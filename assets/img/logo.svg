@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="beetle logo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8a7bf0"/>
+      <stop offset="1" stop-color="#6d5ae0"/>
+    </linearGradient>
+    <linearGradient id="shell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a2e7a"/>
+      <stop offset="1" stop-color="#211f45"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="224" height="224" rx="56" fill="url(#bg)"/>
+  <g stroke="#211f45" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.9">
+    <path d="M78 96 L44 74"/><path d="M74 120 L38 120"/><path d="M78 144 L44 166"/>
+    <path d="M162 96 L196 74"/><path d="M166 120 L202 120"/><path d="M162 144 L196 166"/>
+    <path d="M104 66 L92 40"/><path d="M136 66 L148 40"/>
+  </g>
+  <circle cx="92" cy="40" r="7" fill="#211f45"/>
+  <circle cx="148" cy="40" r="7" fill="#211f45"/>
+  <circle cx="120" cy="70" r="24" fill="#211f45"/>
+  <ellipse cx="120" cy="140" rx="52" ry="66" fill="url(#shell)"/>
+  <path d="M120 82 L120 200" stroke="#6d5ae0" stroke-width="6" stroke-linecap="round"/>
+  <g fill="#f7f6fe">
+    <circle cx="98" cy="118" r="7"/><circle cx="142" cy="118" r="7"/>
+    <circle cx="102" cy="152" r="6"/><circle cx="138" cy="152" r="6"/>
+    <circle cx="110" cy="182" r="5"/><circle cx="130" cy="182" r="5"/>
+  </g>
+  <circle cx="112" cy="64" r="4" fill="#f7f6fe"/>
+  <circle cx="128" cy="64" r="4" fill="#f7f6fe"/>
+</svg>
