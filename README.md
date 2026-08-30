@@ -29,3 +29,6 @@ Pushing to `main` deploys to GitHub Pages via the workflow in
 Design ported from [babyvlm.github.io](https://babyvlm.github.io). Site by
 [Suchir Salhan](https://www.cst.cam.ac.uk/people/sas245); template by
 [BootstrapMade](https://bootstrapmade.com/).
+
+Deployed via GitHub Pages "Deploy from a branch" (main / root). The site is
+plain static files, so no build step or Actions workflow is required.
