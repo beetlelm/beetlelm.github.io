@@ -216,6 +216,60 @@
     .link-card .lc-t { font-family: var(--heading-font); font-weight: 700; font-size: 16px; }
     .link-card .lc-s { font-size: 13px; color: #6b6788; }
 
+    /* ---- Tutorials (picolm-style guide cards) ---- */
+    #tutorials { background-color: #f7f6fe; }
+    .tut-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 8px; }
+    @media (max-width: 991px) { .tut-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 575px) { .tut-grid { grid-template-columns: 1fr; } }
+    .tut-card { position: relative; background: #fff; border: 1px solid #ece7fa; border-radius: 18px; padding: 26px 24px 22px; box-shadow: 0 4px 16px rgba(33,31,69,0.06); display: flex; flex-direction: column; }
+    .tut-step { position: absolute; top: 18px; right: 20px; font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 34px; color: #efeaff; line-height: 1; }
+    .tut-card .tut-ic { width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(160deg, #8a7bf0, #6d5ae0); color: #fff; font-size: 22px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
+    .tut-card h4 { font-size: 18px; margin: 0 0 8px; }
+    .tut-card p { font-size: 14px; color: color-mix(in srgb, var(--default-color), transparent 22%); line-height: 1.55; margin: 0 0 14px; }
+    .tut-card pre { margin: 0 0 12px; padding: 14px 16px; background: #1a1836; border-radius: 12px; overflow-x: auto; }
+    .tut-card pre code { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12.5px; line-height: 1.6; color: #eae7ff; white-space: pre; }
+    .tut-card .tut-link { margin-top: auto; font-family: var(--heading-font); font-weight: 600; font-size: 14px; color: var(--accent-color); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .tut-card .tut-link:hover i { transform: translateX(4px); }
+    .tut-card .tut-link i { transition: transform 0.2s ease; }
+
+    /* ---- Model suite (picolm-style featured cards) ---- */
+    .suite-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 6px 0 30px; }
+    @media (max-width: 991px) { .suite-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 575px) { .suite-grid { grid-template-columns: 1fr; } }
+    .suite-card { background: linear-gradient(160deg, #f7f6fe, #efeaff); border: 1px solid #e4ddf7; border-radius: 18px; padding: 24px 22px; text-decoration: none; color: inherit; transition: transform 0.15s ease, box-shadow 0.2s ease; }
+    .suite-card:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(33,31,69,0.13); color: inherit; }
+    .suite-card .suite-ic { width: 46px; height: 46px; border-radius: 12px; background: linear-gradient(160deg, #8a7bf0, #6d5ae0); color: #fff; font-size: 22px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .suite-card h4 { font-family: "IBM Plex Mono", monospace; font-size: 17px; color: var(--heading-color); margin: 0 0 6px; }
+    .suite-card p { font-size: 14px; margin: 0; color: color-mix(in srgb, var(--default-color), transparent 20%); line-height: 1.5; }
+
+    /* ---- Hugging Face resources hub ---- */
+    #models .hf-search-wrap { position: relative; max-width: 560px; margin: 0 auto 12px; }
+    #models .hf-search { width: 100%; padding: 13px 18px 13px 46px; border: 1.5px solid #e0d9f5; border-radius: 50px; font-family: var(--default-font); font-size: 15px; color: var(--heading-color); background: #fff; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+    #models .hf-search:focus { border-color: var(--accent-color); box-shadow: 0 0 0 4px rgba(109,90,224,0.12); }
+    #models .hf-search-wrap .bi-search { position: absolute; left: 18px; top: 50%; transform: translateY(-50%); color: var(--accent-color); font-size: 16px; }
+    #models .hf-search-hint { text-align: center; font-size: 13px; color: #6b6788; margin-bottom: 26px; }
+    #models .hf-noresult { text-align: center; color: #6b6788; padding: 20px; display: none; }
+
+    .hf-org { background: #fff; border: 1px solid #ece7fa; border-radius: 20px; padding: 26px 26px 20px; margin-bottom: 22px; box-shadow: 0 4px 16px rgba(33,31,69,0.05); }
+    .hf-org-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .hf-org-title { display: flex; align-items: center; gap: 14px; }
+    .hf-org-icon { width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(160deg, #ffd166, #ffb703); color: #211f45; display: flex; align-items: center; justify-content: center; font-size: 24px; flex: 0 0 auto; }
+    .hf-org-title h3 { margin: 0; font-family: "IBM Plex Mono", monospace; font-size: 19px; }
+    .hf-org-title h3 a { color: var(--heading-color); text-decoration: none; }
+    .hf-org-title h3 a:hover { color: var(--accent-color); }
+    .hf-org-title p { margin: 3px 0 0; font-size: 13.5px; color: #6b6788; }
+    .hf-org-btn { flex: 0 0 auto; background: var(--accent-color); color: #fff; font-family: var(--heading-font); font-weight: 600; font-size: 13.5px; padding: 9px 18px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; transition: background 0.2s; }
+    .hf-org-btn:hover { background: #5a49c9; color: #fff; }
+    .hf-org-count { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: #9c99bd; font-weight: 700; margin: 14px 0 4px; }
+
+    .hf-group { margin-top: 16px; }
+    .hf-group h4 { font-size: 14.5px; font-family: var(--heading-font); font-weight: 700; color: var(--heading-color); margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+    .hf-group h4 i { color: var(--accent-color); }
+    .hf-group h4 .hf-n { font-size: 11px; font-weight: 700; color: var(--accent-color); background: #efeaff; border-radius: 50px; padding: 2px 9px; }
+    .hf-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .hf-chip { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12.5px; color: #4a4570; background: #f7f6fe; border: 1px solid #ece7fa; border-radius: 8px; padding: 6px 11px; text-decoration: none; transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s; }
+    .hf-chip:hover { background: var(--accent-color); border-color: var(--accent-color); color: #fff; transform: translateY(-1px); }
+
     /* ---- Footer ---- */
     .footer-brand { text-align: center; padding: 6px 0 22px; }
     .footer-brand img { height: 56px; width: 56px; margin: 0 12px; vertical-align: middle; }
@@ -239,6 +293,8 @@
           <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#overview">About</a></li>
           <li><a href="#quickstart">Quickstart</a></li>
+          <li><a href="#tutorials">Tutorials</a></li>
+          <li><a href="#models">Models &amp; Data</a></li>
           <li><a href="#ecosystem">Ecosystem</a></li>
           <li><a href="#features">Why beetle</a></li>
           <li><a href="#cite">Cite</a></li>
@@ -256,11 +312,8 @@
     <section id="hero" class="hero section dark-background">
       <div class="container d-flex flex-column align-items-center text-center mt-auto">
         <img src="assets/img/logo.svg" class="beetle-logo" alt="beetle logo" data-aos="zoom-in">
-        <h2 data-aos="fade-up" data-aos-delay="100">beetle<br><span>Tiny language models, trained end-to-end on CPU</span></h2>
+        <h2 data-aos="fade-up" data-aos-delay="100">beetle</h2>
         <br>
-        <h3 data-aos="fade-up" data-aos-delay="200">
-          A minimal, transparent framework that trains a real language model in a couple of minutes &mdash; no GPU, no downloads.
-        </h3>
         <span class="badge-pill" data-aos="fade-up" data-aos-delay="300">Open source &middot; Apache-2.0 &middot; Python</span>
         <div class="hero-modalities" data-aos="fade-up" data-aos-delay="400">
           <span><i class="bi bi-cpu"></i> CPU-first</span>
@@ -294,9 +347,9 @@
         <h2><i class="bi bi-bug"></i>What is beetle?</h2>
       </div>
       <div class="container">
-        <div class="row g-4 align-items-stretch">
+        <div class="row g-4 align-items-stretch justify-content-center">
 
-          <div class="col-lg-7" data-aos="fade-up">
+          <div class="col-lg-9" data-aos="fade-up">
             <div class="about-text">
               <p><strong>beetle</strong> is a minimal, transparent framework for training tiny language models
                 end-to-end &mdash; with <strong>zero downloads</strong> and a <strong>reproducible baseline</strong> a
@@ -310,27 +363,8 @@
                   HuggingFace datasets, the architecture zoo, continual-learning modules) for multi-GPU clusters.</li>
               </ul>
               <p>Checkpoints from both are standard HuggingFace and reload with <code>from_pretrained</code>.</p>
-              <p class="about-cta"><a class="cta-btn" href="#quickstart">Try the quickstart <i class="bi bi-arrow-right"></i></a></p>
+              <p class="about-cta"><a class="cta-btn" href="#quickstart">Try the quickstart <i class="bi bi-arrow-right"></i></a> <a class="cta-btn cta-outline" href="#models">Browse the models <i class="bi bi-arrow-right"></i></a></p>
             </div>
-          </div>
-
-          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
-            <aside class="gap-panel">
-              <h3><i class="bi bi-speedometer2"></i> The headline toy result</h3>
-              <div class="stat-row stat-b">
-                <div class="stat-num" data-count="722048" data-prefix="" data-suffix="">722,048</div>
-                <div class="stat-label">parameters &mdash; a 0.72M PicoDecoder</div>
-              </div>
-              <div class="stat-row stat-a">
-                <div class="stat-num" data-count="15" data-prefix="~" data-suffix="s">~15s</div>
-                <div class="stat-label">to train 200 steps on a laptop CPU</div>
-              </div>
-              <div class="stat-row stat-c">
-                <div class="stat-num">5.55 &rarr; 0.2</div>
-                <div class="stat-label">train loss vs. random <code style="color:#eafff6">ln(256)</code> over the byte vocab</div>
-              </div>
-              <p class="gap-note">Deterministic on CPU given the seed. Toy-scale sanity numbers, not research results.</p>
-            </aside>
           </div>
 
         </div>
@@ -379,6 +413,1117 @@ model = PicoDecoderHF.from_pretrained(<span class="c-str">"runs/tiny_cpu"</span>
             <p class="quickstart-note">Point <code>data.train_file</code> at any UTF-8 text file to train on your own corpus, or change one variable with <code>--seed</code>, <code>--max_steps</code>, <code>--d_model</code>.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Tutorials -->
+    <section id="tutorials" class="section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2><i class="bi bi-mortarboard"></i>Tutorials</h2>
+        <p>Step-by-step guides &mdash; from a first CPU run to loading a pretrained beetle checkpoint.</p>
+      </div>
+      <div class="container">
+        <div class="tut-grid">
+
+          <div class="tut-card" data-aos="fade-up">
+            <span class="tut-step">01</span>
+            <div class="tut-ic"><i class="bi bi-download"></i></div>
+            <h4>Install beetle</h4>
+            <p>Clone the repo and install in editable mode. The light install pulls only what the CPU quickstart needs.</p>
+<pre><code>git clone https://github.com/beetlelm/beetlelm.git
+cd beetlelm
+pip install -e .</code></pre>
+            <a class="tut-link" href="#quickstart">Full install options <i class="bi bi-arrow-right"></i></a>
+          </div>
+
+          <div class="tut-card" data-aos="fade-up" data-aos-delay="80">
+            <span class="tut-step">02</span>
+            <div class="tut-ic"><i class="bi bi-cpu"></i></div>
+            <h4>Train your first model</h4>
+            <p>Train a real PicoDecoder end-to-end on CPU with zero downloads &mdash; done in a couple of minutes.</p>
+<pre><code>beetlelm-toy \
+  --config_path configs/tiny_cpu.yaml</code></pre>
+            <a class="tut-link" href="https://github.com/beetlelm/beetlelm" target="_blank" rel="noopener">Open the trainer <i class="bi bi-arrow-right"></i></a>
+          </div>
+
+          <div class="tut-card" data-aos="fade-up" data-aos-delay="160">
+            <span class="tut-step">03</span>
+            <div class="tut-ic"><i class="bi bi-file-earmark-text"></i></div>
+            <h4>Train on your own text</h4>
+            <p>Point <code>data.train_file</code> at any UTF-8 file, and tune the run with a couple of flags.</p>
+<pre><code>beetlelm-toy \
+  --config_path configs/tiny_cpu.yaml \
+  --seed 42 --max_steps 500 --d_model 128</code></pre>
+            <a class="tut-link" href="https://github.com/beetlelm/beetle-data" target="_blank" rel="noopener">Prepare a corpus <i class="bi bi-arrow-right"></i></a>
+          </div>
+
+          <div class="tut-card" data-aos="fade-up">
+            <span class="tut-step">04</span>
+            <div class="tut-ic"><i class="bi bi-box-seam"></i></div>
+            <h4>Load a pretrained model</h4>
+            <p>Every beetle checkpoint is standard HuggingFace &mdash; reload it with <code>from_pretrained</code>.</p>
+<pre><code>from transformers import AutoModelForCausalLM
+m = AutoModelForCausalLM.from_pretrained(
+  "Beetle-HumanScale/beetle-monolingual-humanscale-eng")</code></pre>
+            <a class="tut-link" href="#models">Browse the models <i class="bi bi-arrow-right"></i></a>
+          </div>
+
+          <div class="tut-card" data-aos="fade-up" data-aos-delay="80">
+            <span class="tut-step">05</span>
+            <div class="tut-ic"><i class="bi bi-alphabet"></i></div>
+            <h4>Use a beetle tokenizer</h4>
+            <p>Bilingual and human-scale BPE tokenizers are published on the Hub and load the same way.</p>
+<pre><code>from transformers import AutoTokenizer
+tok = AutoTokenizer.from_pretrained(
+  "Beetle-Data/tokenizer-nl-en")
+print(tok("Hello, beetle!"))</code></pre>
+            <a class="tut-link" href="https://huggingface.co/Beetle-Data" target="_blank" rel="noopener">All tokenizers <i class="bi bi-arrow-right"></i></a>
+          </div>
+
+          <div class="tut-card" data-aos="fade-up" data-aos-delay="160">
+            <span class="tut-step">06</span>
+            <div class="tut-ic"><i class="bi bi-bar-chart-line"></i></div>
+            <h4>Analyse &amp; evaluate</h4>
+            <p>Score learning dynamics and BLiMP-style minimal-pair accuracy, or play in Colab &mdash; no code required.</p>
+<pre><code># minimal-pair evaluation
+from beetle_analyze import blimp_accuracy
+blimp_accuracy("runs/tiny_cpu")</code></pre>
+            <a class="tut-link" href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Try it in Colab <i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Models & Data -->
+    <section id="models" class="section" style="background-color:#ffffff;">
+      <div class="container section-title" data-aos="fade-up">
+        <h2><i class="bi bi-boxes"></i>Models, tokenizers &amp; datasets</h2>
+        <p>Every beetle model, tokenizer and dataset &mdash; published open on the Hugging Face Hub.</p>
+      </div>
+      <div class="container">
+
+        <div class="suite-grid" data-aos="fade-up">
+          <a class="suite-card" href="https://huggingface.co/Beetle-HumanScale/beetle-monolingual-humanscale-eng" target="_blank" rel="noopener">
+            <div class="suite-ic"><i class="bi bi-cpu"></i></div>
+            <h4>Monolingual</h4>
+            <p>Human-scale beetle models trained on a single language (English, Dutch, German, Chinese &hellip;).</p>
+          </a>
+          <a class="suite-card" href="https://huggingface.co/Beetle-HumanScale" target="_blank" rel="noopener">
+            <div class="suite-ic"><i class="bi bi-translate"></i></div>
+            <h4>Bilingual &amp; continual</h4>
+            <p>L2-acquisition schedules (balanced, simultaneous, sequential, classroom, late) with EWC &amp; LAMOL variants.</p>
+          </a>
+          <a class="suite-card" href="https://huggingface.co/Beetle-Data" target="_blank" rel="noopener">
+            <div class="suite-ic"><i class="bi bi-database"></i></div>
+            <h4>Data &amp; tokenizers</h4>
+            <p>BabyBabel corpora, pre-tokenized shards, ~28B raw dumps, and 30+ bilingual BPE tokenizers.</p>
+          </a>
+        </div>
+
+        <div class="hf-search-wrap" data-aos="fade-up">
+          <i class="bi bi-search"></i>
+          <input type="text" id="hf-search" class="hf-search" placeholder="Filter models, tokenizers & datasets (e.g. nld, tokenizer, 100M)&hellip;" aria-label="Filter repositories">
+        </div>
+        <p class="hf-search-hint">Type to filter across every repository below. Each chip links to its page on Hugging Face.</p>
+        <p class="hf-noresult" id="hf-noresult">No repositories match your filter.</p>
+
+        <div class="hf-org" data-aos="fade-up">
+          <div class="hf-org-head">
+            <div class="hf-org-title">
+              <span class="hf-org-icon"><i class="bi bi-boxes"></i></span>
+              <div>
+                <h3><a href="https://huggingface.co/Beetle-Data" target="_blank" rel="noopener">Beetle-Data</a></h3>
+                <p>Bilingual data pipeline: BPE tokenizers, raw &amp; pre-tokenized corpora.</p>
+              </div>
+            </div>
+            <a class="hf-org-btn" href="https://huggingface.co/Beetle-Data" target="_blank" rel="noopener">Open on HF <i class="bi bi-box-arrow-up-right"></i></a>
+          </div>
+          <div class="hf-org-count">326 repositories</div>
+          <div class="hf-group">
+            <h4><i class="bi bi-alphabet"></i> Tokenizers <span class="hf-n">34</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-ar-en" target="_blank" rel="noopener">tokenizer-ar-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-ca-en" target="_blank" rel="noopener">tokenizer-ca-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-cs-en" target="_blank" rel="noopener">tokenizer-cs-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-da-en" target="_blank" rel="noopener">tokenizer-da-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-de-en" target="_blank" rel="noopener">tokenizer-de-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-de-mono" target="_blank" rel="noopener">tokenizer-de-mono</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-el-en" target="_blank" rel="noopener">tokenizer-el-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-en-mono" target="_blank" rel="noopener">tokenizer-en-mono</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-es-en" target="_blank" rel="noopener">tokenizer-es-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-et-en" target="_blank" rel="noopener">tokenizer-et-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-eu-en" target="_blank" rel="noopener">tokenizer-eu-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-fa-en" target="_blank" rel="noopener">tokenizer-fa-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-fi-en" target="_blank" rel="noopener">tokenizer-fi-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-fr-en" target="_blank" rel="noopener">tokenizer-fr-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-he-en" target="_blank" rel="noopener">tokenizer-he-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-hi-en" target="_blank" rel="noopener">tokenizer-hi-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-id-en" target="_blank" rel="noopener">tokenizer-id-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-is-en" target="_blank" rel="noopener">tokenizer-is-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-it-en" target="_blank" rel="noopener">tokenizer-it-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-ja-en" target="_blank" rel="noopener">tokenizer-ja-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-ko-ar-zh-en-multi" target="_blank" rel="noopener">tokenizer-ko-ar-zh-en-multi</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-ko-en" target="_blank" rel="noopener">tokenizer-ko-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-nl-en" target="_blank" rel="noopener">tokenizer-nl-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-nl-mono" target="_blank" rel="noopener">tokenizer-nl-mono</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-no-en" target="_blank" rel="noopener">tokenizer-no-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-pl-en" target="_blank" rel="noopener">tokenizer-pl-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-ro-en" target="_blank" rel="noopener">tokenizer-ro-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-ru-en" target="_blank" rel="noopener">tokenizer-ru-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-sr-en" target="_blank" rel="noopener">tokenizer-sr-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-sv-en" target="_blank" rel="noopener">tokenizer-sv-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-ta-en" target="_blank" rel="noopener">tokenizer-ta-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-tl-en" target="_blank" rel="noopener">tokenizer-tl-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-tr-en" target="_blank" rel="noopener">tokenizer-tr-en</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tokenizer-zh-en" target="_blank" rel="noopener">tokenizer-zh-en</a>
+            </div>
+          </div>
+          <div class="hf-group">
+            <h4><i class="bi bi-database"></i> BabyBabel corpora <span class="hf-n">99</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-eng-100M" target="_blank" rel="noopener">BabyBabel-eng-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fas-66M" target="_blank" rel="noopener">BabyBabel-fas-66M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-deu-30M" target="_blank" rel="noopener">BabyBabel-deu-30M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-eng-66M" target="_blank" rel="noopener">BabyBabel-eng-66M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fra-80M" target="_blank" rel="noopener">BabyBabel-fra-80M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ind-100M" target="_blank" rel="noopener">BabyBabel-ind-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ind-70M" target="_blank" rel="noopener">BabyBabel-ind-70M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ind-80M" target="_blank" rel="noopener">BabyBabel-ind-80M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ukr-20M" target="_blank" rel="noopener">BabyBabel-ukr-20M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ukr-70M" target="_blank" rel="noopener">BabyBabel-ukr-70M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-zho-50M" target="_blank" rel="noopener">BabyBabel-zho-50M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-deu-20M" target="_blank" rel="noopener">BabyBabel-deu-20M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-deu-70M" target="_blank" rel="noopener">BabyBabel-deu-70M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ind-30M" target="_blank" rel="noopener">BabyBabel-ind-30M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ukr-100M" target="_blank" rel="noopener">BabyBabel-ukr-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ukr-33M" target="_blank" rel="noopener">BabyBabel-ukr-33M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-zho-60M" target="_blank" rel="noopener">BabyBabel-zho-60M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-deu-100M" target="_blank" rel="noopener">BabyBabel-deu-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-deu-10M" target="_blank" rel="noopener">BabyBabel-deu-10M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-deu-33M" target="_blank" rel="noopener">BabyBabel-deu-33M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-eng-40M" target="_blank" rel="noopener">BabyBabel-eng-40M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fas-30M" target="_blank" rel="noopener">BabyBabel-fas-30M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fra-100M" target="_blank" rel="noopener">BabyBabel-fra-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fra-20M" target="_blank" rel="noopener">BabyBabel-fra-20M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fra-33M" target="_blank" rel="noopener">BabyBabel-fra-33M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ind-40M" target="_blank" rel="noopener">BabyBabel-ind-40M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ukr-10M" target="_blank" rel="noopener">BabyBabel-ukr-10M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-bul-50M" target="_blank" rel="noopener">BabyBabel-bul-50M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-bul-70M" target="_blank" rel="noopener">BabyBabel-bul-70M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-bul-80M" target="_blank" rel="noopener">BabyBabel-bul-80M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-eng-60M" target="_blank" rel="noopener">BabyBabel-eng-60M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fas-40M" target="_blank" rel="noopener">BabyBabel-fas-40M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fra-10M" target="_blank" rel="noopener">BabyBabel-fra-10M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fra-30M" target="_blank" rel="noopener">BabyBabel-fra-30M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ind-10M" target="_blank" rel="noopener">BabyBabel-ind-10M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ind-20M" target="_blank" rel="noopener">BabyBabel-ind-20M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ind-60M" target="_blank" rel="noopener">BabyBabel-ind-60M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-nld-70M" target="_blank" rel="noopener">BabyBabel-nld-70M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ukr-30M" target="_blank" rel="noopener">BabyBabel-ukr-30M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ukr-80M" target="_blank" rel="noopener">BabyBabel-ukr-80M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-zho-100M" target="_blank" rel="noopener">BabyBabel-zho-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-zho-40M" target="_blank" rel="noopener">BabyBabel-zho-40M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-bul-100M" target="_blank" rel="noopener">BabyBabel-bul-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-deu-66M" target="_blank" rel="noopener">BabyBabel-deu-66M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-deu-80M" target="_blank" rel="noopener">BabyBabel-deu-80M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-eng-10M" target="_blank" rel="noopener">BabyBabel-eng-10M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fas-50M" target="_blank" rel="noopener">BabyBabel-fas-50M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fra-70M" target="_blank" rel="noopener">BabyBabel-fra-70M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ind-33M" target="_blank" rel="noopener">BabyBabel-ind-33M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-nld-100M" target="_blank" rel="noopener">BabyBabel-nld-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-nld-40M" target="_blank" rel="noopener">BabyBabel-nld-40M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-nld-80M" target="_blank" rel="noopener">BabyBabel-nld-80M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-zho-20M" target="_blank" rel="noopener">BabyBabel-zho-20M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-zho-66M" target="_blank" rel="noopener">BabyBabel-zho-66M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-eng-20M" target="_blank" rel="noopener">BabyBabel-eng-20M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-eng-50M" target="_blank" rel="noopener">BabyBabel-eng-50M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fas-60M" target="_blank" rel="noopener">BabyBabel-fas-60M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-nld-50M" target="_blank" rel="noopener">BabyBabel-nld-50M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-zho-70M" target="_blank" rel="noopener">BabyBabel-zho-70M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-bul-40M" target="_blank" rel="noopener">BabyBabel-bul-40M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-bul-60M" target="_blank" rel="noopener">BabyBabel-bul-60M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-deu-50M" target="_blank" rel="noopener">BabyBabel-deu-50M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-nld-33M" target="_blank" rel="noopener">BabyBabel-nld-33M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ukr-66M" target="_blank" rel="noopener">BabyBabel-ukr-66M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-zho-10M" target="_blank" rel="noopener">BabyBabel-zho-10M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-zho-30M" target="_blank" rel="noopener">BabyBabel-zho-30M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-bul-20M" target="_blank" rel="noopener">BabyBabel-bul-20M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-bul-30M" target="_blank" rel="noopener">BabyBabel-bul-30M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-eng-30M" target="_blank" rel="noopener">BabyBabel-eng-30M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fas-20M" target="_blank" rel="noopener">BabyBabel-fas-20M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fas-80M" target="_blank" rel="noopener">BabyBabel-fas-80M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fra-50M" target="_blank" rel="noopener">BabyBabel-fra-50M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-nld-10M" target="_blank" rel="noopener">BabyBabel-nld-10M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ukr-40M" target="_blank" rel="noopener">BabyBabel-ukr-40M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-bul-33M" target="_blank" rel="noopener">BabyBabel-bul-33M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-eng-80M" target="_blank" rel="noopener">BabyBabel-eng-80M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fas-100M" target="_blank" rel="noopener">BabyBabel-fas-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fas-10M" target="_blank" rel="noopener">BabyBabel-fas-10M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fas-70M" target="_blank" rel="noopener">BabyBabel-fas-70M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fra-40M" target="_blank" rel="noopener">BabyBabel-fra-40M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fra-60M" target="_blank" rel="noopener">BabyBabel-fra-60M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fra-66M" target="_blank" rel="noopener">BabyBabel-fra-66M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ind-50M" target="_blank" rel="noopener">BabyBabel-ind-50M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-nld-60M" target="_blank" rel="noopener">BabyBabel-nld-60M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-nld-66M" target="_blank" rel="noopener">BabyBabel-nld-66M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ukr-60M" target="_blank" rel="noopener">BabyBabel-ukr-60M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-zho-80M" target="_blank" rel="noopener">BabyBabel-zho-80M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-bul-10M" target="_blank" rel="noopener">BabyBabel-bul-10M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-bul-66M" target="_blank" rel="noopener">BabyBabel-bul-66M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-deu-60M" target="_blank" rel="noopener">BabyBabel-deu-60M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-eng-70M" target="_blank" rel="noopener">BabyBabel-eng-70M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-nld-20M" target="_blank" rel="noopener">BabyBabel-nld-20M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-nld-30M" target="_blank" rel="noopener">BabyBabel-nld-30M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ukr-50M" target="_blank" rel="noopener">BabyBabel-ukr-50M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-zho-33M" target="_blank" rel="noopener">BabyBabel-zho-33M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-deu-40M" target="_blank" rel="noopener">BabyBabel-deu-40M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-fas-33M" target="_blank" rel="noopener">BabyBabel-fas-33M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-ind-66M" target="_blank" rel="noopener">BabyBabel-ind-66M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/BabyBabel-eng-33M" target="_blank" rel="noopener">BabyBabel-eng-33M</a>
+            </div>
+          </div>
+          <div class="hf-group">
+            <h4><i class="bi bi-database"></i> Pre-tokenized shards <span class="hf-n">108</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/it-2B-pretok" target="_blank" rel="noopener">it-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-hi-2B-pretok" target="_blank" rel="noopener">en-for-hi-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/es-2B-pretok" target="_blank" rel="noopener">es-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/hi-2B-pretok" target="_blank" rel="noopener">hi-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/zh-2B-pretok" target="_blank" rel="noopener">zh-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/de-2B-pretok" target="_blank" rel="noopener">de-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-eu-2B-pretok" target="_blank" rel="noopener">en-for-eu-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-it-2B-pretok" target="_blank" rel="noopener">en-for-it-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ru-2B-pretok" target="_blank" rel="noopener">ru-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tr-2B-pretok" target="_blank" rel="noopener">tr-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ru-2B-pretok" target="_blank" rel="noopener">en-for-ru-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-nl-2B-pretok" target="_blank" rel="noopener">en-for-nl-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tl-2B-pretok" target="_blank" rel="noopener">tl-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-tr-2B-pretok" target="_blank" rel="noopener">en-for-tr-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ko-2B-pretok" target="_blank" rel="noopener">ko-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-is-2B-pretok" target="_blank" rel="noopener">en-for-is-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ar-2B-pretok" target="_blank" rel="noopener">en-for-ar-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ro-2B-pretok" target="_blank" rel="noopener">en-for-ro-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/nl-2B-pretok" target="_blank" rel="noopener">nl-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-pl-2B-pretok" target="_blank" rel="noopener">en-for-pl-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ko-2B-pretok" target="_blank" rel="noopener">en-for-ko-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/sv-2B-pretok" target="_blank" rel="noopener">sv-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-eu-100M-pretok" target="_blank" rel="noopener">en-for-eu-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-hi-100M-pretok" target="_blank" rel="noopener">en-for-hi-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-zh-2B-pretok" target="_blank" rel="noopener">en-for-zh-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tr-100M-pretok" target="_blank" rel="noopener">tr-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-it-100M-pretok" target="_blank" rel="noopener">en-for-it-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/es-100M-pretok" target="_blank" rel="noopener">es-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/eu-100M-pretok" target="_blank" rel="noopener">eu-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/eu-2B-pretok" target="_blank" rel="noopener">eu-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-tr-100M-pretok" target="_blank" rel="noopener">en-for-tr-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ro-2B-pretok" target="_blank" rel="noopener">ro-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tl-100M-pretok" target="_blank" rel="noopener">tl-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/pl-2B-pretok" target="_blank" rel="noopener">pl-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/hi-100M-pretok" target="_blank" rel="noopener">hi-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-zh-100M-pretok" target="_blank" rel="noopener">en-for-zh-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-tl-100M-pretok" target="_blank" rel="noopener">en-for-tl-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ru-100M-pretok" target="_blank" rel="noopener">ru-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ru-100M-pretok" target="_blank" rel="noopener">en-for-ru-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/zh-100M-pretok" target="_blank" rel="noopener">zh-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-pl-100M-pretok" target="_blank" rel="noopener">en-for-pl-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/no-2B-pretok" target="_blank" rel="noopener">no-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/de-100M-pretok" target="_blank" rel="noopener">de-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/it-100M-pretok" target="_blank" rel="noopener">it-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/no-100M-pretok" target="_blank" rel="noopener">no-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/pl-100M-pretok" target="_blank" rel="noopener">pl-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-de-100M-pretok" target="_blank" rel="noopener">en-for-de-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/fi-100M-pretok" target="_blank" rel="noopener">fi-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/is-100M-pretok" target="_blank" rel="noopener">is-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-nl-100M-pretok" target="_blank" rel="noopener">en-for-nl-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-he-100M-pretok" target="_blank" rel="noopener">en-for-he-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-tl-2B-pretok" target="_blank" rel="noopener">en-for-tl-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/he-100M-pretok" target="_blank" rel="noopener">he-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-is-100M-pretok" target="_blank" rel="noopener">en-for-is-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/el-2B-pretok" target="_blank" rel="noopener">el-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-el-2B-pretok" target="_blank" rel="noopener">en-for-el-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/el-100M-pretok" target="_blank" rel="noopener">el-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/fi-2B-pretok" target="_blank" rel="noopener">fi-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-da-2B-pretok" target="_blank" rel="noopener">en-for-da-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ja-2B-pretok" target="_blank" rel="noopener">ja-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ca-100M-pretok" target="_blank" rel="noopener">en-for-ca-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-el-100M-pretok" target="_blank" rel="noopener">en-for-el-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-et-2B-pretok" target="_blank" rel="noopener">en-for-et-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/et-100M-pretok" target="_blank" rel="noopener">et-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-he-2B-pretok" target="_blank" rel="noopener">en-for-he-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/he-2B-pretok" target="_blank" rel="noopener">he-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/cs-2B-pretok" target="_blank" rel="noopener">cs-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/da-100M-pretok" target="_blank" rel="noopener">da-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-et-100M-pretok" target="_blank" rel="noopener">en-for-et-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ja-100M-pretok" target="_blank" rel="noopener">en-for-ja-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ko-100M-pretok" target="_blank" rel="noopener">en-for-ko-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-no-100M-pretok" target="_blank" rel="noopener">en-for-no-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ta-2B-pretok" target="_blank" rel="noopener">en-for-ta-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ca-2B-pretok" target="_blank" rel="noopener">ca-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ca-2B-pretok" target="_blank" rel="noopener">en-for-ca-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-da-100M-pretok" target="_blank" rel="noopener">en-for-da-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-es-100M-pretok" target="_blank" rel="noopener">en-for-es-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-sv-2B-pretok" target="_blank" rel="noopener">en-for-sv-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ta-100M-pretok" target="_blank" rel="noopener">en-for-ta-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/et-2B-pretok" target="_blank" rel="noopener">et-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/is-2B-pretok" target="_blank" rel="noopener">is-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ta-2B-pretok" target="_blank" rel="noopener">ta-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ar-100M-pretok" target="_blank" rel="noopener">ar-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-cs-100M-pretok" target="_blank" rel="noopener">en-for-cs-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-cs-2B-pretok" target="_blank" rel="noopener">en-for-cs-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-de-2B-pretok" target="_blank" rel="noopener">en-for-de-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-es-2B-pretok" target="_blank" rel="noopener">en-for-es-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ja-2B-pretok" target="_blank" rel="noopener">en-for-ja-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-no-2B-pretok" target="_blank" rel="noopener">en-for-no-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-sv-100M-pretok" target="_blank" rel="noopener">en-for-sv-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/nl-100M-pretok" target="_blank" rel="noopener">nl-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ro-100M-pretok" target="_blank" rel="noopener">ro-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/sr-100M-pretok" target="_blank" rel="noopener">sr-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/sv-100M-pretok" target="_blank" rel="noopener">sv-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ar-2B-pretok" target="_blank" rel="noopener">ar-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ca-100M-pretok" target="_blank" rel="noopener">ca-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/da-2B-pretok" target="_blank" rel="noopener">da-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-fi-100M-pretok" target="_blank" rel="noopener">en-for-fi-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-fi-2B-pretok" target="_blank" rel="noopener">en-for-fi-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ro-100M-pretok" target="_blank" rel="noopener">en-for-ro-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-sr-100M-pretok" target="_blank" rel="noopener">en-for-sr-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-sr-2B-pretok" target="_blank" rel="noopener">en-for-sr-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/sr-2B-pretok" target="_blank" rel="noopener">sr-2B-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/cs-100M-pretok" target="_blank" rel="noopener">cs-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ar-100M-pretok" target="_blank" rel="noopener">en-for-ar-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ja-100M-pretok" target="_blank" rel="noopener">ja-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ko-100M-pretok" target="_blank" rel="noopener">ko-100M-pretok</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ta-100M-pretok" target="_blank" rel="noopener">ta-100M-pretok</a>
+            </div>
+          </div>
+          <div class="hf-group">
+            <h4><i class="bi bi-database"></i> Raw corpora (≈28B) <span class="hf-n">84</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/fi-28B" target="_blank" rel="noopener">fi-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-raw-28B" target="_blank" rel="noopener">en-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/pl-raw-28B" target="_blank" rel="noopener">pl-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/hi-raw-28B" target="_blank" rel="noopener">hi-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/da-28B" target="_blank" rel="noopener">da-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-hi-28B" target="_blank" rel="noopener">en-for-hi-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ta-28B" target="_blank" rel="noopener">ta-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ar-raw-28B" target="_blank" rel="noopener">ar-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-nl-28B" target="_blank" rel="noopener">en-for-nl-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ta-28B" target="_blank" rel="noopener">en-for-ta-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/fi-raw-28B" target="_blank" rel="noopener">fi-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/nl-raw-28B" target="_blank" rel="noopener">nl-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ro-raw-28B" target="_blank" rel="noopener">ro-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-it-28B" target="_blank" rel="noopener">en-for-it-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ca-raw-28B" target="_blank" rel="noopener">ca-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ja-28B" target="_blank" rel="noopener">en-for-ja-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ja-raw-28B" target="_blank" rel="noopener">ja-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/nl-28B" target="_blank" rel="noopener">nl-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ko-28B" target="_blank" rel="noopener">en-for-ko-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/hi-28B" target="_blank" rel="noopener">hi-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/fr-raw-28B" target="_blank" rel="noopener">fr-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ko-28B" target="_blank" rel="noopener">ko-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/el-28B" target="_blank" rel="noopener">el-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-tl-28B" target="_blank" rel="noopener">en-for-tl-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/he-raw-28B" target="_blank" rel="noopener">he-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/de-raw-28B" target="_blank" rel="noopener">de-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/it-28B" target="_blank" rel="noopener">it-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-tr-28B" target="_blank" rel="noopener">en-for-tr-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/no-28B" target="_blank" rel="noopener">no-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/et-raw-28B" target="_blank" rel="noopener">et-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/da-raw-28B" target="_blank" rel="noopener">da-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/es-28B" target="_blank" rel="noopener">es-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-pl-28B" target="_blank" rel="noopener">en-for-pl-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/el-raw-28B" target="_blank" rel="noopener">el-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/zh-raw-28B" target="_blank" rel="noopener">zh-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/sr-raw-28B" target="_blank" rel="noopener">sr-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-et-28B" target="_blank" rel="noopener">en-for-et-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/es-raw-28B" target="_blank" rel="noopener">es-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tr-28B" target="_blank" rel="noopener">tr-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/de-28B" target="_blank" rel="noopener">de-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/sv-raw-28B" target="_blank" rel="noopener">sv-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ru-28B" target="_blank" rel="noopener">en-for-ru-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ko-raw-28B" target="_blank" rel="noopener">ko-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/et-28B" target="_blank" rel="noopener">et-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/eu-raw-28B" target="_blank" rel="noopener">eu-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tl-raw-28B" target="_blank" rel="noopener">tl-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-is-28B" target="_blank" rel="noopener">en-for-is-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-de-28B" target="_blank" rel="noopener">en-for-de-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-zh-28B" target="_blank" rel="noopener">en-for-zh-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-sv-28B" target="_blank" rel="noopener">en-for-sv-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ta-raw-28B" target="_blank" rel="noopener">ta-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-no-28B" target="_blank" rel="noopener">en-for-no-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-eu-28B" target="_blank" rel="noopener">en-for-eu-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/no-raw-28B" target="_blank" rel="noopener">no-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-cs-28B" target="_blank" rel="noopener">en-for-cs-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/he-28B" target="_blank" rel="noopener">he-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/it-raw-28B" target="_blank" rel="noopener">it-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/is-raw-28B" target="_blank" rel="noopener">is-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tr-raw-28B" target="_blank" rel="noopener">tr-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-fi-28B" target="_blank" rel="noopener">en-for-fi-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-he-28B" target="_blank" rel="noopener">en-for-he-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ru-raw-28B" target="_blank" rel="noopener">ru-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/tl-28B" target="_blank" rel="noopener">tl-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/cs-raw-28B" target="_blank" rel="noopener">cs-raw-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-es-28B" target="_blank" rel="noopener">en-for-es-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ar-28B" target="_blank" rel="noopener">en-for-ar-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/is-28B" target="_blank" rel="noopener">is-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/sr-28B" target="_blank" rel="noopener">sr-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/pl-28B" target="_blank" rel="noopener">pl-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/eu-28B" target="_blank" rel="noopener">eu-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ru-28B" target="_blank" rel="noopener">ru-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-da-28B" target="_blank" rel="noopener">en-for-da-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-sr-28B" target="_blank" rel="noopener">en-for-sr-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/zh-28B" target="_blank" rel="noopener">zh-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-28B" target="_blank" rel="noopener">en-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ca-28B" target="_blank" rel="noopener">en-for-ca-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-ro-28B" target="_blank" rel="noopener">en-for-ro-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ja-28B" target="_blank" rel="noopener">ja-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/sv-28B" target="_blank" rel="noopener">sv-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/en-for-el-28B" target="_blank" rel="noopener">en-for-el-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ar-28B" target="_blank" rel="noopener">ar-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ca-28B" target="_blank" rel="noopener">ca-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/cs-28B" target="_blank" rel="noopener">cs-28B</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/ro-28B" target="_blank" rel="noopener">ro-28B</a>
+            </div>
+          </div>
+          <div class="hf-group">
+            <h4><i class="bi bi-database"></i> FineWeb corpora <span class="hf-n">1</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-Data/FineWeb2-2B" target="_blank" rel="noopener">FineWeb2-2B</a>
+            </div>
+          </div>
+        </div>
+        <div class="hf-org" data-aos="fade-up">
+          <div class="hf-org-head">
+            <div class="hf-org-title">
+              <span class="hf-org-icon"><i class="bi bi-boxes"></i></span>
+              <div>
+                <h3><a href="https://huggingface.co/Beetle-HumanScale" target="_blank" rel="noopener">Beetle-HumanScale</a></h3>
+                <p>Human-scale (100M-word) tokenizers, corpora &amp; trained beetle models.</p>
+              </div>
+            </div>
+            <a class="hf-org-btn" href="https://huggingface.co/Beetle-HumanScale" target="_blank" rel="noopener">Open on HF <i class="bi bi-box-arrow-up-right"></i></a>
+          </div>
+          <div class="hf-org-count">163 repositories</div>
+          <div class="hf-group">
+            <h4><i class="bi bi-cpu"></i> Monolingual models <span class="hf-n">4</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-monolingual-humanscale-eng" target="_blank" rel="noopener">beetle-monolingual-humanscale-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-monolingual-humanscale-nld" target="_blank" rel="noopener">beetle-monolingual-humanscale-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-monolingual-humanscale-zho" target="_blank" rel="noopener">beetle-monolingual-humanscale-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-monolingual-humanscale-deu" target="_blank" rel="noopener">beetle-monolingual-humanscale-deu</a>
+            </div>
+          </div>
+          <div class="hf-group">
+            <h4><i class="bi bi-translate"></i> Bilingual &amp; continual-learning models <span class="hf-n">27</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-balanced-b1-humanscale-nld-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-humanscale-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-sequential-0-100-b3-humanscale-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-0-100-b3-humanscale-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-classroom-20-b4-humanscale-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-humanscale-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-nld-eng-seed97" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-nld-eng-seed97</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-simultaneous-b2-humanscale-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-humanscale-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-80-late-b5-humanscale-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-humanscale-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-simultaneous-b2-humanscale-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-humanscale-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-balanced-b1-humanscale-deu-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-humanscale-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-classroom-20-b4-humanscale-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-humanscale-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng-seed13" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng-seed13</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-80-late-b5-humanscale-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-humanscale-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng-seed97" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng-seed97</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-nld-eng-seed13" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-nld-eng-seed13</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-nld-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-nld-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-80-late-b5-humanscale-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-humanscale-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-nld-eng-perlang-safe" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-nld-eng-perlang-safe</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-balanced-b1-humanscale-nld-eng-episodic" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-humanscale-nld-eng-episodic</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng-ewc-l20" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng-ewc-l20</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng-lamol-l20" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng-lamol-l20</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng-lr-b2" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-humanscale-nld-eng-lr-b2</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-balanced-b1-humanscale-zho-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-humanscale-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/beetle-bilingual-l2-50-classroom-20-b4-humanscale-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-humanscale-zho-eng</a>
+            </div>
+          </div>
+          <div class="hf-group">
+            <h4><i class="bi bi-alphabet"></i> BPE tokenizers <span class="hf-n">45</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-bul" target="_blank" rel="noopener">bpe-humanscale-bul</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-bul-deu" target="_blank" rel="noopener">bpe-humanscale-bul-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-bul-fra" target="_blank" rel="noopener">bpe-humanscale-bul-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-bul-ind" target="_blank" rel="noopener">bpe-humanscale-bul-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-bul-ukr" target="_blank" rel="noopener">bpe-humanscale-bul-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-deu" target="_blank" rel="noopener">bpe-humanscale-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-deu-ukr" target="_blank" rel="noopener">bpe-humanscale-deu-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-eng" target="_blank" rel="noopener">bpe-humanscale-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-eng-bul" target="_blank" rel="noopener">bpe-humanscale-eng-bul</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-eng-deu" target="_blank" rel="noopener">bpe-humanscale-eng-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-eng-fra" target="_blank" rel="noopener">bpe-humanscale-eng-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-eng-ind" target="_blank" rel="noopener">bpe-humanscale-eng-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-eng-nld" target="_blank" rel="noopener">bpe-humanscale-eng-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-eng-ukr" target="_blank" rel="noopener">bpe-humanscale-eng-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-fas" target="_blank" rel="noopener">bpe-humanscale-fas</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-fas-bul" target="_blank" rel="noopener">bpe-humanscale-fas-bul</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-fas-deu" target="_blank" rel="noopener">bpe-humanscale-fas-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-fas-eng" target="_blank" rel="noopener">bpe-humanscale-fas-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-fas-fra" target="_blank" rel="noopener">bpe-humanscale-fas-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-fas-ind" target="_blank" rel="noopener">bpe-humanscale-fas-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-fas-nld" target="_blank" rel="noopener">bpe-humanscale-fas-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-fas-ukr" target="_blank" rel="noopener">bpe-humanscale-fas-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-fra" target="_blank" rel="noopener">bpe-humanscale-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-fra-deu" target="_blank" rel="noopener">bpe-humanscale-fra-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-fra-ind" target="_blank" rel="noopener">bpe-humanscale-fra-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-fra-ukr" target="_blank" rel="noopener">bpe-humanscale-fra-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-ind" target="_blank" rel="noopener">bpe-humanscale-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-ind-deu" target="_blank" rel="noopener">bpe-humanscale-ind-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-ind-ukr" target="_blank" rel="noopener">bpe-humanscale-ind-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-nld" target="_blank" rel="noopener">bpe-humanscale-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-nld-bul" target="_blank" rel="noopener">bpe-humanscale-nld-bul</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-nld-deu" target="_blank" rel="noopener">bpe-humanscale-nld-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-nld-fra" target="_blank" rel="noopener">bpe-humanscale-nld-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-nld-ind" target="_blank" rel="noopener">bpe-humanscale-nld-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-nld-ukr" target="_blank" rel="noopener">bpe-humanscale-nld-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-ukr" target="_blank" rel="noopener">bpe-humanscale-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-zho" target="_blank" rel="noopener">bpe-humanscale-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-zho-bul" target="_blank" rel="noopener">bpe-humanscale-zho-bul</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-zho-deu" target="_blank" rel="noopener">bpe-humanscale-zho-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-zho-eng" target="_blank" rel="noopener">bpe-humanscale-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-zho-fas" target="_blank" rel="noopener">bpe-humanscale-zho-fas</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-zho-fra" target="_blank" rel="noopener">bpe-humanscale-zho-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-zho-ind" target="_blank" rel="noopener">bpe-humanscale-zho-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-zho-nld" target="_blank" rel="noopener">bpe-humanscale-zho-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bpe-humanscale-zho-ukr" target="_blank" rel="noopener">bpe-humanscale-zho-ukr</a>
+            </div>
+          </div>
+          <div class="hf-group">
+            <h4><i class="bi bi-database"></i> BabyBabel corpora <span class="hf-n">4</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/BabyBabel-zho-held-out" target="_blank" rel="noopener">BabyBabel-zho-held-out</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/BabyBabel-nld-held-out" target="_blank" rel="noopener">BabyBabel-nld-held-out</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/BabyBabel-deu-held-out" target="_blank" rel="noopener">BabyBabel-deu-held-out</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/BabyBabel-eng-held-out" target="_blank" rel="noopener">BabyBabel-eng-held-out</a>
+            </div>
+          </div>
+          <div class="hf-group">
+            <h4><i class="bi bi-database"></i> Datasets <span class="hf-n">83</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/eng-20M-eng-nld" target="_blank" rel="noopener">eng-20M-eng-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fas-50M-eng-fas" target="_blank" rel="noopener">fas-50M-eng-fas</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/nld-80M-eng-nld" target="_blank" rel="noopener">nld-80M-eng-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fas-50M-fas-nld" target="_blank" rel="noopener">fas-50M-fas-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fra-50M-bul-fra" target="_blank" rel="noopener">fra-50M-bul-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/nld-100M" target="_blank" rel="noopener">nld-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/zho-100M" target="_blank" rel="noopener">zho-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/zho-50M-deu-zho" target="_blank" rel="noopener">zho-50M-deu-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bul-50M-bul-ind" target="_blank" rel="noopener">bul-50M-bul-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/deu-50M-bul-deu" target="_blank" rel="noopener">deu-50M-bul-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fra-50M-eng-fra" target="_blank" rel="noopener">fra-50M-eng-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ind-50M-eng-ind" target="_blank" rel="noopener">ind-50M-eng-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/zho-50M-eng-zho" target="_blank" rel="noopener">zho-50M-eng-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bul-50M-bul-fra" target="_blank" rel="noopener">bul-50M-bul-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/deu-100M" target="_blank" rel="noopener">deu-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fas-50M-fas-ukr" target="_blank" rel="noopener">fas-50M-fas-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/nld-50M-ind-nld" target="_blank" rel="noopener">nld-50M-ind-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bul-50M-bul-nld" target="_blank" rel="noopener">bul-50M-bul-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bul-50M-bul-ukr" target="_blank" rel="noopener">bul-50M-bul-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/deu-50M-deu-zho" target="_blank" rel="noopener">deu-50M-deu-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/eng-50M-eng-fas" target="_blank" rel="noopener">eng-50M-eng-fas</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/eng-50M-eng-nld" target="_blank" rel="noopener">eng-50M-eng-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/eng-50M-eng-zho" target="_blank" rel="noopener">eng-50M-eng-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fas-100M" target="_blank" rel="noopener">fas-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fas-50M-fas-fra" target="_blank" rel="noopener">fas-50M-fas-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fas-50M-fas-ind" target="_blank" rel="noopener">fas-50M-fas-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fas-50M-fas-zho" target="_blank" rel="noopener">fas-50M-fas-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fra-50M-fra-nld" target="_blank" rel="noopener">fra-50M-fra-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ind-50M-fas-ind" target="_blank" rel="noopener">ind-50M-fas-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/nld-50M-deu-nld" target="_blank" rel="noopener">nld-50M-deu-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/nld-50M-eng-nld" target="_blank" rel="noopener">nld-50M-eng-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/nld-50M-fra-nld" target="_blank" rel="noopener">nld-50M-fra-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ukr-50M-deu-ukr" target="_blank" rel="noopener">ukr-50M-deu-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ukr-50M-eng-ukr" target="_blank" rel="noopener">ukr-50M-eng-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ukr-50M-fra-ukr" target="_blank" rel="noopener">ukr-50M-fra-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ukr-50M-ukr-zho" target="_blank" rel="noopener">ukr-50M-ukr-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/zho-50M-fas-zho" target="_blank" rel="noopener">zho-50M-fas-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bul-100M" target="_blank" rel="noopener">bul-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bul-50M-bul-zho" target="_blank" rel="noopener">bul-50M-bul-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/deu-50M-deu-eng" target="_blank" rel="noopener">deu-50M-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/eng-100M" target="_blank" rel="noopener">eng-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/eng-50M-deu-eng" target="_blank" rel="noopener">eng-50M-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/eng-50M-eng-fra" target="_blank" rel="noopener">eng-50M-eng-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/eng-50M-eng-ind" target="_blank" rel="noopener">eng-50M-eng-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/eng-50M-eng-ukr" target="_blank" rel="noopener">eng-50M-eng-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fas-50M-bul-fas" target="_blank" rel="noopener">fas-50M-bul-fas</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fra-100M" target="_blank" rel="noopener">fra-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fra-50M-deu-fra" target="_blank" rel="noopener">fra-50M-deu-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fra-50M-fas-fra" target="_blank" rel="noopener">fra-50M-fas-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fra-50M-fra-ind" target="_blank" rel="noopener">fra-50M-fra-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fra-50M-fra-ukr" target="_blank" rel="noopener">fra-50M-fra-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fra-50M-fra-zho" target="_blank" rel="noopener">fra-50M-fra-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ind-50M-bul-ind" target="_blank" rel="noopener">ind-50M-bul-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ind-50M-fra-ind" target="_blank" rel="noopener">ind-50M-fra-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ind-50M-ind-zho" target="_blank" rel="noopener">ind-50M-ind-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/nld-50M-bul-nld" target="_blank" rel="noopener">nld-50M-bul-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/nld-50M-fas-nld" target="_blank" rel="noopener">nld-50M-fas-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/nld-50M-nld-ukr" target="_blank" rel="noopener">nld-50M-nld-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ukr-50M-bul-ukr" target="_blank" rel="noopener">ukr-50M-bul-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ukr-50M-fas-ukr" target="_blank" rel="noopener">ukr-50M-fas-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ukr-50M-ind-ukr" target="_blank" rel="noopener">ukr-50M-ind-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ukr-50M-nld-ukr" target="_blank" rel="noopener">ukr-50M-nld-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/zho-50M-bul-zho" target="_blank" rel="noopener">zho-50M-bul-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/zho-50M-fra-zho" target="_blank" rel="noopener">zho-50M-fra-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/zho-50M-ind-zho" target="_blank" rel="noopener">zho-50M-ind-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/zho-50M-ukr-zho" target="_blank" rel="noopener">zho-50M-ukr-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bul-50M-bul-deu" target="_blank" rel="noopener">bul-50M-bul-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bul-50M-bul-fas" target="_blank" rel="noopener">bul-50M-bul-fas</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/deu-50M-deu-nld" target="_blank" rel="noopener">deu-50M-deu-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/deu-50M-deu-ukr" target="_blank" rel="noopener">deu-50M-deu-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/eng-50M-bul-eng" target="_blank" rel="noopener">eng-50M-bul-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/fas-50M-deu-fas" target="_blank" rel="noopener">fas-50M-deu-fas</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ind-50M-ind-nld" target="_blank" rel="noopener">ind-50M-ind-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/zho-50M-nld-zho" target="_blank" rel="noopener">zho-50M-nld-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/bul-50M-bul-eng" target="_blank" rel="noopener">bul-50M-bul-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/deu-50M-deu-fas" target="_blank" rel="noopener">deu-50M-deu-fas</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/deu-50M-deu-fra" target="_blank" rel="noopener">deu-50M-deu-fra</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/deu-50M-deu-ind" target="_blank" rel="noopener">deu-50M-deu-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ind-100M" target="_blank" rel="noopener">ind-100M</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ind-50M-deu-ind" target="_blank" rel="noopener">ind-50M-deu-ind</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ind-50M-ind-ukr" target="_blank" rel="noopener">ind-50M-ind-ukr</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/nld-50M-nld-zho" target="_blank" rel="noopener">nld-50M-nld-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-HumanScale/ukr-100M" target="_blank" rel="noopener">ukr-100M</a>
+            </div>
+          </div>
+        </div>
+        <div class="hf-org" data-aos="fade-up">
+          <div class="hf-org-head">
+            <div class="hf-org-title">
+              <span class="hf-org-icon"><i class="bi bi-boxes"></i></span>
+              <div>
+                <h3><a href="https://huggingface.co/Beetle-FineWeb" target="_blank" rel="noopener">Beetle-FineWeb</a></h3>
+                <p>Beetle models trained on FineWeb (English/Dutch/German).</p>
+              </div>
+            </div>
+            <a class="hf-org-btn" href="https://huggingface.co/Beetle-FineWeb" target="_blank" rel="noopener">Open on HF <i class="bi bi-box-arrow-up-right"></i></a>
+          </div>
+          <div class="hf-org-count">16 repositories</div>
+          <div class="hf-group">
+            <h4><i class="bi bi-translate"></i> Bilingual &amp; continual-learning models <span class="hf-n">16</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-balanced-b1-fineweb-nld-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-balanced-b5-fineweb-nld-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b5-fineweb-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-balanced-b4-fineweb-nld-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b4-fineweb-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-l2-50-simultaneous-b2-fineweb-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-balanced-b1-fineweb-deu-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-l2-50-simultaneous-b2-fineweb-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-balanced-b4-fineweb-eng-nld" target="_blank" rel="noopener">beetle-bilingual-balanced-b4-fineweb-eng-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-balanced-b1-fineweb-eng-nld" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-eng-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-l2-50-simultaneous-b2-fineweb-eng-nld" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-eng-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-eng-nld" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-eng-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-balanced-b1-fineweb-eng-deu" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-eng-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-balanced-b5-fineweb-eng-nld" target="_blank" rel="noopener">beetle-bilingual-balanced-b5-fineweb-eng-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-l2-50-simultaneous-b2-fineweb-eng-deu" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-eng-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-eng-deu" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-eng-deu</a>
+            </div>
+          </div>
+        </div>
+        <div class="hf-org" data-aos="fade-up">
+          <div class="hf-org-head">
+            <div class="hf-org-title">
+              <span class="hf-org-icon"><i class="bi bi-boxes"></i></span>
+              <div>
+                <h3><a href="https://huggingface.co/Beetle-FineWeb-100M" target="_blank" rel="noopener">Beetle-FineWeb-100M</a></h3>
+                <p>Beetle models trained on the 100M-token FineWeb slice.</p>
+              </div>
+            </div>
+            <a class="hf-org-btn" href="https://huggingface.co/Beetle-FineWeb-100M" target="_blank" rel="noopener">Open on HF <i class="bi bi-box-arrow-up-right"></i></a>
+          </div>
+          <div class="hf-org-count">188 repositories</div>
+          <div class="hf-group">
+            <h4><i class="bi bi-cpu"></i> Monolingual models <span class="hf-n">21</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-nld" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-deu" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-zho" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-ell" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-ell</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-rus" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-rus</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-ita" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-ita</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-tur" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-tur</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-hin" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-hin</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-spa" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-spa</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-est" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-est</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-fin" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-fin</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-jpn" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-jpn</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-isl" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-isl</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-pol" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-pol</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-kor" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-kor</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-heb" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-heb</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-eng" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-arb" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-arb</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-eus" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-eus</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-fil" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-fil</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-dan" target="_blank" rel="noopener">beetle-monolingual-fineweb-100m-dan</a>
+            </div>
+          </div>
+          <div class="hf-group">
+            <h4><i class="bi bi-translate"></i> Bilingual &amp; continual-learning models <span class="hf-n">161</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-humanscale-nld-eng-seed13" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-humanscale-nld-eng-seed13</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-humanscale-nld-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-humanscale-nld-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-heb-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-heb-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-humanscale-nld-eng-seed97" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-humanscale-nld-eng-seed97</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-humanscale-nld-eng-seed7" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-humanscale-nld-eng-seed7</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-dan-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-dan-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-humanscale-nld-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-humanscale-nld-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-isl-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-isl-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso1-smooth-humanscale-nld-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso1-smooth-humanscale-nld-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-dan-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-dan-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-humanscale-nld-eng-seed13" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-humanscale-nld-eng-seed13</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-isl-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-isl-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-dan-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-dan-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-humanscale-nld-eng-seed23" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-humanscale-nld-eng-seed23</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-dan-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-dan-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-nld-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-dan-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-dan-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-humanscale-nld-eng-seed97" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-humanscale-nld-eng-seed97</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-heb-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-heb-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-heb-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-heb-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso1-smooth-humanscale-nld-eng-seed97" target="_blank" rel="noopener">beetle-bilingual-tiso1-smooth-humanscale-nld-eng-seed97</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-tur-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-tur-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso1-smooth-humanscale-nld-eng-seed13" target="_blank" rel="noopener">beetle-bilingual-tiso1-smooth-humanscale-nld-eng-seed13</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso2-burst-humanscale-nld-eng-seed97" target="_blank" rel="noopener">beetle-bilingual-tiso2-burst-humanscale-nld-eng-seed97</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso2-burst-humanscale-nld-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso2-burst-humanscale-nld-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-humanscale-nld-eng-seed23" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-humanscale-nld-eng-seed23</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso1-smooth-humanscale-nld-eng-seed23" target="_blank" rel="noopener">beetle-bilingual-tiso1-smooth-humanscale-nld-eng-seed23</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-est-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-est-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-spa-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-spa-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-humanscale-nld-eng-seed7" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-humanscale-nld-eng-seed7</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-ell-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-ell-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-est-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-est-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso2-burst-humanscale-nld-eng-seed13" target="_blank" rel="noopener">beetle-bilingual-tiso2-burst-humanscale-nld-eng-seed13</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-ell-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-ell-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-ita-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-ita-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso4-shuffled-humanscale-nld-eng-seed13" target="_blank" rel="noopener">beetle-bilingual-tiso4-shuffled-humanscale-nld-eng-seed13</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso4-shuffled-humanscale-nld-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso4-shuffled-humanscale-nld-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-spa-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-spa-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso1-smooth-humanscale-nld-eng-seed7" target="_blank" rel="noopener">beetle-bilingual-tiso1-smooth-humanscale-nld-eng-seed7</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-isl-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-isl-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-ell-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-ell-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-hin-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-hin-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-ita-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-ita-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-rus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-rus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-tur-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-tur-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-fin-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-fin-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-spa-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-spa-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-fil-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-fil-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-fin-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-fin-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-hin-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-hin-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-fin-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-fin-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso2-burst-humanscale-nld-eng-seed23" target="_blank" rel="noopener">beetle-bilingual-tiso2-burst-humanscale-nld-eng-seed23</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-est-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-est-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-rus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-rus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-est-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-est-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-ell-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-ell-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso4-shuffled-humanscale-nld-eng-seed23" target="_blank" rel="noopener">beetle-bilingual-tiso4-shuffled-humanscale-nld-eng-seed23</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso4-shuffled-humanscale-nld-eng-seed7" target="_blank" rel="noopener">beetle-bilingual-tiso4-shuffled-humanscale-nld-eng-seed7</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso4-shuffled-humanscale-nld-eng-seed97" target="_blank" rel="noopener">beetle-bilingual-tiso4-shuffled-humanscale-nld-eng-seed97</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-fin-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-fin-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso2-burst-humanscale-nld-eng-seed7" target="_blank" rel="noopener">beetle-bilingual-tiso2-burst-humanscale-nld-eng-seed7</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-safe" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-safe</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-fil-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-fil-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-est-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-est-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-heb-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-heb-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-pol-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-pol-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-rus-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-rus-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-humanscale-deu-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-humanscale-deu-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-pol-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-pol-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-deu-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-deu-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-tur-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-tur-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-ita-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-ita-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-hin-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-hin-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-deu-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-ita-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-ita-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-spa-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-spa-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-ewc" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-ewc</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-ita-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-ita-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-p33-humanscale-nld-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-p33-humanscale-nld-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-heb-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-heb-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-ell-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-ell-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-hin-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-hin-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-rus-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-rus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-hin-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-hin-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-p33-humanscale-nld-eng-seed13" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-p33-humanscale-nld-eng-seed13</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-p33-humanscale-nld-eng-seed97" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-p33-humanscale-nld-eng-seed97</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-fin-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-fin-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-tur-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-tur-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-eus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-eus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-humanscale-deu-eng-seed13" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-humanscale-deu-eng-seed13</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-deu-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-deu-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-humanscale-zho-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-humanscale-zho-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-p33-humanscale-nld-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-p33-humanscale-nld-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-nld-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-nld-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-eus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-eus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-humanscale-deu-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-humanscale-deu-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-pol-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-pol-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-zho-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-zho-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-p33-humanscale-nld-eng-seed97" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-p33-humanscale-nld-eng-seed97</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-p33-humanscale-nld-eng-seed13" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-p33-humanscale-nld-eng-seed13</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-humanscale-zho-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-humanscale-zho-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-pol-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-pol-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-humanscale-zho-eng-seed13" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-humanscale-zho-eng-seed13</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-zho-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-zho-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-zho-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-zho-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-pol-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-pol-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-eus-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-eus-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-zho-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-zho-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-zho-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-zho-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-eus-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-eus-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-humanscale-deu-eng-seed97" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-humanscale-deu-eng-seed97</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-eus-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-eus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-spa-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-spa-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-jpn-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-jpn-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-kor-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-kor-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso2-burst-humanscale-zho-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso2-burst-humanscale-zho-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso4-shuffled-humanscale-zho-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso4-shuffled-humanscale-zho-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-jpn-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-jpn-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-kor-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-kor-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-isl-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-isl-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-isl-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-isl-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso0-iid-humanscale-zho-eng-seed97" target="_blank" rel="noopener">beetle-bilingual-tiso0-iid-humanscale-zho-eng-seed97</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso1-smooth-humanscale-zho-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso1-smooth-humanscale-zho-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-humanscale-deu-eng-seed13" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-humanscale-deu-eng-seed13</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-jpn-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-jpn-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-kor-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-kor-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso1-smooth-humanscale-deu-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso1-smooth-humanscale-deu-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-kor-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-kor-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso4-shuffled-humanscale-deu-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso4-shuffled-humanscale-deu-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-kor-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-kor-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-jpn-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-jpn-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso2-burst-humanscale-deu-eng-seed42" target="_blank" rel="noopener">beetle-bilingual-tiso2-burst-humanscale-deu-eng-seed42</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-humanscale-zho-eng-seed13" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-humanscale-zho-eng-seed13</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-jpn-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-jpn-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-rus-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-rus-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-tur-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-tur-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-humanscale-zho-eng-seed97" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-humanscale-zho-eng-seed97</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-tiso3-block-humanscale-deu-eng-seed97" target="_blank" rel="noopener">beetle-bilingual-tiso3-block-humanscale-deu-eng-seed97</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-fil-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-fil-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-lamol" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-lamol</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-fil-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-fil-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-fil-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-fil-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-alibi" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-alibi</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-heb-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-heb-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-pre-pretrain" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-pre-pretrain</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-zho-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-100m-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-80-late-b5-fineweb-100m-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-100m-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-layer-growth" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-layer-growth</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-maml" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-nld-eng-maml</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-arb-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-100m-arb-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-arb-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-100m-arb-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-arb-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-100m-arb-eng-1xa100</a>
+            </div>
+          </div>
+          <div class="hf-group">
+            <h4><i class="bi bi-database"></i> FineWeb corpora <span class="hf-n">6</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/camera-ready-ablation-onset-65pct-total-l2-held-33pct-b3-sequential-nld-eng-fineweb-100m" target="_blank" rel="noopener">camera-ready-ablation-onset-65pct-total-l2-held-33pct-b3-sequential-nld-eng-fineweb-100m</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/camera-ready-ablation-tokenizer-language-specific-vocab-b3-sequential-nld-eng-fineweb-100m" target="_blank" rel="noopener">camera-ready-ablation-tokenizer-language-specific-vocab-b3-sequential-nld-eng-fineweb-100m</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/camera-ready-ablation-onset-25pct-total-l2-held-33pct-b3-sequential-nld-eng-fineweb-100m" target="_blank" rel="noopener">camera-ready-ablation-onset-25pct-total-l2-held-33pct-b3-sequential-nld-eng-fineweb-100m</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/camera-ready-ablation-onset-35pct-total-l2-held-33pct-b3-sequential-nld-eng-fineweb-100m" target="_blank" rel="noopener">camera-ready-ablation-onset-35pct-total-l2-held-33pct-b3-sequential-nld-eng-fineweb-100m</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/timingiso-ctrl-b1-iid-fineweb-100m-nld-eng-1xa100" target="_blank" rel="noopener">timingiso-ctrl-b1-iid-fineweb-100m-nld-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-100M/timingiso-ctrl-b1b-episodic-fineweb-100m-nld-eng-1xa100" target="_blank" rel="noopener">timingiso-ctrl-b1b-episodic-fineweb-100m-nld-eng-1xa100</a>
+            </div>
+          </div>
+        </div>
+        <div class="hf-org" data-aos="fade-up">
+          <div class="hf-org-head">
+            <div class="hf-org-title">
+              <span class="hf-org-icon"><i class="bi bi-boxes"></i></span>
+              <div>
+                <h3><a href="https://huggingface.co/Beetle-FineWeb-2B" target="_blank" rel="noopener">Beetle-FineWeb-2B</a></h3>
+                <p>Beetle models trained on the 2B-token FineWeb slice.</p>
+              </div>
+            </div>
+            <a class="hf-org-btn" href="https://huggingface.co/Beetle-FineWeb-2B" target="_blank" rel="noopener">Open on HF <i class="bi bi-box-arrow-up-right"></i></a>
+          </div>
+          <div class="hf-org-count">61 repositories</div>
+          <div class="hf-group">
+            <h4><i class="bi bi-cpu"></i> Monolingual models <span class="hf-n">10</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-monolingual-fineweb-2b-zho" target="_blank" rel="noopener">beetle-monolingual-fineweb-2b-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-monolingual-fineweb-2b-tur" target="_blank" rel="noopener">beetle-monolingual-fineweb-2b-tur</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-monolingual-fineweb-2b-ita" target="_blank" rel="noopener">beetle-monolingual-fineweb-2b-ita</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-monolingual-fineweb-2b-hin" target="_blank" rel="noopener">beetle-monolingual-fineweb-2b-hin</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-monolingual-fineweb-2b-nld" target="_blank" rel="noopener">beetle-monolingual-fineweb-2b-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-monolingual-fineweb-2b-rus" target="_blank" rel="noopener">beetle-monolingual-fineweb-2b-rus</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-monolingual-fineweb-2b-eng" target="_blank" rel="noopener">beetle-monolingual-fineweb-2b-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-monolingual-fineweb-2b-deu" target="_blank" rel="noopener">beetle-monolingual-fineweb-2b-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-monolingual-fineweb-2b-pol" target="_blank" rel="noopener">beetle-monolingual-fineweb-2b-pol</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-monolingual-fineweb-2b-eus" target="_blank" rel="noopener">beetle-monolingual-fineweb-2b-eus</a>
+            </div>
+          </div>
+          <div class="hf-group">
+            <h4><i class="bi bi-translate"></i> Bilingual &amp; continual-learning models <span class="hf-n">51</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-rus-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-rus-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-balanced-b1-fineweb-2b-zho-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-2b-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-rus-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-rus-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-hin-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-hin-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-ita-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-ita-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-pol-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-pol-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-pol-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-pol-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-ita-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-ita-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-80-late-b5-fineweb-2b-hin-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-2b-hin-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-rus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-rus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-hin-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-hin-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-balanced-b1-fineweb-2b-rus-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-2b-rus-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-tur-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-tur-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-tur-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-tur-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-tur-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-tur-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-ita-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-ita-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-hin-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-hin-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-80-late-b5-fineweb-2b-ita-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-2b-ita-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-80-late-b5-fineweb-2b-tur-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-2b-tur-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-80-late-b5-fineweb-2b-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-2b-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-80-late-b5-fineweb-2b-rus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-2b-rus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-balanced-b1-fineweb-2b-deu-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-2b-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-balanced-b1-fineweb-2b-ita-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-2b-ita-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-balanced-b1-fineweb-2b-nld-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-2b-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-balanced-b1-fineweb-2b-pol-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-2b-pol-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-balanced-b1-fineweb-2b-hin-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-2b-hin-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-balanced-b1-fineweb-2b-tur-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-2b-tur-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-80-late-b5-fineweb-2b-pol-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-2b-pol-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-pol-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-pol-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-80-late-b5-fineweb-2b-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-2b-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-80-late-b5-fineweb-2b-nld-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-2b-nld-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-hin-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-hin-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-balanced-b1-fineweb-2b-eus-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-2b-eus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-80-late-b5-fineweb-2b-eus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-2b-eus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-eus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-eus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-eus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-2b-eus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-eus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-eus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-eus-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-2b-eus-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-balanced-b1-fineweb-2b-eus-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-2b-eus-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-eus-eng-1xa100" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-eus-eng-1xa100</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-arb-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-arb-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb-2B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-kor-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-2b-kor-eng</a>
+            </div>
+          </div>
+        </div>
+        <div class="hf-org" data-aos="fade-up">
+          <div class="hf-org-head">
+            <div class="hf-org-title">
+              <span class="hf-org-icon"><i class="bi bi-boxes"></i></span>
+              <div>
+                <h3><a href="https://huggingface.co/Beetle-FineWeb2-24B" target="_blank" rel="noopener">Beetle-FineWeb2-24B</a></h3>
+                <p>Beetle models trained on FineWeb2 (24B tokens).</p>
+              </div>
+            </div>
+            <a class="hf-org-btn" href="https://huggingface.co/Beetle-FineWeb2-24B" target="_blank" rel="noopener">Open on HF <i class="bi bi-box-arrow-up-right"></i></a>
+          </div>
+          <div class="hf-org-count">43 repositories</div>
+          <div class="hf-group">
+            <h4><i class="bi bi-translate"></i> Bilingual &amp; continual-learning models <span class="hf-n">43</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-balanced-b1-fineweb-spa-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-spa-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-spa-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-spa-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-spa-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-spa-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-80-late-b5-fineweb-spa-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-spa-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-rus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-rus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-spa-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-spa-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-rus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-rus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-balanced-b1-fineweb-rus-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-rus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-b3-fineweb-24b-zho-eng-ewc" target="_blank" rel="noopener">beetle-bilingual-b3-fineweb-24b-zho-eng-ewc</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-ita-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-ita-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-b3-fineweb-24b-deu-eng-ewc" target="_blank" rel="noopener">beetle-bilingual-b3-fineweb-24b-deu-eng-ewc</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-tur-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-tur-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-hin-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-hin-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-ita-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-ita-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-hin-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-hin-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-tur-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-tur-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-rus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-rus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-tur-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-tur-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-ita-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-ita-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-hin-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-hin-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-80-late-b5-fineweb-ita-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-ita-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-80-late-b5-fineweb-hin-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-hin-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-pol-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-sequential-33-67-b3-fineweb-pol-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-simultaneous-b2-fineweb-pol-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-simultaneous-b2-fineweb-pol-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-balanced-b1-fineweb-zho-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-80-late-b5-fineweb-deu-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-balanced-b1-fineweb-hin-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-hin-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-balanced-b1-fineweb-tur-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-tur-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-balanced-b1-fineweb-ita-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-ita-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-80-late-b5-fineweb-zho-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-zho-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-80-late-b5-fineweb-rus-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-rus-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-50-classroom-20-b4-fineweb-pol-eng" target="_blank" rel="noopener">beetle-bilingual-l2-50-classroom-20-b4-fineweb-pol-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-80-late-b5-fineweb-tur-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-tur-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-balanced-b1-fineweb-pol-eng" target="_blank" rel="noopener">beetle-bilingual-balanced-b1-fineweb-pol-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-l2-80-late-b5-fineweb-pol-eng" target="_blank" rel="noopener">beetle-bilingual-l2-80-late-b5-fineweb-pol-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-b3-fineweb-24b-deu-eng-lamol" target="_blank" rel="noopener">beetle-bilingual-b3-fineweb-24b-deu-eng-lamol</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-b3-fineweb-24b-400m-deu-eng" target="_blank" rel="noopener">beetle-bilingual-b3-fineweb-24b-400m-deu-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb2-24B/beetle-bilingual-b3-fineweb-24b-zho-eng-sim-replay" target="_blank" rel="noopener">beetle-bilingual-b3-fineweb-24b-zho-eng-sim-replay</a>
+            </div>
+          </div>
+        </div>
+        <div class="hf-org" data-aos="fade-up">
+          <div class="hf-org-head">
+            <div class="hf-org-title">
+              <span class="hf-org-icon"><i class="bi bi-boxes"></i></span>
+              <div>
+                <h3><a href="https://huggingface.co/Beetle-FineWeb3-24B" target="_blank" rel="noopener">Beetle-FineWeb3-24B</a></h3>
+                <p>Beetle models trained on FineWeb3 (24B tokens).</p>
+              </div>
+            </div>
+            <a class="hf-org-btn" href="https://huggingface.co/Beetle-FineWeb3-24B" target="_blank" rel="noopener">Open on HF <i class="bi bi-box-arrow-up-right"></i></a>
+          </div>
+          <div class="hf-org-count">12 repositories</div>
+          <div class="hf-group">
+            <h4><i class="bi bi-cpu"></i> Monolingual models <span class="hf-n">11</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb3-24B/beetle-monolingual-fineweb3-zho" target="_blank" rel="noopener">beetle-monolingual-fineweb3-zho</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb3-24B/beetle-monolingual-fineweb3-ita" target="_blank" rel="noopener">beetle-monolingual-fineweb3-ita</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb3-24B/beetle-monolingual-fineweb3-nld" target="_blank" rel="noopener">beetle-monolingual-fineweb3-nld</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb3-24B/beetle-monolingual-fineweb3-eng" target="_blank" rel="noopener">beetle-monolingual-fineweb3-eng</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb3-24B/beetle-monolingual-fineweb3-hin" target="_blank" rel="noopener">beetle-monolingual-fineweb3-hin</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb3-24B/beetle-monolingual-fineweb3-spa" target="_blank" rel="noopener">beetle-monolingual-fineweb3-spa</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb3-24B/beetle-monolingual-fineweb3-deu" target="_blank" rel="noopener">beetle-monolingual-fineweb3-deu</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb3-24B/beetle-monolingual-fineweb3-pol" target="_blank" rel="noopener">beetle-monolingual-fineweb3-pol</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb3-24B/beetle-monolingual-fineweb3-tur" target="_blank" rel="noopener">beetle-monolingual-fineweb3-tur</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb3-24B/beetle-monolingual-fineweb3-rus" target="_blank" rel="noopener">beetle-monolingual-fineweb3-rus</a>
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb3-24B/beetle-monolingual-fineweb3-fin" target="_blank" rel="noopener">beetle-monolingual-fineweb3-fin</a>
+            </div>
+          </div>
+          <div class="hf-group">
+            <h4><i class="bi bi-database"></i> Datasets <span class="hf-n">1</span></h4>
+            <div class="hf-chips">
+              <a class="hf-chip" href="https://huggingface.co/Beetle-FineWeb3-24B/sweep-status" target="_blank" rel="noopener">sweep-status</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -555,6 +1700,39 @@ model = PicoDecoderHF.from_pretrained(<span class="c-str">"runs/tiny_cpu"</span>
         });
       }, { threshold: 0.4 });
       document.querySelectorAll('.stat-num[data-count]').forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+
+  <!-- Hugging Face resources filter -->
+  <script>
+    (function () {
+      var input = document.getElementById('hf-search');
+      if (!input) return;
+      var orgs = Array.prototype.slice.call(document.querySelectorAll('#models .hf-org'));
+      var noResult = document.getElementById('hf-noresult');
+      function apply() {
+        var q = input.value.trim().toLowerCase();
+        var anyOrg = false;
+        orgs.forEach(function (org) {
+          var orgName = (org.querySelector('.hf-org-title h3') || {}).textContent || '';
+          var orgMatch = orgName.toLowerCase().indexOf(q) !== -1;
+          var anyGroup = false;
+          org.querySelectorAll('.hf-group').forEach(function (group) {
+            var anyChip = false;
+            group.querySelectorAll('.hf-chip').forEach(function (chip) {
+              var show = !q || orgMatch || chip.textContent.toLowerCase().indexOf(q) !== -1;
+              chip.style.display = show ? '' : 'none';
+              if (show) anyChip = true;
+            });
+            group.style.display = anyChip ? '' : 'none';
+            if (anyChip) anyGroup = true;
+          });
+          org.style.display = anyGroup ? '' : 'none';
+          if (anyGroup) anyOrg = true;
+        });
+        if (noResult) noResult.style.display = anyOrg ? 'none' : 'block';
+      }
+      input.addEventListener('input', apply);
     })();
   </script>
 

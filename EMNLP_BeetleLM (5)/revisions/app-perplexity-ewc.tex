@@ -1,0 +1,205 @@
+\section{Perplexity Trade-offs, the Weaker-Links Account, and EWC}
+\label{app:ppl-tradeoff}
+
+\subsection{Perplexity trade-offs and the weaker-links hypothesis}
+
+A recurring finding in the bilingual processing literature is that
+proficiency in a speaker's two languages is not independent: gains in
+one language are frequently accompanied by costs in the other. The
+weaker-links account of \citet{gollan2008weaker} attributes this
+pattern to frequency of use. Because a bilingual distributes a finite
+amount of language experience across two systems, each word in each
+language is encountered less often than it would be for a comparable
+monolingual, so the links between lexical form and meaning are used
+less and are correspondingly weaker. \citet{whitford2015second}
+provide converging evidence from reading, showing that relative
+exposure to each language modulates lexical processing speed in a
+graded fashion, with the more-exposed language enjoying faster and more
+reliable access.
+
+Human-scale bilingual \beetle{} models reproduce the qualitative form
+of this prediction. Under a fixed total experience budget, the amount
+of effective exposure allocated to the second language (L2) is
+determined by the curriculum, and increasing that allocation improves
+L2 fluency while degrading first-language (L1) fluency. Because the two
+languages draw on the same budget, encountering one language more often
+necessarily means encountering the other less often, weakening the
+under-exposed system in a manner directly analogous to the weaker-links
+mechanism. Table~\ref{tab:ppl-curriculum} reports validation perplexity
+by curriculum for two language pairs, Dutch--English and
+Chinese--English, together with monolingual controls trained on the
+same budget.
+
+\begin{table}[t]
+\centering
+\small
+\begin{adjustbox}{max width=\columnwidth}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+& \multicolumn{2}{c}{Dutch model} & \multicolumn{2}{c}{Chinese model} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Curriculum & \makecell{Dutch\\PPL (L1)} & \makecell{English\\PPL (L2)} & \makecell{Chinese\\PPL (L1)} & \makecell{English\\PPL (L2)} \\
+\midrule
+B1 balanced      & 318.4 & 412.4  & 5198.1 & 395.4  \\
+B2 simultaneous  & 273.8 & 1128.8 & 7550.8 & 1309.1 \\
+B3 sequential    & 268.4 & 1032.8 & 7222.9 & 1277.4 \\
+B4 classroom     & 274.8 & 805.6  & 7073.0 & 948.8  \\
+B5 late          & 268.3 & 987.4  & 7729.2 & 1252.3 \\
+\midrule
+Monolingual      & 323.7 & 781.2  & 3839.4 & 781.2  \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Validation perplexity by curriculum for Dutch--English and
+Chinese--English \beetle{} models, with monolingual controls trained on
+a matched budget. For each language pair the L1 and L2 columns move in
+opposite directions as effective L2 exposure changes for the
+typologically close pair, but move together for the distant pair.}
+\label{tab:ppl-curriculum}
+\end{table}
+
+For Dutch--English the results trace out the expected trade-off. The
+balanced curriculum B1, which carries the highest effective English
+exposure, attains an English perplexity of roughly $412$, about
+$2.5\times$ lower than the staged curricula, which cluster near
+$1050$. The same curriculum pays for this with a Dutch perplexity of
+$318$ against roughly $270$ for the staged alternatives, an increase of
+about $18\%$. The two languages therefore move in opposite directions
+along a single shared experience axis: shifting the budget toward
+English improves English at the expense of Dutch, exactly the pattern
+the weaker-links account predicts for two closely related languages
+that share substantial lexical and orthographic structure.
+
+Chinese--English falls in a different regime. Here every bilingual
+curriculum is worse than the corresponding monolingual control in
+\emph{both} languages: Chinese perplexity rises to roughly $7500$
+against $3839$ for the monolingual control, and English perplexity sits
+near $1280$ against $781$. Rather than trading L1 fluency for L2
+fluency along a shared axis, splitting the budget between two systems
+that share little lexical or orthographic structure incurs a dual cost,
+degrading both languages relative to what the same budget buys when
+spent on either alone. The trade-off characteristic of the weaker-links
+prediction thus appears to depend on the two languages sharing enough
+structure to compete over a common representational substrate; when
+that overlap is absent, division of the budget is simply lossy on both
+sides. These comparisons are intended as a quick quantitative check
+against the weaker-links prediction rather than a full account of the
+underlying representations.
+
+\subsection{Comparison with Constantinescu et al.\ (2025): does EWC prevent L1 attrition?}
+
+A natural question is whether an explicit regularisation constraint can
+protect the first language during sequential L1$\rightarrow$L2 training.
+\citet{constantinescu2025investigating} examine this question directly
+and report that critical-period-like retention does not emerge on its
+own: sequential exposure drives severe attrition of the first language
+unless training is constrained to preserve it. The \beetle{} models are
+consistent with this conclusion. Under the B3 sequential curriculum,
+first training on L1 and then on L2, L1 perplexity degrades
+catastrophically, and adding an elastic weight consolidation (EWC)
+penalty \citep{kirkpatrick2017overcoming} substantially mitigates that
+degradation. The effect, however, is weaker at the $24$B-token scale
+studied here than the near-complete retention reported by
+\citet{constantinescu2025investigating}.
+
+Table~\ref{tab:ewc-24b} contrasts the sequential curriculum with and
+without EWC at $24$B tokens for Chinese--English, using a penalty
+strength of $\lambda = 20$. EWC lowers final Chinese (L1) perplexity by
+roughly two orders of magnitude while raising English (L2) perplexity
+only slightly, from $86.9$ to $94.7$.
+
+\begin{table}[t]
+\centering
+\small
+\begin{adjustbox}{max width=\columnwidth}
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+Model & \makecell[r]{L1 (Chinese)\\PPL} & \makecell[r]{L2 (English)\\PPL} & Interpretation \\
+\midrule
+EWC ($\lambda{=}20$) & $437{,}680$    & $94.7$ & \makecell[l]{L1 forgetting reduced,\\small L2 cost} \\
+\addlinespace
+Non-EWC (B3) & $14{,}295{,}664$ & $86.9$ & \makecell[l]{Catastrophic L1\\forgetting} \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{$24$B Chinese--English sequential training with and without
+EWC ($\lambda = 20$). EWC reduces L1 forgetting by about two orders of
+magnitude at a small L2 penalty.}
+\label{tab:ewc-24b}
+\end{table}
+
+Because raw perplexities in the millions are difficult to interpret,
+Table~\ref{tab:ewc-nats} restates the same comparison in nats, giving
+the best L1 loss reached during training, the final L1 loss, the
+resulting forgetting (the increase from best to final), and the
+implied final L1 perplexity.
+
+\begin{table}[t]
+\centering
+\small
+\begin{adjustbox}{max width=\columnwidth}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Model & \makecell[r]{Best L1\\(nats)} & \makecell[r]{Final L1\\(nats)} & \makecell[r]{For-\\getting} & \makecell[r]{Final L1\\PPL} \\
+\midrule
+Non-EWC & $7.43$ & $14.08$ & $+6.66$ & $18{,}957{,}016$ \\
+EWC     & $7.30$ & $13.50$ & $+6.20$ & $4{,}697{,}590$ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{L1 forgetting measured in nats. EWC reduces final Chinese
+forgetting by about $0.46$ nats, corresponding to a roughly $4\times$
+lower final L1 perplexity, while the best L1 loss reached is nearly
+unchanged.}
+\label{tab:ewc-nats}
+\end{table}
+
+Table~\ref{tab:ewc-retention} tracks L1 perplexity across the L2 phase
+of training, reporting the EWC and non-EWC values at matched steps
+together with their ratio. The ratio falls well below one throughout,
+reaching a minimum near $0.04\times$ mid-phase before the two
+trajectories partially reconverge, leaving EWC at roughly a quarter of
+the non-EWC L1 perplexity at the final step.
+
+\begin{table}[t]
+\centering
+\small
+\begin{adjustbox}{max width=\columnwidth}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Step & Non-EWC & EWC & \makecell[r]{EWC /\\Non-EWC} \\
+\midrule
+$32768$ (pre)    & $3{,}574$       & $2{,}727$       & $0.76\times$ \\
+$45775$ (phase)  & $175{,}945$     & $68{,}305$      & $0.39\times$ \\
+$47824$          & $599{,}079$     & $159{,}117$     & $0.27\times$ \\
+$49872$          & $1{,}973{,}516$ & $259{,}442$     & $0.13\times$ \\
+$53968$          & $7{,}906{,}358$ & $1{,}107{,}082$ & $0.14\times$ \\
+$62160$          & $51{,}264{,}313$& $2{,}089{,}939$ & $0.04\times$ \\
+$78544$ (final)  & $18{,}957{,}016$& $4{,}697{,}590$ & $0.25\times$ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{L1 (Chinese) perplexity across the L2 training phase, with and
+without EWC, and their ratio. EWC consistently retains more of the
+first language, but does not restore it to its pre-phase level.}
+\label{tab:ewc-retention}
+\end{table}
+
+Taken together, these measurements show that EWC reduces final Chinese
+forgetting by about $0.46$ nats, equivalent to a roughly $4\times$
+lower matched-step L1 perplexity, at a small English penalty of about
+$0.10$ nats. The constraint therefore does what its motivation predicts:
+it preserves parameters important to the first language and slows
+attrition. Yet Chinese remains substantially degraded relative to its
+best value, in contrast to the near-initial retention reported by
+\citet{constantinescu2025investigating}. A likely explanation is that
+$\lambda = 20$, a penalty strength calibrated on smaller models, is
+under-regularised at $24$B scale: as model and data scale grow, the
+Fisher-weighted penalty required to hold important parameters in place
+grows with them, so a fixed $\lambda$ exerts proportionally less
+pressure. Establishing the penalty strength needed to reproduce strong
+retention at scale would require a scale-aware sweep over $\lambda$
+rather than transfer of a value tuned on smaller runs. The broader
+conclusion is that preventing catastrophic forgetting at scale is not
+simply a matter of switching on an EWC term; it requires scale-aware
+calibration of the constraint itself.

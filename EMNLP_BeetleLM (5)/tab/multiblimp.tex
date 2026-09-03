@@ -1,0 +1,553 @@
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lll cc cc}
+\toprule
+& & & \multicolumn{2}{c}{\textbf{MultiBLiMP}} & \multicolumn{2}{c}{\textbf{MonoBLiMP}} \\
+\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+\textbf{Model (L1--L2)} & \textbf{Data} & \textbf{Curriculum} & \textbf{L1} & \textbf{Eng} & \textbf{L1} & \textbf{Eng} \\
+\midrule
+German & Human-scale & Mono & 89.9 & 64.7 & \textbf{-} & 51.2 \\
+deu--eng & Human-scale & B1 balanced & 86.9 & 80.5 & \textbf{-} & 65.5 \\
+deu--eng & Human-scale & B2 simult. & 89.5 & 70.9 & \textbf{-} & 56.1 \\
+deu--eng & Human-scale & B3 sequential & 89.9 & 71.3 & \textbf{-} & 57.4 \\
+deu--eng & Human-scale & B4 classroom & 89.7 & 72.2 & \textbf{-} & 57.0 \\
+deu--eng & Human-scale & B5 late & 89.6 & 71.2 & \textbf{-} & 55.8 \\
+English & Human-scale & Mono & \textbf{-} & 79.0 & \textbf{-} & 64.7 \\
+Dutch & Human-scale & Mono & 88.9 & 63.5 & 79.0 & 52.5 \\
+nld--eng & Human-scale & B1 balanced & 87.6 & 80.8 & 76.8 & 69.1 \\
+nld--eng {\scriptsize\textit{episodic}} & Human-scale & B1 balanced & 86.4 & 78.6 & 77.6 & 66.2 \\
+nld--eng & Human-scale & B2 simult. & 88.8 & 74.0 & 79.1 & 57.3 \\
+nld--eng {\scriptsize\textit{seed13}} & Human-scale & B2 simult. & 81.2 & 77.0 & 74.5 & 65.9 \\
+nld--eng {\scriptsize\textit{seed42}} & Human-scale & B2 simult. & 82.4 & 77.1 & 73.5 & 65.6 \\
+nld--eng {\scriptsize\textit{seed97}} & Human-scale & B2 simult. & 82.9 & 75.7 & 71.9 & 65.9 \\
+nld--eng & Human-scale & B3 sequential & 90.3 & 73.8 & 78.3 & 58.3 \\
+nld--eng  & Human-scale & B3 sequential & 75.1 & 78.2 & 65.9 & 62.4 \\
+nld--eng {\scriptsize\textit{seed13}} & Human-scale & B3 sequential & 64.7 & 77.1 & 52.8 & 63.8 \\
+nld--eng {\scriptsize\textit{seed42}} & Human-scale & B3 sequential & 65.3 & 77.0 & 53.4 & 64.0 \\
+nld--eng {\scriptsize\textit{seed97}} & Human-scale & B3 sequential & 67.9 & 68.8 & 54.9 & 58.1 \\
+nld--eng & Human-scale & B3 (0--100) & 89.7 & 74.3 & 79.8 & 57.2 \\
+nld--eng & Human-scale & B4 classroom & 89.8 & 74.0 & 78.7 & 58.4 \\
+nld--eng & Human-scale & B5 late & 88.5 & 72.3 & 79.5 & 56.6 \\
+Chinese & Human-scale & Mono & \textbf{-} & 61.7 & 74.6 & 51.5 \\
+zho--eng & Human-scale & B1 balanced & \textbf{-} & 76.6 & 70.4 & 66.0 \\
+zho--eng & Human-scale & B2 simult. & \textbf{-} & 68.8 & 69.8 & 54.2 \\
+zho--eng & Human-scale & B3 sequential & \textbf{-} & 70.3 & 70.1 & 54.7 \\
+zho--eng & Human-scale & B4 classroom & \textbf{-} & 71.4 & 69.1 & 55.7 \\
+zho--eng & Human-scale & B5 late & \textbf{-} & 69.7 & 71.4 & 54.9 \\
+\midrule
+deu--eng & 100M tok & B1 balanced & 88.6 & 87.7 & \textbf{-} & 63.6 \\
+deu--eng & 100M tok & B2 simult. & 92.1 & 71.3 & \textbf{-} & 52.8 \\
+deu--eng & 100M tok & B3 sequential & 91.7 & 72.3 & \textbf{-} & 54.8 \\
+deu--eng  & 100M tok & B4 classroom & 87.6 & 75.6 & \textbf{-} & 57.1 \\
+deu--eng  & 100M tok & B5 late & 75.2 & 83.0 & \textbf{-} & 62.7 \\
+eus--eng & 100M tok & B1 balanced & 97.4 & 85.5 & \textbf{-} & 62.1 \\
+eus--eng & 100M tok & B2 simult. & 96.7 & 69.9 & \textbf{-} & 52.6 \\
+eus--eng & 100M tok & B3 sequential & 97.4 & 70.3 & \textbf{-} & 54.0 \\
+eus--eng  & 100M tok & B4 classroom & 96.0 & 75.8 & \textbf{-} & 56.0 \\
+eus--eng  & 100M tok & B5 late & 93.0 & 81.3 & \textbf{-} & 60.7 \\
+fil--eng & 100M tok & B1 balanced & \textbf{-} & 86.1 & \textbf{-} & 65.0 \\
+fil--eng & 100M tok & B2 simult. & \textbf{-} & 75.3 & \textbf{-} & 59.0 \\
+fil--eng & 100M tok & B3 sequential & \textbf{-} & 75.8 & \textbf{-} & 58.6 \\
+hin--eng & 100M tok & B1 balanced & 87.6 & 86.4 & \textbf{-} & 63.8 \\
+hin--eng & 100M tok & B2 simult. & 91.6 & 67.1 & \textbf{-} & 54.6 \\
+hin--eng & 100M tok & B3 sequential & 91.7 & 68.4 & \textbf{-} & 55.0 \\
+hin--eng  & 100M tok & B4 classroom & 87.6 & 75.8 & \textbf{-} & 57.3 \\
+hin--eng  & 100M tok & B5 late & 80.6 & 79.9 & \textbf{-} & 62.1 \\
+ita--eng & 100M tok & B1 balanced & 81.7 & 87.8 & \textbf{-} & 62.7 \\
+ita--eng & 100M tok & B2 simult. & 84.8 & 70.3 & \textbf{-} & 53.7 \\
+ita--eng & 100M tok & B3 sequential & 84.8 & 72.6 & \textbf{-} & 54.3 \\
+ita--eng  & 100M tok & B4 classroom & 79.5 & 73.5 & \textbf{-} & 56.1 \\
+ita--eng  & 100M tok & B5 late & 66.8 & 82.6 & \textbf{-} & 61.6 \\
+nld--eng & 100M tok & B1 balanced & 88.4 & 88.1 & 74.5 & 63.9 \\
+nld--eng & 100M tok & B2 simult. & 91.1 & 73.9 & 76.1 & 57.6 \\
+nld--eng & 100M tok & B3 sequential & 92.7 & 73.9 & 76.5 & 57.4 \\
+nld--eng {\scriptsize\textit{alibi}} & 100M tok & B3 sequential & 78.9 & 89.1 & 61.6 & 66.4 \\
+nld--eng {\scriptsize\textit{ewc}} & 100M tok & B3 sequential & 78.2 & 89.0 & 63.4 & 63.8 \\
+nld--eng {\scriptsize\textit{lamol}} & 100M tok & B3 sequential & 78.0 & 88.4 & 63.2 & 64.5 \\
+nld--eng {\scriptsize\textit{pre-pretrain}} & 100M tok & B3 sequential & 76.7 & 90.5 & 61.3 & 65.8 \\
+nld--eng  & 100M tok & B3 sequential & 76.9 & 89.1 & 63.5 & 63.9 \\
+nld--eng & 100M tok & B4 classroom & 91.6 & 73.6 & 75.8 & 58.4 \\
+nld--eng  & 100M tok & B5 late & 77.3 & 84.9 & 63.2 & 62.8 \\
+pol--eng & 100M tok & B1 balanced & 77.8 & 86.6 & \textbf{-} & 62.2 \\
+pol--eng & 100M tok & B2 simult. & 82.5 & 70.9 & \textbf{-} & 53.4 \\
+pol--eng & 100M tok & B3 sequential & 81.3 & 69.1 & \textbf{-} & 54.8 \\
+rus--eng & 100M tok & B1 balanced & 77.5 & 85.1 & \textbf{-} & 60.9 \\
+rus--eng & 100M tok & B2 simult. & 81.3 & 68.6 & \textbf{-} & 53.7 \\
+rus--eng & 100M tok & B3 sequential & 82.1 & 70.1 & \textbf{-} & 53.4 \\
+rus--eng  & 100M tok & B4 classroom & 77.7 & 76.8 & \textbf{-} & 55.9 \\
+rus--eng  & 100M tok & B5 late & 66.2 & 81.8 & \textbf{-} & 60.0 \\
+tur--eng & 100M tok & B1 balanced & 76.6 & 84.4 & 74.6 & 61.1 \\
+tur--eng & 100M tok & B2 simult. & 81.2 & 71.0 & 81.5 & 53.3 \\
+tur--eng & 100M tok & B3 sequential & 80.6 & 69.7 & 80.8 & 53.3 \\
+tur--eng  & 100M tok & B4 classroom & 72.5 & 73.6 & 73.1 & 54.2 \\
+tur--eng  & 100M tok & B5 late & 72.2 & 81.3 & 61.5 & 61.0 \\
+zho--eng & 100M tok & B1 balanced & \textbf{-} & 80.8 & 60.9 & 62.2 \\
+zho--eng  & 100M tok & B1 balanced & \textbf{-} & 82.1 & 60.5 & 61.5 \\
+zho--eng & 100M tok & B2 simult. & \textbf{-} & 84.0 & 61.1 & 63.2 \\
+zho--eng  & 100M tok & B2 simult. & \textbf{-} & 85.7 & 61.6 & 63.5 \\
+zho--eng & 100M tok & B3 sequential & \textbf{-} & 86.2 & 53.1 & 64.1 \\
+zho--eng  & 100M tok & B3 sequential & \textbf{-} & 86.2 & 56.5 & 63.3 \\
+zho--eng & 100M tok & B4 classroom & \textbf{-} & 69.4 & 62.6 & 57.4 \\
+zho--eng  & 100M tok & B4 classroom & \textbf{-} & 77.0 & 63.0 & 58.0 \\
+zho--eng & 100M tok & B5 late & \textbf{-} & 81.6 & 58.7 & 61.8 \\
+zho--eng  & 100M tok & B5 late & \textbf{-} & 83.4 & 56.9 & 62.4 \\
+\midrule
+deu--eng & 2B tok & B1 balanced & 88.2 & 85.3 & \textbf{-} & 62.7 \\
+deu--eng & 2B tok & B2 simult. & 78.9 & 83.6 & \textbf{-} & 61.3 \\
+deu--eng & 2B tok & B3 sequential & 76.9 & 86.2 & \textbf{-} & 63.7 \\
+deu--eng & 2B tok & B4 classroom & 90.8 & 78.2 & \textbf{-} & 58.8 \\
+deu--eng & 2B tok & B5 late & 88.3 & 82.7 & \textbf{-} & 59.1 \\
+eus--eng & 2B tok & B1 balanced & 95.2 & 82.2 & \textbf{-} & 61.3 \\
+eus--eng  & 2B tok & B1 balanced & 94.1 & 81.8 & \textbf{-} & 59.6 \\
+eus--eng & 2B tok & B2 simult. & 96.7 & 70.9 & \textbf{-} & 51.8 \\
+eus--eng  & 2B tok & B2 simult. & 94.1 & 80.6 & \textbf{-} & 60.2 \\
+eus--eng & 2B tok & B3 sequential & 96.7 & 67.8 & \textbf{-} & 53.0 \\
+eus--eng  & 2B tok & B3 sequential & 91.2 & 84.0 & \textbf{-} & 60.7 \\
+eus--eng & 2B tok & B4 classroom & 96.7 & 71.3 & \textbf{-} & 53.4 \\
+eus--eng & 2B tok & B5 late & 96.3 & 70.1 & \textbf{-} & 52.3 \\
+hin--eng  & 2B tok & B1 balanced & 80.7 & 78.4 & \textbf{-} & 60.7 \\
+hin--eng & 2B tok & B2 simult. & 91.6 & 66.9 & \textbf{-} & 56.2 \\
+hin--eng  & 2B tok & B2 simult. & 81.1 & 81.2 & \textbf{-} & 60.5 \\
+hin--eng  & 2B tok & B3 sequential & 69.6 & 85.1 & \textbf{-} & 62.4 \\
+ita--eng  & 2B tok & B1 balanced & 74.7 & 80.8 & \textbf{-} & 59.0 \\
+ita--eng  & 2B tok & B2 simult. & 73.8 & 80.9 & \textbf{-} & 59.7 \\
+ita--eng  & 2B tok & B3 sequential & 63.8 & 83.6 & \textbf{-} & 61.7 \\
+nld--eng & 2B tok & B1 balanced & 87.3 & 86.5 & 72.7 & 64.4 \\
+nld--eng & 2B tok & B2 simult. & 88.9 & 71.7 & 76.8 & 55.9 \\
+nld--eng & 2B tok & B3 sequential & 89.9 & 73.1 & 76.8 & 55.5 \\
+nld--eng & 2B tok & B4 classroom & 89.3 & 73.9 & 77.2 & 56.4 \\
+nld--eng & 2B tok & B5 late & 89.3 & 73.0 & 76.9 & 55.7 \\
+rus--eng  & 2B tok & B1 balanced & 70.6 & 82.2 & \textbf{-} & 58.6 \\
+rus--eng  & 2B tok & B2 simult. & 66.6 & 82.6 & \textbf{-} & 60.0 \\
+rus--eng  & 2B tok & B3 sequential & 60.2 & 83.6 & \textbf{-} & 60.9 \\
+tur--eng  & 2B tok & B1 balanced & 70.9 & 80.8 & 67.9 & 58.9 \\
+tur--eng  & 2B tok & B2 simult. & 70.4 & 79.6 & 65.9 & 59.9 \\
+tur--eng  & 2B tok & B3 sequential & 68.7 & 83.2 & 58.6 & 59.5 \\
+zho--eng & 2B tok & B1 balanced & \textbf{-} & 86.9 & 63.5 & 63.5 \\
+zho--eng & 2B tok & B2 simult. & \textbf{-} & 84.8 & 59.8 & 61.4 \\
+zho--eng & 2B tok & B3 sequential & \textbf{-} & 84.0 & 56.4 & 63.0 \\
+zho--eng & 2B tok & B4 classroom & \textbf{-} & 73.4 & 63.7 & 58.2 \\
+zho--eng & 2B tok & B5 late & \textbf{-} & 79.2 & 59.4 & 60.8 \\
+\midrule
+deu--eng & 24B tok & B1 balanced & 95.7 & 94.0 & \textbf{-} & 71.5 \\
+deu--eng & 24B tok & B2 simult. & 96.6 & 84.4 & \textbf{-} & 61.3 \\
+eng--deu & 24B tok & B1 balanced & 93.6 & 93.6 & \textbf{-} & 71.6 \\
+eng--nld & 24B tok & B1 balanced & 93.5 & 93.5 & \textbf{-} & 72.2 \\
+eng--nld & 24B tok & B2 simult. & 95.5 & 95.5 & \textbf{-} & 74.2 \\
+eng--nld & 24B tok & B3 sequential & 94.0 & 94.0 & \textbf{-} & 74.1 \\
+nld--eng & 24B tok & B1 balanced & 94.4 & 94.4 & 78.3 & 72.8 \\
+nld--eng & 24B tok & B2 simult. & 96.0 & 84.7 & 81.6 & 65.8 \\
+nld--eng & 24B tok & B3 sequential & 95.5 & 82.6 & 81.1 & 64.4 \\
+\midrule
+deu--eng & 24B tok (FW2) & B3 sequential & 92.3 & 73.0 & \textbf{-} & 54.3 \\
+deu--eng {\scriptsize\textit{ewc}} & 24B tok (FW2) & B3 sequential & 79.5 & 94.7 & \textbf{-} & 74.1 \\
+deu--eng & 24B tok (FW2) & B4 classroom & 97.3 & 82.9 & \textbf{-} & 63.3 \\
+deu--eng & 24B tok (FW2) & B5 late & 97.3 & 81.8 & \textbf{-} & 60.1 \\
+zho--eng & 24B tok (FW2) & B1 balanced & \textbf{-} & 91.7 & 75.9 & 70.9 \\
+zho--eng & 24B tok (FW2) & B2 simult. & \textbf{-} & 92.9 & 73.7 & 71.6 \\
+zho--eng & 24B tok (FW2) & B3 sequential & \textbf{-} & 93.9 & 55.9 & 72.7 \\
+zho--eng {\scriptsize\textit{ewc}} & 24B tok (FW2) & B3 sequential & \textbf{-} & 93.2 & 57.5 & 70.4 \\
+zho--eng & 24B tok (FW2) & B4 classroom & \textbf{-} & 89.6 & 76.2 & 67.3 \\
+zho--eng & 24B tok (FW2) & B5 late & \textbf{-} & 89.5 & 67.5 & 69.1 \\
+\midrule
+\midrule
+\multicolumn{7}{l}{\textit{Frontier multilingual LLM baselines}\quad(\textit{Data}\,$=$\,params; \textit{Curriculum}\,$=$\,eval cohort)} \\
+\midrule
+BLOOM-560M & 0.56B & Dutch & 59.8 & 81.7 & 52.6 & 66.7 \\
+ &  & German & 65.9 & 81.7 & \na & 66.7 \\
+ &  & Chinese & \na & 81.7 & 72.5 & 66.7 \\
+BLOOM-1.1B & 1.1B & Dutch & 63.0 & 92.5 & 48.7 & 76.7 \\
+ &  & German & 76.5 & 92.5 & \na & 76.7 \\
+ &  & Chinese & \na & 92.5 & 84.1 & 76.7 \\
+BLOOM-1.7B & 1.7B & Dutch & 66.4 & 93.0 & 48.7 & 76.4 \\
+ &  & German & 75.2 & 93.0 & \na & 76.4 \\
+ &  & Chinese & \na & 93.0 & 84.8 & 76.4 \\
+BLOOM-3B & 3B & Dutch & 66.3 & 94.8 & 51.1 & 74.2 \\
+ &  & German & 80.7 & 94.8 & \na & 74.2 \\
+ &  & Chinese & \na & 94.8 & 84.0 & 74.2 \\
+BLOOM-7.1B & 7.1B & Dutch & 64.0 & 94.0 & 55.5 & 77.5 \\
+ &  & German & 82.2 & 94.0 & \na & 77.5 \\
+ &  & Chinese & \na & 94.0 & 84.3 & 77.5 \\
+XGLM-4.5B & 4.5B & Dutch & 96.9 & 98.7 & 83.6 & 80.9 \\
+ &  & German & 98.8 & 98.7 & \na & 80.9 \\
+ &  & Chinese & \na & 98.7 & 84.6 & 80.9 \\
+EuroLLM-9B & 9B & Dutch & 76.4 & 84.4 & 88.0 & 79.6 \\
+ &  & German & 77.3 & 84.4 & \na & 79.6 \\
+ &  & Chinese & \na & 84.4 & 83.5 & 79.6 \\
+Gemma-3-270M & 0.27B & Dutch & 83.7 & 97.0 & 69.9 & 78.8 \\
+ &  & German & 90.4 & 97.0 & \na & 78.8 \\
+ &  & Chinese & \na & 97.0 & 80.7 & 78.8 \\
+Gemma-2-2B & 2B & Dutch & 91.7 & 98.7 & 80.5 & 76.5 \\
+ &  & German & 95.6 & 98.7 & \na & 76.5 \\
+ &  & Chinese & \na & 98.7 & 82.3 & 76.5 \\
+Gemma-2-9B & 9B & Dutch & 91.2 & 98.8 & 84.4 & 77.3 \\
+ &  & German & 96.4 & 98.8 & \na & 77.3 \\
+ &  & Chinese & \na & 98.8 & 82.9 & 77.3 \\
+Gemma-2-27B & 27B & Dutch & 78.6 & 82.6 & 74.0 & 70.7 \\
+ &  & German & 81.1 & 82.6 & \na & 70.7 \\
+ &  & Chinese & \na & 82.6 & 71.5 & 70.7 \\
+Qwen3-0.6B & 0.6B & Dutch & 81.5 & 97.0 & 71.7 & 81.6 \\
+ &  & German & 92.6 & 97.0 & \na & 81.6 \\
+ &  & Chinese & \na & 97.0 & 82.0 & 81.6 \\
+Qwen3-4B & 4B & Dutch & 93.9 & 99.5 & 82.6 & 82.8 \\
+ &  & German & 97.2 & 99.5 & \na & 82.8 \\
+ &  & Chinese & \na & 99.5 & 85.9 & 82.8 \\
+Qwen3-8B & 8B & Dutch & 94.6 & 98.7 & 82.1 & 82.5 \\
+ &  & German & 98.5 & 98.7 & \na & 82.5 \\
+ &  & Chinese & \na & 98.7 & 85.9 & 82.5 \\
+Llama-3.2-1B & 1B & Dutch & 90.8 & 99.0 & 76.0 & 81.8 \\
+ &  & German & 96.1 & 99.0 & \na & 81.8 \\
+ &  & Chinese & \na & 99.0 & 82.9 & 81.8 \\
+Llama-3.1-8B & 8B & Dutch & 96.1 & 99.2 & 85.1 & 81.2 \\
+ &  & German & 98.0 & 99.2 & \na & 81.2 \\
+ &  & Chinese & \na & 99.2 & 84.5 & 81.2 \\
+\bottomrule
+\end{tabular}
+\caption{Minimal-pair grammaticality accuracy (\%) on MultiBLiMP and monolingual BLiMP suites for the final checkpoint of each Beetle model, plus the frontier multilingual-LLM baselines from the MultiBLiMP Pareto (Fig.~\ref{fig:multiblimp_pareto}). For baseline rows, the \emph{Data} column gives the parameter count and \emph{Curriculum} the evaluation cohort. MonoBLiMP (L1) is blimp-nl (Dutch), zhoBLiMP (Chinese) or turBLiMP (Turkish); MultiBLiMP (L1) is available for languages in \texttt{jumelet/multiblimp}. \textbf{-}: benchmark unavailable for this language; \pend: evaluation pending.}
+\label{tab:blimp_multiblimp}
+\end{table*}
+
+
+\newpage
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lll cc cc}
+\toprule
+& & & \multicolumn{2}{c}{\textbf{MultiBLiMP}} & \multicolumn{2}{c}{\textbf{MonoBLiMP}} \\
+\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+\textbf{Model (L1--L2)} & \textbf{Data} & \textbf{Curriculum} & \textbf{L1} & \textbf{Eng} & \textbf{L1} & \textbf{Eng} \\
+\midrule
+German & Human-scale & Mono & \cellcolor[rgb]{0.779,1.000,0.779} 89.9 & \cellcolor[rgb]{0.920,1.000,0.920} 64.7 & \textbf{-} & \cellcolor[rgb]{0.990,1.000,0.990} 51.2 \\
+deu--eng & Human-scale & B1 balanced & \cellcolor[rgb]{0.796,1.000,0.796} 86.9 & \cellcolor[rgb]{0.834,1.000,0.834} 80.5 & \textbf{-} & \cellcolor[rgb]{0.872,1.000,0.872} 65.5 \\
+deu--eng & Human-scale & B2 simult. & \cellcolor[rgb]{0.781,1.000,0.781} 89.5 & \cellcolor[rgb]{0.886,1.000,0.886} 70.9 & \textbf{-} & \cellcolor[rgb]{0.950,1.000,0.950} 56.1 \\
+deu--eng & Human-scale & B3 sequential & \cellcolor[rgb]{0.779,1.000,0.779} 89.9 & \cellcolor[rgb]{0.884,1.000,0.884} 71.3 & \textbf{-} & \cellcolor[rgb]{0.939,1.000,0.939} 57.4 \\
+deu--eng & Human-scale & B4 classroom & \cellcolor[rgb]{0.780,1.000,0.780} 89.7 & \cellcolor[rgb]{0.879,1.000,0.879} 72.2 & \textbf{-} & \cellcolor[rgb]{0.942,1.000,0.942} 57.0 \\
+deu--eng & Human-scale & B5 late & \cellcolor[rgb]{0.781,1.000,0.781} 89.6 & \cellcolor[rgb]{0.884,1.000,0.884} 71.2 & \textbf{-} & \cellcolor[rgb]{0.952,1.000,0.952} 55.8 \\
+English & Human-scale & Mono & \textbf{-} & \cellcolor[rgb]{0.842,1.000,0.842} 79.0 & \textbf{-} & \cellcolor[rgb]{0.879,1.000,0.879} 64.7 \\
+Dutch & Human-scale & Mono & \cellcolor[rgb]{0.785,1.000,0.785} 88.9 & \cellcolor[rgb]{0.926,1.000,0.926} 63.5 & \cellcolor[rgb]{0.794,1.000,0.794} 79.0 & \cellcolor[rgb]{0.979,1.000,0.979} 52.5 \\
+nld--eng & Human-scale & B1 balanced & \cellcolor[rgb]{0.792,1.000,0.792} 87.6 & \cellcolor[rgb]{0.832,1.000,0.832} 80.8 & \cellcolor[rgb]{0.810,1.000,0.810} 76.8 & \cellcolor[rgb]{0.843,1.000,0.843} 69.1 \\
+nld--eng {\scriptsize\textit{episodic}} & Human-scale & B1 balanced & \cellcolor[rgb]{0.799,1.000,0.799} 86.4 & \cellcolor[rgb]{0.844,1.000,0.844} 78.6 & \cellcolor[rgb]{0.804,1.000,0.804} 77.6 & \cellcolor[rgb]{0.867,1.000,0.867} 66.2 \\
+nld--eng & Human-scale & B2 simult. & \cellcolor[rgb]{0.785,1.000,0.785} 88.8 & \cellcolor[rgb]{0.869,1.000,0.869} 74.0 & \cellcolor[rgb]{0.793,1.000,0.793} 79.1 & \cellcolor[rgb]{0.940,1.000,0.940} 57.3 \\
+nld--eng {\scriptsize\textit{seed13}} & Human-scale & B2 simult. & \cellcolor[rgb]{0.827,1.000,0.827} 81.2 & \cellcolor[rgb]{0.853,1.000,0.853} 77.0 & \cellcolor[rgb]{0.826,1.000,0.826} 74.5 & \cellcolor[rgb]{0.869,1.000,0.869} 65.9 \\
+nld--eng {\scriptsize\textit{seed42}} & Human-scale & B2 simult. & \cellcolor[rgb]{0.821,1.000,0.821} 82.4 & \cellcolor[rgb]{0.852,1.000,0.852} 77.1 & \cellcolor[rgb]{0.833,1.000,0.833} 73.5 & \cellcolor[rgb]{0.872,1.000,0.872} 65.6 \\
+nld--eng {\scriptsize\textit{seed97}} & Human-scale & B2 simult. & \cellcolor[rgb]{0.818,1.000,0.818} 82.9 & \cellcolor[rgb]{0.860,1.000,0.860} 75.7 & \cellcolor[rgb]{0.844,1.000,0.844} 71.9 & \cellcolor[rgb]{0.869,1.000,0.869} 65.9 \\
+nld--eng & Human-scale & B3 sequential & \cellcolor[rgb]{0.777,1.000,0.777} 90.3 & \cellcolor[rgb]{0.870,1.000,0.870} 73.8 & \cellcolor[rgb]{0.799,1.000,0.799} 78.3 & \cellcolor[rgb]{0.932,1.000,0.932} 58.3 \\
+nld--eng  & Human-scale & B3 sequential & \cellcolor[rgb]{0.861,1.000,0.861} 75.1 & \cellcolor[rgb]{0.846,1.000,0.846} 78.2 & \cellcolor[rgb]{0.887,1.000,0.887} 65.9 & \cellcolor[rgb]{0.898,1.000,0.898} 62.4 \\
+nld--eng {\scriptsize\textit{seed13}} & Human-scale & B3 sequential & \cellcolor[rgb]{0.919,1.000,0.919} 64.7 & \cellcolor[rgb]{0.852,1.000,0.852} 77.1 & \cellcolor[rgb]{0.980,1.000,0.980} 52.8 & \cellcolor[rgb]{0.886,1.000,0.886} 63.8 \\
+nld--eng {\scriptsize\textit{seed42}} & Human-scale & B3 sequential & \cellcolor[rgb]{0.915,1.000,0.915} 65.3 & \cellcolor[rgb]{0.853,1.000,0.853} 77.0 & \cellcolor[rgb]{0.976,1.000,0.976} 53.4 & \cellcolor[rgb]{0.885,1.000,0.885} 64.0 \\
+nld--eng {\scriptsize\textit{seed97}} & Human-scale & B3 sequential & \cellcolor[rgb]{0.901,1.000,0.901} 67.9 & \cellcolor[rgb]{0.897,1.000,0.897} 68.8 & \cellcolor[rgb]{0.965,1.000,0.965} 54.9 & \cellcolor[rgb]{0.933,1.000,0.933} 58.1 \\
+nld--eng & Human-scale & B3 (0--100) & \cellcolor[rgb]{0.780,1.000,0.780} 89.7 & \cellcolor[rgb]{0.867,1.000,0.867} 74.3 & \cellcolor[rgb]{0.788,1.000,0.788} 79.8 & \cellcolor[rgb]{0.941,1.000,0.941} 57.2 \\
+nld--eng & Human-scale & B4 classroom & \cellcolor[rgb]{0.780,1.000,0.780} 89.8 & \cellcolor[rgb]{0.869,1.000,0.869} 74.0 & \cellcolor[rgb]{0.796,1.000,0.796} 78.7 & \cellcolor[rgb]{0.931,1.000,0.931} 58.4 \\
+nld--eng & Human-scale & B5 late & \cellcolor[rgb]{0.787,1.000,0.787} 88.5 & \cellcolor[rgb]{0.878,1.000,0.878} 72.3 & \cellcolor[rgb]{0.790,1.000,0.790} 79.5 & \cellcolor[rgb]{0.946,1.000,0.946} 56.6 \\
+Chinese & Human-scale & Mono & \textbf{-} & \cellcolor[rgb]{0.936,1.000,0.936} 61.7 & \cellcolor[rgb]{0.825,1.000,0.825} 74.6 & \cellcolor[rgb]{0.988,1.000,0.988} 51.5 \\
+zho--eng & Human-scale & B1 balanced & \textbf{-} & \cellcolor[rgb]{0.855,1.000,0.855} 76.6 & \cellcolor[rgb]{0.855,1.000,0.855} 70.4 & \cellcolor[rgb]{0.868,1.000,0.868} 66.0 \\
+zho--eng & Human-scale & B2 simult. & \textbf{-} & \cellcolor[rgb]{0.897,1.000,0.897} 68.8 & \cellcolor[rgb]{0.859,1.000,0.859} 69.8 & \cellcolor[rgb]{0.965,1.000,0.965} 54.2 \\
+zho--eng & Human-scale & B3 sequential & \textbf{-} & \cellcolor[rgb]{0.889,1.000,0.889} 70.3 & \cellcolor[rgb]{0.857,1.000,0.857} 70.1 & \cellcolor[rgb]{0.961,1.000,0.961} 54.7 \\
+zho--eng & Human-scale & B4 classroom & \textbf{-} & \cellcolor[rgb]{0.883,1.000,0.883} 71.4 & \cellcolor[rgb]{0.864,1.000,0.864} 69.1 & \cellcolor[rgb]{0.953,1.000,0.953} 55.7 \\
+zho--eng & Human-scale & B5 late & \textbf{-} & \cellcolor[rgb]{0.893,1.000,0.893} 69.7 & \cellcolor[rgb]{0.848,1.000,0.848} 71.4 & \cellcolor[rgb]{0.960,1.000,0.960} 54.9 \\
+\midrule
+deu--eng & 100M tok & B1 balanced & \cellcolor[rgb]{0.786,1.000,0.786} 88.6 & \cellcolor[rgb]{0.794,1.000,0.794} 87.7 & \textbf{-} & \cellcolor[rgb]{0.888,1.000,0.888} 63.6 \\
+deu--eng & 100M tok & B2 simult. & \cellcolor[rgb]{0.767,1.000,0.767} 92.1 & \cellcolor[rgb]{0.884,1.000,0.884} 71.3 & \textbf{-} & \cellcolor[rgb]{0.977,1.000,0.977} 52.8 \\
+deu--eng & 100M tok & B3 sequential & \cellcolor[rgb]{0.769,1.000,0.769} 91.7 & \cellcolor[rgb]{0.878,1.000,0.878} 72.3 & \textbf{-} & \cellcolor[rgb]{0.960,1.000,0.960} 54.8 \\
+deu--eng  & 100M tok & B4 classroom & \cellcolor[rgb]{0.792,1.000,0.792} 87.6 & \cellcolor[rgb]{0.860,1.000,0.860} 75.6 & \textbf{-} & \cellcolor[rgb]{0.942,1.000,0.942} 57.1 \\
+deu--eng  & 100M tok & B5 late & \cellcolor[rgb]{0.861,1.000,0.861} 75.2 & \cellcolor[rgb]{0.820,1.000,0.820} 83.0 & \textbf{-} & \cellcolor[rgb]{0.895,1.000,0.895} 62.7 \\
+eus--eng & 100M tok & B1 balanced & \cellcolor[rgb]{0.738,1.000,0.738} 97.4 & \cellcolor[rgb]{0.806,1.000,0.806} 85.5 & \textbf{-} & \cellcolor[rgb]{0.900,1.000,0.900} 62.1 \\
+eus--eng & 100M tok & B2 simult. & \cellcolor[rgb]{0.742,1.000,0.742} 96.7 & \cellcolor[rgb]{0.891,1.000,0.891} 69.9 & \textbf{-} & \cellcolor[rgb]{0.979,1.000,0.979} 52.6 \\
+eus--eng & 100M tok & B3 sequential & \cellcolor[rgb]{0.738,1.000,0.738} 97.4 & \cellcolor[rgb]{0.889,1.000,0.889} 70.3 & \textbf{-} & \cellcolor[rgb]{0.967,1.000,0.967} 54.0 \\
+eus--eng  & 100M tok & B4 classroom & \cellcolor[rgb]{0.745,1.000,0.745} 96.0 & \cellcolor[rgb]{0.859,1.000,0.859} 75.8 & \textbf{-} & \cellcolor[rgb]{0.951,1.000,0.951} 56.0 \\
+eus--eng  & 100M tok & B5 late & \cellcolor[rgb]{0.762,1.000,0.762} 93.0 & \cellcolor[rgb]{0.829,1.000,0.829} 81.3 & \textbf{-} & \cellcolor[rgb]{0.912,1.000,0.912} 60.7 \\
+fil--eng & 100M tok & B1 balanced & \textbf{-} & \cellcolor[rgb]{0.803,1.000,0.803} 86.1 & \textbf{-} & \cellcolor[rgb]{0.877,1.000,0.877} 65.0 \\
+fil--eng & 100M tok & B2 simult. & \textbf{-} & \cellcolor[rgb]{0.862,1.000,0.862} 75.3 & \textbf{-} & \cellcolor[rgb]{0.926,1.000,0.926} 59.0 \\
+fil--eng & 100M tok & B3 sequential & \textbf{-} & \cellcolor[rgb]{0.859,1.000,0.859} 75.8 & \textbf{-} & \cellcolor[rgb]{0.929,1.000,0.929} 58.6 \\
+hin--eng & 100M tok & B1 balanced & \cellcolor[rgb]{0.792,1.000,0.792} 87.6 & \cellcolor[rgb]{0.801,1.000,0.801} 86.4 & \textbf{-} & \cellcolor[rgb]{0.886,1.000,0.886} 63.8 \\
+hin--eng & 100M tok & B2 simult. & \cellcolor[rgb]{0.770,1.000,0.770} 91.6 & \cellcolor[rgb]{0.907,1.000,0.907} 67.1 & \textbf{-} & \cellcolor[rgb]{0.962,1.000,0.962} 54.6 \\
+hin--eng & 100M tok & B3 sequential & \cellcolor[rgb]{0.769,1.000,0.769} 91.7 & \cellcolor[rgb]{0.900,1.000,0.900} 68.4 & \textbf{-} & \cellcolor[rgb]{0.959,1.000,0.959} 55.0 \\
+hin--eng  & 100M tok & B4 classroom & \cellcolor[rgb]{0.792,1.000,0.792} 87.6 & \cellcolor[rgb]{0.859,1.000,0.859} 75.8 & \textbf{-} & \cellcolor[rgb]{0.940,1.000,0.940} 57.3 \\
+hin--eng  & 100M tok & B5 late & \cellcolor[rgb]{0.831,1.000,0.831} 80.6 & \cellcolor[rgb]{0.837,1.000,0.837} 79.9 & \textbf{-} & \cellcolor[rgb]{0.900,1.000,0.900} 62.1 \\
+ita--eng & 100M tok & B1 balanced & \cellcolor[rgb]{0.825,1.000,0.825} 81.7 & \cellcolor[rgb]{0.794,1.000,0.794} 87.8 & \textbf{-} & \cellcolor[rgb]{0.895,1.000,0.895} 62.7 \\
+ita--eng & 100M tok & B2 simult. & \cellcolor[rgb]{0.807,1.000,0.807} 84.8 & \cellcolor[rgb]{0.889,1.000,0.889} 70.3 & \textbf{-} & \cellcolor[rgb]{0.970,1.000,0.970} 53.7 \\
+ita--eng & 100M tok & B3 sequential & \cellcolor[rgb]{0.807,1.000,0.807} 84.8 & \cellcolor[rgb]{0.877,1.000,0.877} 72.6 & \textbf{-} & \cellcolor[rgb]{0.965,1.000,0.965} 54.3 \\
+ita--eng  & 100M tok & B4 classroom & \cellcolor[rgb]{0.837,1.000,0.837} 79.5 & \cellcolor[rgb]{0.872,1.000,0.872} 73.5 & \textbf{-} & \cellcolor[rgb]{0.950,1.000,0.950} 56.1 \\
+ita--eng  & 100M tok & B5 late & \cellcolor[rgb]{0.907,1.000,0.907} 66.8 & \cellcolor[rgb]{0.822,1.000,0.822} 82.6 & \textbf{-} & \cellcolor[rgb]{0.905,1.000,0.905} 61.6 \\
+nld--eng & 100M tok & B1 balanced & \cellcolor[rgb]{0.788,1.000,0.788} 88.4 & \cellcolor[rgb]{0.792,1.000,0.792} 88.1 & \cellcolor[rgb]{0.826,1.000,0.826} 74.5 & \cellcolor[rgb]{0.886,1.000,0.886} 63.9 \\
+nld--eng & 100M tok & B2 simult. & \cellcolor[rgb]{0.773,1.000,0.773} 91.1 & \cellcolor[rgb]{0.870,1.000,0.870} 73.9 & \cellcolor[rgb]{0.815,1.000,0.815} 76.1 & \cellcolor[rgb]{0.937,1.000,0.937} 57.6 \\
+nld--eng & 100M tok & B3 sequential & \cellcolor[rgb]{0.764,1.000,0.764} 92.7 & \cellcolor[rgb]{0.870,1.000,0.870} 73.9 & \cellcolor[rgb]{0.812,1.000,0.812} 76.5 & \cellcolor[rgb]{0.939,1.000,0.939} 57.4 \\
+nld--eng {\scriptsize\textit{alibi}} & 100M tok & B3 sequential & \cellcolor[rgb]{0.840,1.000,0.840} 78.9 & \cellcolor[rgb]{0.787,1.000,0.787} 89.1 & \cellcolor[rgb]{0.918,1.000,0.918} 61.6 & \cellcolor[rgb]{0.865,1.000,0.865} 66.4 \\
+nld--eng {\scriptsize\textit{ewc}} & 100M tok & B3 sequential & \cellcolor[rgb]{0.844,1.000,0.844} 78.2 & \cellcolor[rgb]{0.787,1.000,0.787} 89.0 & \cellcolor[rgb]{0.905,1.000,0.905} 63.4 & \cellcolor[rgb]{0.886,1.000,0.886} 63.8 \\
+nld--eng {\scriptsize\textit{lamol}} & 100M tok & B3 sequential & \cellcolor[rgb]{0.845,1.000,0.845} 78.0 & \cellcolor[rgb]{0.791,1.000,0.791} 88.4 & \cellcolor[rgb]{0.906,1.000,0.906} 63.2 & \cellcolor[rgb]{0.881,1.000,0.881} 64.5 \\
+nld--eng {\scriptsize\textit{pre-pretrain}} & 100M tok & B3 sequential & \cellcolor[rgb]{0.852,1.000,0.852} 76.7 & \cellcolor[rgb]{0.779,1.000,0.779} 90.5 & \cellcolor[rgb]{0.920,1.000,0.920} 61.3 & \cellcolor[rgb]{0.870,1.000,0.870} 65.8 \\
+nld--eng  & 100M tok & B3 sequential & \cellcolor[rgb]{0.851,1.000,0.851} 76.9 & \cellcolor[rgb]{0.787,1.000,0.787} 89.1 & \cellcolor[rgb]{0.904,1.000,0.904} 63.5 & \cellcolor[rgb]{0.886,1.000,0.886} 63.9 \\
+nld--eng & 100M tok & B4 classroom & \cellcolor[rgb]{0.770,1.000,0.770} 91.6 & \cellcolor[rgb]{0.871,1.000,0.871} 73.6 & \cellcolor[rgb]{0.817,1.000,0.817} 75.8 & \cellcolor[rgb]{0.931,1.000,0.931} 58.4 \\
+nld--eng  & 100M tok & B5 late & \cellcolor[rgb]{0.849,1.000,0.849} 77.3 & \cellcolor[rgb]{0.810,1.000,0.810} 84.9 & \cellcolor[rgb]{0.906,1.000,0.906} 63.2 & \cellcolor[rgb]{0.895,1.000,0.895} 62.8 \\
+pol--eng & 100M tok & B1 balanced & \cellcolor[rgb]{0.846,1.000,0.846} 77.8 & \cellcolor[rgb]{0.800,1.000,0.800} 86.6 & \textbf{-} & \cellcolor[rgb]{0.900,1.000,0.900} 62.2 \\
+pol--eng & 100M tok & B2 simult. & \cellcolor[rgb]{0.820,1.000,0.820} 82.5 & \cellcolor[rgb]{0.886,1.000,0.886} 70.9 & \textbf{-} & \cellcolor[rgb]{0.972,1.000,0.972} 53.4 \\
+pol--eng & 100M tok & B3 sequential & \cellcolor[rgb]{0.827,1.000,0.827} 81.3 & \cellcolor[rgb]{0.896,1.000,0.896} 69.1 & \textbf{-} & \cellcolor[rgb]{0.960,1.000,0.960} 54.8 \\
+rus--eng & 100M tok & B1 balanced & \cellcolor[rgb]{0.848,1.000,0.848} 77.5 & \cellcolor[rgb]{0.809,1.000,0.809} 85.1 & \textbf{-} & \cellcolor[rgb]{0.910,1.000,0.910} 60.9 \\
+rus--eng & 100M tok & B2 simult. & \cellcolor[rgb]{0.827,1.000,0.827} 81.3 & \cellcolor[rgb]{0.899,1.000,0.899} 68.6 & \textbf{-} & \cellcolor[rgb]{0.970,1.000,0.970} 53.7 \\
+rus--eng & 100M tok & B3 sequential & \cellcolor[rgb]{0.822,1.000,0.822} 82.1 & \cellcolor[rgb]{0.890,1.000,0.890} 70.1 & \textbf{-} & \cellcolor[rgb]{0.972,1.000,0.972} 53.4 \\
+rus--eng  & 100M tok & B4 classroom & \cellcolor[rgb]{0.847,1.000,0.847} 77.7 & \cellcolor[rgb]{0.854,1.000,0.854} 76.8 & \textbf{-} & \cellcolor[rgb]{0.951,1.000,0.951} 55.9 \\
+rus--eng  & 100M tok & B5 late & \cellcolor[rgb]{0.910,1.000,0.910} 66.2 & \cellcolor[rgb]{0.827,1.000,0.827} 81.8 & \textbf{-} & \cellcolor[rgb]{0.918,1.000,0.918} 60.0 \\
+tur--eng & 100M tok & B1 balanced & \cellcolor[rgb]{0.853,1.000,0.853} 76.6 & \cellcolor[rgb]{0.812,1.000,0.812} 84.4 & \cellcolor[rgb]{0.825,1.000,0.825} 74.6 & \cellcolor[rgb]{0.909,1.000,0.909} 61.1 \\
+tur--eng & 100M tok & B2 simult. & \cellcolor[rgb]{0.827,1.000,0.827} 81.2 & \cellcolor[rgb]{0.885,1.000,0.885} 71.0 & \cellcolor[rgb]{0.776,1.000,0.776} 81.5 & \cellcolor[rgb]{0.973,1.000,0.973} 53.3 \\
+tur--eng & 100M tok & B3 sequential & \cellcolor[rgb]{0.831,1.000,0.831} 80.6 & \cellcolor[rgb]{0.893,1.000,0.893} 69.7 & \cellcolor[rgb]{0.781,1.000,0.781} 80.8 & \cellcolor[rgb]{0.973,1.000,0.973} 53.3 \\
+tur--eng  & 100M tok & B4 classroom & \cellcolor[rgb]{0.876,1.000,0.876} 72.5 & \cellcolor[rgb]{0.871,1.000,0.871} 73.6 & \cellcolor[rgb]{0.836,1.000,0.836} 73.1 & \cellcolor[rgb]{0.965,1.000,0.965} 54.2 \\
+tur--eng  & 100M tok & B5 late & \cellcolor[rgb]{0.877,1.000,0.877} 72.2 & \cellcolor[rgb]{0.829,1.000,0.829} 81.3 & \cellcolor[rgb]{0.918,1.000,0.918} 61.5 & \cellcolor[rgb]{0.909,1.000,0.909} 61.0 \\
+zho--eng & 100M tok & B1 balanced & \textbf{-} & \cellcolor[rgb]{0.832,1.000,0.832} 80.8 & \cellcolor[rgb]{0.923,1.000,0.923} 60.9 & \cellcolor[rgb]{0.900,1.000,0.900} 62.2 \\
+zho--eng  & 100M tok & B1 balanced & \textbf{-} & \cellcolor[rgb]{0.825,1.000,0.825} 82.1 & \cellcolor[rgb]{0.925,1.000,0.925} 60.5 & \cellcolor[rgb]{0.905,1.000,0.905} 61.5 \\
+zho--eng & 100M tok & B2 simult. & \textbf{-} & \cellcolor[rgb]{0.815,1.000,0.815} 84.0 & \cellcolor[rgb]{0.921,1.000,0.921} 61.1 & \cellcolor[rgb]{0.891,1.000,0.891} 63.2 \\
+zho--eng  & 100M tok & B2 simult. & \textbf{-} & \cellcolor[rgb]{0.805,1.000,0.805} 85.7 & \cellcolor[rgb]{0.918,1.000,0.918} 61.6 & \cellcolor[rgb]{0.889,1.000,0.889} 63.5 \\
+zho--eng & 100M tok & B3 sequential & \textbf{-} & \cellcolor[rgb]{0.803,1.000,0.803} 86.2 & \cellcolor[rgb]{0.978,1.000,0.978} 53.1 & \cellcolor[rgb]{0.884,1.000,0.884} 64.1 \\
+zho--eng  & 100M tok & B3 sequential & \textbf{-} & \cellcolor[rgb]{0.803,1.000,0.803} 86.2 & \cellcolor[rgb]{0.954,1.000,0.954} 56.5 & \cellcolor[rgb]{0.891,1.000,0.891} 63.3 \\
+zho--eng & 100M tok & B4 classroom & \textbf{-} & \cellcolor[rgb]{0.894,1.000,0.894} 69.4 & \cellcolor[rgb]{0.910,1.000,0.910} 62.6 & \cellcolor[rgb]{0.939,1.000,0.939} 57.4 \\
+zho--eng  & 100M tok & B4 classroom & \textbf{-} & \cellcolor[rgb]{0.853,1.000,0.853} 77.0 & \cellcolor[rgb]{0.908,1.000,0.908} 63.0 & \cellcolor[rgb]{0.934,1.000,0.934} 58.0 \\
+zho--eng & 100M tok & B5 late & \textbf{-} & \cellcolor[rgb]{0.828,1.000,0.828} 81.6 & \cellcolor[rgb]{0.938,1.000,0.938} 58.7 & \cellcolor[rgb]{0.903,1.000,0.903} 61.8 \\
+zho--eng  & 100M tok & B5 late & \textbf{-} & \cellcolor[rgb]{0.818,1.000,0.818} 83.4 & \cellcolor[rgb]{0.951,1.000,0.951} 56.9 & \cellcolor[rgb]{0.898,1.000,0.898} 62.4 \\
+\midrule
+deu--eng & 2B tok & B1 balanced & \cellcolor[rgb]{0.789,1.000,0.789} 88.2 & \cellcolor[rgb]{0.807,1.000,0.807} 85.3 & \textbf{-} & \cellcolor[rgb]{0.895,1.000,0.895} 62.7 \\
+deu--eng & 2B tok & B2 simult. & \cellcolor[rgb]{0.840,1.000,0.840} 78.9 & \cellcolor[rgb]{0.817,1.000,0.817} 83.6 & \textbf{-} & \cellcolor[rgb]{0.907,1.000,0.907} 61.3 \\
+deu--eng & 2B tok & B3 sequential & \cellcolor[rgb]{0.851,1.000,0.851} 76.9 & \cellcolor[rgb]{0.803,1.000,0.803} 86.2 & \textbf{-} & \cellcolor[rgb]{0.887,1.000,0.887} 63.7 \\
+deu--eng & 2B tok & B4 classroom & \cellcolor[rgb]{0.774,1.000,0.774} 90.8 & \cellcolor[rgb]{0.846,1.000,0.846} 78.2 & \textbf{-} & \cellcolor[rgb]{0.928,1.000,0.928} 58.8 \\
+deu--eng & 2B tok & B5 late & \cellcolor[rgb]{0.788,1.000,0.788} 88.3 & \cellcolor[rgb]{0.822,1.000,0.822} 82.7 & \textbf{-} & \cellcolor[rgb]{0.925,1.000,0.925} 59.1 \\
+eus--eng & 2B tok & B1 balanced & \cellcolor[rgb]{0.750,1.000,0.750} 95.2 & \cellcolor[rgb]{0.824,1.000,0.824} 82.2 & \textbf{-} & \cellcolor[rgb]{0.907,1.000,0.907} 61.3 \\
+eus--eng  & 2B tok & B1 balanced & \cellcolor[rgb]{0.756,1.000,0.756} 94.1 & \cellcolor[rgb]{0.827,1.000,0.827} 81.8 & \textbf{-} & \cellcolor[rgb]{0.921,1.000,0.921} 59.6 \\
+eus--eng & 2B tok & B2 simult. & \cellcolor[rgb]{0.742,1.000,0.742} 96.7 & \cellcolor[rgb]{0.886,1.000,0.886} 70.9 & \textbf{-} & \cellcolor[rgb]{0.985,1.000,0.985} 51.8 \\
+eus--eng  & 2B tok & B2 simult. & \cellcolor[rgb]{0.756,1.000,0.756} 94.1 & \cellcolor[rgb]{0.833,1.000,0.833} 80.6 & \textbf{-} & \cellcolor[rgb]{0.916,1.000,0.916} 60.2 \\
+eus--eng & 2B tok & B3 sequential & \cellcolor[rgb]{0.742,1.000,0.742} 96.7 & \cellcolor[rgb]{0.903,1.000,0.903} 67.8 & \textbf{-} & \cellcolor[rgb]{0.975,1.000,0.975} 53.0 \\
+eus--eng  & 2B tok & B3 sequential & \cellcolor[rgb]{0.772,1.000,0.772} 91.2 & \cellcolor[rgb]{0.815,1.000,0.815} 84.0 & \textbf{-} & \cellcolor[rgb]{0.912,1.000,0.912} 60.7 \\
+eus--eng & 2B tok & B4 classroom & \cellcolor[rgb]{0.742,1.000,0.742} 96.7 & \cellcolor[rgb]{0.884,1.000,0.884} 71.3 & \textbf{-} & \cellcolor[rgb]{0.972,1.000,0.972} 53.4 \\
+eus--eng & 2B tok & B5 late & \cellcolor[rgb]{0.744,1.000,0.744} 96.3 & \cellcolor[rgb]{0.890,1.000,0.890} 70.1 & \textbf{-} & \cellcolor[rgb]{0.981,1.000,0.981} 52.3 \\
+hin--eng  & 2B tok & B1 balanced & \cellcolor[rgb]{0.830,1.000,0.830} 80.7 & \cellcolor[rgb]{0.845,1.000,0.845} 78.4 & \textbf{-} & \cellcolor[rgb]{0.912,1.000,0.912} 60.7 \\
+hin--eng & 2B tok & B2 simult. & \cellcolor[rgb]{0.770,1.000,0.770} 91.6 & \cellcolor[rgb]{0.908,1.000,0.908} 66.9 & \textbf{-} & \cellcolor[rgb]{0.949,1.000,0.949} 56.2 \\
+hin--eng  & 2B tok & B2 simult. & \cellcolor[rgb]{0.828,1.000,0.828} 81.1 & \cellcolor[rgb]{0.830,1.000,0.830} 81.2 & \textbf{-} & \cellcolor[rgb]{0.914,1.000,0.914} 60.5 \\
+hin--eng  & 2B tok & B3 sequential & \cellcolor[rgb]{0.892,1.000,0.892} 69.6 & \cellcolor[rgb]{0.809,1.000,0.809} 85.1 & \textbf{-} & \cellcolor[rgb]{0.898,1.000,0.898} 62.4 \\
+ita--eng  & 2B tok & B1 balanced & \cellcolor[rgb]{0.863,1.000,0.863} 74.7 & \cellcolor[rgb]{0.832,1.000,0.832} 80.8 & \textbf{-} & \cellcolor[rgb]{0.926,1.000,0.926} 59.0 \\
+ita--eng  & 2B tok & B2 simult. & \cellcolor[rgb]{0.868,1.000,0.868} 73.8 & \cellcolor[rgb]{0.831,1.000,0.831} 80.9 & \textbf{-} & \cellcolor[rgb]{0.920,1.000,0.920} 59.7 \\
+ita--eng  & 2B tok & B3 sequential & \cellcolor[rgb]{0.924,1.000,0.924} 63.8 & \cellcolor[rgb]{0.817,1.000,0.817} 83.6 & \textbf{-} & \cellcolor[rgb]{0.904,1.000,0.904} 61.7 \\
+nld--eng & 2B tok & B1 balanced & \cellcolor[rgb]{0.794,1.000,0.794} 87.3 & \cellcolor[rgb]{0.801,1.000,0.801} 86.5 & \cellcolor[rgb]{0.839,1.000,0.839} 72.7 & \cellcolor[rgb]{0.881,1.000,0.881} 64.4 \\
+nld--eng & 2B tok & B2 simult. & \cellcolor[rgb]{0.785,1.000,0.785} 88.9 & \cellcolor[rgb]{0.882,1.000,0.882} 71.7 & \cellcolor[rgb]{0.810,1.000,0.810} 76.8 & \cellcolor[rgb]{0.951,1.000,0.951} 55.9 \\
+nld--eng & 2B tok & B3 sequential & \cellcolor[rgb]{0.779,1.000,0.779} 89.9 & \cellcolor[rgb]{0.874,1.000,0.874} 73.1 & \cellcolor[rgb]{0.810,1.000,0.810} 76.8 & \cellcolor[rgb]{0.955,1.000,0.955} 55.5 \\
+nld--eng & 2B tok & B4 classroom & \cellcolor[rgb]{0.783,1.000,0.783} 89.3 & \cellcolor[rgb]{0.870,1.000,0.870} 73.9 & \cellcolor[rgb]{0.807,1.000,0.807} 77.2 & \cellcolor[rgb]{0.947,1.000,0.947} 56.4 \\
+nld--eng & 2B tok & B5 late & \cellcolor[rgb]{0.783,1.000,0.783} 89.3 & \cellcolor[rgb]{0.875,1.000,0.875} 73.0 & \cellcolor[rgb]{0.809,1.000,0.809} 76.9 & \cellcolor[rgb]{0.953,1.000,0.953} 55.7 \\
+rus--eng  & 2B tok & B1 balanced & \cellcolor[rgb]{0.886,1.000,0.886} 70.6 & \cellcolor[rgb]{0.824,1.000,0.824} 82.2 & \textbf{-} & \cellcolor[rgb]{0.929,1.000,0.929} 58.6 \\
+rus--eng  & 2B tok & B2 simult. & \cellcolor[rgb]{0.908,1.000,0.908} 66.6 & \cellcolor[rgb]{0.822,1.000,0.822} 82.6 & \textbf{-} & \cellcolor[rgb]{0.918,1.000,0.918} 60.0 \\
+rus--eng  & 2B tok & B3 sequential & \cellcolor[rgb]{0.944,1.000,0.944} 60.2 & \cellcolor[rgb]{0.817,1.000,0.817} 83.6 & \textbf{-} & \cellcolor[rgb]{0.910,1.000,0.910} 60.9 \\
+tur--eng  & 2B tok & B1 balanced & \cellcolor[rgb]{0.884,1.000,0.884} 70.9 & \cellcolor[rgb]{0.832,1.000,0.832} 80.8 & \cellcolor[rgb]{0.873,1.000,0.873} 67.9 & \cellcolor[rgb]{0.927,1.000,0.927} 58.9 \\
+tur--eng  & 2B tok & B2 simult. & \cellcolor[rgb]{0.887,1.000,0.887} 70.4 & \cellcolor[rgb]{0.839,1.000,0.839} 79.6 & \cellcolor[rgb]{0.887,1.000,0.887} 65.9 & \cellcolor[rgb]{0.919,1.000,0.919} 59.9 \\
+tur--eng  & 2B tok & B3 sequential & \cellcolor[rgb]{0.897,1.000,0.897} 68.7 & \cellcolor[rgb]{0.819,1.000,0.819} 83.2 & \cellcolor[rgb]{0.939,1.000,0.939} 58.6 & \cellcolor[rgb]{0.922,1.000,0.922} 59.5 \\
+zho--eng & 2B tok & B1 balanced & \textbf{-} & \cellcolor[rgb]{0.799,1.000,0.799} 86.9 & \cellcolor[rgb]{0.904,1.000,0.904} 63.5 & \cellcolor[rgb]{0.889,1.000,0.889} 63.5 \\
+zho--eng & 2B tok & B2 simult. & \textbf{-} & \cellcolor[rgb]{0.810,1.000,0.810} 84.8 & \cellcolor[rgb]{0.930,1.000,0.930} 59.8 & \cellcolor[rgb]{0.906,1.000,0.906} 61.4 \\
+zho--eng & 2B tok & B3 sequential & \textbf{-} & \cellcolor[rgb]{0.815,1.000,0.815} 84.0 & \cellcolor[rgb]{0.955,1.000,0.955} 56.4 & \cellcolor[rgb]{0.893,1.000,0.893} 63.0 \\
+zho--eng & 2B tok & B4 classroom & \textbf{-} & \cellcolor[rgb]{0.872,1.000,0.872} 73.4 & \cellcolor[rgb]{0.903,1.000,0.903} 63.7 & \cellcolor[rgb]{0.932,1.000,0.932} 58.2 \\
+zho--eng & 2B tok & B5 late & \textbf{-} & \cellcolor[rgb]{0.841,1.000,0.841} 79.2 & \cellcolor[rgb]{0.933,1.000,0.933} 59.4 & \cellcolor[rgb]{0.911,1.000,0.911} 60.8 \\
+\midrule
+deu--eng & 24B tok & B1 balanced & \cellcolor[rgb]{0.747,1.000,0.747} 95.7 & \cellcolor[rgb]{0.760,1.000,0.760} 94.0 & \textbf{-} & \cellcolor[rgb]{0.823,1.000,0.823} 71.5 \\
+deu--eng & 24B tok & B2 simult. & \cellcolor[rgb]{0.742,1.000,0.742} 96.6 & \cellcolor[rgb]{0.812,1.000,0.812} 84.4 & \textbf{-} & \cellcolor[rgb]{0.907,1.000,0.907} 61.3 \\
+eng--deu & 24B tok & B1 balanced & \cellcolor[rgb]{0.759,1.000,0.759} 93.6 & \cellcolor[rgb]{0.762,1.000,0.762} 93.6 & \textbf{-} & \cellcolor[rgb]{0.822,1.000,0.822} 71.6 \\
+eng--nld & 24B tok & B1 balanced & \cellcolor[rgb]{0.759,1.000,0.759} 93.5 & \cellcolor[rgb]{0.763,1.000,0.763} 93.5 & \textbf{-} & \cellcolor[rgb]{0.817,1.000,0.817} 72.2 \\
+eng--nld & 24B tok & B2 simult. & \cellcolor[rgb]{0.748,1.000,0.748} 95.5 & \cellcolor[rgb]{0.752,1.000,0.752} 95.5 & \textbf{-} & \cellcolor[rgb]{0.801,1.000,0.801} 74.2 \\
+eng--nld & 24B tok & B3 sequential & \cellcolor[rgb]{0.757,1.000,0.757} 94.0 & \cellcolor[rgb]{0.760,1.000,0.760} 94.0 & \textbf{-} & \cellcolor[rgb]{0.802,1.000,0.802} 74.1 \\
+nld--eng & 24B tok & B1 balanced & \cellcolor[rgb]{0.754,1.000,0.754} 94.4 & \cellcolor[rgb]{0.758,1.000,0.758} 94.4 & \cellcolor[rgb]{0.799,1.000,0.799} 78.3 & \cellcolor[rgb]{0.812,1.000,0.812} 72.8 \\
+nld--eng & 24B tok & B2 simult. & \cellcolor[rgb]{0.745,1.000,0.745} 96.0 & \cellcolor[rgb]{0.811,1.000,0.811} 84.7 & \cellcolor[rgb]{0.775,1.000,0.775} 81.6 & \cellcolor[rgb]{0.870,1.000,0.870} 65.8 \\
+nld--eng & 24B tok & B3 sequential & \cellcolor[rgb]{0.748,1.000,0.748} 95.5 & \cellcolor[rgb]{0.822,1.000,0.822} 82.6 & \cellcolor[rgb]{0.779,1.000,0.779} 81.1 & \cellcolor[rgb]{0.881,1.000,0.881} 64.4 \\
+\midrule
+deu--eng & 24B tok (FW2) & B3 sequential & \cellcolor[rgb]{0.766,1.000,0.766} 92.3 & \cellcolor[rgb]{0.875,1.000,0.875} 73.0 & \textbf{-} & \cellcolor[rgb]{0.965,1.000,0.965} 54.3 \\
+deu--eng {\scriptsize\textit{ewc}} & 24B tok (FW2) & B3 sequential & \cellcolor[rgb]{0.837,1.000,0.837} 79.5 & \cellcolor[rgb]{0.756,1.000,0.756} 94.7 & \textbf{-} & \cellcolor[rgb]{0.802,1.000,0.802} 74.1 \\
+deu--eng & 24B tok (FW2) & B4 classroom & \cellcolor[rgb]{0.738,1.000,0.738} 97.3 & \cellcolor[rgb]{0.821,1.000,0.821} 82.9 & \textbf{-} & \cellcolor[rgb]{0.891,1.000,0.891} 63.3 \\
+deu--eng & 24B tok (FW2) & B5 late & \cellcolor[rgb]{0.738,1.000,0.738} 97.3 & \cellcolor[rgb]{0.827,1.000,0.827} 81.8 & \textbf{-} & \cellcolor[rgb]{0.917,1.000,0.917} 60.1 \\
+zho--eng & 24B tok (FW2) & B1 balanced & \textbf{-} & \cellcolor[rgb]{0.773,1.000,0.773} 91.7 & \cellcolor[rgb]{0.816,1.000,0.816} 75.9 & \cellcolor[rgb]{0.828,1.000,0.828} 70.9 \\
+zho--eng & 24B tok (FW2) & B2 simult. & \textbf{-} & \cellcolor[rgb]{0.766,1.000,0.766} 92.9 & \cellcolor[rgb]{0.832,1.000,0.832} 73.7 & \cellcolor[rgb]{0.822,1.000,0.822} 71.6 \\
+zho--eng & 24B tok (FW2) & B3 sequential & \textbf{-} & \cellcolor[rgb]{0.761,1.000,0.761} 93.9 & \cellcolor[rgb]{0.958,1.000,0.958} 55.9 & \cellcolor[rgb]{0.813,1.000,0.813} 72.7 \\
+zho--eng {\scriptsize\textit{ewc}} & 24B tok (FW2) & B3 sequential & \textbf{-} & \cellcolor[rgb]{0.764,1.000,0.764} 93.2 & \cellcolor[rgb]{0.947,1.000,0.947} 57.5 & \cellcolor[rgb]{0.832,1.000,0.832} 70.4 \\
+zho--eng & 24B tok (FW2) & B4 classroom & \textbf{-} & \cellcolor[rgb]{0.784,1.000,0.784} 89.6 & \cellcolor[rgb]{0.814,1.000,0.814} 76.2 & \cellcolor[rgb]{0.858,1.000,0.858} 67.3 \\
+zho--eng & 24B tok (FW2) & B5 late & \textbf{-} & \cellcolor[rgb]{0.785,1.000,0.785} 89.5 & \cellcolor[rgb]{0.876,1.000,0.876} 67.5 & \cellcolor[rgb]{0.843,1.000,0.843} 69.1 \\
+\midrule
+\midrule
+\multicolumn{7}{l}{\textit{Frontier multilingual LLM baselines}\quad(\textit{Data}\,$=$\,params; \textit{Curriculum}\,$=$\,eval cohort)} \\
+\midrule
+BLOOM-560M & 0.56B & Dutch & \cellcolor[rgb]{0.946,1.000,0.946} 59.8 & \cellcolor[rgb]{0.827,1.000,0.827} 81.7 & \cellcolor[rgb]{0.982,1.000,0.982} 52.6 & \cellcolor[rgb]{0.863,1.000,0.863} 66.7 \\
+ &  & German & \cellcolor[rgb]{0.912,1.000,0.912} 65.9 & \cellcolor[rgb]{0.827,1.000,0.827} 81.7 & \na & \cellcolor[rgb]{0.863,1.000,0.863} 66.7 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.827,1.000,0.827} 81.7 & \cellcolor[rgb]{0.840,1.000,0.840} 72.5 & \cellcolor[rgb]{0.863,1.000,0.863} 66.7 \\
+BLOOM-1.1B & 1.1B & Dutch & \cellcolor[rgb]{0.928,1.000,0.928} 63.0 & \cellcolor[rgb]{0.768,1.000,0.768} 92.5 & \cellcolor[rgb]{1.000,0.730,0.730} 48.7 & \cellcolor[rgb]{0.780,1.000,0.780} 76.7 \\
+ &  & German & \cellcolor[rgb]{0.853,1.000,0.853} 76.5 & \cellcolor[rgb]{0.768,1.000,0.768} 92.5 & \na & \cellcolor[rgb]{0.780,1.000,0.780} 76.7 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.768,1.000,0.768} 92.5 & \cellcolor[rgb]{0.758,1.000,0.758} 84.1 & \cellcolor[rgb]{0.780,1.000,0.780} 76.7 \\
+BLOOM-1.7B & 1.7B & Dutch & \cellcolor[rgb]{0.909,1.000,0.909} 66.4 & \cellcolor[rgb]{0.765,1.000,0.765} 93.0 & \cellcolor[rgb]{1.000,0.730,0.730} 48.7 & \cellcolor[rgb]{0.783,1.000,0.783} 76.4 \\
+ &  & German & \cellcolor[rgb]{0.861,1.000,0.861} 75.2 & \cellcolor[rgb]{0.765,1.000,0.765} 93.0 & \na & \cellcolor[rgb]{0.783,1.000,0.783} 76.4 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.765,1.000,0.765} 93.0 & \cellcolor[rgb]{0.753,1.000,0.753} 84.8 & \cellcolor[rgb]{0.783,1.000,0.783} 76.4 \\
+BLOOM-3B & 3B & Dutch & \cellcolor[rgb]{0.910,1.000,0.910} 66.3 & \cellcolor[rgb]{0.756,1.000,0.756} 94.8 & \cellcolor[rgb]{0.992,1.000,0.992} 51.1 & \cellcolor[rgb]{0.801,1.000,0.801} 74.2 \\
+ &  & German & \cellcolor[rgb]{0.830,1.000,0.830} 80.7 & \cellcolor[rgb]{0.756,1.000,0.756} 94.8 & \na & \cellcolor[rgb]{0.801,1.000,0.801} 74.2 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.756,1.000,0.756} 94.8 & \cellcolor[rgb]{0.758,1.000,0.758} 84.0 & \cellcolor[rgb]{0.801,1.000,0.801} 74.2 \\
+BLOOM-7.1B & 7.1B & Dutch & \cellcolor[rgb]{0.923,1.000,0.923} 64.0 & \cellcolor[rgb]{0.760,1.000,0.760} 94.0 & \cellcolor[rgb]{0.961,1.000,0.961} 55.5 & \cellcolor[rgb]{0.774,1.000,0.774} 77.5 \\
+ &  & German & \cellcolor[rgb]{0.822,1.000,0.822} 82.2 & \cellcolor[rgb]{0.760,1.000,0.760} 94.0 & \na & \cellcolor[rgb]{0.774,1.000,0.774} 77.5 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.760,1.000,0.760} 94.0 & \cellcolor[rgb]{0.756,1.000,0.756} 84.3 & \cellcolor[rgb]{0.774,1.000,0.774} 77.5 \\
+XGLM-4.5B & 4.5B & Dutch & \cellcolor[rgb]{0.741,1.000,0.741} 96.9 & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \cellcolor[rgb]{0.761,1.000,0.761} 83.6 & \cellcolor[rgb]{0.746,1.000,0.746} 80.9 \\
+ &  & German & \cellcolor[rgb]{0.730,1.000,0.730} 98.8 & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \na & \cellcolor[rgb]{0.746,1.000,0.746} 80.9 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \cellcolor[rgb]{0.754,1.000,0.754} 84.6 & \cellcolor[rgb]{0.746,1.000,0.746} 80.9 \\
+EuroLLM-9B & 9B & Dutch & \cellcolor[rgb]{0.854,1.000,0.854} 76.4 & \cellcolor[rgb]{0.812,1.000,0.812} 84.4 & \cellcolor[rgb]{0.730,1.000,0.730} 88.0 & \cellcolor[rgb]{0.756,1.000,0.756} 79.6 \\
+ &  & German & \cellcolor[rgb]{0.849,1.000,0.849} 77.3 & \cellcolor[rgb]{0.812,1.000,0.812} 84.4 & \na & \cellcolor[rgb]{0.756,1.000,0.756} 79.6 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.812,1.000,0.812} 84.4 & \cellcolor[rgb]{0.762,1.000,0.762} 83.5 & \cellcolor[rgb]{0.756,1.000,0.756} 79.6 \\
+Gemma-3-270M & 0.27B & Dutch & \cellcolor[rgb]{0.814,1.000,0.814} 83.7 & \cellcolor[rgb]{0.744,1.000,0.744} 97.0 & \cellcolor[rgb]{0.859,1.000,0.859} 69.9 & \cellcolor[rgb]{0.763,1.000,0.763} 78.8 \\
+ &  & German & \cellcolor[rgb]{0.776,1.000,0.776} 90.4 & \cellcolor[rgb]{0.744,1.000,0.744} 97.0 & \na & \cellcolor[rgb]{0.763,1.000,0.763} 78.8 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.744,1.000,0.744} 97.0 & \cellcolor[rgb]{0.782,1.000,0.782} 80.7 & \cellcolor[rgb]{0.763,1.000,0.763} 78.8 \\
+Gemma-2-2B & 2B & Dutch & \cellcolor[rgb]{0.769,1.000,0.769} 91.7 & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \cellcolor[rgb]{0.783,1.000,0.783} 80.5 & \cellcolor[rgb]{0.782,1.000,0.782} 76.5 \\
+ &  & German & \cellcolor[rgb]{0.748,1.000,0.748} 95.6 & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \na & \cellcolor[rgb]{0.782,1.000,0.782} 76.5 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \cellcolor[rgb]{0.770,1.000,0.770} 82.3 & \cellcolor[rgb]{0.782,1.000,0.782} 76.5 \\
+Gemma-2-9B & 9B & Dutch & \cellcolor[rgb]{0.772,1.000,0.772} 91.2 & \cellcolor[rgb]{0.734,1.000,0.734} 98.8 & \cellcolor[rgb]{0.756,1.000,0.756} 84.4 & \cellcolor[rgb]{0.775,1.000,0.775} 77.3 \\
+ &  & German & \cellcolor[rgb]{0.743,1.000,0.743} 96.4 & \cellcolor[rgb]{0.734,1.000,0.734} 98.8 & \na & \cellcolor[rgb]{0.775,1.000,0.775} 77.3 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.734,1.000,0.734} 98.8 & \cellcolor[rgb]{0.766,1.000,0.766} 82.9 & \cellcolor[rgb]{0.775,1.000,0.775} 77.3 \\
+Gemma-2-27B & 27B & Dutch & \cellcolor[rgb]{0.842,1.000,0.842} 78.6 & \cellcolor[rgb]{0.822,1.000,0.822} 82.6 & \cellcolor[rgb]{0.829,1.000,0.829} 74.0 & \cellcolor[rgb]{0.830,1.000,0.830} 70.7 \\
+ &  & German & \cellcolor[rgb]{0.828,1.000,0.828} 81.1 & \cellcolor[rgb]{0.822,1.000,0.822} 82.6 & \na & \cellcolor[rgb]{0.830,1.000,0.830} 70.7 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.822,1.000,0.822} 82.6 & \cellcolor[rgb]{0.847,1.000,0.847} 71.5 & \cellcolor[rgb]{0.830,1.000,0.830} 70.7 \\
+Qwen3-0.6B & 0.6B & Dutch & \cellcolor[rgb]{0.826,1.000,0.826} 81.5 & \cellcolor[rgb]{0.744,1.000,0.744} 97.0 & \cellcolor[rgb]{0.846,1.000,0.846} 71.7 & \cellcolor[rgb]{0.740,1.000,0.740} 81.6 \\
+ &  & German & \cellcolor[rgb]{0.764,1.000,0.764} 92.6 & \cellcolor[rgb]{0.744,1.000,0.744} 97.0 & \na & \cellcolor[rgb]{0.740,1.000,0.740} 81.6 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.744,1.000,0.744} 97.0 & \cellcolor[rgb]{0.773,1.000,0.773} 82.0 & \cellcolor[rgb]{0.740,1.000,0.740} 81.6 \\
+Qwen3-4B & 4B & Dutch & \cellcolor[rgb]{0.757,1.000,0.757} 93.9 & \cellcolor[rgb]{0.730,1.000,0.730} 99.5 & \cellcolor[rgb]{0.768,1.000,0.768} 82.6 & \cellcolor[rgb]{0.730,1.000,0.730} 82.8 \\
+ &  & German & \cellcolor[rgb]{0.739,1.000,0.739} 97.2 & \cellcolor[rgb]{0.730,1.000,0.730} 99.5 & \na & \cellcolor[rgb]{0.730,1.000,0.730} 82.8 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.730,1.000,0.730} 99.5 & \cellcolor[rgb]{0.745,1.000,0.745} 85.9 & \cellcolor[rgb]{0.730,1.000,0.730} 82.8 \\
+Qwen3-8B & 8B & Dutch & \cellcolor[rgb]{0.753,1.000,0.753} 94.6 & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \cellcolor[rgb]{0.772,1.000,0.772} 82.1 & \cellcolor[rgb]{0.732,1.000,0.732} 82.5 \\
+ &  & German & \cellcolor[rgb]{0.732,1.000,0.732} 98.5 & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \na & \cellcolor[rgb]{0.732,1.000,0.732} 82.5 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \cellcolor[rgb]{0.745,1.000,0.745} 85.9 & \cellcolor[rgb]{0.732,1.000,0.732} 82.5 \\
+Llama-3.2-1B & 1B & Dutch & \cellcolor[rgb]{0.774,1.000,0.774} 90.8 & \cellcolor[rgb]{0.733,1.000,0.733} 99.0 & \cellcolor[rgb]{0.815,1.000,0.815} 76.0 & \cellcolor[rgb]{0.738,1.000,0.738} 81.8 \\
+ &  & German & \cellcolor[rgb]{0.745,1.000,0.745} 96.1 & \cellcolor[rgb]{0.733,1.000,0.733} 99.0 & \na & \cellcolor[rgb]{0.738,1.000,0.738} 81.8 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.733,1.000,0.733} 99.0 & \cellcolor[rgb]{0.766,1.000,0.766} 82.9 & \cellcolor[rgb]{0.738,1.000,0.738} 81.8 \\
+Llama-3.1-8B & 8B & Dutch & \cellcolor[rgb]{0.745,1.000,0.745} 96.1 & \cellcolor[rgb]{0.732,1.000,0.732} 99.2 & \cellcolor[rgb]{0.751,1.000,0.751} 85.1 & \cellcolor[rgb]{0.743,1.000,0.743} 81.2 \\
+ &  & German & \cellcolor[rgb]{0.734,1.000,0.734} 98.0 & \cellcolor[rgb]{0.732,1.000,0.732} 99.2 & \na & \cellcolor[rgb]{0.743,1.000,0.743} 81.2 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.732,1.000,0.732} 99.2 & \cellcolor[rgb]{0.755,1.000,0.755} 84.5 & \cellcolor[rgb]{0.743,1.000,0.743} 81.2 \\
+\bottomrule
+\end{tabular}
+\caption{Minimal-pair grammaticality accuracy (\%) on MultiBLiMP and monolingual BLiMP suites for the final checkpoint of each Beetle model, plus the frontier multilingual-LLM baselines from the MultiBLiMP Pareto (Fig.~\ref{fig:multiblimp_pareto}). For baseline rows, the \emph{Data} column gives the parameter count and \emph{Curriculum} the evaluation cohort. MonoBLiMP (L1) is blimp-nl (Dutch), zhoBLiMP (Chinese) or turBLiMP (Turkish); MultiBLiMP (L1) is available for languages in \texttt{jumelet/multiblimp}. \textbf{-}: benchmark unavailable for this language; \pend: evaluation pending.}
+\label{tab:blimp_multiblimp}
+\end{table*}
+
+
+% ====== TABLE 2: Beetle ablations / robustness ======
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lll l cc cc}
+\toprule
+& & & & \multicolumn{2}{c}{\textbf{MultiBLiMP}} & \multicolumn{2}{c}{\textbf{MonoBLiMP}} \\
+\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+\textbf{Pair} & \textbf{Variant} & \textbf{Data} & \textbf{Curriculum} & \textbf{L1} & \textbf{Eng} & \textbf{L1} & \textbf{Eng} \\
+\midrule
+\texttt{nld--eng} & \textit{seed13} & Human-scale & B2 simult. & \cellcolor[rgb]{0.827,1.000,0.827} 81.2 & \cellcolor[rgb]{0.853,1.000,0.853} 77.0 & \cellcolor[rgb]{0.826,1.000,0.826} 74.5 & \cellcolor[rgb]{0.869,1.000,0.869} 65.9 \\
+\texttt{nld--eng} & \textit{seed13} & Human-scale & B3 sequential & \cellcolor[rgb]{0.919,1.000,0.919} 64.7 & \cellcolor[rgb]{0.852,1.000,0.852} 77.1 & \cellcolor[rgb]{0.980,1.000,0.980} 52.8 & \cellcolor[rgb]{0.886,1.000,0.886} 63.8 \\
+\texttt{nld--eng} & \textit{seed42} & Human-scale & B2 simult. & \cellcolor[rgb]{0.821,1.000,0.821} 82.4 & \cellcolor[rgb]{0.852,1.000,0.852} 77.1 & \cellcolor[rgb]{0.833,1.000,0.833} 73.5 & \cellcolor[rgb]{0.872,1.000,0.872} 65.6 \\
+\texttt{nld--eng} & \textit{seed42} & Human-scale & B3 sequential & \cellcolor[rgb]{0.915,1.000,0.915} 65.3 & \cellcolor[rgb]{0.853,1.000,0.853} 77.0 & \cellcolor[rgb]{0.976,1.000,0.976} 53.4 & \cellcolor[rgb]{0.885,1.000,0.885} 64.0 \\
+\texttt{nld--eng} & \textit{seed97} & Human-scale & B2 simult. & \cellcolor[rgb]{0.818,1.000,0.818} 82.9 & \cellcolor[rgb]{0.860,1.000,0.860} 75.7 & \cellcolor[rgb]{0.844,1.000,0.844} 71.9 & \cellcolor[rgb]{0.869,1.000,0.869} 65.9 \\
+\texttt{nld--eng} & \textit{seed97} & Human-scale & B3 sequential & \cellcolor[rgb]{0.901,1.000,0.901} 67.9 & \cellcolor[rgb]{0.897,1.000,0.897} 68.8 & \cellcolor[rgb]{0.965,1.000,0.965} 54.9 & \cellcolor[rgb]{0.933,1.000,0.933} 58.1 \\
+\texttt{nld--eng} & \textit{episodic} & Human-scale & B1 balanced & \cellcolor[rgb]{0.799,1.000,0.799} 86.4 & \cellcolor[rgb]{0.844,1.000,0.844} 78.6 & \cellcolor[rgb]{0.804,1.000,0.804} 77.6 & \cellcolor[rgb]{0.867,1.000,0.867} 66.2 \\
+\texttt{nld--eng} & \textit{alibi} & 100M tok & B3 sequential & \cellcolor[rgb]{0.840,1.000,0.840} 78.9 & \cellcolor[rgb]{0.787,1.000,0.787} 89.1 & \cellcolor[rgb]{0.918,1.000,0.918} 61.6 & \cellcolor[rgb]{0.865,1.000,0.865} 66.4 \\
+\texttt{deu--eng} & \textit{ewc} & 24B tok (FW-24B) & B3 sequential & \cellcolor[rgb]{0.837,1.000,0.837} 79.5 & \cellcolor[rgb]{0.756,1.000,0.756} 94.7 & \textbf{-} & \cellcolor[rgb]{0.802,1.000,0.802} 74.1 \\
+\texttt{nld--eng} & \textit{ewc} & 100M tok & B3 sequential & \cellcolor[rgb]{0.844,1.000,0.844} 78.2 & \cellcolor[rgb]{0.787,1.000,0.787} 89.0 & \cellcolor[rgb]{0.905,1.000,0.905} 63.4 & \cellcolor[rgb]{0.886,1.000,0.886} 63.8 \\
+\texttt{zho--eng} & \textit{ewc} & 24B tok (FW-24B) & B3 sequential & \textbf{-} & \cellcolor[rgb]{0.764,1.000,0.764} 93.2 & \cellcolor[rgb]{0.947,1.000,0.947} 57.5 & \cellcolor[rgb]{0.832,1.000,0.832} 70.4 \\
+\texttt{nld--eng} & \textit{lamol} & 100M tok & B3 sequential & \cellcolor[rgb]{0.845,1.000,0.845} 78.0 & \cellcolor[rgb]{0.791,1.000,0.791} 88.4 & \cellcolor[rgb]{0.906,1.000,0.906} 63.2 & \cellcolor[rgb]{0.881,1.000,0.881} 64.5 \\
+\texttt{nld--eng} & \textit{pre-pretrain} & 100M tok & B3 sequential & \cellcolor[rgb]{0.852,1.000,0.852} 76.7 & \cellcolor[rgb]{0.779,1.000,0.779} 90.5 & \cellcolor[rgb]{0.920,1.000,0.920} 61.3 & \cellcolor[rgb]{0.870,1.000,0.870} 65.8 \\
+\texttt{nld--eng} & \textit{B3 0--100} & Human-scale & B3 (0--100) & \cellcolor[rgb]{0.780,1.000,0.780} 89.7 & \cellcolor[rgb]{0.867,1.000,0.867} 74.3 & \cellcolor[rgb]{0.788,1.000,0.788} 79.8 & \cellcolor[rgb]{0.941,1.000,0.941} 57.2 \\
+\texttt{deu--eng} & \textit{(FW-24B)} & 24B tok (FW-24B) & B3 sequential & \cellcolor[rgb]{0.766,1.000,0.766} 92.3 & \cellcolor[rgb]{0.875,1.000,0.875} 73.0 & \textbf{-} & \cellcolor[rgb]{0.965,1.000,0.965} 54.3 \\
+\texttt{deu--eng} & \textit{(FW-24B)} & 24B tok (FW-24B) & B4 classroom & \cellcolor[rgb]{0.738,1.000,0.738} 97.3 & \cellcolor[rgb]{0.821,1.000,0.821} 82.9 & \textbf{-} & \cellcolor[rgb]{0.891,1.000,0.891} 63.3 \\
+\texttt{deu--eng} & \textit{(FW-24B)} & 24B tok (FW-24B) & B5 late & \cellcolor[rgb]{0.738,1.000,0.738} 97.3 & \cellcolor[rgb]{0.827,1.000,0.827} 81.8 & \textbf{-} & \cellcolor[rgb]{0.917,1.000,0.917} 60.1 \\
+\texttt{zho--eng} & \textit{(FW-24B)} & 24B tok (FW-24B) & B1 balanced & \textbf{-} & \cellcolor[rgb]{0.773,1.000,0.773} 91.7 & \cellcolor[rgb]{0.816,1.000,0.816} 75.9 & \cellcolor[rgb]{0.828,1.000,0.828} 70.9 \\
+\texttt{zho--eng} & \textit{(FW-24B)} & 24B tok (FW-24B) & B2 simult. & \textbf{-} & \cellcolor[rgb]{0.766,1.000,0.766} 92.9 & \cellcolor[rgb]{0.832,1.000,0.832} 73.7 & \cellcolor[rgb]{0.822,1.000,0.822} 71.6 \\
+\texttt{zho--eng} & \textit{(FW-24B)} & 24B tok (FW-24B) & B3 sequential & \textbf{-} & \cellcolor[rgb]{0.761,1.000,0.761} 93.9 & \cellcolor[rgb]{0.958,1.000,0.958} 55.9 & \cellcolor[rgb]{0.813,1.000,0.813} 72.7 \\
+\texttt{zho--eng} & \textit{(FW-24B)} & 24B tok (FW-24B) & B4 classroom & \textbf{-} & \cellcolor[rgb]{0.784,1.000,0.784} 89.6 & \cellcolor[rgb]{0.814,1.000,0.814} 76.2 & \cellcolor[rgb]{0.858,1.000,0.858} 67.3 \\
+\texttt{zho--eng} & \textit{(FW-24B)} & 24B tok (FW-24B) & B5 late & \textbf{-} & \cellcolor[rgb]{0.785,1.000,0.785} 89.5 & \cellcolor[rgb]{0.876,1.000,0.876} 67.5 & \cellcolor[rgb]{0.843,1.000,0.843} 69.1 \\
+\texttt{eus--eng} & \textit{\textbf{run\,2?}} & 2B tok & B1 balanced & \cellcolor[rgb]{0.756,1.000,0.756} 94.1 & \cellcolor[rgb]{0.827,1.000,0.827} 81.8 & \textbf{-} & \cellcolor[rgb]{0.921,1.000,0.921} 59.6 \\
+\texttt{eus--eng} & \textit{\textbf{run\,2?}} & 2B tok & B2 simult. & \cellcolor[rgb]{0.756,1.000,0.756} 94.1 & \cellcolor[rgb]{0.833,1.000,0.833} 80.6 & \textbf{-} & \cellcolor[rgb]{0.916,1.000,0.916} 60.2 \\
+\texttt{eus--eng} & \textit{\textbf{run\,2?}} & 2B tok & B3 sequential & \cellcolor[rgb]{0.772,1.000,0.772} 91.2 & \cellcolor[rgb]{0.815,1.000,0.815} 84.0 & \textbf{-} & \cellcolor[rgb]{0.912,1.000,0.912} 60.7 \\
+\texttt{hin--eng} & \textit{\textbf{run\,2?}} & 2B tok & B2 simult. & \cellcolor[rgb]{0.828,1.000,0.828} 81.1 & \cellcolor[rgb]{0.830,1.000,0.830} 81.2 & \textbf{-} & \cellcolor[rgb]{0.914,1.000,0.914} 60.5 \\
+\texttt{nld--eng} & \textit{\textbf{run\,2?}} & Human-scale & B3 sequential & \cellcolor[rgb]{0.861,1.000,0.861} 75.1 & \cellcolor[rgb]{0.846,1.000,0.846} 78.2 & \cellcolor[rgb]{0.887,1.000,0.887} 65.9 & \cellcolor[rgb]{0.898,1.000,0.898} 62.4 \\
+\texttt{nld--eng} & \textit{\textbf{run\,2?}} & 100M tok & B3 sequential & \cellcolor[rgb]{0.851,1.000,0.851} 76.9 & \cellcolor[rgb]{0.787,1.000,0.787} 89.1 & \cellcolor[rgb]{0.904,1.000,0.904} 63.5 & \cellcolor[rgb]{0.886,1.000,0.886} 63.9 \\
+\texttt{zho--eng} & \textit{\textbf{run\,2?}} & 100M tok & B1 balanced & \textbf{-} & \cellcolor[rgb]{0.825,1.000,0.825} 82.1 & \cellcolor[rgb]{0.925,1.000,0.925} 60.5 & \cellcolor[rgb]{0.905,1.000,0.905} 61.5 \\
+\texttt{zho--eng} & \textit{\textbf{run\,2?}} & 100M tok & B2 simult. & \textbf{-} & \cellcolor[rgb]{0.805,1.000,0.805} 85.7 & \cellcolor[rgb]{0.918,1.000,0.918} 61.6 & \cellcolor[rgb]{0.889,1.000,0.889} 63.5 \\
+\texttt{zho--eng} & \textit{\textbf{run\,2?}} & 100M tok & B3 sequential & \textbf{-} & \cellcolor[rgb]{0.803,1.000,0.803} 86.2 & \cellcolor[rgb]{0.954,1.000,0.954} 56.5 & \cellcolor[rgb]{0.891,1.000,0.891} 63.3 \\
+\texttt{zho--eng} & \textit{\textbf{run\,2?}} & 100M tok & B4 classroom & \textbf{-} & \cellcolor[rgb]{0.853,1.000,0.853} 77.0 & \cellcolor[rgb]{0.908,1.000,0.908} 63.0 & \cellcolor[rgb]{0.934,1.000,0.934} 58.0 \\
+\texttt{zho--eng} & \textit{\textbf{run\,2?}} & 100M tok & B5 late & \textbf{-} & \cellcolor[rgb]{0.818,1.000,0.818} 83.4 & \cellcolor[rgb]{0.951,1.000,0.951} 56.9 & \cellcolor[rgb]{0.898,1.000,0.898} 62.4 \\
+\texttt{English} & \textit{Eng mono} & Human-scale & Mono & \textbf{-} & \cellcolor[rgb]{0.842,1.000,0.842} 79.0 & \textbf{-} & \cellcolor[rgb]{0.879,1.000,0.879} 64.7 \\
+\bottomrule
+\end{tabular}
+\caption{Robustness and method ablations for Beetle models: multiple seeds, continual-learning methods (alibi, ewc, lamol, episodic, pre-pretrain), FrameWork-2 (FW-24B) data, and the B3 0--100 curriculum variant. Rows tagged \textbf{?dup} were unlabeled duplicates in the source table and need a distinguishing label or removal.}
+\label{tab:beetle_ablations}
+\end{table*}
+
+% ====== TABLE 3: Frontier multilingual LLM baselines ======
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{ll l cc cc}
+\toprule
+& & & \multicolumn{2}{c}{\textbf{MultiBLiMP}} & \multicolumn{2}{c}{\textbf{MonoBLiMP}} \\
+\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+\textbf{Model} & \textbf{Params} & \textbf{Cohort} & \textbf{L1} & \textbf{Eng} & \textbf{L1} & \textbf{Eng} \\
+\midrule
+\multirow{3}{*}{BLOOM-560M} & \multirow{3}{*}{0.56B} & Dutch & \cellcolor[rgb]{0.946,1.000,0.946} 59.8 & \cellcolor[rgb]{0.827,1.000,0.827} 81.7 & \cellcolor[rgb]{0.982,1.000,0.982} 52.6 & \cellcolor[rgb]{0.863,1.000,0.863} 66.7 \\
+ &  & German & \cellcolor[rgb]{0.912,1.000,0.912} 65.9 & \cellcolor[rgb]{0.827,1.000,0.827} 81.7 & \na & \cellcolor[rgb]{0.863,1.000,0.863} 66.7 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.827,1.000,0.827} 81.7 & \cellcolor[rgb]{0.840,1.000,0.840} 72.5 & \cellcolor[rgb]{0.863,1.000,0.863} 66.7 \\
+\addlinespace[2pt]
+\multirow{3}{*}{BLOOM-1.1B} & \multirow{3}{*}{1.1B} & Dutch & \cellcolor[rgb]{0.928,1.000,0.928} 63.0 & \cellcolor[rgb]{0.768,1.000,0.768} 92.5 & \cellcolor[rgb]{1.000,0.730,0.730} 48.7 & \cellcolor[rgb]{0.780,1.000,0.780} 76.7 \\
+ &  & German & \cellcolor[rgb]{0.853,1.000,0.853} 76.5 & \cellcolor[rgb]{0.768,1.000,0.768} 92.5 & \na & \cellcolor[rgb]{0.780,1.000,0.780} 76.7 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.768,1.000,0.768} 92.5 & \cellcolor[rgb]{0.758,1.000,0.758} 84.1 & \cellcolor[rgb]{0.780,1.000,0.780} 76.7 \\
+\addlinespace[2pt]
+\multirow{3}{*}{BLOOM-1.7B} & \multirow{3}{*}{1.7B} & Dutch & \cellcolor[rgb]{0.909,1.000,0.909} 66.4 & \cellcolor[rgb]{0.765,1.000,0.765} 93.0 & \cellcolor[rgb]{1.000,0.730,0.730} 48.7 & \cellcolor[rgb]{0.783,1.000,0.783} 76.4 \\
+ &  & German & \cellcolor[rgb]{0.861,1.000,0.861} 75.2 & \cellcolor[rgb]{0.765,1.000,0.765} 93.0 & \na & \cellcolor[rgb]{0.783,1.000,0.783} 76.4 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.765,1.000,0.765} 93.0 & \cellcolor[rgb]{0.753,1.000,0.753} 84.8 & \cellcolor[rgb]{0.783,1.000,0.783} 76.4 \\
+\addlinespace[2pt]
+\multirow{3}{*}{BLOOM-3B} & \multirow{3}{*}{3B} & Dutch & \cellcolor[rgb]{0.910,1.000,0.910} 66.3 & \cellcolor[rgb]{0.756,1.000,0.756} 94.8 & \cellcolor[rgb]{0.992,1.000,0.992} 51.1 & \cellcolor[rgb]{0.801,1.000,0.801} 74.2 \\
+ &  & German & \cellcolor[rgb]{0.830,1.000,0.830} 80.7 & \cellcolor[rgb]{0.756,1.000,0.756} 94.8 & \na & \cellcolor[rgb]{0.801,1.000,0.801} 74.2 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.756,1.000,0.756} 94.8 & \cellcolor[rgb]{0.758,1.000,0.758} 84.0 & \cellcolor[rgb]{0.801,1.000,0.801} 74.2 \\
+\addlinespace[2pt]
+\multirow{3}{*}{BLOOM-7.1B} & \multirow{3}{*}{7.1B} & Dutch & \cellcolor[rgb]{0.923,1.000,0.923} 64.0 & \cellcolor[rgb]{0.760,1.000,0.760} 94.0 & \cellcolor[rgb]{0.961,1.000,0.961} 55.5 & \cellcolor[rgb]{0.774,1.000,0.774} 77.5 \\
+ &  & German & \cellcolor[rgb]{0.822,1.000,0.822} 82.2 & \cellcolor[rgb]{0.760,1.000,0.760} 94.0 & \na & \cellcolor[rgb]{0.774,1.000,0.774} 77.5 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.760,1.000,0.760} 94.0 & \cellcolor[rgb]{0.756,1.000,0.756} 84.3 & \cellcolor[rgb]{0.774,1.000,0.774} 77.5 \\
+\addlinespace[2pt]
+\multirow{3}{*}{XGLM-4.5B} & \multirow{3}{*}{4.5B} & Dutch & \cellcolor[rgb]{0.741,1.000,0.741} 96.9 & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \cellcolor[rgb]{0.761,1.000,0.761} 83.6 & \cellcolor[rgb]{0.746,1.000,0.746} 80.9 \\
+ &  & German & \cellcolor[rgb]{0.730,1.000,0.730} 98.8 & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \na & \cellcolor[rgb]{0.746,1.000,0.746} 80.9 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \cellcolor[rgb]{0.754,1.000,0.754} 84.6 & \cellcolor[rgb]{0.746,1.000,0.746} 80.9 \\
+\addlinespace[2pt]
+\multirow{3}{*}{EuroLLM-9B} & \multirow{3}{*}{9B} & Dutch & \cellcolor[rgb]{0.854,1.000,0.854} 76.4 & \cellcolor[rgb]{0.812,1.000,0.812} 84.4 & \cellcolor[rgb]{0.730,1.000,0.730} 88.0 & \cellcolor[rgb]{0.756,1.000,0.756} 79.6 \\
+ &  & German & \cellcolor[rgb]{0.849,1.000,0.849} 77.3 & \cellcolor[rgb]{0.812,1.000,0.812} 84.4 & \na & \cellcolor[rgb]{0.756,1.000,0.756} 79.6 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.812,1.000,0.812} 84.4 & \cellcolor[rgb]{0.762,1.000,0.762} 83.5 & \cellcolor[rgb]{0.756,1.000,0.756} 79.6 \\
+\addlinespace[2pt]
+\multirow{3}{*}{Gemma-3-270M} & \multirow{3}{*}{0.27B} & Dutch & \cellcolor[rgb]{0.814,1.000,0.814} 83.7 & \cellcolor[rgb]{0.744,1.000,0.744} 97.0 & \cellcolor[rgb]{0.859,1.000,0.859} 69.9 & \cellcolor[rgb]{0.763,1.000,0.763} 78.8 \\
+ &  & German & \cellcolor[rgb]{0.776,1.000,0.776} 90.4 & \cellcolor[rgb]{0.744,1.000,0.744} 97.0 & \na & \cellcolor[rgb]{0.763,1.000,0.763} 78.8 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.744,1.000,0.744} 97.0 & \cellcolor[rgb]{0.782,1.000,0.782} 80.7 & \cellcolor[rgb]{0.763,1.000,0.763} 78.8 \\
+\addlinespace[2pt]
+\multirow{3}{*}{Gemma-2-2B} & \multirow{3}{*}{2B} & Dutch & \cellcolor[rgb]{0.769,1.000,0.769} 91.7 & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \cellcolor[rgb]{0.783,1.000,0.783} 80.5 & \cellcolor[rgb]{0.782,1.000,0.782} 76.5 \\
+ &  & German & \cellcolor[rgb]{0.748,1.000,0.748} 95.6 & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \na & \cellcolor[rgb]{0.782,1.000,0.782} 76.5 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \cellcolor[rgb]{0.770,1.000,0.770} 82.3 & \cellcolor[rgb]{0.782,1.000,0.782} 76.5 \\
+\addlinespace[2pt]
+\multirow{3}{*}{Gemma-2-9B} & \multirow{3}{*}{9B} & Dutch & \cellcolor[rgb]{0.772,1.000,0.772} 91.2 & \cellcolor[rgb]{0.734,1.000,0.734} 98.8 & \cellcolor[rgb]{0.756,1.000,0.756} 84.4 & \cellcolor[rgb]{0.775,1.000,0.775} 77.3 \\
+ &  & German & \cellcolor[rgb]{0.743,1.000,0.743} 96.4 & \cellcolor[rgb]{0.734,1.000,0.734} 98.8 & \na & \cellcolor[rgb]{0.775,1.000,0.775} 77.3 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.734,1.000,0.734} 98.8 & \cellcolor[rgb]{0.766,1.000,0.766} 82.9 & \cellcolor[rgb]{0.775,1.000,0.775} 77.3 \\
+\addlinespace[2pt]
+\multirow{3}{*}{Gemma-2-27B} & \multirow{3}{*}{27B} & Dutch & \cellcolor[rgb]{0.842,1.000,0.842} 78.6 & \cellcolor[rgb]{0.822,1.000,0.822} 82.6 & \cellcolor[rgb]{0.829,1.000,0.829} 74.0 & \cellcolor[rgb]{0.830,1.000,0.830} 70.7 \\
+ &  & German & \cellcolor[rgb]{0.828,1.000,0.828} 81.1 & \cellcolor[rgb]{0.822,1.000,0.822} 82.6 & \na & \cellcolor[rgb]{0.830,1.000,0.830} 70.7 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.822,1.000,0.822} 82.6 & \cellcolor[rgb]{0.847,1.000,0.847} 71.5 & \cellcolor[rgb]{0.830,1.000,0.830} 70.7 \\
+\addlinespace[2pt]
+\multirow{3}{*}{Qwen3-0.6B} & \multirow{3}{*}{0.6B} & Dutch & \cellcolor[rgb]{0.826,1.000,0.826} 81.5 & \cellcolor[rgb]{0.744,1.000,0.744} 97.0 & \cellcolor[rgb]{0.846,1.000,0.846} 71.7 & \cellcolor[rgb]{0.740,1.000,0.740} 81.6 \\
+ &  & German & \cellcolor[rgb]{0.764,1.000,0.764} 92.6 & \cellcolor[rgb]{0.744,1.000,0.744} 97.0 & \na & \cellcolor[rgb]{0.740,1.000,0.740} 81.6 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.744,1.000,0.744} 97.0 & \cellcolor[rgb]{0.773,1.000,0.773} 82.0 & \cellcolor[rgb]{0.740,1.000,0.740} 81.6 \\
+\addlinespace[2pt]
+\multirow{3}{*}{Qwen3-4B} & \multirow{3}{*}{4B} & Dutch & \cellcolor[rgb]{0.757,1.000,0.757} 93.9 & \cellcolor[rgb]{0.730,1.000,0.730} 99.5 & \cellcolor[rgb]{0.768,1.000,0.768} 82.6 & \cellcolor[rgb]{0.730,1.000,0.730} 82.8 \\
+ &  & German & \cellcolor[rgb]{0.739,1.000,0.739} 97.2 & \cellcolor[rgb]{0.730,1.000,0.730} 99.5 & \na & \cellcolor[rgb]{0.730,1.000,0.730} 82.8 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.730,1.000,0.730} 99.5 & \cellcolor[rgb]{0.745,1.000,0.745} 85.9 & \cellcolor[rgb]{0.730,1.000,0.730} 82.8 \\
+\addlinespace[2pt]
+\multirow{3}{*}{Qwen3-8B} & \multirow{3}{*}{8B} & Dutch & \cellcolor[rgb]{0.753,1.000,0.753} 94.6 & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \cellcolor[rgb]{0.772,1.000,0.772} 82.1 & \cellcolor[rgb]{0.732,1.000,0.732} 82.5 \\
+ &  & German & \cellcolor[rgb]{0.732,1.000,0.732} 98.5 & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \na & \cellcolor[rgb]{0.732,1.000,0.732} 82.5 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.734,1.000,0.734} 98.7 & \cellcolor[rgb]{0.745,1.000,0.745} 85.9 & \cellcolor[rgb]{0.732,1.000,0.732} 82.5 \\
+\addlinespace[2pt]
+\multirow{3}{*}{Llama-3.2-1B} & \multirow{3}{*}{1B} & Dutch & \cellcolor[rgb]{0.774,1.000,0.774} 90.8 & \cellcolor[rgb]{0.733,1.000,0.733} 99.0 & \cellcolor[rgb]{0.815,1.000,0.815} 76.0 & \cellcolor[rgb]{0.738,1.000,0.738} 81.8 \\
+ &  & German & \cellcolor[rgb]{0.745,1.000,0.745} 96.1 & \cellcolor[rgb]{0.733,1.000,0.733} 99.0 & \na & \cellcolor[rgb]{0.738,1.000,0.738} 81.8 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.733,1.000,0.733} 99.0 & \cellcolor[rgb]{0.766,1.000,0.766} 82.9 & \cellcolor[rgb]{0.738,1.000,0.738} 81.8 \\
+\addlinespace[2pt]
+\multirow{3}{*}{Llama-3.1-8B} & \multirow{3}{*}{8B} & Dutch & \cellcolor[rgb]{0.745,1.000,0.745} 96.1 & \cellcolor[rgb]{0.732,1.000,0.732} 99.2 & \cellcolor[rgb]{0.751,1.000,0.751} 85.1 & \cellcolor[rgb]{0.743,1.000,0.743} 81.2 \\
+ &  & German & \cellcolor[rgb]{0.734,1.000,0.734} 98.0 & \cellcolor[rgb]{0.732,1.000,0.732} 99.2 & \na & \cellcolor[rgb]{0.743,1.000,0.743} 81.2 \\
+ &  & Chinese & \na & \cellcolor[rgb]{0.732,1.000,0.732} 99.2 & \cellcolor[rgb]{0.755,1.000,0.755} 84.5 & \cellcolor[rgb]{0.743,1.000,0.743} 81.2 \\
+\bottomrule
+\end{tabular}
+\caption{Frontier multilingual-LLM baselines from the MultiBLiMP Pareto (Fig.~\ref{fig:multiblimp_pareto}). \emph{Params} is the parameter count; \emph{Cohort} is the evaluation language. Shading on the same fixed scale as Table~\ref{tab:beetle_main}. \na: not applicable for this cohort.}
+\label{tab:baselines}
+\end{table}
+
+

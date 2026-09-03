@@ -1,0 +1,181 @@
+\begin{table*}[t]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lll cccc}
+\toprule
+& & & \multicolumn{4}{c}{\textbf{BLiSS (matched-L1 cohort)}} \\
+\cmidrule(lr){4-7}
+\textbf{Model (L1--L2)} & \textbf{Data} & \textbf{Curriculum} & \textbf{RP@0} & \textbf{RP@$\tau$} & \textbf{NGS} & \textbf{CPS} \\
+\midrule
+German & Human-scale & Mono & 51.0 & 38.3 & 51.3 & 29.5 \\
+deu--eng & Human-scale & B1 balanced & 57.2 & 48.2 & 55.5 & 46.8 \\
+deu--eng & Human-scale & B2 simult. & 54.8 & 44.5 & 54.9 & 35.1 \\
+deu--eng & Human-scale & B3 sequential & 55.5 & 47.0 & 55.5 & 36.7 \\
+deu--eng & Human-scale & B4 classroom & 54.8 & 44.0 & 54.7 & 39.3 \\
+deu--eng & Human-scale & B5 late & 55.2 & 44.9 & 54.6 & 35.4 \\
+Dutch & Human-scale & Mono & 55.3 & 44.6 & 54.6 & 32.3 \\
+nld--eng & Human-scale & B1 balanced & 56.6 & 48.9 & 55.2 & 48.4 \\
+nld--eng {\scriptsize\textit{episodic}} & Human-scale & B1 balanced & 57.0 & 48.9 & 55.6 & 48.6 \\
+nld--eng & Human-scale & B2 simult. & 57.5 & 50.1 & 57.4 & 38.6 \\
+nld--eng {\scriptsize\textit{seed13}} & Human-scale & B2 simult. & 56.9 & 48.1 & 55.8 & 45.5 \\
+nld--eng {\scriptsize\textit{seed42}} & Human-scale & B2 simult. & 54.5 & 46.7 & 54.7 & 47.8 \\
+nld--eng {\scriptsize\textit{seed97}} & Human-scale & B2 simult. & 56.1 & 46.7 & 54.4 & 47.3 \\
+nld--eng & Human-scale & B3 sequential & 57.7 & 49.1 & 57.0 & 40.3 \\
+nld--eng  & Human-scale & B3 sequential & 55.1 & 45.1 & 55.3 & 42.8 \\
+nld--eng {\scriptsize\textit{seed13}} & Human-scale & B3 sequential & 56.4 & 47.1 & 55.3 & 44.0 \\
+nld--eng {\scriptsize\textit{seed42}} & Human-scale & B3 sequential & 57.0 & 47.7 & 55.1 & 47.1 \\
+nld--eng {\scriptsize\textit{seed97}} & Human-scale & B3 sequential & 58.1 & 50.4 & 58.0 & 41.1 \\
+nld--eng & Human-scale & B3 (0--100) & 56.2 & 48.2 & 56.0 & 40.6 \\
+nld--eng & Human-scale & B4 classroom & 57.3 & 47.6 & 55.8 & 42.3 \\
+nld--eng & Human-scale & B5 late & 57.1 & 48.6 & 56.7 & 39.2 \\
+Chinese & Human-scale & Mono & 45.4 & 22.0 & 46.5 & 25.5 \\
+zho--eng & Human-scale & B1 balanced & \pend & \pend & \pend & \pend \\
+zho--eng & Human-scale & B2 simult. & 63.8 & 54.6 & 60.8 & 36.5 \\
+zho--eng & Human-scale & B3 sequential & 64.0 & 53.3 & 61.5 & 36.4 \\
+zho--eng & Human-scale & B4 classroom & \pend & \pend & \pend & \pend \\
+zho--eng & Human-scale & B5 late & 64.3 & 55.0 & 61.9 & 36.4 \\
+\midrule
+deu--eng & 100M tok & B1 balanced & 54.6 & 45.8 & 54.4 & 50.1 \\
+deu--eng & 100M tok & B2 simult. & 55.6 & 47.1 & 56.2 & 40.1 \\
+deu--eng & 100M tok & B3 sequential & 55.6 & 45.3 & 55.0 & 38.2 \\
+deu--eng  & 100M tok & B4 classroom & 54.9 & 45.5 & 55.7 & 44.0 \\
+deu--eng  & 100M tok & B5 late & 56.1 & 47.1 & 55.3 & 48.1 \\
+hin--eng & 100M tok & B1 balanced & 54.8 & 44.3 & 54.3 & 53.8 \\
+hin--eng & 100M tok & B2 simult. & 52.4 & 40.7 & 53.6 & 42.5 \\
+hin--eng & 100M tok & B3 sequential & 52.1 & 41.0 & 53.6 & 44.2 \\
+hin--eng  & 100M tok & B4 classroom & 54.3 & 41.5 & 53.9 & 46.7 \\
+hin--eng  & 100M tok & B5 late & 54.5 & 43.7 & 53.7 & 53.0 \\
+ita--eng & 100M tok & B1 balanced & 62.6 & 51.3 & 59.7 & 49.3 \\
+ita--eng & 100M tok & B2 simult. & 61.8 & 49.4 & 60.8 & 38.1 \\
+ita--eng & 100M tok & B3 sequential & 62.1 & 48.5 & 59.8 & 38.3 \\
+ita--eng  & 100M tok & B4 classroom & 62.6 & 50.3 & 60.7 & 43.5 \\
+ita--eng  & 100M tok & B5 late & 61.5 & 50.6 & 59.6 & 47.5 \\
+nld--eng & 100M tok & B1 balanced & 57.1 & 50.1 & 57.2 & 48.9 \\
+nld--eng & 100M tok & B2 simult. & 59.5 & 50.2 & 58.3 & 40.7 \\
+nld--eng & 100M tok & B3 sequential & 59.3 & 50.4 & 57.3 & 40.3 \\
+nld--eng {\scriptsize\textit{alibi}} & 100M tok & B3 sequential & 57.0 & 49.5 & 55.6 & 50.4 \\
+nld--eng {\scriptsize\textit{ewc}} & 100M tok & B3 sequential & 56.6 & 48.6 & 55.9 & 50.1 \\
+nld--eng {\scriptsize\textit{lamol}} & 100M tok & B3 sequential & 54.3 & 48.8 & 55.4 & 50.9 \\
+nld--eng {\scriptsize\textit{pre-pretrain}} & 100M tok & B3 sequential & 57.2 & 50.1 & 56.0 & 48.9 \\
+nld--eng & 100M tok & B3 sequential & 55.5 & 47.9 & 55.5 & 50.6 \\
+nld--eng & 100M tok & B4 classroom & 57.9 & 49.8 & 57.2 & 41.5 \\
+nld--eng  & 100M tok & B5 late & 57.1 & 49.0 & 56.9 & 48.8 \\
+pol--eng & 100M tok & B1 balanced & 55.0 & 47.1 & 54.3 & 54.6 \\
+pol--eng & 100M tok & B2 simult. & 52.2 & 43.9 & 53.1 & 45.1 \\
+pol--eng & 100M tok & B3 sequential & 52.1 & 43.9 & 52.8 & 46.4 \\
+tur--eng & 100M tok & B1 balanced & 57.5 & 50.2 & 55.7 & 50.6 \\
+tur--eng & 100M tok & B2 simult. & 53.2 & 44.9 & 53.3 & 39.8 \\
+tur--eng & 100M tok & B3 sequential & 52.8 & 44.8 & 53.2 & 39.2 \\
+tur--eng  & 100M tok & B4 classroom & 56.3 & 48.3 & 55.6 & 43.0 \\
+tur--eng  & 100M tok & B5 late & 56.1 & 49.1 & 55.4 & 48.7 \\
+zho--eng & 100M tok & B1 balanced & \pend & \pend & \pend & \pend \\
+zho--eng  & 100M tok & B1 balanced & 69.3 & 58.7 & 65.1 & 48.1 \\
+zho--eng & 100M tok & B2 simult. & \pend & \pend & \pend & \pend \\
+zho--eng  & 100M tok & B2 simult. & 68.9 & 59.5 & 65.1 & 48.8 \\
+zho--eng & 100M tok & B3 sequential & \pend & \pend & \pend & \pend \\
+zho--eng  & 100M tok & B3 sequential & 69.0 & 60.7 & 65.0 & 48.9 \\
+zho--eng & 100M tok & B4 classroom & \pend & \pend & \pend & \pend \\
+zho--eng  & 100M tok & B4 classroom & 66.5 & 56.5 & 63.8 & 41.1 \\
+zho--eng & 100M tok & B5 late & \pend & \pend & \pend & \pend \\
+zho--eng  & 100M tok & B5 late & 67.8 & 59.9 & 64.2 & 48.4 \\
+\midrule
+deu--eng & 2B tok & B1 balanced & 53.5 & 43.5 & 53.4 & 48.7 \\
+deu--eng & 2B tok & B2 simult. & 55.5 & 46.1 & 55.0 & 47.0 \\
+deu--eng & 2B tok & B3 sequential & 53.5 & 45.8 & 53.7 & 49.9 \\
+deu--eng & 2B tok & B4 classroom & 55.7 & 45.2 & 55.6 & 44.0 \\
+deu--eng & 2B tok & B5 late & 56.0 & 44.7 & 55.2 & 48.0 \\
+hin--eng  & 2B tok & B1 balanced & 53.6 & 41.9 & 53.3 & 50.9 \\
+hin--eng & 2B tok & B2 simult. & 53.0 & 40.7 & 53.0 & 41.8 \\
+hin--eng  & 2B tok & B2 simult. & 55.4 & 43.0 & 53.8 & 51.6 \\
+hin--eng  & 2B tok & B3 sequential & 55.0 & 43.6 & 54.2 & 52.1 \\
+ita--eng  & 2B tok & B1 balanced & 60.8 & 49.9 & 59.8 & 46.0 \\
+ita--eng  & 2B tok & B2 simult. & 61.8 & 49.0 & 59.4 & 47.7 \\
+ita--eng  & 2B tok & B3 sequential & 61.2 & 50.3 & 58.8 & 48.1 \\
+nld--eng & 2B tok & B1 balanced & 58.5 & 50.6 & 57.0 & 47.7 \\
+nld--eng & 2B tok & B2 simult. & 57.4 & 50.2 & 57.7 & 39.6 \\
+nld--eng & 2B tok & B3 sequential & 58.1 & 49.1 & 57.8 & 37.3 \\
+nld--eng & 2B tok & B4 classroom & 58.9 & 49.9 & 57.7 & 39.2 \\
+nld--eng & 2B tok & B5 late & 58.7 & 50.4 & 57.6 & 36.5 \\
+tur--eng  & 2B tok & B1 balanced & 56.3 & 49.0 & 56.0 & 47.2 \\
+tur--eng  & 2B tok & B2 simult. & 56.8 & 48.7 & 55.4 & 48.2 \\
+tur--eng  & 2B tok & B3 sequential & 55.8 & 47.7 & 55.3 & 50.1 \\
+zho--eng & 2B tok & B1 balanced & 68.5 & 60.1 & 64.6 & 49.5 \\
+zho--eng & 2B tok & B2 simult. & 68.4 & 59.0 & 64.1 & 48.5 \\
+zho--eng & 2B tok & B3 sequential & 69.1 & 60.2 & 64.7 & 49.0 \\
+zho--eng & 2B tok & B4 classroom & 64.8 & 56.1 & 63.4 & 41.4 \\
+zho--eng & 2B tok & B5 late & 67.6 & 57.9 & 64.5 & 45.4 \\
+\midrule
+deu--eng & 24B tok & B1 balanced & 53.1 & 46.8 & 53.0 & 52.0 \\
+deu--eng & 24B tok & B2 simult. & 54.9 & 46.3 & 55.6 & 46.1 \\
+eng--deu & 24B tok & B1 balanced & 54.6 & 46.3 & 52.9 & 51.8 \\
+eng--nld & 24B tok & B1 balanced & 56.8 & 50.2 & 54.7 & 54.7 \\
+eng--nld & 24B tok & B2 simult. & 56.6 & 48.6 & 54.1 & 54.7 \\
+eng--nld & 24B tok & B3 sequential & 54.6 & 47.8 & 53.4 & 55.8 \\
+nld--eng & 24B tok & B1 balanced & 56.6 & 48.6 & 54.9 & 56.8 \\
+nld--eng & 24B tok & B2 simult. & 60.0 & 51.9 & 57.9 & 51.5 \\
+nld--eng & 24B tok & B3 sequential & 62.1 & 52.2 & 58.1 & 50.1 \\
+\midrule
+deu--eng & 24B tok (FW2) & B3 sequential & 56.2 & 46.3 & 55.9 & 40.3 \\
+deu--eng {\scriptsize\textit{ewc}} & 24B tok (FW2) & B3 sequential & 53.0 & 46.2 & 52.1 & 55.2 \\
+deu--eng & 24B tok (FW2) & B4 classroom & 54.7 & 46.9 & 55.0 & 47.0 \\
+deu--eng & 24B tok (FW2) & B5 late & 58.3 & 47.6 & 56.7 & 45.8 \\
+zho--eng & 24B tok (FW2) & B1 balanced & 69.8 & 61.7 & 64.8 & 54.8 \\
+zho--eng & 24B tok (FW2) & B2 simult. & 70.2 & 62.4 & 64.8 & 54.6 \\
+zho--eng & 24B tok (FW2) & B3 sequential & 68.3 & 61.2 & 63.6 & 55.2 \\
+zho--eng {\scriptsize\textit{ewc}} & 24B tok (FW2) & B3 sequential & 69.8 & 61.3 & 64.2 & 56.1 \\
+zho--eng & 24B tok (FW2) & B4 classroom & 69.0 & 62.1 & 64.7 & 51.9 \\
+zho--eng & 24B tok (FW2) & B5 late & 70.7 & 63.3 & 65.0 & 53.8 \\
+\midrule
+\midrule
+\multicolumn{7}{l}{\textit{Frontier multilingual LLM baselines}\quad(\textit{Data}\,$=$\,params; \textit{Curriculum}\,$=$\,L1 cohort)} \\
+\midrule
+BLOOM-560M & 0.56B & Dutch & 59.0 & 52.7 & 55.4 & 55.8 \\
+ &  & German & 58.9 & 50.7 & 54.9 & 52.3 \\
+ &  & Chinese & 70.2 & 62.1 & 65.0 & 56.1 \\
+BLOOM-1.1B & 1.1B & Dutch & 59.7 & 51.6 & 55.8 & 56.6 \\
+ &  & German & 57.6 & 49.4 & 54.7 & 53.1 \\
+ &  & Chinese & 70.3 & 63.6 & 65.7 & 56.6 \\
+BLOOM-1.7B & 1.7B & Dutch & 59.0 & 51.3 & 55.9 & 56.6 \\
+ &  & German & 57.3 & 50.2 & 54.7 & 55.7 \\
+ &  & Chinese & 70.5 & 63.7 & 65.7 & 58.4 \\
+BLOOM-7.1B & 7.1B & Dutch & 63.1 & 57.2 & 58.3 & 58.8 \\
+ &  & German & 59.3 & 50.0 & 55.7 & 56.7 \\
+ &  & Chinese & 73.2 & 65.6 & 67.4 & 57.5 \\
+XGLM-4.5B & 4.5B & Dutch & 62.0 & 54.0 & 57.5 & 63.2 \\
+ &  & German & 59.3 & 50.6 & 55.3 & 58.1 \\
+ &  & Chinese & 73.7 & 65.7 & 67.3 & 59.8 \\
+EuroLLM-9B & 9B & Dutch & 64.4 & 56.3 & 57.5 & 61.6 \\
+ &  & German & 60.3 & 50.8 & 55.1 & 61.3 \\
+ &  & Chinese & 73.7 & 65.4 & 67.5 & 61.1 \\
+Gemma-3-270M & 0.27B & Dutch & 60.8 & 55.1 & 57.2 & 56.9 \\
+ &  & German & 57.2 & 51.9 & 55.3 & 53.6 \\
+ &  & Chinese & 72.0 & 66.5 & 66.7 & 56.1 \\
+Gemma-2-2B & 2B & Dutch & 64.7 & 57.4 & 58.1 & 56.1 \\
+ &  & German & 63.0 & 56.8 & 58.5 & 55.2 \\
+ &  & Chinese & 75.9 & 71.3 & 69.6 & 54.5 \\
+Gemma-2-9B & 9B & Dutch & 65.5 & 60.4 & 59.7 & 54.5 \\
+ &  & German & 66.0 & 60.4 & 60.0 & 55.4 \\
+ &  & Chinese & 75.3 & 71.4 & 70.4 & 55.2 \\
+Gemma-2-27B & 27B & Dutch & 69.0 & 61.3 & 63.0 & 55.7 \\
+ &  & German & 68.1 & 59.3 & 62.0 & 52.1 \\
+ &  & Chinese & 75.2 & 70.0 & 70.3 & 54.2 \\
+Qwen3-0.6B & 0.6B & Dutch & 59.5 & 54.1 & 55.7 & 60.3 \\
+ &  & German & 57.8 & 49.9 & 55.4 & 57.4 \\
+ &  & Chinese & 70.9 & 62.2 & 65.4 & 60.9 \\
+Qwen3-4B & 4B & Dutch & 63.2 & 55.7 & 58.9 & 61.2 \\
+ &  & German & 60.3 & 53.4 & 55.7 & 59.4 \\
+ &  & Chinese & 72.8 & 66.1 & 67.3 & 56.3 \\
+Qwen3-8B & 8B & Dutch & 65.4 & 57.0 & 59.5 & 62.0 \\
+ &  & German & 59.9 & 52.6 & 56.3 & 57.6 \\
+ &  & Chinese & 75.2 & 67.7 & 68.9 & 57.7 \\
+Llama-3.2-1B & 1B & Dutch & 63.5 & 54.9 & 57.9 & 60.8 \\
+ &  & German & 61.2 & 53.5 & 56.5 & 59.2 \\
+ &  & Chinese & 73.9 & 66.1 & 67.7 & 60.1 \\
+Llama-3.1-8B & 8B & Dutch & 67.0 & 58.7 & 60.7 & 60.6 \\
+ &  & German & 62.4 & 54.8 & 58.0 & 57.3 \\
+ &  & Chinese & 75.8 & 68.7 & 69.2 & 59.3 \\
+\bottomrule
+\end{tabular}
+\caption{BLiSS learner-minimal-pair scores (\%, 0--100) for the final checkpoint of each Beetle model, on the \emph{matched-L1 cohort} -- the BLiSS learner-L1 split equal to the model's non-English training language -- plus the frontier multilingual-LLM baselines from the BLiSS Pareto (Fig.~\ref{fig:bliss_pareto}), scored per L1 cohort. For baseline rows, the \emph{Data} column gives the parameter count and \emph{Curriculum} the L1 cohort. Metrics are pooled item-weighted across CEFR levels: RP@0 / RP@$\tau$ (random-over-human preference, with and without a margin), NGS (normalised gap score), CPS (correct-preferred sanity check). \pend: evaluation pending.}
+\label{tab:bliss_matched}
+\end{table*}

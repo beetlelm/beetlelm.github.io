@@ -1,0 +1,3317 @@
+@inproceedings{satvaty-etal-2025-memorization,
+    title = "Memorization is Language-Sensitive: Analyzing Memorization and Inference Risks of {LLM}s in a Multilingual Setting",
+    author = "Satvaty, Ali  and
+      Visman, Anna  and
+      Seidel, Dan  and
+      Verberne, Suzan  and
+      Turkmen, Fatih",
+    editor = "Jia, Robin  and
+      Wallace, Eric  and
+      Huang, Yangsibo  and
+      Pimentel, Tiago  and
+      Maini, Pratyush  and
+      Dankers, Verna  and
+      Wei, Johnny  and
+      Lesci, Pietro",
+    booktitle = "Proceedings of the First Workshop on Large Language Model Memorization (L2M2)",
+    month = aug,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.l2m2-1.9/",
+    doi = "10.18653/v1/2025.l2m2-1.9",
+    pages = "106--126",
+    ISBN = "979-8-89176-278-7",
+    abstract = "Large Language Models (LLMs) are known to memorize and reproduce parts of their training data during inference, raising significant privacy and safety concerns. While this phenomenon has been extensively studied to explain its contributing factors and countermeasures, its implications in multilingual contexts remain largely unexplored.In this work, we investigate cross-lingual differences in memorization behaviors of multilingual LLMs.Specifically, we examine both discoverable memorization and susceptibility to perplexity ratio attacks using Pythia models of varying sizes, evaluated on two parallel multilingual datasets.Our results reveal that lower-resource languages consistently exhibit higher vulnerability to perplexity ratio attacks, indicating greater privacy risks. In contrast, patterns of discoverable memorization appear to be influenced more strongly by the model{'}s pretraining or fine-tuning phases than by language resource level alone.These findings highlight the nuanced interplay between language resource availability and memorization in multilingual LLMs, providing insights toward developing safer and more privacy-preserving language models across diverse linguistic settings."
+}
+
+
+@inproceedings{luo-etal-2025-shared,
+    title = "Shared Path: Unraveling Memorization in Multilingual {LLM}s through Language Similarities",
+    author = "Luo, Xiaoyu  and
+      Chen, Yiyi  and
+      Bjerva, Johannes  and
+      Li, Qiongxiu",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.978/",
+    doi = "10.18653/v1/2025.emnlp-main.978",
+    pages = "19372--19388",
+    ISBN = "979-8-89176-332-6",
+    abstract = "We present the first comprehensive study of Memorization in Multilingual Large Language Models (MLLMs), analyzing 95 languages using models across diverse model scales, architectures, and memorization definitions. As MLLMs are increasingly deployed, understanding their memorization behavior has become critical. Yet prior work has focused primarily on monolingual models, leaving multilingual memorization underexplored, despite the inherently long-tailed nature of training corpora. We find that the prevailing assumption, that memorization is highly correlated with training data availability, fails to fully explain memorization patterns in MLLMs. We hypothesize that treating languages in isolation {---} ignoring their similarities {---} obscures the true patterns of memorization. To address this, we propose a novel graph-based correlation metric that incorporates language similarity to analyze cross-lingual memorization. Our analysis reveals that among similar languages, those with fewer training tokens tend to exhibit higher memorization, a trend that only emerges when cross-lingual relationships are explicitly modeled. These findings underscore the importance of a language-aware perspective in evaluating and mitigating memorization vulnerabilities in MLLMs. This also constitutes empirical evidence that language similarity both explains Memorization in MLLMs and underpins Cross-lingual Transferability, with broad implications for multilingual NLP."
+}
+
+@inproceedings{srivastava-etal-2025-owl,
+    title = "{OWL}: Probing Cross-Lingual Recall of Memorized Texts via World Literature",
+    author = "Srivastava, Alisha  and
+      Korukluoglu, Emir Kaan  and
+      Le, Minh Nhat  and
+      Tran, Duyen  and
+      Pham, Chau Minh  and
+      Karpinska, Marzena  and
+      Iyyer, Mohit",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.1314/",
+    doi = "10.18653/v1/2025.emnlp-main.1314",
+    pages = "25868--25895",
+    ISBN = "979-8-89176-332-6",
+    abstract = "Large language models (LLMs) are known to memorize and recall English text from their pretraining data. However, the extent to which this ability generalizes to non-English languages or transfers across languages remains unclear. This paper investigates multilingual and cross-lingual memorization in LLMs, probing if memorized content in one language (e.g., English) can be recalled when presented in translation. To do so, we introduce , a dataset of **31.5K** aligned excerpts from 20 books in ten languages, including English originals, official translations (Vietnamese, Spanish, Turkish), and new translations in six low-resource languages (Sesotho, Yoruba, Maithili, Malagasy, Setswana, Tahitian). We evaluate memorization across model families and sizes through three tasks: (1) **direct probing**, which asks the model to identify a book{'}s title and author; (2) **name cloze**, which requires predicting masked character names; and (3) **prefix probing**, which involves generating continuations. We find that some LLMs consistently recall content across languages, even for texts without existing translation. GPT-4o, for example, identifies authors and titles 69.4{\%} of the time and masked entities 6.3{\%} of the time in newly translated excerpts. While perturbations (e.g., masking characters, shuffling words) reduce accuracy, the model{'}s performance remains above chance level. Our results highlight the extent of cross-lingual memorization and provide insights on the differences between the models."
+}
+
+@article{gao2025can,
+  title={Can LLMs Simulate L2-English Dialogue? An Information-Theoretic Analysis of L1-Dependent Biases},
+  author={Gao, Rena and Wu, Xuetong and Kuribayashi, Tatsuki and Ye, Mingrui and Qi, Siya and Roever, Carsten and Liu, Yuanxing and Yuan, Zheng and Lau, Jey Han},
+  journal={arXiv preprint arXiv:2502.14507},
+  year={2025}
+}
+
+@article{knoeferle2025desirable,
+  title={How desirable is alignment between LLMs and linguistically diverse human users?},
+  author={Knoeferle, Pia and M{\"o}ller, Sebastian and Kolossa, Dorothea and Solopova, Veronika and Rehm, Georg},
+  journal={arXiv preprint arXiv:2502.12884},
+  year={2025}
+}
+
+
+@inproceedings{arase-etal-2022-cefr,
+    title = "{CEFR}-Based Sentence Difficulty Annotation and Assessment",
+    author = "Arase, Yuki  and
+      Uchida, Satoru  and
+      Kajiwara, Tomoyuki",
+    editor = "Goldberg, Yoav  and
+      Kozareva, Zornitsa  and
+      Zhang, Yue",
+    booktitle = "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2022",
+    address = "Abu Dhabi, United Arab Emirates",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.emnlp-main.416",
+    doi = "10.18653/v1/2022.emnlp-main.416",
+    pages = "6206--6219",
+    abstract = "Controllable text simplification is a crucial assistive technique for language learning and teaching. One of the primary factors hindering its advancement is the lack of a corpus annotated with sentence difficulty levels based on language ability descriptions. To address this problem, we created the CEFR-based Sentence Profile (CEFR-SP) corpus, containing 17k English sentences annotated with the levels based on the Common European Framework of Reference for Languages assigned by English-education professionals. In addition, we propose a sentence-level assessment model to handle unbalanced level distribution because the most basic and highly proficient sentences are naturally scarce. In the experiments in this study, our method achieved a macro-F1 score of 84.5{\%} in the level assessment, thus outperforming strong baselines employed in readability assessment.",
+}
+
+
+@inproceedings{behzad-etal-2024-leaf,
+    title = "{LEAF}: Language Learners{'} {E}nglish Essays and Feedback Corpus",
+    author = "Behzad, Shabnam  and
+      Kashefi, Omid  and
+      Somasundaran, Swapna",
+    editor = "Duh, Kevin  and
+      Gomez, Helena  and
+      Bethard, Steven",
+    booktitle = "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 2: Short Papers)",
+    month = jun,
+    year = "2024",
+    address = "Mexico City, Mexico",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.naacl-short.36",
+    doi = "10.18653/v1/2024.naacl-short.36",
+    pages = "433--442",
+    abstract = "This paper addresses the issue of automated feedback generation for English language learners by presenting a corpus of English essays and their corresponding feedback, called LEAF, collected from the {``}essayforum{''} website. The corpus comprises approximately 6K essay-feedback pairs, offering a diverse and valuable resource for developing personalized feedback generation systems that address the critical deficiencies within essays, spanning from rectifying grammatical errors to offering insights on argumentative aspects and organizational coherence. Using this corpus, we present and compare multiple feedback generation baselines. Our findings shed light on the challenges of providing personalized feedback and highlight the potential of the LEAF corpus in advancing automated essay evaluation.",
+}
+
+@article{chi-etal-2023-learning,
+    title = "Learning to Paraphrase Sentences to Different Complexity Levels",
+    author = "Chi, Alison  and
+      Chen, Li-Kuang  and
+      Chang, Yi-Chen  and
+      Lee, Shu-Hui  and
+      Chang, Jason S.",
+    journal = "Transactions of the Association for Computational Linguistics",
+    volume = "11",
+    year = "2023",
+    address = "Cambridge, MA",
+    publisher = "MIT Press",
+    url = "https://aclanthology.org/2023.tacl-1.76",
+    doi = "10.1162/tacl_a_00606",
+    pages = "1332--1354",
+    abstract = "While sentence simplification is an active research topic in NLP, its adjacent tasks of sentence complexification and same-level paraphrasing are not. To train models on all three tasks, we present two new unsupervised datasets. We compare these datasets, one labeled by a weak classifier and the other by a rule-based approach, with a single supervised dataset. Using these three datasets for training, we perform extensive experiments on both multitasking and prompting strategies. Compared to other systems trained on unsupervised parallel data, models trained on our weak classifier labeled dataset achieve state-of-the-art performance on the ASSET simplification benchmark. Our models also outperform previous work on sentence-level targeting. Finally, we establish how a handful of Large Language Models perform on these tasks under a zero-shot setting.",
+}
+
+
+@misc{barayan2024,
+      title={Analysing Zero-Shot Readability-Controlled Sentence Simplification}, 
+      author={Abdullah Barayan and Jose Camacho-Collados and Fernando Alva-Manchego},
+      year={2024},
+      eprint={2409.20246},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2409.20246}, 
+}
+
+@inproceedings{dahlmeier-etal-2013-building,
+    title = "Building a Large Annotated Corpus of Learner {E}nglish: The {NUS} Corpus of Learner {E}nglish",
+    author = "Dahlmeier, Daniel  and
+      Ng, Hwee Tou  and
+      Wu, Siew Mei",
+    editor = "Tetreault, Joel  and
+      Burstein, Jill  and
+      Leacock, Claudia",
+    booktitle = "Proceedings of the Eighth Workshop on Innovative Use of {NLP} for Building Educational Applications",
+    month = jun,
+    year = "2013",
+    address = "Atlanta, Georgia",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/W13-1703",
+    pages = "22--31",
+}
+
+
+
+@inproceedings{oba-etal-2023-second,
+    title = "Second Language Acquisition of Neural Language Models",
+    author = "Oba, Miyu  and
+      Kuribayashi, Tatsuki  and
+      Ouchi, Hiroki  and
+      Watanabe, Taro",
+    editor = "Rogers, Anna  and
+      Boyd-Graber, Jordan  and
+      Okazaki, Naoaki",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL 2023",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.findings-acl.856/",
+    doi = "10.18653/v1/2023.findings-acl.856",
+    pages = "13557--13572",
+    abstract = "With the success of neural language models (LMs), their language acquisition has gained much attention. This work sheds light on the second language (L2) acquisition of LMs, while previous work has typically explored their first language (L1) acquisition. Specifically, we trained bilingual LMs with a scenario similar to human L2 acquisition and analyzed their cross-lingual transfer from linguistic perspectives. Our exploratory experiments demonstrated that the L1 pretraining accelerated their linguistic generalization in L2, and language transfer configurations (e.g., the L1 choice, and presence of parallel texts) substantially affected their generalizations. These clarify their (non-)human-like L2 acquisition in particular aspects."
+}
+
+@article{edman2024babylms,
+  title={Are BabyLMs Second Language Learners?},
+  author={Edman, Lukas and Bylinina, Lisa and Ghorbanpour, Faeze and Fraser, Alexander},
+  journal={arXiv preprint arXiv:2410.21254},
+  year={2024}
+}
+
+@article{shen2024bambino,
+  title={BAMBINO-LM:(Bilingual-) Human-Inspired Continual Pretraining of BabyLM},
+  author={Shen, Zhewen and Joshi, Aditya and Chen, Ruey-Cheng},
+  journal={arXiv preprint arXiv:2406.11418},
+  year={2024}
+}
+
+@inproceedings{liumaximizing,
+  title={Maximizing Intermediate Checkpoint Value in LLM Pretraining with Bayesian Optimization},
+  author={Liu, Deyuan and Wang, Zecheng and Wang, Bingning and Chen, Weipeng and Li, Chunshan and Tu, Zhiying and Chu, Dianhui and Sui, Dianbo},
+  booktitle={Forty-second International Conference on Machine Learning},
+  year={2025}
+}
+
+@article{hu2025unveiling,
+  title={Unveiling the Learning Mind of Language Models: A Cognitive Framework and Empirical Study},
+  author={Hu, Zhengyu and Lian, Jianxun and Xiao, Zheyuan and Zhang, Seraphina and Wang, Tianfu and Yuan, Nicholas Jing and Xie, Xing and Xiong, Hui},
+  journal={arXiv preprint arXiv:2506.13464},
+  year={2025}
+}
+
+@article{zhang2025path,
+  title={The Path of Self-Evolving Large Language Models: Achieving Data-Efficient Learning via Intrinsic Feedback},
+  author={Zhang, Hangfan and Xu, Siyuan and Guo, Zhimeng and Zhu, Huaisheng and Liu, Shicheng and Wang, Xinrun and Zhang, Qiaosheng and Chen, Yang and Ye, Peng and Bai, Lei and others},
+  journal={arXiv preprint arXiv:2510.02752},
+  year={2025}
+}
+
+@article{zweiger2025self,
+  title={Self-Adapting Language Models},
+  author={Zweiger, Adam and Pari, Jyothish and Guo, Han and Aky{\"u}rek, Ekin and Kim, Yoon and Agrawal, Pulkit},
+  journal={arXifv preprint arXiv:2506.10943},
+  year={2025}
+}
+
+
+@inproceedings{li-etal-2025-impact,
+    title = "The Impact of Language Mixing on Bilingual {LLM} Reasoning",
+    author = "Li, Yihao  and
+      Xin, Jiayi  and
+      Miao, Miranda Muqing  and
+      Long, Qi  and
+      Ungar, Lyle",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.1654/",
+    doi = "10.18653/v1/2025.emnlp-main.1654",
+    pages = "32519--32536",
+    ISBN = "979-8-89176-332-6",
+    abstract = "Proficient multilingual speakers often intentionally switch languages in the middle of a conversation. Similarly, recent reasoning-focused bilingual large language models (LLMs) with strong capabilities in both languages exhibit **language mixing**{---}alternating languages within their chain of thought. Discouraging this behavior in DeepSeek-R1 was found to degrade accuracy, suggesting that language mixing may benefit reasoning. In this work, we study language switching in Chinese-English bilingual reasoning models. We identify reinforcement learning with verifiable rewards (RLVR) as the critical training stage that leads to language mixing. We show that language mixing can enhance reasoning: enforcing monolingual decoding reduces accuracy by 5.6 percentage points on MATH500. Additionally, a lightweight probe can be trained to predict whether a potential language switch would benefit or harm reasoning, and when used to guide decoding, increases accuracy by 2.92 percentage points. Our findings suggest that language mixing is not merely a byproduct of multilingual training, but is a *strategic reasoning behavior*."
+}
+
+@inproceedings{yoo-etal-2025-code-switching,
+    title = "Code-Switching Curriculum Learning for Multilingual Transfer in {LLM}s",
+    author = "Yoo, Haneul  and
+      Park, Cheonbok  and
+      Yun, Sangdoo  and
+      Oh, Alice  and
+      Lee, Hwaran",
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL 2025",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.findings-acl.407/",
+    doi = "10.18653/v1/2025.findings-acl.407",
+    pages = "7816--7836",
+    ISBN = "979-8-89176-256-5",
+    abstract = "Large language models (LLMs) now exhibit near human-level performance in various tasks, but their performance drops drastically after a handful of high-resource languages due to the imbalance in pre-training data. Inspired by the human process of second language acquisition, particularly code-switching{---}the practice of language alternation in a conversation{---}we propose code-switching curriculum learning (CSCL) to enhance cross-lingual transfer for LLMs. CSCL mimics the stages of human language learning by progressively training models with a curriculum consisting of 1) token-level code-switching, 2) sentence-level code-switching, and 3) monolingual corpora. Using Qwen 2 as our underlying model, we demonstrate the efficacy of the CSCL in improving language transfer to Korean, achieving significant performance gains compared to monolingual continual pre-training methods. Ablation studies reveal that both token- and sentence-level code-switching significantly enhance cross-lingual transfer and that curriculum learning amplifies these effects. We also extend our findings into various languages, including Japanese (high-resource) and Indonesian (low-resource), and using two additional models (Gemma 2 and Phi 3.5). We further show that CSCL mitigates spurious correlations between language resources and safety alignment, presenting a robust, efficient framework for more equitable language transfer in LLMs. We observe that CSCL is effective for low-resource settings where high-quality, monolingual corpora for language transfer are hardly available."
+}
+
+
+@inproceedings{inaba-etal-2025-bilingual,
+    title = "How a Bilingual {LM} Becomes Bilingual: Tracing Internal Representations with Sparse Autoencoders",
+    author = "Inaba, Tatsuro  and
+      Kamoda, Go  and
+      Inui, Kentaro  and
+      Isonuma, Masaru  and
+      Miyao, Yusuke  and
+      Oseki, Yohei  and
+      Takagi, Yu  and
+      Heinzerling, Benjamin",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2025",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.findings-emnlp.725/",
+    doi = "10.18653/v1/2025.findings-emnlp.725",
+    pages = "13458--13470",
+    ISBN = "979-8-89176-335-7",
+    abstract = "This study explores how bilingual language models develop complex internal representations.We employ sparse autoencoders to analyze internal representations of bilingual language models with a focus on the effects of training steps, layers, and model sizes.Our analysis shows that language models first learn languages separately, and then gradually form bilingual alignments, particularly in the mid layers. We also found that this bilingual tendency is stronger in larger models.Building on these findings, we demonstrate the critical role of bilingual representations in model performance by employing a novel method that integrates decomposed representations from a fully trained model into a mid-training model.Our results provide insights into how language models acquire bilingual capabilities."
+}
+
+
+@inproceedings{zhou-matusevych-2025-curse,
+    title = "Curse of bilinguality: Evaluating monolingual and bilingual language models on {C}hinese linguistic benchmarks",
+    author = "Zhou, Yuwen  and
+      Matusevych, Yevgen",
+    editor = "Arviv, Ofir  and
+      Clinciu, Miruna  and
+      Dhole, Kaustubh  and
+      Dror, Rotem  and
+      Gehrmann, Sebastian  and
+      Habba, Eliya  and
+      Itzhak, Itay  and
+      Mille, Simon  and
+      Perlitz, Yotam  and
+      Santus, Enrico  and
+      Sedoc, Jo{\~a}o  and
+      Shmueli Scheuer, Michal  and
+      Stanovsky, Gabriel  and
+      Tafjord, Oyvind",
+    booktitle = "Proceedings of the Fourth Workshop on Generation, Evaluation and Metrics (GEM{\texttwosuperior})",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria and virtual meeting",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.gem-1.58/",
+    pages = "622--630",
+    ISBN = "979-8-89176-261-9",
+    abstract = "We investigate cross-lingual transfer effects in large language models (LLMs) trained on two high-resource languages, English and Chinese. Four monolingual Chinese and four bilingual English{--}Chinese models are evaluated on two Chinese linguistic benchmarks. The monolingual models consistently outperform the bilingual ones on 12 out of 55 tasks, while the reverse is true for only 4 tasks, highlighting the prevalence of negative (rather than positive) transfer from English to Chinese. Additionally, we carry out a feature attribution analysis in a monolingual and a bilingual model, showing that the differences in their performance may be explained by more predictable attribution patterns in the monolingual model. Our findings have implications for the ongoing effort of training bilingual LLMs."
+} 
+
+
+@inproceedings{kallini-etal-2025-false,
+    title = "False {F}riends Are Not Foes: Investigating Vocabulary Overlap in Multilingual Language Models",
+    author = "Kallini, Julie  and
+      Jurafsky, Dan  and
+      Potts, Christopher  and
+      Bartelds, Martijn",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2025",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.findings-emnlp.1153/",
+    doi = "10.18653/v1/2025.findings-emnlp.1153",
+    pages = "21138--21154",
+    ISBN = "979-8-89176-335-7",
+    abstract = "Subword tokenizers trained on multilingual corpora naturally produce overlapping tokens across languages. Does token overlap facilitate cross-lingual transfer or instead introduce interference between languages? Prior work offers mixed evidence, partly due to varied setups and confounders, such as token frequency or subword segmentation granularity. To address this question, we devise a controlled experiment where we train bilingual autoregressive models on multiple language pairs under systematically varied vocabulary overlap settings. Crucially, we explore a new dimension to understanding how overlap affects transfer: the semantic similarity of tokens shared across languages. We first analyze our models' hidden representations and find that overlap *of any kind* creates embedding spaces that capture cross-lingual semantic relationships, while this effect is much weaker in models with disjoint vocabularies. On XNLI and XQuAD, we find that models with overlap outperform models with disjoint vocabularies, and that transfer performance generally improves as overlap increases. Overall, our findings highlight the advantages of token overlap in multilingual models and show that substantial shared vocabulary remains a beneficial design choice for multilingual tokenizers."
+}
+
+
+@inproceedings{seto-etal-2025-assessing,
+    title = "Assessing the Role of Data Quality in Training Bilingual Language Models",
+    author = "Seto, Skyler  and
+      Ter Hoeve, Maartje  and
+      de Seyssel, Maureen  and
+      Grangier, David",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2025",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.findings-emnlp.1236/",
+    doi = "10.18653/v1/2025.findings-emnlp.1236",
+    pages = "22694--22720",
+    ISBN = "979-8-89176-335-7",
+    abstract = "Bilingual and multilingual language models offer a promising path toward scaling NLP systems across diverse languages and users. However, their performance often varies wildly between languages as prior works show that adding more languages can degrade performance for some languages (such as English), while improving others (typically more data constrained languages). In this work, we investigate causes of these inconsistencies by comparing bilingual and monolingual language models. Our analysis reveals that unequal data quality, not just data quantity, is a major driver of performance degradation in bilingual settings. We propose a simple yet effective data filtering strategy to select higher-quality bilingual training data with only high quality English data. Applied to French, German, and Chinese, our approach improves monolingual performance by 2{--}4{\%} and reduces bilingual model performance gaps to 1{\%}. These results highlight the overlooked importance of data quality in multilingual pretraining and offer a practical recipe for balancing performance."
+}
+
+
+@inproceedings{seto-etal-2025-training,
+    title = "Training Bilingual {LM}s with Data Constraints in the Targeted Language",
+    author = "Seto, Skyler  and
+      Ter Hoeve, Maartje  and
+      Bai, Richard He  and
+      Schluter, Natalie  and
+      Grangier, David",
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL 2025",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.findings-acl.977/",
+    doi = "10.18653/v1/2025.findings-acl.977",
+    pages = "19096--19122",
+    ISBN = "979-8-89176-256-5",
+    abstract = "Large language models are trained on massive scrapes of the web, as required by current scaling laws. Most progress is made for English, given its abundance of high-quality pretraining data. For most other languages, however, such high quality pretraining data is unavailable. In this work, we study how to boost pretrained model performance in a target language with insufficient pretraining data for training a high performing language model by enlisting data from an auxiliary language for which high quality data is available. We study this by quantifying the performance gap between training with data in a data-rich auxiliary language compared with training in the target language, exploring the benefits of translation systems, studying the limitations of model scaling when data is limited in the target languages, and proposing new methods for upsampling data from the auxiliary language. Our results show that stronger auxiliary datasets result in performance gains without modification to the model or training objective for close languages, and, in particular, that performance gains due to the development of more information-rich English pretraining datasets can extend to targeted language settings with limited data."
+}
+
+
+@article{longpre2025atlas,
+  title={ATLAS: Adaptive Transfer Scaling Laws for Multilingual Pretraining, Finetuning, and Decoding the Curse of Multilinguality},
+  author={Longpre, Shayne and Kudugunta, Sneha and Muennighoff, Niklas and Hsu, I and Caswell, Isaac and Pentland, Alex and Arik, Sercan and Lee, Chen-Yu and Ebrahimi, Sayna and others},
+  journal={arXiv preprint arXiv:2510.22037},
+  year={2025}
+}
+
+@article{arnett2025explaining,
+  title={Explaining and Mitigating Crosslingual Tokenizer Inequities},
+  author={Arnett, Catherine and Chang, Tyler A and Biderman, Stella and Bergen, Benjamin K},
+  journal={arXiv preprint arXiv:2510.21909},
+  year={2025}
+}
+
+
+@article{zhang2024same,
+  title={The same but different: Structural similarities and differences in multilingual language modeling},
+  author={Zhang, Ruochen and Yu, Qinan and Zang, Matianyu and Eickhoff, Carsten and Pavlick, Ellie},
+  journal={arXiv preprint arXiv:2410.09223},
+  year={2024}
+}
+
+@article{issam2026language,
+  title={Language Models as Artificial Learners: Investigating Crosslinguistic Influence},
+  author={Issam, Abderrahmane and Semerci, Yusuf Can and Scholtes, Jan and Spanakis, Gerasimos},
+  journal={arXiv preprint arXiv:2601.21587},
+  year={2026}
+}
+
+
+@article{constantinescu2025investigating,
+  title={Investigating critical period effects in language acquisition through neural language models},
+  author={Constantinescu, Ionut and Pimentel, Tiago and Cotterell, Ryan and Warstadt, Alex},
+  journal={Transactions of the Association for Computational Linguistics},
+  volume={13},
+  pages={96--120},
+  year={2025},
+  publisher={MIT Press 255 Main Street, 9th Floor, Cambridge, Massachusetts 02142, USA~…}
+}
+
+@inproceedings{aoyama2024modeling,
+    title = "Modeling Nonnative Sentence Processing with {L}2 Language Models",
+    author = "Aoyama, Tatsuya  and
+      Schneider, Nathan",
+    editor = "Al-Onaizan, Yaser  and
+      Bansal, Mohit  and
+      Chen, Yun-Nung",
+    booktitle = "Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.emnlp-main.283/",
+    doi = "10.18653/v1/2024.emnlp-main.283",
+    pages = "4927--4940",
+    abstract = "We study LMs pretrained sequentially on two languages ({``}L2LMs'') for modeling nonnative sentence processing. In particular, we pretrain GPT2 on 6 different first languages (L1s), followed by English as the second language (L2). We examine the effect of the choice of pretraining L1 on the model{'}s ability to predict human reading times, evaluating on English readers from a range of L1 backgrounds. Experimental results show that, while all of the LMs' word surprisals improve prediction of L2 reading times, especially for human L1s distant from English, there is no reliable effect of the choice of L2LM{'}s L1. We also evaluate the learning trajectory of a monolingual English LM: for predicting L2 as opposed to L1 reading, it peaks much earlier and immediately falls off, possibly mirroring the difference in proficiency between the native and nonnative populations. Lastly, we provide examples of L2LMs' surprisals, which could potentially generate hypotheses about human L2 reading."
+}
+
+@inproceedings{gao2025bliss,
+  title={BLiSS: Evaluating Bilingual Learner Competence in Second Language Small Language Models},
+  author={Gao, Yuan and Salhan, Suchir and Caines, Andrew and Buttery, Paula and Sun, Weiwei},
+  booktitle={Proceedings of the First BabyLM Workshop},
+  pages={160--174},
+  year={2025}
+}
+
+@article{chantal2022cross,
+  title={Cross-linguistic influence in simultaneous and early sequential bilingual children: A meta-analysis},
+  author={Chantal, VAN and Van Wonderen, Elise and Koutamanis, Elly and Kootstra, Gerrit Jan and Dijkstra, Ton and Unsworth, Sharon},
+  journal={Journal of Child Language},
+  volume={49},
+  number={5},
+  pages={897--929},
+  year={2022},
+  publisher={Cambridge University Press}
+}
+
+@inproceedings{diehl-martinez-etal-2025-pico,
+    title = "Pico: A Modular Framework for Hypothesis-Driven Small Language Model Research",
+    author = "Diehl Martinez, Richard  and
+      Africa, David Demitri  and
+      Weiss, Yuval  and
+      Salhan, Suchir  and
+      Daniels, Ryan  and
+      Buttery, Paula",
+    editor = {Habernal, Ivan  and
+      Schulam, Peter  and
+      Tiedemann, J{\"o}rg},
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-demos.22/",
+    doi = "10.18653/v1/2025.emnlp-demos.22",
+    pages = "295--306",
+    ISBN = "979-8-89176-334-0"
+}
+
+
+@inproceedings{africa-etal-2025-learning,
+    title = "Learning Dynamics of Meta-Learning in Small Model Pretraining",
+    author = "Africa, David Demitri  and
+      Weiss, Yuval  and
+      Buttery, Paula  and
+      Diehl Martinez, Richard",
+    editor = "T.y.s.s, Santosh  and
+      Shimizu, Shuichiro  and
+      Gong, Yifan",
+    booktitle = "The 14th International Joint Conference on Natural Language Processing and The 4th Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics",
+    month = dec,
+    year = "2025",
+    address = "Mumbai, India",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.ijcnlp-srw.2/",
+    pages = "10--23",
+    ISBN = "979-8-89176-304-3"
+}
+
+@misc{jumelet2025babybabellmmultilingualbenchmarkdevelopmentally,
+      title={BabyBabelLM: A Multilingual Benchmark of Developmentally Plausible Training Data}, 
+      author={Jaap Jumelet and Abdellah Fourtassi and Akari Haga and Bastian Bunzeck and Bhargav Shandilya and Diana Galvan-Sosa and Faiz Ghifari Haznitrama and Francesca Padovani and Francois Meyer and Hai Hu and Julen Etxaniz and Laurent Prévot and Linyang He and María Grandury and Mila Marcheva and Negar Foroutan and Nikitas Theodoropoulos and Pouya Sadeghi and Siyuan Song and Suchir Salhan and Susana Zhou and Yurii Paniv and Ziyin Zhang and Arianna Bisazza and Alex Warstadt and Leshem Choshen},
+      year={2025},
+      eprint={2510.10159},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2510.10159}, 
+}
+
+
+@inproceedings{padovani-etal-2025-child,
+    title = "Child-Directed Language Does Not Consistently Boost Syntax Learning in Language Models",
+    author = "Padovani, Francesca  and
+      Jumelet, Jaap  and
+      Matusevych, Yevgen  and
+      Bisazza, Arianna",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.999/",
+    doi = "10.18653/v1/2025.emnlp-main.999",
+    pages = "19735--19756",
+    ISBN = "979-8-89176-332-6",
+    abstract = "Seminal work by Huebner et al. (2021) showed that language models (LMs) trained on English Child-Directed Language (CDL) can outperform LMs trained on an equal amount of adult-directed text like Wikipedia. However, it remains unclear whether these results generalize across languages, architectures, and evaluation settings. We test this by comparing models trained on CDL vs. Wikipedia across two LM objectives (masked and causal), three languages (English, French, German), and three syntactic minimal pair benchmarks. Our results on these benchmarks show inconsistent benefits of CDL, which in most cases is outperformed by Wikipedia models. We then identify various shortcomings in these benchmarks, and introduce a novel testing methodology, FIT-CLAMS, which uses a frequency-controlled design to enable balanced comparisons across training corpora. Through minimal pair evaluations and regression analysis we show that training on CDL does not yield stronger generalizations for acquiring syntax and highlight the importance of controlling for frequency effects when evaluating syntactic ability."
+}
+
+
+@article{blevins2022analyzing,
+  title={Analyzing the mono-and cross-lingual pretraining dynamics of multilingual language models},
+  author={Blevins, Terra and Gonen, Hila and Zettlemoyer, Luke},
+  journal={arXiv preprint arXiv:2205.11758},
+  year={2022}
+}
+
+
+@inproceedings{arnett-etal-2025-acquisition,
+    title = "On the Acquisition of Shared Grammatical Representations in Bilingual Language Models",
+    author = "Arnett, Catherine  and
+      Chang, Tyler A.  and
+      Michaelov, James A.  and
+      Bergen, Ben",
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-long.1010/",
+    doi = "10.18653/v1/2025.acl-long.1010",
+    pages = "20707--20726",
+    ISBN = "979-8-89176-251-0",
+    abstract = "Crosslingual transfer is crucial to contemporary language models' multilingual capabilities, but how it occurs is not well understood. Weask what happens to a monolingual language model when it begins to be trained on a second language. Specifically, we train small bilingual models for which we control the amount of data for each language and the order of language exposure. To find evidence of shared multilingual representations, we turn to structural priming, a method used to study grammatical representations in humans. We first replicate previous crosslingual structural priming results and find that after controlling for training data quantity and language exposure, there are asymmetrical effects across language pairs and directions. We argue that this asymmetry may shape hypotheses about human structural priming effects. We also find that structural priming effects are less robust for less similar language pairs, highlighting potential limitations of crosslingual transfer learning and shared representations for typologically diverse languages."
+}
+
+@inproceedings{blevins-zettlemoyer-2022-language,
+    title = "Language Contamination Helps Explains the Cross-lingual Capabilities of {E}nglish Pretrained Models",
+    author = "Blevins, Terra  and
+      Zettlemoyer, Luke",
+    editor = "Goldberg, Yoav  and
+      Kozareva, Zornitsa  and
+      Zhang, Yue",
+    booktitle = "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2022",
+    address = "Abu Dhabi, United Arab Emirates",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.emnlp-main.233/",
+    doi = "10.18653/v1/2022.emnlp-main.233",
+    pages = "3563--3574",
+    abstract = "English pretrained language models, which make up the backbone of many modern NLP systems, require huge amounts of unlabeled training data. These models are generally presented as being trained only on English text but have been found to transfer surprisingly well to other languages. We investigate this phenomenon and find that common English pretraining corpora actually contain significant amounts of non-English text: even when less than 1{\%} of data is not English (well within the error rate of strong language classifiers), this leads to hundreds of millions of foreign language tokens in large-scale datasets. We then demonstrate that even these small percentages of non-English data facilitate cross-lingual transfer for models trained on them, with target language performance strongly correlated to the amount of in-language data seen during pretraining. In light of these findings, we argue that no model is truly monolingual when pretrained at scale, which should be considered when evaluating cross-lingual transfer."
+}
+
+
+@inproceedings{chensudden,
+  title={Sudden Drops in the Loss: Syntax Acquisition, Phase Transitions, and Simplicity Bias in MLMs},
+  author={Chen, Angelica and Shwartz-Ziv, Ravid and Cho, Kyunghyun and Leavitt, Matthew L and Saphra, Naomi},
+  booktitle={The Twelfth International Conference on Learning Representations},
+  year={2024}
+}
+
+@inproceedings{
+chang2025bigram,
+title={Bigram Subnetworks: Mapping to Next Tokens in Transformer Language Models},
+author={Tyler A. Chang and Ben Bergen},
+booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+year={2025},
+url={https://openreview.net/forum?id=0TD3eO46gk}
+}
+
+@inproceedings{aoyama-wilcox-2025-language,
+    title = "Language Models Grow Less Humanlike beyond Phase Transition",
+    author = "Aoyama, Tatsuya  and
+      Wilcox, Ethan",
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-long.1214/",
+    doi = "10.18653/v1/2025.acl-long.1214",
+    pages = "24938--24958",
+    ISBN = "979-8-89176-251-0",
+    abstract = "LMs' alignment with human reading behavior (i.e. psychometric predictive power; PPP) is known to improve during pretraining up to a tipping point, beyond which it either plateaus or degrades. Various factors, such as word frequency, recency bias in attention, and context size, have been theorized to affect PPP, yet there is no current account that explains why such a tipping point exists, and how it interacts with LMs' pretraining dynamics more generally. We hypothesize that the underlying factor is a pretraining phase transition, characterized by the rapid emergence of specialized attention heads. We conduct a series of correlational and causal experiments to show that such a phase transition is responsible for the tipping point in PPP. We then show that, rather than producing attention patterns that contribute to the degradation in PPP, phase transitions alter the subsequent learning dynamics of the model, such that further training keeps damaging PPP."
+}
+
+
+@article{bayazit2025crosscoding,
+  title={Crosscoding Through Time: Tracking Emergence \& Consolidation Of Linguistic Representations Throughout LLM Pretraining},
+  author={Bayazit, Deniz and Mueller, Aaron and Bosselut, Antoine},
+  journal={arXiv preprint arXiv:2509.05291},
+  year={2025}
+}
+
+@article{michaelov2025disaggregation,
+  title={Disaggregation Reveals Hidden Training Dynamics: The Case of Agreement Attraction},
+  author={Michaelov, James A and Arnett, Catherine},
+  journal={arXiv preprint arXiv:2510.24934},
+  year={2025}
+}
+
+@article{michaelov2025language,
+  title={Language Model Behavioral Phases are Consistent Across Architecture, Training Data, and Scale},
+  author={Michaelov, James A and Levy, Roger P and Bergen, Benjamin K},
+  journal={arXiv preprint arXiv:2510.24963},
+  year={2025}
+}
+
+@article{carroll1989second,
+  title={Second-language acquisition and the computational paradigm},
+  author={Carroll, Susanne},
+  journal={Language Learning},
+  volume={39},
+  number={4},
+  pages={535--594},
+  year={1989},
+  publisher={Wiley Online Library}
+}
+
+@article{penedo2025fineweb2,
+  title={FineWeb2: One Pipeline to Scale Them All--Adapting Pre-Training Data Processing to Every Language},
+  author={Penedo, Guilherme and Kydl{\'\i}{\v{c}}ek, Hynek and Sabol{\v{c}}ec, Vinko and Messmer, Bettina and Foroutan, Negar and Kargaran, Amir Hossein and Raffel, Colin and Jaggi, Martin and Von Werra, Leandro and Wolf, Thomas},
+  journal={arXiv preprint arXiv:2506.20920},
+  year={2025}
+}
+
+@misc{rebuschat2017language,
+  title={Language learning research at the intersection of experimental, computational, and corpus-based approaches},
+  author={Rebuschat, Patrick and Meurers, Detmar and McEnery, Tony},
+  journal={Language Learning},
+  volume={67},
+  number={S1},
+  pages={6--13},
+  year={2017}
+}
+
+@article{mcenery2019corpus,
+  title={Corpus linguistics, learner corpora, and SLA: Employing technology to analyze language use},
+  author={McEnery, Tony and Brezina, Vaclav and Gablasova, Dana and Banerjee, Jayanti},
+  journal={Annual Review of Applied Linguistics},
+  volume={39},
+  pages={74--92},
+  year={2019},
+  publisher={Cambridge University Press}
+}
+
+@book{yip2007bilingual,
+  title={The bilingual child: Early development and language contact},
+  author={Yip, Virginia and Matthews, Stephen},
+  year={2007},
+  publisher={Cambridge University Press}
+}
+
+
+@article{kirkpatrick2017overcoming,
+  title={Overcoming catastrophic forgetting in neural networks},
+  author={Kirkpatrick, James and Pascanu, Razvan and Rabinowitz, Neil and Veness, Joel and Desjardins, Guillaume and Rusu, Andrei A and Milan, Kieran and Quan, John and Ramalho, Tiago and Grabska-Barwinska, Agnieszka and others},
+  journal={Proceedings of the national academy of sciences},
+  volume={114},
+  number={13},
+  pages={3521--3526},
+  year={2017},
+  publisher={National Academy of Sciences}
+}
+
+
+%Catastrophic Forgetting References
+@inproceedings{liu-niehues-2025-conditions,
+    title = "Conditions for Catastrophic Forgetting in Multilingual Translation",
+    author = "Liu, Danni  and
+      Niehues, Jan",
+    editor = "Adelani, David Ifeoluwa  and
+      Arnett, Catherine  and
+      Ataman, Duygu  and
+      Chang, Tyler A.  and
+      Gonen, Hila  and
+      Raja, Rahul  and
+      Schmidt, Fabian  and
+      Stap, David  and
+      Wang, Jiayi",
+    booktitle = "Proceedings of the 5th Workshop on Multilingual Representation Learning (MRL 2025)",
+    month = nov,
+    year = "2025",
+    address = "Suzhuo, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.mrl-main.23/",
+    doi = "10.18653/v1/2025.mrl-main.23",
+    pages = "347--359",
+    ISBN = "979-8-89176-345-6",
+    abstract = "Fine-tuning multilingual foundation models on specific languages often induces catastrophic forgetting, degrading performance on languages unseen in fine-tuning. While this phenomenon is widely-documented, the literature presents fragmented results about when forgetting occurs. To address this ambiguity, we conduct a systematic empirical study using machine translation as a testbed to identify the conditions that trigger catastrophic forgetting in multilingual fine-tuning. Through controlled experiments across different model architectures, data scales, and fine-tuning approaches, we reveal that the relative scale between model and data size is a primary determinant of forgetting. Moreover, we demonstrate that a model{'}s instruction-following ability is more critical for retaining multilingual knowledge than its architecture. Contrary to assumptions, parameter-efficient fine-tuning offers no clear advantage over full fine-tuning in mitigating forgetting. Lastly, we show that cross-lingual alignment can mitigate forgetting while also facilitating positive transfer to unseen target languages."
+}
+
+@inproceedings{vu-etal-2022-overcoming,
+    title = "Overcoming Catastrophic Forgetting in Zero-Shot Cross-Lingual Generation",
+    author = "Vu, Tu  and
+      Barua, Aditya  and
+      Lester, Brian  and
+      Cer, Daniel  and
+      Iyyer, Mohit  and
+      Constant, Noah",
+    editor = "Goldberg, Yoav  and
+      Kozareva, Zornitsa  and
+      Zhang, Yue",
+    booktitle = "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2022",
+    address = "Abu Dhabi, United Arab Emirates",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.emnlp-main.630/",
+    doi = "10.18653/v1/2022.emnlp-main.630",
+    pages = "9279--9300",
+    abstract = "In this paper, we explore the challenging problem of performing a generative task in a target language when labeled data is only available in English, using summarization as a case study. We assume a strict setting with no access to parallel data or machine translation and find that common transfer learning approaches struggle in this setting, as a generative multilingual model fine-tuned purely on English catastrophically forgets how to generate non-English. Given the recent rise of parameter-efficient adaptation techniques, we conduct the first investigation into how one such method, prompt tuning (Lester et al., 2021), can overcome catastrophic forgetting to enable zero-shot cross-lingual generation. Our experiments show that parameter-efficient prompt tuning provides gains over standard fine-tuning when transferring between less-related languages, e.g., from English to Thai. However, a significant gap still remains between these methods and fully-supervised baselines. To improve cross-lingual transfer further, we explore several approaches, including: (1) mixing in unlabeled multilingual data, and (2) explicitly factoring prompts into recombinable language and task components. Our approaches can provide further quality gains, suggesting that robust zero-shot cross-lingual generation is within reach."
+}
+
+@inproceedings{sun-etal-2023-efficiently,
+    title = "Efficiently Upgrading Multilingual Machine Translation Models to Support More Languages",
+    author = "Sun, Simeng  and
+      Elbayad, Maha  and
+      Sun, Anna  and
+      Cross, James",
+    editor = "Vlachos, Andreas  and
+      Augenstein, Isabelle",
+    booktitle = "Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics",
+    month = may,
+    year = "2023",
+    address = "Dubrovnik, Croatia",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.eacl-main.111/",
+    doi = "10.18653/v1/2023.eacl-main.111",
+    pages = "1513--1527",
+    abstract = "With multilingual machine translation (MMT) models continuing to grow in size and number of supported languages, it is natural to reuse and upgrade existing models to save computation as data becomes available in more languages. However, adding new languages requires updating the vocabulary, which complicates the reuse of embeddings. The question of how to reuse existing models while also making architectural changes to provide capacity for both old and new languages has also not been closely studied. In this work, we introduce three techniques that help speed up the effective learning of new languages and alleviate catastrophic forgetting despite vocabulary and architecture mismatches. Our results show that by (1) carefully initializing the network, (2) applying learning rate scaling, and (3) performing data up-sampling, it is possible to exceed the performance of a same-sized baseline model with 30{\%} computation and recover the performance of a larger model trained from scratch with over 50{\%} reduction in computation. Furthermore, our analysis reveals that the introduced techniques help learn new directions more effectively and alleviate catastrophic forgetting at the same time. We hope our work will guide research into more efficient approaches to growing languages for these MMT models and ultimately maximize the reuse of existing models."
+}
+
+@inproceedings{winata-etal-2023-overcoming,
+    title = "Overcoming Catastrophic Forgetting in Massively Multilingual Continual Learning",
+    author = "Winata, Genta  and
+      Xie, Lingjue  and
+      Radhakrishnan, Karthik  and
+      Wu, Shijie  and
+      Jin, Xisen  and
+      Cheng, Pengxiang  and
+      Kulkarni, Mayank  and
+      Preotiuc-Pietro, Daniel",
+    editor = "Rogers, Anna  and
+      Boyd-Graber, Jordan  and
+      Okazaki, Naoaki",
+    booktitle = "Findings of the Association for Computational Linguistics: ACL 2023",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.findings-acl.48/",
+    doi = "10.18653/v1/2023.findings-acl.48",
+    pages = "768--777",
+    abstract = "Real-life multilingual systems should be able to efficiently incorporate new languages as data distributions fed to the system evolve and shift over time. To do this, systems need to handle the issue of catastrophic forgetting, where the model performance drops for languages or tasks seen further in its past. In this paper, we study catastrophic forgetting, as well as methods to minimize this, in a massively multilingual continual learning framework involving up to 51 languages and covering both classification and sequence labeling tasks. We present LR ADJUST, a learning rate scheduling method that is simple, yet effective in preserving new information without strongly overwriting past knowledge. Furthermore, we show that this method is effective across multiple continual learning approaches. Finally, we provide further insights into the dynamics of catastrophic forgetting in this massively multilingual setup."
+}
+
+
+@inproceedings{alexandrov-etal-2024-mitigating,
+    title = "Mitigating Catastrophic Forgetting in Language Transfer via Model Merging",
+    author = {Alexandrov, Anton  and
+      Raychev, Veselin  and
+      M{\"u}ller, Mark Niklas  and
+      Zhang, Ce  and
+      Vechev, Martin  and
+      Toutanova, Kristina},
+    editor = "Al-Onaizan, Yaser  and
+      Bansal, Mohit  and
+      Chen, Yun-Nung",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.findings-emnlp.1000/",
+    doi = "10.18653/v1/2024.findings-emnlp.1000",
+    pages = "17167--17186",
+    abstract = "As open-weight large language models (LLMs) achieve ever more impressive performance across a wide range of tasks in English, practitioners aim to adapt these models to different languages. However, such language adaptation is often accompanied by catastrophic forgetting of the base model{'}s capabilities, severely limiting the usefulness of the resulting model. We address this issue by proposing Branch-and-Merge (BaM), a new adaptation method based on iteratively merging multiple models, fine-tuned on a subset of the available training data. BaM is based on the insight that this yields lower magnitude but higher quality weight changes, reducing forgetting of the source domain while maintaining learning on the target domain. We demonstrate in an extensive empirical study on Bulgarian and German that BaM can significantly reduce forgetting while matching or even improving target domain performance compared to both standard continued pretraining and instruction finetuning across different model architectures."
+}
+
+@article{owodunni2025continually,
+  title={Continually adding new languages to multilingual language models},
+  author={Owodunni, Abraham Toluwase and Kumar, Sachin},
+  journal={arXiv preprint arXiv:2509.11414},
+  year={2025}
+}
+
+@article{yu2026afriquellm,
+  title={AfriqueLLM: How Data Mixing and Model Architecture Impact Continued Pre-training for African Languages},
+  author={Yu, Hao and Xu, Tianyi and Hedderich, Michael A and Hamidouche, Wassim and Zamir, Syed Waqas and Adelani, David Ifeoluwa},
+  journal={arXiv preprint arXiv:2601.06395},
+  year={2026}
+}
+
+
+@inproceedings{liao-etal-2025-exploring,
+    title = "Exploring Forgetting in Large Language Model Pre-Training",
+    author = "Liao, Chonghua  and
+      Xie, Ruobing  and
+      Sun, Xingwu  and
+      Sun, Haowen  and
+      Kang, Zhanhui",
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-long.105/",
+    doi = "10.18653/v1/2025.acl-long.105",
+    pages = "2112--2127",
+    ISBN = "979-8-89176-251-0",
+    abstract = "Catastrophic forgetting remains a formidable obstacle to building an omniscient model in large language models (LLMs). Despite the pioneering research on task-level forgetting in LLM fine-tuning, there is scant focus on forgetting during pre-training. We systematically explored the existence and measurement of forgetting in pre-training, questioning traditional metrics such as perplexity (PPL) and introducing new metrics to better detect entity memory retention. Based on our revised assessment of forgetting metrics, we explored low-cost, straightforward methods to mitigate forgetting during the pre-training phase. In addition, we carefully analyzed the learning curves, offering insights into the dynamics of forgetting. Extensive evaluations and analyses on forgetting of pre-training could facilitate future research on LLMs."
+}
+
+@article{de2019episodic,
+  title={Episodic memory in lifelong language learning},
+  author={de Masson D'Autume, Cyprien and Ruder, Sebastian and Kong, Lingpeng and Yogatama, Dani},
+  journal={Advances in Neural Information Processing Systems},
+  volume={32},
+  year={2019}
+}
+
+@article{sun2019lamol,
+  title={Lamol: Language modeling for lifelong language learning},
+  author={Sun, Fan-Keng and Ho, Cheng-Hao and Lee, Hung-Yi},
+  journal={arXiv preprint arXiv:1909.03329},
+  year={2019}
+}
+
+
+
+%DST 
+
+@article{verspoor2011dynamic,
+  title={A dynamic approach to second language development},
+  author={Verspoor, Marjolijn H and Lowie, Wander and Bot, Kees},
+  year={2011},
+  publisher={John Benjamins Publishing Company}
+}
+
+@article{lowie2019individual,
+  title={Individual differences and the ergodicity problem},
+  author={Lowie, Wander M and Verspoor, Marjolijn H},
+  journal={Language learning},
+  volume={69},
+  pages={184--206},
+  year={2019},
+  publisher={Wiley Online Library}
+}
+
+@article{verspoor2022measures,
+  title={Measures of variability in transitional phases in second language development},
+  author={Verspoor, Marjolijn and De Bot, Kees},
+  journal={International Review of Applied Linguistics in Language Teaching},
+  volume={60},
+  number={1},
+  pages={85--101},
+  year={2022},
+  publisher={De Gruyter}
+}
+
+@article{verspoor2021variability,
+  title={Variability as normal as apple pie},
+  author={Verspoor, Marjolijn and Lowie, Wander and De Bot, Kees},
+  journal={Linguistics Vanguard},
+  volume={7},
+  number={s2},
+  pages={20200034},
+  year={2021},
+  publisher={De Gruyter}
+}
+
+@article{huang2022learning,
+  title={Learning an L2 and L3 at the Same Time: Help or Hinder?},
+  author={Huang, Ting and Steinkrauss, Rasmus and Verspoor, Marjolijn},
+  journal={International Journal of Multilingualism},
+  volume={19},
+  number={4},
+  pages={566--582},
+  year={2022},
+  publisher={Taylor \& Francis}
+}
+
+@incollection{lenzing2022lost,
+  title={Lost in translation? On some key features of dynamical systems theorizing invoked in SLA research},
+  author={Lenzing, Anke and Pienemann, Manfred and Nicholas, Howard},
+  booktitle={Understanding variability in second language acquisition, bilingualism, and cognition},
+  pages={39--79},
+  year={2022},
+  publisher={Routledge}
+}
+
+@article{ionin2007dst,
+  title={DST vs. UG: Can DST account for purely linguistic phenomena?},
+  author={Ionin, Tania},
+  journal={Bilingualism: Language and cognition},
+  volume={10},
+  number={1},
+  pages={27--29},
+  year={2007},
+  publisher={Cambridge University Press}
+}
+
+@article{pienemann2024can,
+  title={Can dynamical systems theory be applied to second language acquisition? The issues of reductionism and intentionality},
+  author={Pienemann, Manfred and Lenzing, Anke and Nicholas, Howard},
+  journal={Second Language Research},
+  volume={40},
+  number={4},
+  pages={1009--1029},
+  year={2024},
+  publisher={SAGE Publications Sage UK: London, England}
+}
+
+
+@article{pallotti2022cratylus,
+  title={Cratylus’ silence: On the philosophy and methodology of complex dynamic systems theory in SLA},
+  author={Pallotti, Gabriele},
+  journal={Second Language Research},
+  volume={38},
+  number={3},
+  pages={689--701},
+  year={2022},
+  publisher={SAGE Publications Sage UK: London, England}
+}
+
+
+@article{van2007dynamic,
+  title={Dynamic systems in second language learning: Some general methodological reflections},
+  author={Van Geert, Paul},
+  journal={Bilingualism: Language and Cognition},
+  volume={10},
+  number={1},
+  pages={47--49},
+  year={2007},
+  publisher={Cambridge University Press}
+}
+
+
+@article{irie2025metalearning,
+  title={Metalearning continual learning algorithms},
+  author={Irie, Kazuki and Csord{\'a}s, R{\'o}bert and Schmidhuber, J{\"u}rgen},
+  journal={Transactions on Machine Learning Research},
+  year={2025}
+}
+
+@inproceedings{xu-etal-2025-infini,
+    title = "Infini-gram mini: Exact n-gram Search at the {I}nternet Scale with {FM}-Index",
+    author = "Xu, Hao  and
+      Liu, Jiacheng  and
+      Choi, Yejin  and
+      Smith, Noah A.  and
+      Hajishirzi, Hannaneh",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.1268/",
+    doi = "10.18653/v1/2025.emnlp-main.1268",
+    pages = "24944--24969",
+    ISBN = "979-8-89176-332-6",
+    abstract = "Language models are trained mainly on massive text data from the Internet, and it becomes increasingly important to understand this data source. Exact-match search engines enable searching in large text corpora {--} counting string appearances and retrieving the enclosing documents {--} yet the high storage overhead hinders their application on Internet-scale data. We present Infini-gram mini, an efficient and scalable system that can make petabyte-level text corpora searchable. Based on the FM-index data structure (Ferragina and Manzini, 2000), which simultaneously indexes and compresses text, our system creates indexes with size only 44{\%} of the corpus. Infini-gram mini greatly improves upon the best existing implementation of FM-index in terms of indexing speed (18$\times$) and memory use during both indexing (3.2$\times$ reduction) and querying (down to a negligible amount). We index 83TB of Internet text in 99 days with a single 128-core CPU node (or 19 hours if using 137 such nodes). We show one important use case of Infini-gram mini in a large-scale analysis of benchmark contamination. We find several core LM evaluation benchmarks to be heavily contaminated in Internet crawls (up to 74.2{\%} in GSM8K), which could lead to overestimating the capabilities of language models if trained on such data. We host a benchmark contamination bulletin to share the contamination rate of many core and community-contributed benchmarks. We also release a web interface and an API endpoint to serve general search queries on Infini-gram mini indexes."
+}
+
+
+@article{siegelman2025wave,
+  title={Wave 2 of the Multilingual Eye-Movement Corpus (MECO): New text reading data across languages},
+  author={Siegelman, Noam and Schroeder, Sascha and Bao, Yaqian Borogjoon and Acart{\"u}rk, Cengiz and Agrawal, Niket and Bolliger, Lena S and Brasser, Jan and Campos-Rojas, C{\'e}sar and Drieghe, Denis and Filipovi{\'c} {\DJ}ur{\dj}evi{\'c}, Du{\v{s}}ica and others},
+  journal={Scientific data},
+  volume={12},
+  number={1},
+  pages={1183},
+  year={2025},
+  publisher={Nature Publishing Group UK London}
+}
+
+@incollection{mccloskey1989catastrophic,
+  title={Catastrophic interference in connectionist networks: The sequential learning problem},
+  author={McCloskey, Michael and Cohen, Neal J},
+  booktitle={Psychology of learning and motivation},
+  volume={24},
+  pages={109--165},
+  year={1989},
+  publisher={Elsevier}
+}
+
+@inproceedings{africa-etal-2025-meta,
+    title = "Meta-Pretraining for Zero-Shot Cross-Lingual Named Entity Recognition in Low-Resource {P}hilippine Languages",
+    author = "Africa, David Demitri  and
+      Salhan, Suchir  and
+      Weiss, Yuval  and
+      Buttery, Paula  and
+      Diehl Martinez, Richard",
+    editor = "Adelani, David Ifeoluwa  and
+      Arnett, Catherine  and
+      Ataman, Duygu  and
+      Chang, Tyler A.  and
+      Gonen, Hila  and
+      Raja, Rahul  and
+      Schmidt, Fabian  and
+      Stap, David  and
+      Wang, Jiayi",
+    booktitle = "Proceedings of the 5th Workshop on Multilingual Representation Learning (MRL 2025)",
+    month = nov,
+    year = "2025",
+    address = "Suzhuo, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.mrl-main.8/",
+    doi = "10.18653/v1/2025.mrl-main.8",
+    pages = "106--127",
+    ISBN = "979-8-89176-345-6",
+    abstract = "Named-entity recognition (NER) in low-resource languages is usually tackled by finetuning very large multilingual LMs, an option that is often infeasible in memory- or latency-constrained settings. We ask whether small decoder LMs can be pretrained so that they adapt quickly and transfer zero-shot to languages unseen during pretraining. To this end we replace part of the autoregressive objective with first-order model-agnostic meta-learning (MAML). Tagalog and Cebuano are typologically similar yet structurally different in their actor/non-actor voice systems, and hence serve as a challenging test-bed. Across four model sizes (11 M {--} 570 M) MAML lifts zero-shot micro-F1 by 2{--}6 pp under head-only tuning and 1{--}3 pp after full tuning, while cutting convergence time by up to 8{\%}. Gains are largest for single-token person entities that co-occur with Tagalog case particles si/ni, highlighting the importance of surface anchors."
+}
+
+@article{touvron2023llama,
+  title={Llama: Open and efficient foundation language models},
+  author={Touvron, Hugo and Lavril, Thibaut and Izacard, Gautier and Martinet, Xavier and Lachaux, Marie-Anne and Lacroix, Timoth{\'e}e and Rozi{\`e}re, Baptiste and Goyal, Naman and Hambro, Eric and Azhar, Faisal and others},
+  journal={arXiv preprint arXiv:2302.13971},
+  year={2023}
+}
+
+
+
+% Rope Embeddings 
+@article{su2024rope,
+  title={Roformer: Enhanced transformer with rotary position embedding},
+  author={Su, Jianlin and Ahmed, Murtadha and Lu, Yu and Pan, Shengfeng and Bo, Wen and Liu, Yunfeng},
+  journal={Neurocomputing},
+  volume={568},
+  pages={127063},
+  year={2024},
+  publisher={Elsevier}
+}
+
+
+% Grouped Query Attention
+@inproceedings{ainslie2023gqa,
+  title={GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints},
+  author={Ainslie, Joshua and Lee-Thorp, James and de Jong, Michiel and Zemlyanskiy, Yury and Lebron, Federico and Sanghai, Sumit},
+  booktitle={Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
+  pages={4895--4901},
+  year={2023}
+}
+
+
+% RMS Norm
+@article{zhang2019rms,
+  title={Root mean square layer normalization},
+  author={Zhang, Biao and Sennrich, Rico},
+  journal={Advances in Neural Information Processing Systems},
+  volume={32},
+  year={2019}
+}
+
+% Flash Attention 
+@article{dao2022flashattention,
+  title={Flashattention: Fast and memory-efficient exact attention with io-awareness},
+  author={Dao, Tri and Fu, Dan and Ermon, Stefano and Rudra, Atri and R{\'e}, Christopher},
+  journal={Advances in neural information processing systems},
+  volume={35},
+  pages={16344--16359},
+  year={2022}
+}
+
+
+% SwiGLU 
+@article{shazeer2020glu,
+  title={Glu variants improve transformer},
+  author={Shazeer, Noam},
+  journal={arXiv preprint arXiv:2002.05202},
+  year={2020}
+}
+
+
+@article{wilcox2025bigger,
+  title={Bigger is not always better: The importance of human-scale language modeling for psycholinguistics},
+  author={Wilcox, Ethan Gotlieb and Hu, Michael Y and Mueller, Aaron and Warstadt, Alex and Choshen, Leshem and Zhuang, Chengxu and Williams, Adina and Cotterell, Ryan and Linzen, Tal},
+  journal={Journal of Memory and Language},
+  volume={144},
+  pages={104650},
+  year={2025},
+  publisher={Elsevier}
+}
+
+@inproceedings{oh2023transformer,
+  title={Transformer-based language model surprisal predicts human reading times best with about two billion training tokens},
+  author={Oh, Byung-Doh and Schuler, William},
+  booktitle={Findings of the association for computational linguistics: EMNLP 2023},
+  pages={1915--1921},
+  year={2023}
+}
+
+@inproceedings{li-zhang-2021-semi,
+    title = "Semi-supervised Meta-learning for Cross-domain Few-shot Intent Classification",
+    author = "Li, Yue  and
+      Zhang, Jiong",
+    editor = "Lee, Hung-Yi  and
+      Mohtarami, Mitra  and
+      Li, Shang-Wen  and
+      Jin, Di  and
+      Korpusik, Mandy  and
+      Dong, Shuyan  and
+      Vu, Ngoc Thang  and
+      Hakkani-Tur, Dilek",
+    booktitle = "Proceedings of the 1st Workshop on Meta Learning and Its Applications to Natural Language Processing",
+    month = aug,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.metanlp-1.8/",
+    doi = "10.18653/v1/2021.metanlp-1.8",
+    pages = "67--75",
+    abstract = "Meta learning aims to optimize the model`s capability to generalize to new tasks and domains. Lacking a data-efficient way to create meta training tasks has prevented the application of meta-learning to the real-world few shot learning scenarios. Recent studies have proposed unsupervised approaches to create meta-training tasks from unlabeled data for free, e.g., the SMLMT method (Bansal et al., 2020a) constructs unsupervised multi-class classification tasks from the unlabeled text by randomly masking words in the sentence and let the meta learner choose which word to fill in the blank. This study proposes a semi-supervised meta-learning approach that incorporates both the representation power of large pre-trained language models and the generalization capability of prototypical networks enhanced by SMLMT. The semi-supervised meta training approach avoids overfitting prototypical networks on a small number of labeled training examples and quickly learns cross-domain task-specific representation only from a few supporting examples. By incorporating SMLMT with prototypical networks, the meta learner generalizes better to unseen domains and gains higher accuracy on out-of-scope examples without the heavy lifting of pre-training. We observe significant improvement in few-shot generalization after training only a few epochs on the intent classification tasks evaluated in a multi-domain setting."
+}
+
+@article{costa2022no,
+  title={No language left behind: Scaling human-centered machine translation},
+  author={Costa-Juss{\`a}, Marta R and Cross, James and {\c{C}}elebi, Onur and Elbayad, Maha and Heafield, Kenneth and Heffernan, Kevin and Kalbassi, Elahe and Lam, Janice and Licht, Daniel and Maillard, Jean and others},
+  journal={arXiv preprint arXiv:2207.04672},
+  year={2022}
+}
+
+@article{chang2024goldfish,
+  title={Goldfish: Monolingual language models for 350 languages},
+  author={Chang, Tyler A and Arnett, Catherine and Tu, Zhuowen and Bergen, Benjamin K},
+  journal={arXiv preprint arXiv:2408.10441},
+  year={2024}
+}
+
+
+@inproceedings{kornblith2019similarity,
+  title={Similarity of neural network representations revisited},
+  author={Kornblith, Simon and Norouzi, Mohammad and Lee, Honglak and Hinton, Geoffrey},
+  booktitle={International conference on machine learning},
+  pages={3519--3529},
+  year={2019},
+  organization={PMlR}
+}
+
+@inproceedings{kuribayashi-etal-2021-lower,
+    title = "Lower Perplexity is Not Always Human-Like",
+    author = "Kuribayashi, Tatsuki  and
+      Oseki, Yohei  and
+      Ito, Takumi  and
+      Yoshida, Ryo  and
+      Asahara, Masayuki  and
+      Inui, Kentaro",
+    editor = "Zong, Chengqing  and
+      Xia, Fei  and
+      Li, Wenjie  and
+      Navigli, Roberto",
+    booktitle = "Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)",
+    month = aug,
+    year = "2021",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.acl-long.405/",
+    doi = "10.18653/v1/2021.acl-long.405",
+    pages = "5203--5217",
+    abstract = "In computational psycholinguistics, various language models have been evaluated against human reading behavior (e.g., eye movement) to build human-like computational models. However, most previous efforts have focused almost exclusively on English, despite the recent trend towards linguistic universal within the general community. In order to fill the gap, this paper investigates whether the established results in computational psycholinguistics can be generalized across languages. Specifically, we re-examine an established generalization {---}\textit{the lower perplexity a language model has, the more human-like the language model is}{---} in Japanese with typologically different structures from English. Our experiments demonstrate that this established generalization exhibits a surprising lack of universality; namely, lower perplexity is not always human-like. Moreover, this discrepancy between English and Japanese is further explored from the perspective of (non-)uniform information density. Overall, our results suggest that a cross-lingual evaluation will be necessary to construct human-like computational models."
+}
+
+@article{choshen2026babylm,
+  title={BabyLM Turns 4: Call for Papers for the 2026 BabyLM Workshop},
+  author={Choshen, Leshem and Cotterell, Ryan and Gul, Mustafa Omer and Jumelet, Jaap and Linzen, Tal and Mueller, Aaron and Salhan, Suchir and Shah, Raj Sanjay and Warstadt, Alex and Wilcox, Ethan Gotlieb},
+  journal={arXiv preprint arXiv:2602.20092},
+  year={2026}
+}
+
+@inproceedings{charpentier2025findings,
+  title={Findings of the Third BabyLM Challenge: Accelerating Language Modeling Research with Cognitively Plausible Data},
+  author={Charpentier, Lucas Georges Gabriel and Choshen, Leshem and Cotterell, Ryan and Gul, Mustafa Omer and Hu, Michael Y and Liu, Jing and Jumelet, Jaap and Linzen, Tal and Mueller, Aaron and Ross, Candance and others},
+  booktitle={Proceedings of the First BabyLM Workshop},
+  pages={399--420},
+  year={2025}
+}
+
+@inproceedings{warstadt2024insights,
+  title={Insights from the first BabyLM Challenge: Training sample-efficient language models on a developmentally plausible corpus},
+  author={Warstadt, Alex and Mueller, Aaron and Choshen, Leshem and Wilcox, Ethan Gotlieb and Zhuang, Chengxu and Williams, Adina and Cotterell, Ryan and Linzen, Tal},
+  booktitle={Proceedings of the Annual Meeting of the Cognitive Science Society},
+  volume={46},
+  year={2024}
+}
+
+@inproceedings{hu2024findings,
+  title={Findings of the second BabyLM challenge: Sample-efficient pretraining on developmentally plausible corpora},
+  author={Hu, Michael Y and Mueller, Aaron and Ross, Candace and Williams, Adina and Linzen, Tal and Zhuang, Chengxu and Cotterell, Ryan and Choshen, Leshem and Warstadt, Alex and Wilcox, Ethan Gotlieb},
+  booktitle={The 2nd BabyLM Challenge at the 28th Conference on Computational Natural Language Learning},
+  pages={1--21},
+  year={2024}
+}
+
+@inproceedings{warstadt2023findings,
+  title={Findings of the BabyLM challenge: Sample-efficient pretraining on developmentally plausible corpora},
+  author={Warstadt, Alex and Mueller, Aaron and Choshen, Leshem and Wilcox, Ethan and Zhuang, Chengxu and Ciro, Juan and Mosquera, Rafael and Paranjabe, Bhargavi and Williams, Adina and Linzen, Tal and others},
+  booktitle={Proceedings of the babylm challenge at the 27th conference on computational natural language learning},
+  pages={1--34},
+  year={2023}
+}
+
+
+@inproceedings{salhan-etal-2024-less,
+    title = "Less is More: Pre-Training Cross-Lingual Small-Scale Language Models with Cognitively-Plausible Curriculum Learning Strategies",
+    author = "Salhan, Suchir  and
+      Diehl Martinez, Richard  and
+      Goriely, Z{\'e}bulon  and
+      Buttery, Paula",
+    editor = "Hu, Michael Y.  and
+      Mueller, Aaron  and
+      Ross, Candace  and
+      Williams, Adina  and
+      Linzen, Tal  and
+      Zhuang, Chengxu  and
+      Choshen, Leshem  and
+      Cotterell, Ryan  and
+      Warstadt, Alex  and
+      Wilcox, Ethan Gotlieb",
+    booktitle = "The 2nd BabyLM Challenge at the 28th Conference on Computational Natural Language Learning",
+    month = nov,
+    year = "2024",
+    address = "Miami, FL, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.conll-babylm.15/",
+    pages = "174--188",
+    abstract = "Curriculum Learning has been a popular strategy to improve the cognitive plausibility of Small-Scale Language Models (SSLMs) in the BabyLM Challenge. However, it has not led to considerable improvements over non-curriculum models. We assess whether theoretical linguistic acquisition theories can be used to specify more fine-grained curriculum learning strategies, creating age-ordered corpora of Child-Directed Speech for four typologically distant language families to implement SSLMs and acquisition-inspired curricula cross-lingually. Comparing the success of three objective curricula (Growing, Inwards {\&} MMM) that precisely replicate the predictions of acquisition theories on a standard SSLM architecture, we find fine-grained acquisition-inspired curricula can outperform non-curriculum baselines and performance benefits of curricula strategies in SSLMs can be derived by specifying fine-grained language-specific curricula that precisely replicate language acquisition theories."
+}
+
+@inproceedings{prevot-etal-2024-extending,
+    title = "Extending the {B}aby{LM} Initiative : Promoting Diversity in Datasets and Metrics through High-Quality Linguistic Corpora",
+    author = "Pr{\'e}vot, Laurent  and
+      Wang, Sheng-Fu  and
+      Chi, Jou-An  and
+      Hsieh, Shu-Kai",
+    editor = "Hu, Michael Y.  and
+      Mueller, Aaron  and
+      Ross, Candace  and
+      Williams, Adina  and
+      Linzen, Tal  and
+      Zhuang, Chengxu  and
+      Choshen, Leshem  and
+      Cotterell, Ryan  and
+      Warstadt, Alex  and
+      Wilcox, Ethan Gotlieb",
+    booktitle = "The 2nd BabyLM Challenge at the 28th Conference on Computational Natural Language Learning",
+    month = nov,
+    year = "2024",
+    address = "Miami, FL, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.conll-babylm.12/",
+    pages = "147--158",
+    abstract = "BabyLM paves the way for a range of experiments aimed at better understanding language models (LMs) and the differences and similarities between human and artificial language learning. However, the current framework is limited to the English language and a narrow but significant range of evaluation metrics, primarily focused on syntax, semantics, and pragmatics. In this paper, we propose some steps towards extending the framework to other languages, specifically Mandarin Chinese and French, leveraging existing linguistic resources for these languages. Additionally, we advocate for greater exploration of genre variations within subcorpora for training LMs, as well as for the adoption of additional evaluation metrics with different underlying principles. Our proposal consists of using high-quality spontaneous speech corpora as a source for extracting production-related variables, which the models are then fine-tuned to predict. We hypothesize that these production-related features offer insights into the language processing mechanisms underlying the data and that cognitively sensitive models should outperform others in predicting these features. Specifically, we propose focusing on the prediction of phenomena such as speech reductions, prosodic prominences, sequences co-occurring with listeners' backchannels, and disfluencies. To illustrate our approach, we present an example involving the prediction of speech reductions in spontaneous speech in two different languages (French and English), using models trained on 10 million tokens from different data source mixtures. Although the results are preliminary, they suggest that this task can characterize models for predicting human language processing."
+}
+
+@inproceedings{matzopoulos-etal-2025-babylms,
+    title = "{B}aby{LM}s for isi{X}hosa: Data-Efficient Language Modelling in a Low-Resource Context",
+    author = "Matzopoulos, Alexis  and
+      Hendriks, Charl  and
+      Mahomed, Hishaam  and
+      Meyer, Francois",
+    editor = "Hettiarachchi, Hansi  and
+      Ranasinghe, Tharindu  and
+      Rayson, Paul  and
+      Mitkov, Ruslan  and
+      Gaber, Mohamed  and
+      Premasiri, Damith  and
+      Tan, Fiona Anting  and
+      Uyangodage, Lasitha",
+    booktitle = "Proceedings of the First Workshop on Language Models for Low-Resource Languages",
+    month = jan,
+    year = "2025",
+    address = "Abu Dhabi, United Arab Emirates",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.loreslm-1.19/",
+    pages = "240--248",
+    abstract = "The BabyLM challenge called on participants to develop sample-efficient language models. Submissions were pretrained on a fixed English corpus, limited to the amount of words children are exposed to in development ({\ensuremath{<}}100m). The challenge produced new architectures for data-efficient language modelling, outperforming models trained on trillions of words. This is promising for low-resource languages, where available corpora are limited to much less than 100m words. In this paper, we explore the potential of BabyLMs for low-resource languages, using the isiXhosa language as a case study. We pretrain two BabyLM architectures, ELC-BERT and MLSM, on an isiXhosa corpus. They outperform a vanilla pretrained model on POS tagging and NER, achieving notable gains (+3.2 F1) for the latter. In some instances, the BabyLMs even outperform XLM-R. Our findings show that data-efficient models are viable for low-resource languages, but highlight the continued importance, and lack of, high-quality pretraining data. Finally, we visually analyse how BabyLM architectures encode isiXhosa."
+}
+
+@inproceedings{capone-etal-2024-babies,
+    title = "{B}a{BIE}s: A Benchmark for the Linguistic Evaluation of {I}talian Baby Language Models",
+    author = "Capone, Luca  and
+      Suozzi, Alice  and
+      Lebani, Gianluca  and
+      Lenci, Alessandro",
+    editor = "Dell'Orletta, Felice  and
+      Lenci, Alessandro  and
+      Montemagni, Simonetta  and
+      Sprugnoli, Rachele",
+    booktitle = "Proceedings of the Tenth Italian Conference on Computational Linguistics (CLiC-it 2024)",
+    month = dec,
+    year = "2024",
+    address = "Pisa, Italy",
+    publisher = "CEUR Workshop Proceedings",
+    url = "https://aclanthology.org/2024.clicit-1.20/",
+    pages = "157--170",
+    ISBN = "979-12-210-7060-6",
+    abstract = "The possibility of comparing the linguistic competence of Language Models (LMs) to that of children has gained growing attention lately, raising the need for effective tools for evaluating both the former and the latter. To this purpose, we developed a resource for the linguistic evaluation of BabyLMs, which are LMs trained on datasets that comparable to the linguistic stimulus received by children. This resource adapts four standardized tests for the evaluation of linguistic skills of Italian-speaking children (BVL, TROG-2, TCGB-2 and Peabody). To verify the effectiveness of our benchmark, we administered it to Minerva, a LLM pretrained from scratch on Italian. Our results indicate that Minerva struggles to master certain linguistic aspects, achieving an age-equivalent score of 4 years, and that the type of task administered affects the model{'}s performance."
+}
+
+@inproceedings{shen-etal-2024-bambino,
+    title = "{BAMBINO}-{LM}: (Bilingual-)Human-Inspired Continual Pre-training of {B}aby{LM}",
+    author = "Shen, Zhewen  and
+      Joshi, Aditya  and
+      Chen, Ruey-Cheng",
+    editor = "Kuribayashi, Tatsuki  and
+      Rambelli, Giulia  and
+      Takmaz, Ece  and
+      Wicke, Philipp  and
+      Oseki, Yohei",
+    booktitle = "Proceedings of the Workshop on Cognitive Modeling and Computational Linguistics",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.cmcl-1.1/",
+    doi = "10.18653/v1/2024.cmcl-1.1",
+    pages = "1--7",
+    abstract = "Children from bilingual backgrounds benefit from interactions with parents and teachers to re-acquire their heritage language. In this paper, we investigate how this insight from behavioral study can be incorporated into the learning of small-scale language models. We introduce BAMBINO-LM, a continual pre-training strategy for BabyLM that uses a novel combination of alternation and PPO-based perplexity reward induced from a parent Italian model. Upon evaluation on zero-shot classification tasks for English and Italian, BAMBINO-LM improves the Italian language capability of a BabyLM baseline. Our ablation analysis demonstrates that employing both the alternation strategy and PPO-based modeling is key to this effectiveness gain. We also show that, as a side effect, the proposed method leads to a similar degradation in L1 effectiveness as human children would have had in an equivalent learning scenario. Through its modeling and findings, BAMBINO-LM makes a focused contribution to the pre-training of small-scale language models by first developing a human-inspired strategy for pre-training and then showing that it results in behaviours similar to that of humans."
+}
+
+@inproceedings{goriely-buttery-2025-ipa,
+    title = "{IPA} {CHILDES} {\&} {G}2{P}+: Feature-Rich Resources for Cross-Lingual Phonology and Phonemic Language Modeling",
+    author = "Goriely, Z{\'e}bulon  and
+      Buttery, Paula",
+    editor = "Boleda, Gemma  and
+      Roth, Michael",
+    booktitle = "Proceedings of the 29th Conference on Computational Natural Language Learning",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.conll-1.33/",
+    doi = "10.18653/v1/2025.conll-1.33",
+    pages = "502--521",
+    ISBN = "979-8-89176-271-8",
+    abstract = "In this paper, we introduce two resources: (i) G2P+, a tool for converting orthographic datasets to a consistent phonemic representation; and (ii) IPA CHILDES, a phonemic dataset of child-centered speech across 31 languages. Prior tools for grapheme-to-phoneme conversion result in phonemic vocabularies that are inconsistent with established phonemic inventories, an issue which G2P+ addresses by leveraging the inventories in the Phoible database. Using this tool, we augment CHILDES with phonemic transcriptions to produce IPA CHILDES. This new resource fills several gaps in existing phonemic datasets, which often lack multilingual coverage, spontaneous speech, and a focus on child-directed language. We demonstrate the utility of this dataset for phonological research by training phoneme language models on 11 languages and probing them for distinctive features, finding that the distributional properties of phonemes are sufficient to learn major class and place features cross-lingually."
+}
+
+@inproceedings{brown2020gpt3,
+ author = {Brown, Tom and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared D and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and Agarwal, Sandhini and Herbert-Voss, Ariel and Krueger, Gretchen and Henighan, Tom and Child, Rewon and Ramesh, Aditya and Ziegler, Daniel and Wu, Jeffrey and Winter, Clemens and Hesse, Chris and Chen, Mark and Sigler, Eric and Litwin, Mateusz and Gray, Scott and Chess, Benjamin and Clark, Jack and Berner, Christopher and McCandlish, Sam and Radford, Alec and Sutskever, Ilya and Amodei, Dario},
+ booktitle = {Advances in Neural Information Processing Systems},
+ editor = {H. Larochelle and M. Ranzato and R. Hadsell and M.F. Balcan and H. Lin},
+ pages = {1877--1901},
+ publisher = {Curran Associates, Inc.},
+ title = {Language Models are Few-Shot Learners},
+ url = {https://proceedings.neurips.cc/paper_files/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf},
+ volume = {33},
+ year = {2020}
+}
+
+@book{grosjean2021life,
+  title={Life as a bilingual: Knowing and using two or more languages},
+  author={Grosjean, Fran{\c{c}}ois},
+  year={2021},
+  publisher={Cambridge University Press}
+}
+
+@inproceedings{aoyama2024ModelingNonnativeSentence,
+  title = {Modeling {{Nonnative Sentence Processing}} with {{L2 Language Models}}},
+  booktitle = {Proceedings of the 2024 {{Conference}} on {{Empirical Methods}} in {{Natural Language Processing}}},
+  author = {Aoyama, Tatsuya and Schneider, Nathan},
+  year = 2024,
+  editor = {Al-Onaizan, Yaser and Bansal, Mohit and Chen, Yun-Nung},
+  date = {2024-11},
+  pages = {4927--4940},
+  publisher = {Association for Computational Linguistics},
+  location = {Miami, Florida, USA},
+  doi = {10.18653/v1/2024.emnlp-main.283},
+  url = {https://aclanthology.org/2024.emnlp-main.283/},
+  urldate = {2025-05-15},
+  abstract = {We study LMs pretrained sequentially on two languages (“L2LMs”) for modeling nonnative sentence processing. In particular, we pretrain GPT2 on 6 different first languages (L1s), followed by English as the second language (L2). We examine the effect of the choice of pretraining L1 on the model`s ability to predict human reading times, evaluating on English readers from a range of L1 backgrounds. Experimental results show that, while all of the LMs' word surprisals improve prediction of L2 reading times, especially for human L1s distant from English, there is no reliable effect of the choice of L2LM`s L1. We also evaluate the learning trajectory of a monolingual English LM: for predicting L2 as opposed to L1 reading, it peaks much earlier and immediately falls off, possibly mirroring the difference in proficiency between the native and nonnative populations. Lastly, we provide examples of L2LMs' surprisals, which could potentially generate hypotheses about human L2 reading.},
+  eventtitle = {{{EMNLP}} 2024},
+  file = {/Users/yuangao/Zotero/storage/9RE5SFUL/Aoyama and Schneider - 2024 - Modeling Nonnative Sentence Processing with L2 Language Models.pdf}
+}
+
+
+
+@inproceedings{oba2023SecondLanguageAcquisition,
+  title = {Second {{Language Acquisition}} of {{Neural Language Models}}},
+  booktitle = {Findings of the {{Association}} for {{Computational Linguistics}}: {{ACL}} 2023},
+  author = {Oba, Miyu and Kuribayashi, Tatsuki and Ouchi, Hiroki and Watanabe, Taro},
+  editor = {Rogers, Anna and Boyd-Graber, Jordan and Okazaki, Naoaki},
+  date = {2023-07},
+  pages = {13557--13572},
+  publisher = {Association for Computational Linguistics},
+  location = {Toronto, Canada},
+  doi = {10.18653/v1/2023.findings-acl.856},
+  url = {https://aclanthology.org/2023.findings-acl.856/},
+  urldate = {2025-05-15},
+  abstract = {With the success of neural language models (LMs), their language acquisition has gained much attention. This work sheds light on the second language (L2) acquisition of LMs, while previous work has typically explored their first language (L1) acquisition. Specifically, we trained bilingual LMs with a scenario similar to human L2 acquisition and analyzed their cross-lingual transfer from linguistic perspectives. Our exploratory experiments demonstrated that the L1 pretraining accelerated their linguistic generalization in L2, and language transfer configurations (e.g., the L1 choice, and presence of parallel texts) substantially affected their generalizations. These clarify their (non-)human-like L2 acquisition in particular aspects.},
+  eventtitle = {Findings 2023},
+  file = {/Users/yuangao/Zotero/storage/RCEFDLBQ/Oba et al. - 2023 - Second Language Acquisition of Neural Language Models.pdf}
+}
+
+
+
+@article{constantinescu2025InvestigatingCriticalPeriod,
+  title = {Investigating {{Critical Period Effects}} in {{Language Acquisition}} through {{Neural Language Models}}},
+  author = {Constantinescu, Ionut and Pimentel, Tiago and Cotterell, Ryan and Warstadt, Alex},
+  date = {2025-01-24},
+  journaltitle = {Transactions of the Association for Computational Linguistics},
+  shortjournal = {Transactions of the Association for Computational Linguistics},
+  volume = {13},
+  pages = {96--120},
+  issn = {2307-387X},
+  doi = {10.1162/tacl_a_00725},
+  url = {https://doi.org/10.1162/tacl_a_00725},
+  urldate = {2025-05-15},
+  abstract = {Humans appear to have a critical period (CP) for language acquisition: Second language (L2) acquisition becomes harder after early childhood, and ceasing exposure to a first language (L1) after this period (but not before) typically does not lead to substantial loss of L1 proficiency. It is unknown whether these CP effects result from innately determined brain maturation or as a stabilization of neural connections naturally induced by experience. In this study, we use language models (LMs) to test the extent to which these phenomena are peculiar to humans, or shared by a broader class of language learners. We vary the age of exposure by training LMs on language pairs in various experimental conditions, and find that LMs, which lack any direct analog to innate maturational stages, do not show CP effects when the age of exposure of L2 is delayed. Our results contradict the claim that CP effects are an inevitable result of statistical learning, and they are consistent with an innate mechanism for CP effects. We show that we can reverse-engineer the CP by introducing a regularizer partway through training to simulate a maturational decrease in plasticity. All in all, our results suggest that L1 learning on its own may not be enough to induce a CP, and additional engineering is necessary to make language models more cognitively plausible.},
+  file = {/Users/yuangao/Zotero/storage/W4RIPNEY/Constantinescu et al. - 2025 - Investigating Critical Period Effects in Language Acquisition through Neural Language Models.pdf;/Users/yuangao/Zotero/storage/6TPLSM4X/127669.html}
+}
+
+@article{koo2024InvestigatingGrammaticalTransfer,
+  title = {Investigating {{Grammatical Transfer}} in {{Korean-English GPT2 Language Models}}},
+  author = {Koo, Keonwoo and Lee, Jaemin and Park, Myung-Kwan},
+  date = {2024-06},
+  publisher = {한국영어학회},
+  issn = {1598-1398},
+  doi = {10.15738/kjell.24..202406.568},
+  url = {https://scholarworks.dongguk.edu/handle/sw.dongguk/22862},
+  urldate = {2025-05-15},
+  abstract = {With the recent success of artificial neural language model (LMs), their language acquisition has gained much attention (Futrell et al. 2019, Hu et al. 2020, Linzen et al. 2016, Warstadt et al. 2020, Wilcox et al. 2018). This paper delves into their second language (L2) acquisition, a largely unexplored area compared to their first language (L1) learning. The primary focus is on unraveling transfer effects originating from the L1’s linguistic structures. By closely examining our LMs’ performances on English grammar tasks, this study inspects how LMs encode abstract grammatical knowledge, particularly how pre-training biases acquired from Korean (L1) influence English (L2) performances in LMs. We present exploratory experiments where LMs were first trained on the dataset representing the initial language acquisition stage, followed by fine-tuning on the second language dataset. We analyzed cross-lingual transfer effects across diverse linguistic phenomena with the BLiMP test suite. We found that L1 pre-training did not accelerate linguistic generalization in the second language. Furthermore, our results revealed significant L1-interference, where the initial language knowledge hindered the LMs\&apos; ability to acquire and apply second language rules. © 2024 KASELL All rights reserved.},
+  langid = {english},
+  annotation = {Accepted: 2024-08-13T06:30:19Z},
+  file = {/Users/yuangao/Zotero/storage/T3K86IAY/22862.html}
+}
+
+@online{papadimitriou2020LearningMusicHelps,
+  title = {Learning {{Music Helps You Read}}: {{Using Transfer}} to {{Study Linguistic Structure}} in {{Language Models}}},
+  shorttitle = {Learning {{Music Helps You Read}}},
+  author = {Papadimitriou, Isabel and Jurafsky, Dan},
+  date = {2020-10-30},
+  eprint = {2004.14601},
+  eprinttype = {arXiv},
+  eprintclass = {cs},
+  doi = {10.48550/arXiv.2004.14601},
+  url = {http://arxiv.org/abs/2004.14601},
+  urldate = {2025-05-15},
+  abstract = {We propose transfer learning as a method for analyzing the encoding of grammatical structure in neural language models. We train LSTMs on non-linguistic data and evaluate their performance on natural language to assess which kinds of data induce generalizable structural features that LSTMs can use for natural language. We find that training on non-linguistic data with latent structure (MIDI music or Java code) improves test performance on natural language, despite no overlap in surface form or vocabulary. To pinpoint the kinds of abstract structure that models may be encoding to lead to this improvement, we run similar experiments with two artificial parentheses languages: one which has a hierarchical recursive structure, and a control which has paired tokens but no recursion. Surprisingly, training a model on either of these artificial languages leads to the same substantial gains when testing on natural language. Further experiments on transfer between natural languages controlling for vocabulary overlap show that zero-shot performance on a test language is highly correlated with typological syntactic similarity to the training language, suggesting that representations induced by pre-training correspond to the cross-linguistic syntactic properties. Our results provide insights into the ways that neural models represent abstract syntactic structure, and also about the kind of structural inductive biases which allow for natural language acquisition.},
+  pubstate = {prepublished},
+  keywords = {Computer Science - Computation and Language},
+  file = {/Users/yuangao/Zotero/storage/RNVXVVDS/Papadimitriou and Jurafsky - 2020 - Learning Music Helps You Read Using Transfer to Study Linguistic Structure in Language Models.pdf;/Users/yuangao/Zotero/storage/WRETHN3F/2004.html}
+}
+
+@inproceedings{yadavalli-etal-2023-slabert,
+    title = "{SLABERT} Talk Pretty One Day: Modeling Second Language Acquisition with {BERT}",
+    author = "Yadavalli, Aditya  and
+      Yadavalli, Alekhya  and
+      Tobin, Vera",
+    editor = "Rogers, Anna  and
+      Boyd-Graber, Jordan  and
+      Okazaki, Naoaki",
+    booktitle = "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.acl-long.657/",
+    doi = "10.18653/v1/2023.acl-long.657",
+    pages = "11763--11777"
+}
+
+
+
+
+@article{jumelet2025multiblimp,
+  title={{MultiBLiMP} 1.0: A Massively Multilingual Benchmark of Linguistic Minimal Pairs},
+  author={Jumelet, Jaap and Weissweiler, Leonie and Bisazza, Arianna},
+  journal={arXiv preprint arXiv:2504.02768},
+  year={2025},
+url = {https://arxiv.org/abs/2504.02768}
+}
+
+
+@book{macwhinney2000childes,
+  title = {The {{CHILDES}} Project: {{Tools}} for Analyzing Talk},
+  author = {MacWhinney, Brian},
+  year = {2000},
+  edition = {3},
+  publisher = {Lawrence Erlbaum Associates},
+  address = {Mahwah, NJ}
+}
+
+@inproceedings{gao-etal-2025-llms,
+    title = "Can {LLM}s Simulate {L}2-{E}nglish Dialogue? An Information-Theoretic Analysis of {L}1-Dependent Biases",
+    author = "Gao, Rena  and
+      Wu, Xuetong  and
+      Kuribayashi, Tatsuki  and
+      Ye, Mingrui  and
+      Qi, Siya  and
+      Roever, Carsten  and
+      Liu, Yuanxing  and
+      Yuan, Zheng  and
+      Lau, Jey Han",
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-long.219/",
+    doi = "10.18653/v1/2025.acl-long.219",
+    pages = "4355--4379",
+    ISBN = "979-8-89176-251-0",
+    abstract = "This study evaluates Large Language Models' (LLMs) ability to simulate non-native-like English use observed in human second language (L2) learners interfered with by their native first language (L1). In dialogue-based interviews, we prompt LLMs to mimic L2 English learners with specific L1s (e.g., Japanese, Thai, Urdu) across seven languages, comparing their outputs to real L2 learner data. Our analysis examines L1-driven linguistic biases, such as reference word usage and avoidance behaviors, using information-theoretic and distributional density measures. Results show that modern LLMs (e.g., Qwen2.5, LLAMA3, DeepseekV3, GPT 4o) replicate L1-dependent patterns observed in human L2 data, with distinct influences from various languages (e.g., Japanese, Korean, and Mandarin significantly affect tense agreement, and Urdu influences noun-verb collocations). Our results reveal LLMs' potential for L2 dialogue generation and evaluation for future educational applications."
+}
+
+
+
+@article{lenneberg1967biological,
+  author  = {Lenneberg, Eric H.},
+  title   = {The biological foundations of language},
+  journal = {Hospital Practice},
+  year    = {1967},
+  volume  = {2},
+  number  = {12},
+  pages   = {59--67},
+  doi     = {10.1080/21548331.1967.11707799}
+}
+
+
+@phdthesis{berzak2018second,
+  author = {Berzak, Yevgeni},
+  title  = {Second language learning from a multilingual perspective},
+  school = {Massachusetts Institute of Technology},
+  year   = {2018}
+}
+
+@article{berzak2022celer,
+  author  = {Berzak, Yevgeni and Nakamura, Chie and Smith, Amelia and Weng, Emily and Katz, Boris and Flynn, Suzanne and Levy, Roger},
+  title   = {CELER: A 365-participant corpus of eye movements in L1 and L2 English reading},
+  journal = {Open Mind},
+  year    = {2022},
+  volume  = {6},
+  pages   = {41--50},
+  doi     = {10.1162/opmi_a_00060}
+}
+
+
+@inproceedings{evanson2023language,
+  title={Language acquisition: do children and language models follow similar learning stages?},
+  author={Evanson, Linnea and Lakretz, Yair and King, Jean-Remi},
+  booktitle={Findings of the Association for Computational Linguistics: ACL 2023},
+  pages={12205--12218},
+  year={2023}
+}
+
+
+
+@article{garcia2012cognitive,
+  title={Cognitive approaches to L3 acquisition.},
+  author={Garc{\'\i}a-Mayo, Mar{\'\i}a del Pilar},
+  journal={International journal of English studies},
+  volume={12},
+  number={1},
+  pages={129--146},
+  year={2012},
+  publisher={ERIC}
+}
+
+@article{tucker1998global,
+  title={A Global Perspective on Multilingualism and Multilingual},
+  author={Tucker, G Richard},
+  journal={Beyond bilingualism: Multilingualism and multilingual education},
+  volume={110},
+  pages={1},
+  year={1998},
+  publisher={Clevedon [England]; Toronto: Multilingual Matters Limited}
+}
+
+@article{de2015multilingual,
+  title={Multilingual learners and foreign language acquisition: Insights into the effects of prior linguistic knowledge},
+  author={de la Fuente, Anah{\'\i} Alba and Lacroix, Hugues},
+  journal={Language Learning in Higher Education},
+  volume={5},
+  number={1},
+  pages={45--57},
+  year={2015},
+  publisher={De Gruyter}
+}
+
+@article{lenzing2015exploring,
+  title={Exploring regularities and dynamic systems in L2 development},
+  author={Lenzing, Anke},
+  journal={Language Learning},
+  volume={65},
+  number={1},
+  pages={89--122},
+  year={2015},
+  publisher={Wiley Online Library}
+}
+
+@inproceedings{bosch2025another,
+  title={On another topic, how do acquisition orders vary? the left-periphery and topicalization in bilingual and monolingual acquisition},
+  author={Bosch, N{\'u}ria and Biberauer, Theresa},
+  booktitle={Proceedings of the 49th Boston University Conference on Language Development (BUCLD)},
+  pages={129--144},
+  year={2025},
+  organization={Cascadilla Proceedings Project Somerville, MA}
+}
+
+@inproceedings{bosch2024emergent,
+  title={Emergent syntactic categories and increasing granularity: Evidence from a multilingual corpus study},
+  author={Bosch, N{\'u}ria and Biberauer, Theresa},
+  booktitle={Proceedings of the 48th Boston University Conference on Language Development (BUCLD)},
+  pages={101--116},
+  year={2024},
+  organization={Cascadilla Proceedings Project}
+}
+
+
+@article{michaelov2026n,
+  title={N-gram-like Language Models Predict Reading Time Best},
+  author={Michaelov, James A and Levy, Roger P},
+  journal={arXiv preprint arXiv:2603.09872},
+  year={2026}
+}
+
+@inproceedings{de-varda-marelli-2023-scaling,
+    title = "Scaling in Cognitive Modelling: a Multilingual Approach to Human Reading Times",
+    author = "de Varda, Andrea  and
+      Marelli, Marco",
+    editor = "Rogers, Anna  and
+      Boyd-Graber, Jordan  and
+      Okazaki, Naoaki",
+    booktitle = "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.acl-short.14/",
+    doi = "10.18653/v1/2023.acl-short.14",
+    pages = "139--149",
+    abstract = "Neural language models are increasingly valued in computational psycholinguistics, due to their ability to provide conditional probability distributions over the lexicon that are predictive of human processing times. Given the vast array of available models, it is of both theoretical and methodological importance to assess what features of a model influence its psychometric quality. In this work we focus on parameter size, showing that larger Transformer-based language models generate probabilistic estimates that are less predictive of early eye-tracking measurements reflecting lexical access and early semantic integration. However, relatively bigger models show an advantage in capturing late eye-tracking measurements that reflect the full semantic and syntactic integration of a word into the current language context. Our results are supported by eye movement data in ten languages and consider four models, spanning from 564M to 4.5B parameters."
+}
+
+@inproceedings{wilcox2023language,
+  title={Language model quality correlates with psychometric predictive power in multiple languages},
+  author={Wilcox, Ethan and Meister, Clara and Cotterell, Ryan and Pimentel, Tiago},
+  booktitle={Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
+  pages={7503--7511},
+  year={2023}
+}
+
+@inproceedings{xu2023linearity,
+  title={The linearity of the effect of surprisal on reading times across languages},
+  author={Xu, Weijie and Chon, Jason and Liu, Tianran and Futrell, Richard},
+  booktitle={Findings of the association for computational linguistics: EMNLP 2023},
+  pages={15711--15721},
+  year={2023}
+}
+
+@article{siegelman2022expanding,
+  title={Expanding horizons of cross-linguistic research on reading: The Multilingual Eye-movement Corpus (MECO)},
+  author={Siegelman, Noam and Schroeder, Sascha and Acart{\"u}rk, Cengiz and Ahn, Hee-Don and Alexeeva, Svetlana and Amenta, Simona and Bertram, Raymond and Bonandrini, Rolando and Brysbaert, Marc and Chernova, Daria and others},
+  journal={Behavior research methods},
+  volume={54},
+  number={6},
+  pages={2843--2863},
+  year={2022},
+  publisher={Springer}
+}
+
+@inproceedings{colman-etal-2022-geco,
+    title = "{GECO}-{MT}: The Ghent Eye-tracking Corpus of Machine Translation",
+    author = "Colman, Toon  and
+      Fonteyne, Margot  and
+      Daems, Joke  and
+      Dirix, Nicolas  and
+      Macken, Lieve",
+    editor = "Calzolari, Nicoletta  and
+      B{\'e}chet, Fr{\'e}d{\'e}ric  and
+      Blache, Philippe  and
+      Choukri, Khalid  and
+      Cieri, Christopher  and
+      Declerck, Thierry  and
+      Goggi, Sara  and
+      Isahara, Hitoshi  and
+      Maegaard, Bente  and
+      Mariani, Joseph  and
+      Mazo, H{\'e}l{\`e}ne  and
+      Odijk, Jan  and
+      Piperidis, Stelios",
+    booktitle = "Proceedings of the Thirteenth Language Resources and Evaluation Conference",
+    month = jun,
+    year = "2022",
+    address = "Marseille, France",
+    publisher = "European Language Resources Association",
+    url = "https://aclanthology.org/2022.lrec-1.4/",
+    pages = "29--38",
+    abstract = "In the present paper, we describe a large corpus of eye movement data, collected during natural reading of a human translation and a machine translation of a full novel. This data set, called GECO-MT (Ghent Eye tracking Corpus of Machine Translation) expands upon an earlier corpus called GECO (Ghent Eye-tracking Corpus) by Cop et al. (2017). The eye movement data in GECO-MT will be used in future research to investigate the effect of machine translation on the reading process and the effects of various error types on reading. In this article, we describe in detail the materials and data collection procedure of GECO-MT. Extensive information on the language proficiency of our participants is given, as well as a comparison with the participants of the original GECO. We investigate the distribution of a selection of important eye movement variables and explore the possibilities for future analyses of the data. GECO-MT is freely available at \url{https://www.lt3.ugent.be/resources/geco-mt}."
+}
+
+
+@misc{Salhan2026,
+  author       = {Suchir Salhan and Ej Zhou and Laura Barbenel and Aoife O'Driscoll and Lily Goulder and Lucas Resck and Catherine Arnett and Paula Buttery},
+  title        = {Glints of Gold or Troubling Waters? Can a School of Merged Monolingual Goldfish Models Swim in Bilingual Seas?},
+  year         = {2026},
+  month        = {jan},
+  note         = {Non-archival paper, published 23 Jan 2026. \url{URL if available}}
+}
+
+@inproceedings{das-biswas-etal-2026-ella,
+    title = "{ELLA}: Efficient Lifelong Learning for Adapters in Large Language Models",
+    author = "Das Biswas, Shristi  and
+      Zhang, Yue  and
+      Pal, Anwesan  and
+      Bhargava, Radhika  and
+      Roy, Kaushik",
+    editor = "Demberg, Vera  and
+      Inui, Kentaro  and
+      Marquez, Llu{\'i}s",
+    booktitle = "Proceedings of the 19th Conference of the {E}uropean Chapter of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)",
+    month = mar,
+    year = "2026",
+    address = "Rabat, Morocco",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.eacl-long.84/",
+    doi = "10.18653/v1/2026.eacl-long.84",
+    pages = "1907--1924",
+    ISBN = "979-8-89176-380-7",
+    abstract = "Large Language Models (LLMs) suffer from severe catastrophic forgetting when adapted sequentially to new tasks in a continual learning (CL) setting. Existing approaches are fundamentally limited: replay-based methods are impractical and could potentially violate privacy, while strict orthogonality-based methods collapse under scale: each new task is projected onto an orthogonal complement, progressively reducing the residual degrees of freedom and eliminating forward transfer by forbidding overlap in shared representations. In this work, we introduce ELLA, a training framework built on the principle of selective subspace de-correlation. Rather than forbidding all overlap, ELLA explicitly characterizes the structure of past updates and penalizes alignments along their high-energy, task-specific directions, while preserving freedom in the low-energy residual subspaces to enable transfer. Formally, this is realized via a lightweight regularizer on a single aggregated update matrix. This mechanism is proven to be an anisotropic shrinkage operator that bounds interference, yielding a penalty that is both memory- and compute-constant regardless of task sequence length. ELLA requires no data replay, no architectural expansion, and negligible storage. Empirically, it achieves state-of-the-art CL performance on three popular benchmarks spanning both classification and generative tasks, with relative accuracy gains of up to 9.6{\%} and a $35\times$ smaller memory footprint. Furthermore, ELLA scales robustly across architectures and actively enhances the model{'}s zero-shot generalization performance on unseen tasks, establishing a principled and scalable solution for constructive lifelong LLM adaptation."
+}
+
+
+@inproceedings{k-etal-2026-continual,
+    title = "Continual-learning for Modelling Low-Resource Languages from Large Language Models",
+    author = "K, Santosh Srinath  and
+      Somani, Mudit  and
+      Padala, Varun Reddy  and
+      Upadhyay, Prajna  and
+      Das, Abhijit",
+    editor = "Demberg, Vera  and
+      Inui, Kentaro  and
+      Marquez, Llu{\'i}s",
+    booktitle = "Proceedings of the 19th Conference of the {E}uropean Chapter of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)",
+    month = mar,
+    year = "2026",
+    address = "Rabat, Morocco",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.eacl-long.293/",
+    doi = "10.18653/v1/2026.eacl-long.293",
+    pages = "6258--6275",
+    ISBN = "979-8-89176-380-7",
+    abstract = "Modelling a language model for a multi-lingual scenario includes several potential challenges, among which catastrophic forgetting is the major challenge. For example, small language models (SLM) built for low-resource languages by adapting large language models (LLMs) pose the challenge of catastrophic forgetting. This work proposes to employ a continual learning strategy using parts-of-speech (POS)-based code-switching along with a replay adapter strategy to mitigate the identified gap of catastrophic forgetting while training SLM from LLM. Experiments conducted on vision language tasks such as visual question answering and language modelling task exhibits the success of the proposed architecture."
+}
+
+@inproceedings{zeng-etal-2026-sparse,
+    title = "Sparse Adapter Fusion for Continual Learning in {NLP}",
+    author = "Zeng, Min  and
+      Chen, Xi  and
+      Yang, Haiqin  and
+      Guo, Yike",
+    editor = "Demberg, Vera  and
+      Inui, Kentaro  and
+      Marquez, Llu{\'i}s",
+    booktitle = "Proceedings of the 19th Conference of the {E}uropean Chapter of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)",
+    month = mar,
+    year = "2026",
+    address = "Rabat, Morocco",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.eacl-long.37/",
+    doi = "10.18653/v1/2026.eacl-long.37",
+    pages = "852--863",
+    ISBN = "979-8-89176-380-7",
+    abstract = "Continual learning in natural language processing plays a crucial role in adapting to evolving data and preventing catastrophic forgetting. Despite significant progress, existing methods still face challenges, such as inefficient parameter reuse across tasks, risking catastrophic forgetting when tasks are dissimilar, and the unnecessary introduction of new parameters for each task, which hampers knowledge sharing among similar tasks. To tackle these issues, we propose a Sparse Adapter Fusion Method (SAFM), which dynamically fuses old and new adapters to address these challenges. SAFM operates in two stages: the decision stage and the tuning stage. In the decision stage, SAFM determines whether to incorporate a new adapter, reuse an existing one, or add an empty adapter. The architecture search procedure, designed to prioritize reusing or adding empty adapters, minimizes parameter consumption and maximizes reuse. In the tuning stage, SAFM especially facilitates a layer-wise loss to encourage differentiation between adapters, effectively capturing knowledge within the same task. Experimental results consistently show that SAFM outperforms state-of-the-art (SOTA) methods, achieving comparable performance while utilizing less than 60{\%} of the parameters."
+}
+
+
+@article{langlais2025common,
+  title={Common corpus: The largest collection of ethical data for llm pre-training},
+  author={Langlais, Pierre-Carl and Hinostroza, Carlos Rosas and Nee, Mattia and Arnett, Catherine and Chizhov, Pavel and Jones, Eliot Krzystof and Girard, Ir{\`e}ne and Mach, David and Stasenko, Anastasia and Yamshchikov, Ivan P},
+  journal={arXiv preprint arXiv:2506.01732},
+  year={2025}
+}
+
+
+%Bilingualism References
+
+@article{paradis2023sources,
+  title={Sources of individual differences in the dual language development of heritage bilinguals},
+  author={Paradis, Johanne},
+  journal={Journal of Child Language},
+  volume={50},
+  number={4},
+  pages={793--817},
+  year={2023},
+  publisher={Cambridge University Press}
+} 
+
+@article{de2017role,
+  title={The role of language input environments for language outcomes and language acquisition in young bilingual children},
+  author={De Houwer, Annick and Miller, D and Bayram, F and Rothman, J and Serratrice, L},
+  journal={Bilingual cognition and language: The state of the science across its subfields},
+  pages={127--154},
+  year={2017},
+  publisher={John Benjamins Amsterdam}
+}
+
+
+@article{de2025detailed,
+  title={How detailed do measures of bilingual language experience need to be? A cost--benefit analysis using the Q-BEx questionnaire},
+  author={De Cat, C{\'e}cile and Gusnanto, Arief and Ka{\v{s}}{\'c}elan, Dra{\v{s}}ko and Pr{\'e}vost, Philippe and Serratrice, Ludovica and Tuller, Laurie and Unsworth, Sharon},
+  journal={Bilingualism: Language and Cognition},
+  pages={1--12},
+  year={2025},
+  publisher={Cambridge University Press}
+}
+
+@article{carroll2017exposure,
+  title={Exposure and input in bilingual development},
+  author={Carroll, Susanne E},
+  journal={Bilingualism: Language and Cognition},
+  volume={20},
+  number={1},
+  pages={3--16},
+  year={2017},
+  publisher={Cambridge University Press}
+}
+
+@article{luk2013bilingualism,
+  title={Bilingualism is not a categorical variable: Interaction between language proficiency and usage},
+  author={Luk, Gigi and Bialystok, Ellen},
+  journal={Journal of cognitive Psychology},
+  volume={25},
+  number={5},
+  pages={605--621},
+  year={2013},
+  publisher={Taylor \& Francis}
+}
+
+
+@article{cai2022objective,
+  title={Objective ages of acquisition for 3300+ simplified Chinese characters},
+  author={Cai, Zhenguang G and Huang, Shuting and Xu, Zebo and Zhao, Nan},
+  journal={Behavior Research Methods},
+  volume={54},
+  number={1},
+  pages={311--323},
+  year={2022},
+  publisher={Springer}
+}
+
+@article{mochizuki2025collection,
+  title={Collection of age of acquisition ratings for over 5,000 Japanese words},
+  author={Mochizuki, Masaya and Ota, Naoto},
+  journal={Frontiers in Language Sciences},
+  volume={4},
+  pages={1605224},
+  year={2025},
+  publisher={Frontiers Media SA}
+}
+
+@inproceedings{basirat-2025-multilingual,
+    title = "Multilingual Learning Strategies in Multilingual Large Language Models",
+    author = "Basirat, Ali",
+    editor = "Adelani, David Ifeoluwa  and
+      Arnett, Catherine  and
+      Ataman, Duygu  and
+      Chang, Tyler A.  and
+      Gonen, Hila  and
+      Raja, Rahul  and
+      Schmidt, Fabian  and
+      Stap, David  and
+      Wang, Jiayi",
+    booktitle = "Proceedings of the 5th Workshop on Multilingual Representation Learning (MRL 2025)",
+    month = nov,
+    year = "2025",
+    address = "Suzhuo, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.mrl-main.34/",
+    doi = "10.18653/v1/2025.mrl-main.34",
+    pages = "507--518",
+    ISBN = "979-8-89176-345-6",
+    abstract = "Despite the effective performance of multilingual large language models (LLMs), the mechanisms underlying their multilingual capabilities remain unclear. This study examines the intermediate representations of multilingual LLMs to determine if these models utilize human-like second language acquisition strategies: coordinate, sub-coordinate, or compound learning. Our investigations into the discriminative and generative aspects of these models indicate that coordinate learning is the dominant mechanism, with decoder-only models progressively developing distinct feature spaces for each language, while encoder-only models exhibit a mixture of coordinate and compound learning in their middle layers. We find little evidence for sub-coordinate learning. Moreover, the role of training data coverage in shaping multilingual representations is reflected in the fact that languages present in a model{'}s training data consistently exhibit stronger separation than those absent from it."
+}
+
+@article{michaelov2026better,
+  title={Better language models better model the N400, but not reading time},
+  author={Michaelov, James A and Bergen, Benjamin K},
+  journal={Journal of Memory and Language},
+  volume={149},
+  pages={104762},
+  year={2026},
+  publisher={Elsevier}
+}
+
+@article{zeng2026bringing,
+  title={Bringing Up a Bilingual BabyLM: Investigating Multilingual Language Acquisition Using Small-Scale Models},
+  author={Zeng, Linda and Feng, Steven Y and Frank, Michael C},
+  journal={arXiv preprint arXiv:2603.29552},
+  year={2026}
+}
+
+@article{zeng2022glm,
+  title={Glm-130b: An open bilingual pre-trained model},
+  author={Zeng, Aohan and Liu, Xiao and Du, Zhengxiao and Wang, Zihan and Lai, Hanyu and Ding, Ming and Yang, Zhuoyi and Xu, Yifan and Zheng, Wendi and Xia, Xiao and others},
+  journal={arXiv preprint arXiv:2210.02414},
+  year={2022}
+}
+
+@article{inaba2025bilingual,
+  title={How a bilingual lm becomes bilingual: Tracing internal representations with sparse autoencoders},
+  author={Inaba, Tatsuro and Kamoda, Go and Inui, Kentaro and Isonuma, Masaru and Miyao, Yusuke and Oseki, Yohei and Takagi, Yu and Heinzerling, Benjamin},
+  journal={Findings of the Association for Computational Linguistics: EMNLP 2025},
+  pages={13458--13470},
+  year={2025},
+  publisher={Association for Computational Linguistics}
+}
+
+
+@inproceedings{liu-etal-2026-review,
+    title = "A Review of Incorporating Psychological Theories in {LLM}s",
+    author = "Liu, Zizhou  and
+      Gong, Ziwei  and
+      Ai, Lin  and
+      Hui, Zheng  and
+      Chen, Run  and
+      Leach, Colin Wayne  and
+      Greene, Michelle R.  and
+      Hirschberg, Julia",
+    editor = "Demberg, Vera  and
+      Inui, Kentaro  and
+      Marquez, Llu{\'i}s",
+    booktitle = "Proceedings of the 19th Conference of the {E}uropean Chapter of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)",
+    month = mar,
+    year = "2026",
+    address = "Rabat, Morocco",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.eacl-long.350/",
+    doi = "10.18653/v1/2026.eacl-long.350",
+    pages = "7459--7495",
+    ISBN = "979-8-89176-380-7",
+    abstract = "Psychological insights have long shaped pivotal NLP breakthroughs, from attention mechanisms to reinforcement learning and social modeling. As Large Language Models (LLMs) develop, there is a rising consensus that psychology is essential for capturing human-like cognition, behavior, and interaction.This paper reviews how psychological theories can inform and enhance stages of LLM development. Our review integrates insights from six subfields of psychology, including cognitive, developmental, behavioral, social, personality psychology, and psycholinguistics. With stage-wise analysis, we highlight current trends and gaps in how psychological theories are applied. By examining both cross-domain connections and points of tension, we aim to bridge disciplinary divides and promote more thoughtful integration of psychology into NLP research."
+}
+
+@article{hosseini2024artificial,
+  title={Artificial neural network language models predict human brain responses to language even after a developmentally realistic amount of training},
+  author={Hosseini, Eghbal A and Schrimpf, Martin and Zhang, Yian and Bowman, Samuel and Zaslavsky, Noga and Fedorenko, Evelina},
+  journal={Neurobiology of Language},
+  volume={5},
+  number={1},
+  pages={43--63},
+  year={2024},
+  publisher={MIT Press One Broadway, 12th Floor, Cambridge, Massachusetts 02142, USA~…}
+}
+
+@article{frank2025cognitive,
+  title={Cognitive modeling using artificial intelligence},
+  author={Frank, Michael C and Goodman, Noah D},
+  journal={Annual Review of Psychology},
+  volume={77},
+  year={2025},
+  publisher={Annual Reviews}
+}
+
+
+@inproceedings{alkhamissi-etal-2025-language,
+    title = "From Language to Cognition: How {LLM}s Outgrow the Human Language Network",
+    author = "AlKhamissi, Badr  and
+      Tuckute, Greta  and
+      Tang, Yingtian  and
+      Binhuraib, Taha Osama A  and
+      Bosselut, Antoine  and
+      Schrimpf, Martin",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.1237/",
+    doi = "10.18653/v1/2025.emnlp-main.1237",
+    pages = "24321--24339",
+    ISBN = "979-8-89176-332-6",
+    abstract = "Large language models (LLMs) exhibit remarkable similarity to neural activity in the human language network. However, the key properties of language underlying this alignment{---}and how brain-like representations emerge and change across training{---}remain unclear. We here benchmark 34 training checkpoints spanning 300B tokens across 8 different model sizes to analyze how brain alignment relates to linguistic competence. Specifically, we find that brain alignment tracks the development of formal linguistic competence{---}i.e., knowledge of linguistic rules{---}more closely than functional linguistic competence. While functional competence, which involves world knowledge and reasoning, continues to develop throughout training, its relationship with brain alignment is weaker, suggesting that the human language network primarily encodes formal linguistic structure rather than broader cognitive functions. Notably, we find that the correlation between next-word prediction, behavioral alignment, and brain alignment fades once models surpass human language proficiency. We further show that model size is not a reliable predictor of brain alignment when controlling for the number of features. Finally, using the largest set of rigorous neural language benchmarks to date, we show that language brain alignment benchmarks remain unsaturated, highlighting opportunities for improving future models. Taken together, our findings suggest that the human language network is best modeled by formal, rather than functional, aspects of language."
+}
+
+
+@inproceedings{ficarra-etal-2025-distributional,
+    title = "A Distributional Perspective on Word Learning in Neural Language Models",
+    author = "Ficarra, Filippo  and
+      Cotterell, Ryan  and
+      Warstadt, Alex",
+    editor = "Chiruzzo, Luis  and
+      Ritter, Alan  and
+      Wang, Lu",
+    booktitle = "Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+    month = apr,
+    year = "2025",
+    address = "Albuquerque, New Mexico",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.naacl-long.558/",
+    doi = "10.18653/v1/2025.naacl-long.558",
+    pages = "11184--11207",
+    ISBN = "979-8-89176-189-6",
+    abstract = "Language models (LMs) are increasingly being studied as models of human language learners.Due to the nascency of the field, it is not well-established whether LMs exhibit similar learning dynamics to humans, and there are few direct comparisons between learning trajectories in humans and models.Word learning trajectories for children are relatively well-documented, and recent work has tried to extend these investigations to language models.However, there are no widely agreed-upon metrics for word learning in language models.We take a distributional approach to this problem, defining lexical knowledge in terms of properties of the learned distribution for a target word.We argue that distributional signatures studied in prior work fail to capture key distributional information. Thus, we propose an array of signatures that improve on earlier approaches by capturing knowledge of both where the target word can and cannot occur as well as gradient preferences about the word{'}s appropriateness.We obtain learning trajectories for a selection of small language models we train from scratch, study the relationship between different distributional signatures, compare how well they align with human word learning trajectories and interpretable lexical features, and address basic methodological questions about estimating these distributional signatures.Our metrics largely capture complementary information, suggesting that it is important not to rely on a single metric.However, across all metrics, language models' learning trajectories fail to correlate with those of children."
+}
+
+%Meta-Learning
+@inproceedings{goodale-etal-2025-meta,
+    title = "Meta-Learning Neural Mechanisms rather than {B}ayesian Priors",
+    author = "Goodale, Michael Eric  and
+      Mascarenhas, Salvador  and
+      Lakretz, Yair",
+    editor = "Che, Wanxiang  and
+      Nabende, Joyce  and
+      Shutova, Ekaterina  and
+      Pilehvar, Mohammad Taher",
+    booktitle = "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2025",
+    address = "Vienna, Austria",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.acl-long.860/",
+    doi = "10.18653/v1/2025.acl-long.860",
+    pages = "17588--17605",
+    ISBN = "979-8-89176-251-0",
+    abstract = "Children acquire language despite being exposed to several orders of magnitude less data than large language models require. Meta-learning has been proposed as a way to integrate human-like learning biases into neural-network architectures, combining both the structured generalizations of symbolic models with the scalability of neural-network models. But what does meta-learning exactly imbue the model with? We investigate the meta-learning of formal languages and find that, contrary to previous claims, meta-trained models are not learning simplicity-based priors when meta-trained on datasets organised around simplicity. Rather, we find evidence that meta-training imprints neural mechanisms (such as counters) into the model, which function like cognitive primitives for the network on downstream tasks. Most surprisingly, we find that meta-training on a *single* formal language can provide as much improvement to a model as meta-training on 5000 different formal languages, provided that the formal language incentivizes the learning of useful neural mechanisms. Taken together, our findings provide practical implications for efficient meta-learning paradigms and new theoretical insights into linking symbolic theories and neural mechanisms."
+}
+
+@article{mccoy2025modeling,
+  title={Modeling rapid language learning by distilling Bayesian priors into artificial neural networks},
+  author={McCoy, R Thomas and Griffiths, Thomas L},
+  journal={Nature communications},
+  volume={16},
+  number={1},
+  pages={4676},
+  year={2025},
+  publisher={Nature Publishing Group UK London}
+}
+
+@article{schuler20266,
+  title={6-To-8 Year-Old Children Adjust Their Linguistic Generalizations Based on Distributional Cues},
+  author={Schuler, Kathryn D and Reeder, Patricia A and Getz, Heidi and Kissinger, Kathryn and Aslin, Richard N and Newport, Elissa L},
+  journal={Journal of Cognition and Development},
+  pages={1--26},
+  year={2026},
+  publisher={Taylor \& Francis}
+}
+
+@article{mccoy2024meta,
+  title={Meta-learning as a bridge between neural networks and symbolic Bayesian models.},
+  author={McCoy, R Thomas and Griffiths, Thomas L},
+  journal={Behavioral \& Brain Sciences},
+  volume={47},
+  year={2024}
+}
+
+
+%Multlilingual References
+@inproceedings{conneau2020unsupervised,
+  title={Unsupervised cross-lingual representation learning at scale},
+  author={Conneau, Alexis and Khandelwal, Kartikay and Goyal, Naman and Chaudhary, Vishrav and Wenzek, Guillaume and Guzm{\'a}n, Francisco and Grave, {\'E}douard and Ott, Myle and Zettlemoyer, Luke and Stoyanov, Veselin},
+  booktitle={Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics},
+  pages={8440--8451},
+  year={2020}
+}
+
+
+
+@inproceedings{xue2021mt5,
+  title={mT5: A massively multilingual pre-trained text-to-text transformer},
+  author={Xue, Linting and Constant, Noah and Roberts, Adam and Kale, Mihir and Al-Rfou, Rami and Siddhant, Aditya and Barua, Aditya and Raffel, Colin},
+  booktitle={Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies},
+  pages={483--498},
+  year={2021}
+}
+
+@inproceedings{pires2019multilingual,
+  title={How multilingual is multilingual BERT?},
+  author={Pires, Telmo and Schlinger, Eva and Garrette, Dan},
+  booktitle={Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics},
+  pages={4996--5001},
+  year={2019}
+}
+
+
+%Brain Alignment
+
+
+
+@article{liu2026training,
+  title={Training-Driven Representational Geometry Modularization Predicts Brain Alignment in Language Models},
+  author={Liu, Yixuan and Ma, Zhiyuan and Tang, Likai and Gan, Runmin and Zhang, Xinche and Li, Jinhao and Xie, Chao and Song, Sen},
+  journal={arXiv preprint arXiv:2602.07539},
+  year={2026}
+}
+
+@article{negi2025brain,
+  title={Brain-Informed Fine-Tuning for Improved Multilingual Understanding in Language Models},
+  author={Negi, Anuja and Oota, Subba Reddy and Nunez-Elizalde, Anwar O and Gupta, Manish and Deniz, Fatma},
+  journal={bioRxiv},
+  pages={2025--07},
+  year={2025},
+  publisher={Cold Spring Harbor Laboratory}
+}
+
+@article{lamarre2025concreteness,
+  title={Concreteness shapes semantic representations in bilingual brains},
+  author={Lamarre, Mathis and Gong, Xue L and Chen, Catherine and Deniz, Fatma},
+  journal={bioRxiv},
+  pages={2025--12},
+  year={2025},
+  publisher={Cold Spring Harbor Laboratory}
+}
+
+@inproceedings{salhan2025pedagogical,
+  title        = {Pedagogical Alignment of LLMs Requires Diverse Cognitively-Inspired Student Proxies},
+  author       = {Salhan, Suchir and Caines, Andrew and Buttery, Paula},
+  booktitle    = {Proceedings of the First Workshop on CogInterp: Interpreting Cognition in Deep Learning Models at NeurIPS 2025},
+  year         = {2025},
+  address      = {San Diego, California, USA},
+  publisher    = {NeurIPS Foundation}
+}
+
+@misc{yang2026applesapplescomparablecrosslingual,
+      title={{Apples to Apples? Towards Comparable Crosslingual Language Model Evaluation}}, 
+      author={Xiulin Yang and Ethan Gotlieb Wilcox and Catherine Arnett},
+      year={2026},
+      eprint={2608.25089},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2608.25089}, 
+}
+
+@misc{zhou2026crosslingualalignmentjointtraining,
+      title={Cross-Lingual Alignment Without Joint Training: Do Monolingual Language Models Converge on Universal Representations?}, 
+      author={Ej Zhou and Suchir Salhan and Catherine Arnett and Anna Korhonen},
+      year={2026},
+      eprint={2608.27115},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2608.27115}, 
+}
+
+@inproceedings{korner-etal-2026-meanings,
+    title = "When Meanings Meet: Investigating the Emergence and Quality of Shared Concept Spaces during Multilingual Language Model Training",
+    author = {K{\"o}rner, Felicia  and
+      M{\"u}ller-Eberstein, Max  and
+      Korhonen, Anna  and
+      Plank, Barbara},
+    editor = "Demberg, Vera  and
+      Inui, Kentaro  and
+      Marquez, Llu{\'i}s",
+    booktitle = "Proceedings of the 19th Conference of the {E}uropean Chapter of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)",
+    month = mar,
+    year = "2026",
+    address = "Rabat, Morocco",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.eacl-long.145/",
+    doi = "10.18653/v1/2026.eacl-long.145",
+    pages = "3149--3169",
+    ISBN = "979-8-89176-380-7",
+    abstract = "Training Large Language Models (LLMs) with high multilingual coverage is becoming increasingly important {---} especially when monolingual resources are scarce. Recent studies have found that LLMs process multilingual inputs in shared concept spaces, thought to support generalization and cross-lingual transfer. However, these prior studies often do not use causal methods, lack deeper error analysis or focus on the final model only, leaving open how these spaces emerge \textit{during training}. We investigate the development of language-agnostic concept spaces during pretraining of EuroLLM through the causal interpretability method of activation patching. We isolate cross-lingual concept representations, then inject them into a translation prompt to investigate how consistently translations can be altered, independently of the language. We find that \textit{shared concept spaces emerge early and continue to refine}, but that \textit{alignment with them is language-dependent}. Furthermore, in contrast to prior work, our fine-grained manual analysis reveals that some apparent gains in translation quality reflect shifts in behavior {---} like selecting senses for polysemous words or translating instead of copying cross-lingual homographs {---} rather than improved translation ability. Our findings offer new insight into the training dynamics of cross-lingual alignment and the conditions under which causal interpretability methods offer meaningful insights in multilingual contexts."
+}
+
+@inproceedings{barbenel-etal-2026-l1,
+    title = "{L}1 Influence in {L}2 Language Models: A Human-centric Approach",
+    author = "Barbenel, Laura  and
+      Goulder, Lily  and
+      O{'}Driscoll, Aoife  and
+      Salhan, Suchir  and
+      Arnett, Catherine  and
+      Caines, Andrew  and
+      Buttery, Paula",
+    editor = "Ma, Martin Ziqiao  and
+      Liu, Emmy  and
+      Liu, Jing  and
+      Chang, Tyler A.  and
+      Fourtassi, Abdellah  and
+      Warstadt, Alex  and
+      Hahn, Michael  and
+      Sun, Weiwei  and
+      Shi, Freda",
+    booktitle = "Proceedings of the 1st Workshop on Computational Developmental Linguistics ({CDL})",
+    month = jul,
+    year = "2026",
+    address = "Grand Hyatt Manchester San Diego, 1 Market Pl, San Diego, CA 92101",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.cdl-1.15/",
+    doi = "10.18653/v1/2026.cdl-1.15",
+    pages = "92--116",
+    ISBN = "979-8-89176-428-6",
+    abstract = "Language learners typically exhibit first language (L1) influence in their written second language (L2) production. We investigate whether similar patterns emerge in L2 language models (L2LMs), which are typically assessed on task-based benchmarks rather than on language use. We evaluate the use of Native Language Identification (NLI) as a method for detecting whether L2LMs exhibit human-like L1 influence. Using existing learner corpora and our novel L2 English dataset, we identify the conditions that yield the highest NLI accuracy, and show that text length but not proficiency affects performance. We then apply NLI to L2LM-generated text under various instruction-tuning and prompting conditions. We find that instruction tuning on human learner essays yields high NLI accuracy ({\textasciitilde}90{\%}) and is necessary for detectable L1 influence. Whilst NLI accuracy is similar for L2LM and human essays, human evaluation shows that LM-generated L1 influence remains distinguishable from human writing."
+}
+
+@techreport{salhan2025linguistics_llms,
+  title        = {Linguistics in the Age of Language Models: What Can Cognitively-Inspired Language Models Offer to Linguistic Theory?},
+  author       = {Salhan, Suchir},
+  institution  = {University of Cambridge},
+  series       = {Cambridge Occasional Papers in Linguistics (CoPiL)},
+  year         = {2025},
+  month        = jun,
+  doi          = {10.13140/RG.2.2.34495.88483},
+  number       = {Volume 17, Article 10}
+}
+
+@article{wilcox2023testing,
+  title={Testing the predictions of surprisal theory in 11 languages},
+  author={Wilcox, Ethan G and Pimentel, Tiago and Meister, Clara and Cotterell, Ryan and Levy, Roger P},
+  journal={Transactions of the Association for Computational Linguistics},
+  volume={11},
+  pages={1451--1470},
+  year={2023},
+  publisher={MIT Press One Broadway, 12th Floor, Cambridge, Massachusetts 02142, USA~…}
+}
+
+@inproceedings{rajaee2024analyzing,
+  title={Analyzing the evaluation of cross-lingual knowledge transfer in multilingual language models},
+  author={Rajaee, Sara and Monz, Christof},
+  booktitle={Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  pages={2895--2914},
+  year={2024}
+}
+
+@inproceedings{de-varda-marelli-2022-effects,
+    title = "The Effects of Surprisal across Languages: Results from Native and Non-native Reading",
+    author = "de Varda, Andrea  and
+      Marelli, Marco",
+    editor = "He, Yulan  and
+      Ji, Heng  and
+      Li, Sujian  and
+      Liu, Yang  and
+      Chang, Chua-Hui",
+    booktitle = "Findings of the Association for Computational Linguistics: AACL-IJCNLP 2022",
+    month = nov,
+    year = "2022",
+    address = "Online only",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.findings-aacl.13/",
+    doi = "10.18653/v1/2022.findings-aacl.13",
+    pages = "138--144",
+    abstract = {It is well known that the surprisal of an upcoming word, as estimated by language models, is a solid predictor of reading times (Smith and Levy, 2013). However, most of the studies that support this view are based on English and few other Germanic languages, leaving an open question as to the cross-lingual generalizability of such findings. Moreover, they tend to consider only the best-performing eye-tracking measure, which might conflate the effects of predictive and integrative processing. Furthermore, it is not clear whether prediction plays a role in non-native language processing in bilingual individuals (Gr{\"u}ter et al., 2014). We approach these problems at large scale, extracting surprisal estimates from mBERT, and assessing their psychometric predictive power on the MECO corpus, a cross-linguistic dataset of eye movement behavior in reading (Siegelman et al., 2022; Kuperman et al., 2020). We show that surprisal is a strong predictor of reading times across languages and fixation measurements, and that its effects in L2 are weaker with respect to L1.}
+}
+
+@inproceedings{wang2024probing,
+  title={Probing the emergence of cross-lingual alignment during LLM training},
+  author={Wang, Hetong and Minervini, Pasquale and Ponti, Edoardo},
+  booktitle={Findings of the Association for Computational Linguistics: ACL 2024},
+  pages={12159--12173},
+  year={2024}
+}
+
+@inproceedings{chang-etal-2022-geometry,
+    title = "The Geometry of Multilingual Language Model Representations",
+    author = "Chang, Tyler A.  and
+      Tu, Zhuowen  and
+      Bergen, Benjamin K.",
+    editor = "Goldberg, Yoav  and
+      Kozareva, Zornitsa  and
+      Zhang, Yue",
+    booktitle = "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2022",
+    address = "Abu Dhabi, United Arab Emirates",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.emnlp-main.9/",
+    doi = "10.18653/v1/2022.emnlp-main.9",
+    pages = "119--136",
+    abstract = "We assess how multilingual language models maintain a shared multilingual representation space while still encoding language-sensitive information in each language. Using XLM-R as a case study, we show that languages occupy similar linear subspaces after mean-centering, evaluated based on causal effects on language modeling performance and direct comparisons between subspaces for 88 languages. The subspace means differ along language-sensitive axes that are relatively stable throughout middle layers, and these axes encode information such as token vocabularies. Shifting representations by language means is sufficient to induce token predictions in different languages. However, we also identify stable language-neutral axes that encode information such as token positions and part-of-speech. We visualize representations projected onto language-sensitive and language-neutral axes, identifying language family and part-of-speech clusters, along with spirals, toruses, and curves representing token position information. These results demonstrate that multilingual language models encode information along orthogonal language-sensitive and language-neutral axes, allowing the models to extract a variety of features for downstream tasks and cross-lingual transfer learning."
+}
+
+@article{kolling2025large,
+  title={Large Language Models as Model Organisms for Human Associative Learning},
+  author={Kolling, Camila and Vo, Vy Ai and Toneva, Mariya},
+  journal={arXiv preprint arXiv:2510.21408},
+  year={2025}
+}
+
+@article{jain2024computational,
+  title={Computational language modeling and the promise of in silico experimentation},
+  author={Jain, Shailee and Vo, Vy A and Wehbe, Leila and Huth, Alexander G},
+  journal={Neurobiology of Language},
+  volume={5},
+  number={1},
+  pages={80--106},
+  year={2024},
+  publisher={MIT Press One Broadway, 12th Floor, Cambridge, Massachusetts 02142, USA~…}
+}
+
+@article{hosseini2022artificial,
+  title={Artificial neural network language models align neurally and behaviorally with humans even after a developmentally realistic amount of training},
+  author={Hosseini, Eghbal A and Schrimpf, Martin and Zhang, Yian and Bowman, Samuel and Zaslavsky, Noga and Fedorenko, Evelina},
+  journal={BioRxiv},
+  pages={2022--10},
+  year={2022},
+  publisher={Cold Spring Harbor Laboratory}
+}
+
+@article{aw2026zero,
+  title={Zero-shot World Models Are Developmentally Efficient Learners},
+  author={Aw, Khai Loong and Kotar, Klemen and Lee, Wanhee and Kim, Seungwoo and Jedoui, Khaled and Venkatesh, Rahul and Chen, Lilian Naing and Frank, Michael C and Yamins, Daniel LK},
+  journal={arXiv preprint arXiv:2604.10333},
+  year={2026}
+}
+
+
+@inproceedings{lai-etal-2017-race,
+    title = "{RACE}: Large-scale {R}e{A}ding Comprehension Dataset From Examinations",
+    author = "Lai, Guokun  and
+      Xie, Qizhe  and
+      Liu, Hanxiao  and
+      Yang, Yiming  and
+      Hovy, Eduard",
+    editor = "Palmer, Martha  and
+      Hwa, Rebecca  and
+      Riedel, Sebastian",
+    booktitle = "Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing",
+    month = sep,
+    year = "2017",
+    address = "Copenhagen, Denmark",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/D17-1082/",
+    doi = "10.18653/v1/D17-1082",
+    pages = "785--794",
+    abstract = "We present RACE, a new dataset for benchmark evaluation of methods in the reading comprehension task. Collected from the English exams for middle and high school Chinese students in the age range between 12 to 18, RACE consists of near 28,000 passages and near 100,000 questions generated by human experts (English instructors), and covers a variety of topics which are carefully designed for evaluating the students' ability in understanding and reasoning. In particular, the proportion of questions that requires reasoning is much larger in RACE than that in other benchmark datasets for reading comprehension, and there is a significant gap between the performance of the state-of-the-art models (43{\%}) and the ceiling human performance (95{\%}). We hope this new dataset can serve as a valuable resource for research and evaluation in machine comprehension. The dataset is freely available at \url{http://www.cs.cmu.edu/~glai1/data/race/}and the code is available at \url{https://github.com/qizhex/RACE_AR_baselines}."
+}
+
+@inproceedings{benedetto-etal-2024-using,
+    title = "Using {LLM}s to simulate students' responses to exam questions",
+    author = "Benedetto, Luca  and
+      Aradelli, Giovanni  and
+      Donvito, Antonia  and
+      Lucchetti, Alberto  and
+      Cappelli, Andrea  and
+      Buttery, Paula",
+    editor = "Al-Onaizan, Yaser  and
+      Bansal, Mohit  and
+      Chen, Yun-Nung",
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.findings-emnlp.663/",
+    doi = "10.18653/v1/2024.findings-emnlp.663",
+    pages = "11351--11368",
+    abstract = "Previous research leveraged Large Language Models (LLMs) in numerous ways in the educational domain. Here, we show that they can be used to answer exam questions simulating students of different skill levels and share a prompt, engineered for GPT-3.5, that enables the simulation of varying student skill levels on questions from different educational domains. We evaluate the proposed prompt on three publicly available datasets (one from science exams and two from English reading comprehension exams) and three LLMs (two versions of GPT-3.5 and one of GPT-4), and show that it is robust to different educational domains and capable of generalising to data unseen during the prompt engineering phase. We also show that, being engineered for a specific version of GPT-3.5, the prompt does not generalise well to different LLMs, stressing the need for prompt engineering for each model in practical applications. Lastly, we find that there is not a direct correlation between the quality of the rationales obtained with chain-of-thought prompting and the accuracy in the student simulation task."
+}
+
+@article{wilcox2020predictive,
+  title={On the predictive power of neural language models for human real-time comprehension behavior},
+  author={Wilcox, Ethan Gotlieb and Gauthier, Jon and Hu, Jennifer and Qian, Peng and Levy, Roger},
+  journal={arXiv preprint arXiv:2006.01912},
+  year={2020}
+}
+
+@article{kaye2025sentence,
+  title={Sentence processing by humans and machines: Large language models as a tool to better understand human reading},
+  author={Kaye, Nikki G and Gordon, Peter C},
+  journal={Psychonomic Bulletin \& Review},
+  volume={32},
+  number={6},
+  pages={2719--2733},
+  year={2025},
+  publisher={Springer}
+}
+
+
+@article{kuperman2023text,
+  title={Text reading in English as a second language: Evidence from the Multilingual Eye-Movements Corpus},
+  author={Kuperman, Victor and Siegelman, Noam and Schroeder, Sascha and Acart{\"u}rk, Cengiz and Alexeeva, Svetlana and Amenta, Simona and Bertram, Raymond and Bonandrini, Rolando and Brysbaert, Marc and Chernova, Daria and others},
+  journal={Studies in second language acquisition},
+  volume={45},
+  number={1},
+  pages={3--37},
+  year={2023},
+  publisher={Cambridge University Press}
+}
+
+@article{kuperman2025new,
+  title={New data on text reading in English as a second language: The Wave 2 expansion of the Multilingual Eye-Movement Corpus (MECO)},
+  author={Kuperman, Victor and Schroeder, Sascha and Acart{\"u}rk, Cengiz and Agrawal, Niket and Alexandre, Dominick M and Bolliger, Lena S and Brasser, Jan and Campos-Rojas, C{\'e}sar and Drieghe, Denis and {\DJ}ur{\dj}evi{\'c}, Du{\v{s}}ica Filipovi{\'c} and others},
+  journal={Studies in Second Language Acquisition},
+  volume={47},
+  number={2},
+  pages={677--695},
+  year={2025},
+  publisher={Cambridge University Press}
+}
+
+@inproceedings{meister2021revisiting,
+  title={Revisiting the uniform information density hypothesis},
+  author={Meister, Clara and Pimentel, Tiago and Haller, Patrick and J{\"a}ger, Lena and Cotterell, Ryan and Levy, Roger},
+  booktitle={Proceedings of the 2021 conference on empirical methods in natural language processing},
+  pages={963--980},
+  year={2021}
+}
+
+@book{hillert1998sentence,
+  title={Sentence processing: A crosslinguistic perspective},
+  author={Hillert, Dieter},
+  volume={31},
+  year={1998},
+  publisher={Brill}
+}
+
+@inproceedings{jakobi2025multipleye,
+  title={MultiplEYE: Creating a multilingual eye-tracking-while-reading corpus},
+  author={Jakobi, Deborah Noemie and Stegenwallner-Sch{\"u}tz, Maja and Hollenstein, Nora and Ding, Cui and Kaspere, Ramune and Mati{\'c} {\v{S}}kori{\'c}, Ana and Pavlinusic Vilus, Eva and Frank, Stefan and M{\"u}ller, Marie-Luise and Jensen de L{\'o}pez, Kristine M and others},
+  booktitle={Proceedings of the 2025 Symposium on Eye Tracking Research and Applications},
+  pages={1--11},
+  year={2025}
+}
+
+@article{aoyama2025predicting,
+  title={Predicting the Formation of Induction Heads},
+  author={Aoyama, Tatsuya and Wilcox, Ethan Gotlieb and Schneider, Nathan},
+  journal={arXiv preprint arXiv:2511.16893},
+  year={2025}
+}
+
+@article{oh2023does,
+  title={Why does surprisal from larger transformer-based language models provide a poorer fit to human reading times?},
+  author={Oh, Byung-Doh and Schuler, William},
+  journal={Transactions of the Association for Computational Linguistics},
+  volume={11},
+  pages={336--350},
+  year={2023},
+  publisher={MIT Press One Broadway, 12th Floor, Cambridge, Massachusetts 02142, USA~…}
+}
+
+
+@article{patil2024filtered,
+  title={Filtered corpus training (FiCT) shows that language models can generalize from indirect evidence},
+  author={Patil, Abhinav and Jumelet, Jaap and Chiu, Yu Ying and Lapastora, Andy and Shen, Peter and Wang, Lexie and Willrich, Clevis and Steinert-Threlkeld, Shane},
+  journal={Transactions of the Association for Computational Linguistics},
+  volume={12},
+  pages={1597--1615},
+  year={2024},
+  publisher={MIT Press 255 Main Street, 9th Floor, Cambridge, Massachusetts 02142, USA~…}
+}
+
+@article{nakagi2025triple,
+  title={Triple phase transitions: Understanding the learning dynamics of large language models from a neuroscience perspective},
+  author={Nakagi, Yuko and Tada, Keigo and Yoshino, Sota and Nishimoto, Shinji and Takagi, Yu},
+  journal={arXiv preprint arXiv:2502.20779},
+  year={2025}
+}
+
+@inproceedings{de-varda-marelli-2024-locally,
+    title = "Locally Biased Transformers Better Align with Human Reading Times",
+    author = "De Varda, Andrea  and
+      Marelli, Marco",
+    editor = "Kuribayashi, Tatsuki  and
+      Rambelli, Giulia  and
+      Takmaz, Ece  and
+      Wicke, Philipp  and
+      Oseki, Yohei",
+    booktitle = "Proceedings of the Workshop on Cognitive Modeling and Computational Linguistics",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.cmcl-1.3/",
+    doi = "10.18653/v1/2024.cmcl-1.3",
+    pages = "30--36",
+    abstract = "Recent psycholinguistic theories emphasize the interdependence between linguistic expectations and memory limitations in human language processing. We modify the self-attention mechanism of a transformer model to simulate a lossy context representation, biasing the model{'}s predictions to give additional weight to the local linguistic context. We show that surprisal estimates from our locally-biased model generally provide a better fit to human psychometric data, underscoring the sensitivity of the human parser to local linguistic information."
+}
+
+
+
+@article{madhyastha2026working,
+  title={Working Memory Constraints Scaffold Learning in Transformers under Data Scarcity},
+  author={Madhyastha, Pranava and Adamcova, Dagmar},
+  journal={arXiv preprint arXiv:2604.20789},
+  year={2026}
+}
+
+@article{yamaguchi2026enhancing,
+  title={Enhancing Linguistic Competence of Language Models through Pre-training with Language Learning Tasks},
+  author={Yamaguchi, Atsuki and Mi, Maggie and Aletras, Nikolaos},
+  journal={arXiv preprint arXiv:2601.03448},
+  year={2026}
+}
+@inproceedings{wilcox-etal-2023-language,
+  title     = {Language Model Quality Correlates with Psychometric Predictive Power in Multiple Languages},
+  author    = {Wilcox, Ethan G. and Meister, Clara and Cotterell, Ryan and Pimentel, Tiago},
+  booktitle = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
+  year      = {2023},
+  pages     = {7503--7511},
+  publisher = {Association for Computational Linguistics}
+}
+
+@misc{mullooly2023cupa5,
+  title        = {{CUP\&A5}: A CEFR-Stratified Multiple-Choice Question-Answering Dataset for Pedagogical Evaluation},
+  author       = {Mullooly, John},
+  howpublished = {Cambridge University Press \& Assessment internal dataset},
+  year         = {2023}
+}
+
+@misc{frank2026dutch,
+  title        = {Dutch--English Cognate and False-Friend Effects in Bilingual Language Models},
+  author       = {Frank, Stefan L. and {\v{S}}krjanec, Iza},
+  year         = {2026},
+  note         = {In preparation / forthcoming}
+}
+
+@misc{hu2025between,
+  title        = {Between Circuits and Chomsky: Pre-pretraining on Formal Languages Imparts Linguistic Biases},
+  author       = {Hu, Michael Y. and Petty, Jackson and Shi, Chuan and Merrill, William and Linzen, Tal},
+  year         = {2025},
+  eprint       = {2505.20275},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.CL}
+}
+
+@misc{mita2025wm,
+  title        = {Working-Memory-Constrained Language Models via ALiBi Decay},
+  author       = {Mita, Masato and Goriely, Zebulon and Buttery, Paula},
+  year         = {2025},
+  note         = {Preprint}
+}
+
+
+@misc{feng2026bilingual,
+  title        = {Bilingual {BabyLM}: Matched Mono- and Bi-lingual Pretraining at 100M Words},
+  author       = {Feng, Steven Y. and Yadavalli, Aditya and Wang, Chenhao and Chang, Tyler A.},
+  year         = {2026},
+  note         = {Forthcoming}
+}
+
+
+@article{smith2013effect,
+  title={The effect of word predictability on reading time is logarithmic},
+  author={Smith, Nathaniel J and Levy, Roger},
+  journal={Cognition},
+  volume={128},
+  number={3},
+  pages={302--319},
+  year={2013},
+  publisher={Elsevier}
+}
+
+
+% MECO references for X-PPL-26
+
+@article{melby2014reading,
+  title={Reading comprehension and its underlying components in second-language learners: A meta-analysis of studies comparing first-and second-language learners.},
+  author={Melby-Lerv{\aa}g, Monica and Lerv{\aa}g, Arne},
+  journal={Psychological bulletin},
+  volume={140},
+  number={2},
+  pages={409},
+  year={2014},
+  publisher={American Psychological Association}
+}
+
+@article{siegelman2024rethinking,
+  title={Rethinking first language--second language similarities and differences in English proficiency: Insights from the ENglish Reading Online (ENRO) project},
+  author={Siegelman, Noam and Elgort, Irina and Brysbaert, Marc and Agrawal, Niket and Amenta, Simona and Arsenijevi{\'c} Mijalkovi{\'c}, Jasmina and Chang, Christine S and Chernova, Daria and Chetail, Fabienne and Clarke, AJ Benjamin and others},
+  journal={Language Learning},
+  volume={74},
+  number={1},
+  pages={249--294},
+  year={2024},
+  publisher={Wiley Online Library}
+}
+
+@article{crossley2008assessing,
+  title={Assessing L2 reading texts at the intermediate level: An approximate replication of Crossley, Louwerse, McCarthy \& McNamara (2007)},
+  author={Crossley, Scott A and McNamara, Danielle S},
+  journal={Language Teaching},
+  volume={41},
+  number={3},
+  pages={409--429},
+  year={2008},
+  publisher={Cambridge University Press}
+}
+
+@article{mcneish2017unnecessary,
+  title={On the unnecessary ubiquity of hierarchical linear modeling.},
+  author={McNeish, Daniel and Stapleton, Laura M and Silverman, Rebecca D},
+  journal={Psychological methods},
+  volume={22},
+  number={1},
+  pages={114},
+  year={2017},
+  publisher={American Psychological Association}
+}
+
+@inproceedings{goodkind2018predictive,
+  title={Predictive power of word surprisal for reading times is a linear function of language model quality},
+  author={Goodkind, Adam and Bicknell, Klinton},
+  booktitle={Proceedings of the 8th workshop on cognitive modeling and computational linguistics (CMCL 2018)},
+  pages={10--18},
+  year={2018}
+}
+
+@inproceedings{merkx2021human,
+  title={Human sentence processing: Recurrence or attention?},
+  author={Merkx, Danny and Frank, Stefan L},
+  booktitle={Proceedings of the workshop on cognitive modeling and computational linguistics},
+  pages={12--22},
+  year={2021}
+}
+
+@article{oh2022comparison,
+  title={Comparison of structural parsers and neural language models as surprisal estimators},
+  author={Oh, Byung-Doh and Clark, Christian and Schuler, William},
+  journal={Frontiers in Artificial Intelligence},
+  volume={5},
+  pages={777963},
+  year={2022},
+  publisher={Frontiers Media SA}
+}
+
+@article{shain2024large,
+  title={Large-scale evidence for logarithmic effects of word predictability on reading time},
+  author={Shain, Cory and Meister, Clara and Pimentel, Tiago and Cotterell, Ryan and Levy, Roger},
+  journal={Proceedings of the National Academy of Sciences},
+  volume={121},
+  number={10},
+  pages={e2307876121},
+  year={2024},
+  publisher={National Academy of Sciences}
+}
+
+@article{cameron2008bootstrap,
+  title={Bootstrap-based improvements for inference with clustered errors},
+  author={Cameron, A Colin and Gelbach, Jonah B and Miller, Douglas L},
+  journal={The review of economics and statistics},
+  volume={90},
+  number={3},
+  pages={414--427},
+  year={2008},
+  publisher={The MIT Press}
+}
+
+@article{levy2008expectation,
+  title={Expectation-based syntactic comprehension},
+  author={Levy, Roger},
+  journal={Cognition},
+  volume={106},
+  number={3},
+  pages={1126--1177},
+  year={2008},
+  publisher={Elsevier}
+}
+
+@inproceedings{hale2001probabilistic,
+  title={A probabilistic Earley parser as a psycholinguistic model},
+  author={Hale, John},
+  booktitle={Second meeting of the north american chapter of the association for computational linguistics},
+  year={2001}
+}
+
+@inproceedings{hoffmann2022,
+author = {Hoffmann, Jordan and Borgeaud, Sebastian and Mensch, Arthur and Buchatskaya, Elena and Cai, Trevor and Rutherford, Eliza and de Las Casas, Diego and Hendricks, Lisa Anne and Welbl, Johannes and Clark, Aidan and Hennigan, Tom and Noland, Eric and Millican, Katie and van den Driessche, George and Damoc, Bogdan and Guy, Aurelia and Osindero, Simon and Simonyan, Karen and Elsen, Erich and Vinyals, Oriol and Rae, Jack W. and Sifre, Laurent},
+title = {Training compute-optimal large language models},
+year = {2022},
+isbn = {9781713871088},
+publisher = {Curran Associates Inc.},
+address = {Red Hook, NY, USA},
+abstract = {We investigate the optimal model size and number of tokens for training a Transformer language model under a given compute budget. We find that current large language models are significantly undertrained, a consequence of the recent focus on scaling language models whilst keeping the amount of training data constant. By training over 400 language models ranging from 70 million to over 16 billion parameters on 5 to 500 billion tokens, we find that for compute-optimal training, the model size and the number of training tokens should be scaled equally: for every doubling of model size the number of training tokens should also be doubled. We test this hypothesis by training a predicted compute-optimal model, Chinchilla, that uses the same compute budget as Gopher but with 70B parameters and 4\texttimes{} more more data. Chinchilla uniformly and significantly outperforms Gopher (280B), GPT-3 (175B), Jurassic-1 (178B), and Megatron-Turing NLG (530B) on a large range of downstream evaluation tasks. This also means that Chinchilla uses substantially less compute for fine-tuning and inference, greatly facilitating downstream usage. As a highlight, Chinchilla reaches a state-of-the-art average accuracy of 67.5\% on the MMLU benchmark, greater than a 7\% improvement over Gopher.},
+booktitle = {Proceedings of the 36th International Conference on Neural Information Processing Systems},
+articleno = {2176},
+numpages = {15},
+location = {New Orleans, LA, USA},
+series = {NIPS '22}
+}
+
+@misc{liu-etal-2025-zhoblimp,
+  title={{ZhoBLiMP}: A Systematic Assessment of Language Models with Linguistic Minimal Pairs in {C}hinese},
+  author={Liu, Yikang and Shen, Yeting and Zhu, Hongao and Xu, Lilong and Qian, Zhiheng and Song, Siyuan and Zhang, Kejia and Tang, Jialong and Zhang, Pei and Yang, Baosong and Tu, Rui-Jie and Liu, Hai},
+  year={2025},
+  eprint={2411.06096},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2411.06096}
+}
+
+@misc{suijkerbuijk-etal-2025-blimp-nl,
+  title={{BLiMP-NL}: A Corpus of {D}utch Minimal Pairs and Grammaticality Judgements for Language Model Evaluation},
+  author={Suijkerbuijk, Michelle and Prins, Zoe and de Heer Kloots, Marianne and Zuidema, Willem and Frank, Stefan L.},
+  year={2025},
+  eprint={2503.04395},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2503.04395}
+}
+
+@misc{workshop2022bloom,
+  title={{BLOOM}: A 176{B}-Parameter Open-Access Multilingual Language Model},
+  author={{BigScience Workshop}},
+  year={2022},
+  eprint={2211.05100},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2211.05100}
+}
+
+@inproceedings{xie-etal-2018-cloth,
+  title={Large-scale Cloze Test Dataset Created by Teachers},
+  author={Xie, Qizhe and Lai, Guokun and Dai, Zihang and Hovy, Eduard},
+  booktitle={Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing},
+  pages={2344--2356},
+  year={2018},
+  address={Brussels, Belgium},
+  publisher={Association for Computational Linguistics},
+  url={https://aclanthology.org/D18-1257/},
+  doi={10.18653/v1/D18-1257}
+}
+
+@misc{martins2024eurollm,
+  title={{EuroLLM}: Multilingual Language Models for {E}urope},
+  author={Martins, Pedro Henrique and Fernandes, Patrick and Alves, Jo{\~a}o and Guerreiro, Nuno M. and Rei, Ricardo and Alves, Duarte M. and Pombal, Jos{\'e} and Farajian, Amin and Faysse, Manuel and Klimaszewski, Mateusz and Colombo, Pierre and Haddow, Barry and de Souza, Jos{\'e} G. C. and Birch, Alexandra and Martins, Andr{\'e} F. T.},
+  year={2024},
+  eprint={2409.16235},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2409.16235}
+}
+
+@misc{aryabumi2024aya,
+  title={{Aya} 23: Open Weight Releases to Further Multilingual Progress},
+  author={Aryabumi, Viraat and Dang, John and Talupuru, Dwarak and Dash, Saurabh and Cairuz, David and Lin, Hangyu and Venkitesh, Bharat and Smith, Madeline and Marchisio, Kelly and Ruder, Sebastian and Locatelli, Acyr and Fadaee, Marzieh and {\"U}st{\"u}n, Ahmet and Hooker, Sara},
+  year={2024},
+  eprint={2405.15032},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2405.15032}
+}
+
+@misc{swiss-ai-2025-apertus,
+  title={{Apertus}: Democratizing Open and Compliant {LLM}s for Global Language Environments},
+  author={{Swiss AI Initiative}},
+  year={2025},
+  eprint={2509.14233},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2509.14233}
+}
+
+@inproceedings{lin-etal-2022-shot,
+  title={Few-shot Learning with Multilingual Generative Language Models},
+  author={Lin, Xi Victoria and Mihaylov, Todor and Artetxe, Mikel and Wang, Tianlu and Chen, Shuohui and Simig, Daniel and Ott, Myle and Goyal, Naman and Bhosale, Shruti and Du, Jingfei and Pasunuru, Ramakanth and Shleifer, Sam and Koura, Punit Singh and Chaudhary, Vishrav and O'Horo, Brian and Wang, Jeff and Zettlemoyer, Luke and Kozareva, Zornitsa and Diab, Mona and Stoyanov, Veselin and Li, Xian},
+  booktitle={Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing},
+  pages={9019--9052},
+  year={2022},
+  address={Abu Dhabi, United Arab Emirates},
+  publisher={Association for Computational Linguistics},
+  url={https://aclanthology.org/2022.emnlp-main.616/},
+  doi={10.18653/v1/2022.emnlp-main.616}
+}
+
+@inproceedings{biderman2023pythia,
+  title={{Pythia}: A Suite for Analyzing Large Language Models Across Training and Scaling},
+  author={Biderman, Stella and Schoelkopf, Hailey and Anthony, Quentin Gregory and Bradley, Herbie and O'Brien, Kyle and Hallahan, Eric and Khan, Mohammad Aflah and Purohit, Shivanshu and Prashanth, U. S. and Raff, Edward and Skowron, Aviya and Sutawika, Lintang and van der Wal, Oskar},
+  booktitle={Proceedings of the 40th International Conference on Machine Learning},
+  pages={2397--2430},
+  year={2023},
+  publisher={PMLR},
+  url={https://proceedings.mlr.press/v202/biderman23a.html}
+}
+
+
+@article{bai2023qwen,
+  title={Qwen technical report},
+  author={Bai, Jinze and Bai, Shuai and Chu, Yunfei and Cui, Zeyu and Dang, Kai and Deng, Xiaodong and Fan, Yang and Ge, Wenbin and Han, Yu and Huang, Fei and others},
+  journal={arXiv preprint arXiv:2309.16609},
+  year={2023}
+}
+
+
+@inproceedings{lin2022few,
+  title={Few-shot learning with multilingual generative language models},
+  author={Lin, Xi Victoria and Mihaylov, Todor and Artetxe, Mikel and Wang, Tianlu and Chen, Shuohui and Simig, Daniel and Ott, Myle and Goyal, Naman and Bhosale, Shruti and Du, Jingfei and others},
+  booktitle={Proceedings of the 2022 conference on empirical methods in natural language processing},
+  pages={9019--9052},
+  year={2022}
+}
+
+@article{grattafiori2024llama,
+  title={The llama 3 herd of models},
+  author={Grattafiori, Aaron and Dubey, Abhimanyu and Jauhri, Abhinav and Pandey, Abhinav and Kadian, Abhishek and Al-Dahle, Ahmad and Letman, Aiesha and Mathur, Akhil and Schelten, Alan and Vaughan, Alex and others},
+  journal={arXiv preprint arXiv:2407.21783},
+  year={2024}
+}
+
+@article{yang2023baichuan,
+  title={Baichuan 2: Open large-scale language models},
+  author={Yang, Aiyuan and Xiao, Bin and Wang, Bingning and Zhang, Borong and Bian, Ce and Yin, Chao and Lv, Chenxu and Pan, Da and Wang, Dian and Yan, Dong and others},
+  journal={arXiv preprint arXiv:2309.10305},
+  year={2023}
+}
+
+@article{team2024gemma,
+  title={Gemma 2: Improving open language models at a practical size},
+  author={Team, Gemma and Riviere, Morgane and Pathak, Shreya and Sessa, Pier Giuseppe and Hardin, Cassidy and Bhupatiraju, Surya and Hussenot, L{\'e}onard and Mesnard, Thomas and Shahriari, Bobak and Ram{\'e}, Alexandre and others},
+  journal={arXiv preprint arXiv:2408.00118},
+  year={2024}
+}
+
+@article{yang2025qwen3,
+  title={Qwen3 technical report},
+  author={Yang, An and Li, Anfeng and Yang, Baosong and Zhang, Beichen and Hui, Binyuan and Zheng, Bo and Yu, Bowen and Gao, Chang and Huang, Chengen and Lv, Chenxu and others},
+  journal={arXiv preprint arXiv:2505.09388},
+  year={2025}
+}
+
+@article{young2024yi,
+  title={Yi: Open foundation models by 01. ai},
+  author={Young, Alex and Chen, Bei and Li, Chao and Huang, Chengen and Zhang, Ge and Zhang, Guanwei and Wang, Guoyin and Li, Heng and Zhu, Jiangcheng and Chen, Jianqun and others},
+  journal={arXiv preprint arXiv:2403.04652},
+  year={2024}
+}
+
+@inproceedings{brown2020language,
+  title={Language Models are Few-Shot Learners},
+  author={Brown, Tom B. and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and Agarwal, Sandhini and Herbert-Voss, Ariel and Krueger, Gretchen and Henighan, Tom and Child, Rewon and Ramesh, Aditya and Ziegler, Daniel M. and Wu, Jeffrey and Winter, Clemens and Hesse, Christopher and Chen, Mark and Sigler, Eric and Litwin, Mateusz and Gray, Scott and Chess, Benjamin and Clark, Jack and Berner, Christopher and McCandlish, Sam and Radford, Alec and Sutskever, Ilya and Amodei, Dario},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
+  volume={33},
+  pages={1877--1901},
+  year={2020}
+}
+
+@article{gao2021framework,
+  title={A framework for few-shot language model evaluation},
+  author={Gao, Leo and Tow, Jonathan and Biderman, Stella and Black, Sid and DiPofi, Anthony and Foster, Charles and Golding, Laurence and Hsu, Jeffrey and McDonell, Kyle and Muennighoff, Niklas and others},
+  journal={Zenodo},
+  year={2021}
+}
+
+@article{hofmann2022language,
+  title={Language models explain word reading times better than empirical predictability},
+  author={Hofmann, Markus J and Remus, Steffen and Biemann, Chris and Radach, Ralph and Kuchinke, Lars},
+  journal={Frontiers in Artificial Intelligence},
+  volume={4},
+  pages={730570},
+  year={2022},
+  publisher={Frontiers Media SA}
+}
+
+@article{hopp2016timing,
+  title={The timing of lexical and syntactic processes in second language sentence comprehension},
+  author={Hopp, Holger},
+  journal={Applied Psycholinguistics},
+  volume={37},
+  number={5},
+  pages={1253--1280},
+  year={2016},
+  publisher={Cambridge University Press}
+}
+
+% #1
+@article{nahatame2025relative,
+  author  = {Nahatame, Shingo and Uchida, Satoru},
+  title   = {Relative Importance of Lexical Features in Word Processing during {L2} {English} Reading},
+  journal = {Studies in Second Language Acquisition},
+  year    = {2025},
+  volume  = {47},
+  number  = {5},
+  pages   = {1383--1406},
+  doi     = {10.1017/S0272263125101137}
+}
+% #2
+@article{elgort2018contextual,
+  author  = {Elgort, Irina and Brysbaert, Marc and Stevens, Micha{\"e}l and Van Assche, Eva},
+  title   = {Contextual Word Learning during Reading in a Second Language: An Eye-Movement Study},
+  journal = {Studies in Second Language Acquisition},
+  year    = {2018},
+  volume  = {40},
+  number  = {2},
+  pages   = {341--366},
+  doi     = {10.1017/S0272263117000109}
+}
+% #3
+@article{nahatame2026readability,
+  author  = {Nahatame, Shingo and Yamaguchi, Kazuhiro},
+  title   = {Revisiting Text Readability and Processing Effort in Second Language Reading: {Bayesian} Analysis of Eye-Tracking Data},
+  journal = {Language Learning},
+  year    = {2026},
+  volume  = {76},
+  number  = {2},
+  pages   = {671--703},
+  doi     = {10.1111/lang.70011}
+}
+% #4 (matches the description in L2_Reading-cite.md; NOT the JML PII, which is kuperman2024wordlength below)
+@article{berzak2023eye,
+  author  = {Berzak, Yevgeni and Levy, Roger},
+  title   = {Eye Movement Traces of Linguistic Knowledge in Native and Non-Native Reading},
+  journal = {Open Mind},
+  year    = {2023},
+  volume  = {7},
+  pages   = {179--196},
+  doi     = {10.1162/opmi_a_00084}
+}
+% #4-alt (the article the original PII S0749596X23000967 actually resolves to; L1/12-language length+frequency)
+@article{kuperman2024wordlength,
+  author  = {Kuperman, Victor and Schroeder, Sascha and Gnetov, Daniil},
+  title   = {Word Length and Frequency Effects on Text Reading Are Highly Similar in 12 Alphabetic Languages},
+  journal = {Journal of Memory and Language},
+  year    = {2024},
+  volume  = {135},
+  pages   = {104497},
+  doi     = {10.1016/j.jml.2023.104497}
+}
+% #5
+@article{kuperman2025distance,
+  author  = {Kuperman, Victor},
+  title   = {How Does Language Distance Affect Reading Fluency and Comprehension in {English} as Second Language?},
+  journal = {Studies in Second Language Acquisition},
+  year    = {2025},
+  volume  = {47},
+  number  = {3},
+  pages   = {757--773},
+  doi     = {10.1017/S027226312510065X}
+}
+% #6
+@article{luke2023exgaussian,
+  author  = {Luke, Steven G. and Liu, Rachel Yu and Nelson, Kyle and Denton, Jared and Child, Michael W.},
+  title   = {An Ex-{Gaussian} Analysis of Eye Movements in {L2} Reading},
+  journal = {Bilingualism: Language and Cognition},
+  year    = {2023},
+  volume  = {26},
+  number  = {2},
+  pages   = {330--344},
+  doi     = {10.1017/S1366728922000670}
+}
+% #7 (DOI/pages from secondary sources; verify on PsycNet before final)
+@article{whitford2015second,
+  author  = {Whitford, Veronica and Titone, Debra},
+  title   = {Second-Language Experience Modulates Eye Movements during First- and Second-Language Sentence Reading: Evidence from a Gaze-Contingent Moving Window Paradigm},
+  journal = {Journal of Experimental Psychology: Learning, Memory, and Cognition},
+  year    = {2015},
+  volume  = {41},
+  number  = {4},
+  pages   = {1118--1129},
+  doi     = {10.1037/xlm0000093}
+}
+% #8 (advance online 2026; no print vol/issue yet)
+@article{zhao2026proficiency,
+  author  = {Zhao, Changze and Cong, Fengjiao and Chen, Baoguo},
+  title   = {The Influence of {L2} Proficiency on Letter Position Encoding and Sentence Processing of Bilinguals: Evidence from a Reading-Like Task},
+  journal = {International Journal of Bilingualism},
+  year    = {2026},
+  doi     = {10.1177/13670069251410409},
+  note    = {Advance online publication}
+}
+% #9
+@article{dussias2010uses,
+  author  = {Dussias, Paola E.},
+  title   = {Uses of Eye-Tracking Data in Second Language Sentence Processing Research},
+  journal = {Annual Review of Applied Linguistics},
+  year    = {2010},
+  volume  = {30},
+  pages   = {149--166},
+  doi     = {10.1017/S026719051000005X}
+}
+% #10 (verify DOI on Cambridge Core before final)
+@article{zhang2024modeling,
+  author  = {Zhang, Xiaopeng and Gong, Nan},
+  title   = {Modeling Effects of Linguistic Complexity on {L2} Processing Effort: The Case of Eye Movement in Text Reading},
+  journal = {Studies in Second Language Acquisition},
+  year    = {2024},
+  volume  = {46},
+  number  = {1},
+  pages   = {141--168},
+  doi     = {10.1017/S0272263123000408}
+}
+
+@article{frank2021toward,
+  title={Toward computational models of multilingual sentence processing},
+  author={Frank, Stefan L},
+  journal={Language Learning},
+  volume={71},
+  number={S1},
+  pages={193--218},
+  year={2021},
+  publisher={Wiley Online Library}
+}
+
+
+@article{jumelet2026multiblimp,
+  title={Multiblimp 1.0: A massively multilingual benchmark of linguistic minimal pairs},
+  author={Jumelet, Jaap and Weissweiler, Leonie and Nivre, Joakim and Bisazza, Arianna},
+  journal={Transactions of the Association for Computational Linguistics},
+  volume={14},
+  pages={193--216},
+  year={2026},
+  publisher={MIT Press}
+}
+
+@article{warstadt2020blimp,
+  title={BLiMP: The benchmark of linguistic minimal pairs for English},
+  author={Warstadt, Alex and Parrish, Alicia and Liu, Haokun and Mohananey, Anhad and Peng, Wei and Wang, Sheng-Fu and Bowman, Samuel R},
+  journal={Transactions of the Association for Computational Linguistics},
+  volume={8},
+  pages={377--392},
+  year={2020},
+  publisher={MIT Press One Rogers Street, Cambridge, MA 02142-1209, USA journals-info~…}
+}
+
+@article{liu2024systematic,
+  title={A Systematic Assessment of Language Models with Linguistic Minimal Pairs in Chinese},
+  author={Liu, Yikang and Shen, Yeting and Zhu, Hongao and Xu, Lilong and Qian, Zhiheng and Song, Siyuan and Zhang, Kejia and Tang, Jialong and Zhang, Pei and Yang, Baosong and others},
+  journal={arXiv preprint arXiv:2411.06096},
+  year={2024}
+}
+
+@article{suijkerbuijk2025blimp,
+  title={Blimp-nl: A corpus of dutch minimal pairs and acceptability judgments for language model evaluation},
+  author={Suijkerbuijk, Michelle and Prins, Zo{\"e} and Kloots, Marianne de Heer and Zuidema, Willem and Frank, Stefan L},
+  journal={Computational Linguistics},
+  volume={51},
+  number={4},
+  pages={1267--1301},
+  year={2025},
+  publisher={MIT Press 255 Main Street, 9th Floor, Cambridge, Massachusetts 02142, USA~…}
+}
+
+@article{bylund202210,
+  title={WEIRD Psycholinguistics},
+  author={Bylund, Emanuel},
+  journal={Struggles for Multilingualism and Linguistic Citizenship},
+  volume={173},
+  year={2022},
+  publisher={Channel View Publications}
+}
+
+@article{majid2010weird,
+  title={WEIRD languages have misled us, too},
+  author={Majid, Asifa and Levinson, Stephen C},
+  journal={Behavioral and Brain Sciences},
+  volume={33},
+  number={2-3},
+  year={2010}
+}
+
+@article{blasi2022over,
+  title={Over-reliance on English hinders cognitive science},
+  author={Blasi, Dami{\'a}n E and Henrich, Joseph and Adamou, Evangelia and Kemmerer, David and Majid, Asifa},
+  journal={Trends in cognitive sciences},
+  volume={26},
+  number={12},
+  pages={1153--1170},
+  year={2022},
+  publisher={Elsevier}
+}
+
+@article{bylund202210,
+  title={WEIRD Psycholinguistics},
+  author={Bylund, Emanuel},
+  journal={Struggles for Multilingualism and Linguistic Citizenship},
+  volume={173},
+  year={2022},
+  publisher={Channel View Publications}
+}
+
+@misc{gemmateam2025gemma3technicalreport,
+      title={Gemma 3 Technical Report}, 
+      author={Gemma Team and Aishwarya Kamath and Johan Ferret and Shreya Pathak and Nino Vieillard and Ramona Merhej and Sarah Perrin and Tatiana Matejovicova and Alexandre Ramé and Morgane Rivière and Louis Rouillard and Thomas Mesnard and Geoffrey Cideron and Jean-bastien Grill and Sabela Ramos and Edouard Yvinec and Michelle Casbon and Etienne Pot and Ivo Penchev and Gaël Liu and Francesco Visin and Kathleen Kenealy and Lucas Beyer and Xiaohai Zhai and Anton Tsitsulin and Robert Busa-Fekete and Alex Feng and Noveen Sachdeva and Benjamin Coleman and Yi Gao and Basil Mustafa and Iain Barr and Emilio Parisotto and David Tian and Matan Eyal and Colin Cherry and Jan-Thorsten Peter and Danila Sinopalnikov and Surya Bhupatiraju and Rishabh Agarwal and Mehran Kazemi and Dan Malkin and Ravin Kumar and David Vilar and Idan Brusilovsky and Jiaming Luo and Andreas Steiner and Abe Friesen and Abhanshu Sharma and Abheesht Sharma and Adi Mayrav Gilady and Adrian Goedeckemeyer and Alaa Saade and Alex Feng and Alexander Kolesnikov and Alexei Bendebury and Alvin Abdagic and Amit Vadi and András György and André Susano Pinto and Anil Das and Ankur Bapna and Antoine Miech and Antoine Yang and Antonia Paterson and Ashish Shenoy and Ayan Chakrabarti and Bilal Piot and Bo Wu and Bobak Shahriari and Bryce Petrini and Charlie Chen and Charline Le Lan and Christopher A. Choquette-Choo and CJ Carey and Cormac Brick and Daniel Deutsch and Danielle Eisenbud and Dee Cattle and Derek Cheng and Dimitris Paparas and Divyashree Shivakumar Sreepathihalli and Doug Reid and Dustin Tran and Dustin Zelle and Eric Noland and Erwin Huizenga and Eugene Kharitonov and Frederick Liu and Gagik Amirkhanyan and Glenn Cameron and Hadi Hashemi and Hanna Klimczak-Plucińska and Harman Singh and Harsh Mehta and Harshal Tushar Lehri and Hussein Hazimeh and Ian Ballantyne and Idan Szpektor and Ivan Nardini and Jean Pouget-Abadie and Jetha Chan and Joe Stanton and John Wieting and Jonathan Lai and Jordi Orbay and Joseph Fernandez and Josh Newlan and Ju-yeong Ji and Jyotinder Singh and Kat Black and Kathy Yu and Kevin Hui and Kiran Vodrahalli and Klaus Greff and Linhai Qiu and Marcella Valentine and Marina Coelho and Marvin Ritter and Matt Hoffman and Matthew Watson and Mayank Chaturvedi and Michael Moynihan and Min Ma and Nabila Babar and Natasha Noy and Nathan Byrd and Nick Roy and Nikola Momchev and Nilay Chauhan and Noveen Sachdeva and Oskar Bunyan and Pankil Botarda and Paul Caron and Paul Kishan Rubenstein and Phil Culliton and Philipp Schmid and Pier Giuseppe Sessa and Pingmei Xu and Piotr Stanczyk and Pouya Tafti and Rakesh Shivanna and Renjie Wu and Renke Pan and Reza Rokni and Rob Willoughby and Rohith Vallu and Ryan Mullins and Sammy Jerome and Sara Smoot and Sertan Girgin and Shariq Iqbal and Shashir Reddy and Shruti Sheth and Siim Põder and Sijal Bhatnagar and Sindhu Raghuram Panyam and Sivan Eiger and Susan Zhang and Tianqi Liu and Trevor Yacovone and Tyler Liechty and Uday Kalra and Utku Evci and Vedant Misra and Vincent Roseberry and Vlad Feinberg and Vlad Kolesnikov and Woohyun Han and Woosuk Kwon and Xi Chen and Yinlam Chow and Yuvein Zhu and Zichuan Wei and Zoltan Egyed and Victor Cotruta and Minh Giang and Phoebe Kirk and Anand Rao and Kat Black and Nabila Babar and Jessica Lo and Erica Moreira and Luiz Gustavo Martins and Omar Sanseviero and Lucas Gonzalez and Zach Gleicher and Tris Warkentin and Vahab Mirrokni and Evan Senter and Eli Collins and Joelle Barral and Zoubin Ghahramani and Raia Hadsell and Yossi Matias and D. Sculley and Slav Petrov and Noah Fiedel and Noam Shazeer and Oriol Vinyals and Jeff Dean and Demis Hassabis and Koray Kavukcuoglu and Clement Farabet and Elena Buchatskaya and Jean-Baptiste Alayrac and Rohan Anil and Dmitry and Lepikhin and Sebastian Borgeaud and Olivier Bachem and Armand Joulin and Alek Andreev and Cassidy Hardin and Robert Dadashi and Léonard Hussenot},
+      year={2025},
+      eprint={2503.19786},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2503.19786}, 
+}
+
+% ---- References added for reviewer-response analyses (bilingual processing) ----
+@inproceedings{winther2021cumulative,
+  year = {2021},
+  title = {Cumulative frequency can explain cognate facilitation in language models},
+  booktitle = {Proceedings of the 43rd Annual Meeting of the Cognitive Science Society},
+  author = {Winther, Irene Elisabeth and Matusevych, Yevgen and Pickering, Martin J.},
+  pages = {2513--2519},
+  url = {https://escholarship.org/uc/item/5d39q2k1}
+}
+
+@inproceedings{skrjanec2026crosslingual,
+  year = {2026},
+  title = {Is Cross-Lingual Transfer in Bilingual Models Human-Like? A Study with Overlapping Word Forms in Dutch and English},
+  author = {{\v{S}}krjanec, Iza and others},
+  booktitle = {Proceedings of the Workshop on Cognitive Modeling and Computational Linguistics (CMCL), LREC-COLING 2026},
+  url = {http://lrec-conf.org/proceedings/lrec2026/workshops/cmcl/2026.cmcl-1.0.pdf}
+}
+
+@article{gollan2008weaker,
+  author = {Gollan, Tamar H. and Montoya, Rosa I. and Cera, Cynthia and Sandoval, Tiffany C.},
+  title = {More use almost always means a smaller frequency effect: Aging, bilingualism, and the weaker links hypothesis},
+  journal = {Journal of Memory and Language},
+  year = {2008},
+  volume = {58},
+  number = {3},
+  pages = {787--814}
+}
+
+@article{schoonbaert2007representation,
+  author = {Schoonbaert, Sofie and Hartsuiker, Robert J. and Pickering, Martin J.},
+  title = {The representation of lexical and syntactic information in bilinguals: Evidence from syntactic priming},
+  journal = {Journal of Memory and Language},
+  year = {2007},
+  volume = {56},
+  number = {2},
+  pages = {153--171}
+}
+
+@article{bernolet2013language,
+  author = {Bernolet, Sarah and Hartsuiker, Robert J. and Pickering, Martin J.},
+  title = {From language-specific to shared syntactic representations: The influence of second language proficiency on syntactic sharing in bilinguals},
+  journal = {Cognition},
+  year = {2013},
+  volume = {127},
+  number = {3},
+  pages = {287--306}
+}
+
+@article{dijkstra2002architecture,
+  author = {Dijkstra, Ton and Van Heuven, Walter J. B.},
+  title = {The architecture of the bilingual word recognition system: From identification to decision},
+  journal = {Bilingualism: Language and Cognition},
+  year = {2002},
+  volume = {5},
+  number = {3},
+  pages = {175--197}
+}
+
+@article{dijkstra2000interlingual,
+  author = {Dijkstra, Ton and Timmermans, Mark and Schriefers, Herbert},
+  title = {On being blinded by your other language: Effects of task demands on interlingual homograph recognition},
+  journal = {Journal of Memory and Language},
+  year = {2000},
+  volume = {42},
+  number = {4},
+  pages = {445--464}
+}
+
+@article{meuter1999bilingual,
+  author = {Meuter, Renata F. I. and Allport, Alan},
+  title = {Bilingual language switching in naming: Asymmetrical costs of language selection},
+  journal = {Journal of Memory and Language},
+  year = {1999},
+  volume = {40},
+  number = {1},
+  pages = {25--40}
+}
+
+@article{hartsuiker2004crosslinguistic,
+  author = {Hartsuiker, Robert J. and Pickering, Martin J. and Veltkamp, Eline},
+  title = {Is syntax separate or shared between languages? Cross-linguistic syntactic priming in Spanish-English bilinguals},
+  journal = {Psychological Science},
+  year = {2004},
+  volume = {15},
+  number = {6},
+  pages = {409--414}
+}
+
+@article{gollan2009should,
+  author = {Gollan, Tamar H. and Ferreira, Victor S.},
+  title = {Should I stay or should I switch? A cost-benefit analysis of voluntary language switching in young and aging bilinguals},
+  journal = {Journal of Experimental Psychology: Learning, Memory, and Cognition},
+  year = {2009},
+  volume = {35},
+  number = {3},
+  pages = {640--665}
+}
+
+@article{hoversten2016time,
+  author = {Hoversten, Liv J. and Traxler, Matthew J.},
+  title = {A time course analysis of interlingual homograph processing: Evidence from eye movements},
+  journal = {Bilingualism: Language and Cognition},
+  year = {2016},
+  volume = {19},
+  number = {2},
+  pages = {347--360}
+}
+
+@inproceedings{oh2024frequency,
+  title={Frequency explains the inverse correlation of large language models’ size, training data amount, and surprisal’s fit to reading times},
+  author={Oh, Byung-Doh and Yue, Shisen and Schuler, William},
+  booktitle={Proceedings of the 18th conference of the European chapter of the association for computational linguistics (volume 1: long papers)},
+  pages={2644--2663},
+  year={2024}
+}
+
+@inproceedings{frank2014modelling,
+  title={Modelling reading times in bilingual sentence comprehension},
+  author={Frank, Stefan},
+  booktitle={Proceedings of the Annual Meeting of the Cognitive Science Society},
+  volume={36},
+  year={2014}
+
+
+  @inproceedings{michaelov-2023-structural,
+    title = "Structural Priming Demonstrates Abstract Grammatical Representations in Multilingual Language Models",
+    author = "Michaelov, James A.  and
+      Arnett, Catherine  and
+      Chang, Tyler A.  and
+      Bergen, Benjamin K.",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.227/",
+    doi = "10.18653/v1/2023.emnlp-main.227",
+    pages = "3703--3720",
+    abstract = "Abstract grammatical knowledge{---}of parts of speech and grammatical patterns{---}is key to the capacity for linguistic generalization in humans. But how abstract is grammatical knowledge in large language models? In the human literature, compelling evidence for grammatical abstraction comes from structural priming. A sentence that shares the same grammatical structure as a preceding sentence is processed and produced more readily. Because confounds exist when using stimuli in a single language, evidence of abstraction is even more compelling from crosslingual structural priming, where use of a syntactic structure in one language primes an analogous structure in another language. We measure crosslingual structural priming in large language models, comparing model behavior to human experimental results from eight crosslingual experiments covering six languages, and four monolingual structural priming experiments in three non-English languages. We find evidence for abstract monolingual and crosslingual grammatical representations in the models that function similarly to those found in humans. These results demonstrate that grammatical representations in multilingual language models are not only similar across languages, but they can causally influence text produced in different languages."
+}
+
+@article{marian2007leapq,
+  title={The Language Experience and Proficiency Questionnaire (LEAP-Q): Assessing language profiles in bilinguals and multilinguals},
+  author={Marian, Viorica and Blumenfeld, Henrike K. and Kaushanskaya, Margarita},
+  journal={Journal of Speech, Language, and Hearing Research},
+  volume={50},
+  number={4},
+  pages={940--967},
+  year={2007},
+  publisher={American Speech-Language-Hearing Association}
+}
+@article{lemhofer2012lextale,
+  title={Introducing LexTALE: A quick and valid Lexical Test for Advanced Learners of English},
+  author={Lemh{\"o}fer, Kristin and Broersma, Mirjam},
+  journal={Behavior Research Methods},
+  volume={44},
+  number={2},
+  pages={325--343},
+  year={2012},
+  publisher={Springer}
+}
+
+@inproceedings{pimentel-meister-2024-compute,
+  title={How to Compute the Probability of a Word},
+  author={Pimentel, Tiago and Meister, Clara},
+  booktitle={Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing},
+  pages={18358--18375},
+  year={2024},
+  address={Miami, Florida, USA},
+  publisher={Association for Computational Linguistics},
+  url={https://aclanthology.org/2024.emnlp-main.1020/}
+}

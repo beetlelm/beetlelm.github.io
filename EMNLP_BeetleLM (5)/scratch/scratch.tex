@@ -1,0 +1,481 @@
+
+%Structured Exposure Pretraining can beat Scale for Human-Like Representation Alignment in Bilingual Language Models
+%Pretraining Strategies for Human-Like Representation Learning in Bilingual Language Models
+
+
+
+%Interpretable Neural Language Modeling for Human-Like Multilingual Acquisition
+
+%\textbf{Training Human-Scale Polyglot Language Models via Exposure Scheduling for Studying Acquisition}
+
+%Exposure Scheduling for Developmentally Interpretable Multilingual Acquisition in Neural Language Models
+
+%\title{
+%\raisebox{-0.8em}{\includegraphics[height=2em]{fig/logo/beetlewBug.png}}  \textbf{: Causal Dynamics of Memorization, Tokenization, and Transfer in Developmentally Interpretable Bilingual Models}
+%}
+
+
+
+
+%A 125M-parameter Dutch--English \textsc{Beetle} trained with B3-33 sequential exposure reaches $\Delta\log L = 139.6$ on the matched Dutch-reader MECO~L2 cell, exceeding BLOOM-7b1 (19.7) by $7.1\times$ at $1/56$th the parameter count and multilingual LLMs (Apertus-8B, EuroLLM-9B, Gemma-2-9B, Qwen-3 variants; Dutch-reader mean 12.35) by $11.3\times$. 
+% Optimal curriculum is \emph{task-specific}: sequential and late-onset schedules dominate MECO~L2; balanced and simultaneous schedules dominate BLiSS error discrimination and CEFR-graded pedagogical simulation. The advantage attenuates monotonically with typological distance and meets a typological boundary on Chinese~L2 against the legacy BLOOM ladder, while \textsc{Beetle} continues to outscore every modern bilingual LLM on the same Chinese-reader cell. The bilingual induction-head emergence window (0.6--1.4B tokens) sits earlier than the monolingual $\sim$2B-token tipping point of \citet{aoyama-wilcox-2025-language}, suggesting that structured L1/L2 exposure shifts the psychometric tipping point left rather than abolishing it. 
+%Bilingual language models (LMs) occupy a uniquely useful middle ground between monolingual and massively multilingual systems. They potentially can serve as minimal testbed for analysing multilingual learning dynamics, models of human language acquisition and processing for cognitive science, and learner simulations in applied Machine Learning settings. However, it remains unclear how to pretrain bilingual LMs that exhibit human-like acquisition trajectories or demonstrate learner-like behaviour in psycholinguistic and pedagogical tasks.  We introduce \pdftooltip{\raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}}}{Beetle}, a pretraining framework for human-like multilingual language modelling with manipulable language exposure curricula, continual-learning regimes, and acquisition-inspired architectural manipulations. Our experiments pretrain 125M-parameter bilingual and trilingual models with varying settings across data scales (100M/2B/24B tokens) [insert n.o langs] to identify task-specific Pareto-optimal pretraining regimes for psycholinguistic and pedagogical tasks. [insert sentence about results – pretrained bilingual LMs can outperform substantially larger multilingual LLMs on tasks with 10x fewer parameters]. 
+
+
+%evaluate on multilingual reading-time prediction, grammaticality and pedagogical tasks. Results show that .
+%mechanisms by which multilingual knowledge is acquired, retained, and generalized remain poorly understood
+
+
+%While cross-lingual transfer underlies multilingual language model (LM) performance, the mechanisms by which multilingual knowledge is acquired is poorly understood. Pretrained Bilingual LMs are a minimally interpretable testbed for analysing multilingual learning dynamics, and are tractable models for cognitive modelling and applied simulation. We introduce \pdftooltip{%
+  %\raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}}%}{Beetle}, a pretraining framework for human-like multilingual language modelling with manipulable language exposure curricula, continual-learning regimes, and acquisition-inspired architectural manipulations. Training 125M-parameter bilingual and trilingual models with varying settings across scales (100M/2B/24B tokens) for over 13 languages, we evaluate on multilingual reading-time prediction, grammaticality and pedagogical tasks. Results show that bilingual pretraining can outperform substantially larger multilingual LLMs on human-alignment measure, allowing us to identify task-specific Pareto-optimal pretraining regimes for cognitive and applied modeling.
+%revealing systematic trade-offs between transfer, retention, and learner-like generalisation.
+
+
+%While cross-lingual transfer underlies multilingual language model (LM) performance, the mechanisms by which multilingual knowledge is acquired, retained, and generalized remain poorly understood. Bilingual language models (LMs) occupy a uniquely useful middle ground between monolingual and massively multilingual systems. They provide a minimal yet linguistically meaningful testbed for multilingual interpretability, tractable student models for Educational Machine Learning, and computational proxies of human bilingual acquisition and processing. However, it remains unclear how to pretrain bilingual LMs that exhibit human-like learning dynamics, psychometric predictive validity, or learner-like task behaviour. We introduce \BeginAccSupp{ActualText=Beetle} \raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}} \EndAccSupp{}, a reproducible pretraining framework for bilingual and multilingual language modeling with controllable training conditions: (1) language exposure curricula, (2) continual-learning and forgetting regimes, and (3) architectural manipulations motivated by developmental plausibility. Using 125M-parameter models trained from 100M to 24B tokens across 13 languages, we evaluate systems on second-language learner reading-time prediction and minimal-pair grammaticality benchmarks. We find that appropriately trained \texorpdfstring{\raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}}}{Beetle} models can outperform substantially larger multilingual LLMs on human-alignment measures, while exposing task-specific trade-offs between transfer, retention, and learner-like generalisation, motivating small bilingual LM pretraining as a practical testbed for multilingual interpretability, cognitive modelling, and applied NLP. 
+
+%We argue that bilingual LMs provide a minimal yet informative setting for studying multilingual learning, enabling controlled experiments on transfer, interference, and language exposure. Controlled analysis of bilingual LM 
+%While cross-lingual transfer underlies multilingual language model (LM) capabilities, the mechanisms through which multilingual knowledge is acquired, retained, and generalised remain poorly understood. Bilingual LMs provide a minimal testbed for multilingual interpretability, potential student models for Educational Machine Learning, and computational proxies of human bilingual acquisition and processing. Yet it remains unclear how to pretrain bilingual models that exhibit human-like learning dynamics, psychometric predictive power, or learner-like task performance. We introduce \texorpdfstring{\raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}}}{Beetle}, a multilingual LM pretraining and learning-dynamics framework for reproducible research in bilingual representation learning. \texorpdfstring{\raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}}}{Beetle} supports controllable training conditions: (1) language exposure curricula; (2) continual learning and catastrophic forgetting settings; and (3) architectural and optimisation manipulations motivated by developmental plausibility. We report experiments training 125M-parameter models at human scale (100M tokens) and web scale (2B, 24B) bilingual and trilingual LMs across 13 languages. Evaluation on second-language learner reading-time and minimal-pair benchmarks shows that \texorpdfstring{\raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}}}{Beetle} models can be more human-aligned than substantially larger multilingual LLMs, while revealing task-specific Pareto-optimal pretraining regimes for cognitive modelling and pedagogical applications.
+
+
+%While cross-lingual transfer underpins multilingual language model (LM) capabilities, the mechanisms by which multilingual knowledge is acquired, retained, and generalised remain largely opaque. Bilingual LMs are a minimal setting for investigating multilingual interpretability in NLP, potentially useful student models of language learners in Educational Machine Learning, and are of interest in computational cognitive science as computational models of human acquisition and processing. However, it is unclear how to pretrain a human-like bilingual models that are “cognitive proxies” of humans, with human-like psychometric predictive power or learner-like performance in applied tasks. We introduce  \raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}}, a multilingual language model pretraining and learning dynamics framework for reproducible research in bilingual representation learning. \raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}} has manipulable training conditions: (1) language exposure curricula; (2) catastrophic forgetting and continual learning settings and (3) several architectural and training manipulations that are claimed to be more developmentally-plausible. Reported experiments train 125M parameter models at human-scale (100M token) and web-scale (2B, 24B) bilingual and trilingual LMs for 13 languages with these manipulations. Evaluation on second language learner reading-time and minimal pair tasks finds \raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}} are more human-aligned than larger multilingual LLMs, and identify task-specific Pareto-optimal pretraining regimes for various cognitive modelling and pedagogical tasks.
+
+
+%We treat  multilingual learning  as a dynamical system  and introduce \raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}}, a developmentally interpretable bilingual and polyglot language modeling framework for human-scale language modelling, designed for fine-grained causal analysis of learning dynamics. \raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}} leverages controlled interventions that systematically manipulate (i) exposure regimes, (ii) control parameters related to catastrophic forgetting and (iii) typological pairings. We find human-scale bilingual models with near-balanced exposure schedules achieve higher alignment to multilingual reading behaviour than state-of-the-art multilingual LLMs. %Our analysis demonstrates that: (i) typological similarity strongly modulates transfer efficiency and the structure of learned representations, (ii) tokenization choices disproportionately impact learning for typologically distant language pairs, and (iii) curriculum design shapes developmental trajectories and interpretability of bilingual knowledge. By revealing the mechanistic underpinnings of bilingual LM learning, \raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}} provides actionable insights for multilingual NLP system design, typology-aware tokenization, and cognitive modeling of second language acquisition.
+
+%Recent findings in neural scaling and psychometric predictive power (PPP) show that language models exhibit non-monotonic learning dynamics during training: alignment with human processing behavior improves early in training, peaks near a phase transition, and can subsequently decline even as perplexity continues to improve. In pariticular, a neural pretraining phase transition – characterized by the rapid emergence of specialized attention heads – has been suggested to occur at around 2 billion words of pretraining 
+
+
+
+
+% – BLiSS (artificial-vs-learner-error discrimination) \citep{gao2025bliss}, MECO~L2 reading-time alignment \citep{kuperman2023text, kuperman2025new} following \citet{wilcox-etal-2023-language} and \citet{de-varda-marelli-2022-effects, de-varda-marelli-2023-scaling}, and pedagogical CEFR-graded MCQA simulation following \citet{benedetto-etal-2024-using} ---
+
+
+
+%The increasing apparent “human-likeness” of Language Models (LMs) has jointly motivated their increasing usage as \textit{proxies of human capabilities and behaviours} in applied Machine Learning settings \citep{liu-etal-2026-review} and  \textit{plausible “model organisms”} that can be used to investigate human language acquisition and processing in computational cognitive science and neuroscience \citep{hosseini2024artificial, jain2024computational, kolling2025large, alkhamissi-etal-2025-language}.  
+
+%Recent findings in scaling and psychometric predictive power suggest that alignment with human behavior follows non-monotonic training dynamics, often peaking near representational phase transitions before degrading despite continued perplexity improvements. A neural pretraining phase transition, characterised by the emergence of specialised attention heads, has been observed at approximately 2B words of exposure \citep{aoyama-wilcox-2025-language}.   
+
+%Increasingly, frontier LMs have multilingual data mixtures and are typically trained under the assumption that multilingual capabilities emerge from joint pretraining on large-scale multilingual data mixtures \citep{pires2019multilingual, conneau-etal-2020-emerging, conneau2020unsupervised, xue-etal-2021-mt5}.  Recent empirical evidence suggests there is partial alignment between multilingual LMs and human processing behaviour \citep{liu2026training, negi2025brain, lamarre2025concreteness, negi2025brain}.  However, most multilingual LLMs lack open-source checkpointing, so the emergence of multilingual representations in a shared representational space \citep{chang-etal-2022-geometry} remains poorly understood. Thus, \textit{any psycho/neuro-linguistic alignment of multilingual LLMs is uninterpretable}. Additionally, bilingual small language models (SLMs) have also been positioned as computational proxies of human multilingual processing and acquisition \citep{yadavalli-etal-2023-slabert,oba-etal-2023-second,  aoyama2024modeling, constantinescu2025investigating, arnett-etal-2025-acquisition}.  However, Bilingual SLMs have heterogeneous training regimes and architectural strategies that have not been systematically compared under identical training conditions, and each strategy is evaluated on distinct tasks: reading time surprisal \citet{aoyama2024modeling}, syntactic priming \citet{arnett-etal-2025-acquisition}, grammaticality tasks \citep{oba-etal-2023-second, yadavalli-etal-2023-slabert,constantinescu2025InvestigatingCriticalPeriod}.  Recent evidence suggests that LMs monotonically increase in their psychometric predictive power (PPP),  or alignment with human reading time surprisals, until 2B tokens of pretraining, and subsequently surpass human-like PPP \citep{aoyama-wilcox-2025-language}.
+
+%In this paper, we systematically investigate whether it is possible to identify a Pareto-optimal bilingual and multilingual pretraining regime that increases the "human-likeness" of language models across psycholinguistic and simulation tasks. We introduce \raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}}, a modular pretraining and learning dynamics framework to investigate the effect of architecture, training manipulations (pre-pretraining, learning rate, attention with linear biases) exposure curricula (proportion and stage of language data), and continual-learning language adaptation on multilingual representation learning. We compare pre- and post-transition dynamics, training models at a fixed 125M-parameter architecture at 100M, 2B and 24B tokens for 13+ language pairs.  Checkpoints are saved at log-scale intervals, enabling trajectory-level interpretability of multilingual acquisition.\raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/logo/BeetleLM.png}} models are evaluated across psycholinguistic human eye-tracking datasets (MECO) in first- and second-language acquisition, word learning age-of-acquisition (AoA), minimal pair tasks \citep{gao2025bliss} and learner simulation \citep{lai-etal-2017-race, benedetto-etal-2024-using}. \suchir{\textit{preliminary findings:} We find that exposure structure alone induces systematic differences in multilingual learning trajectories, including cross-lingual interference, learning rate sensitivity, and forgetting patterns. Crucially, models trained with structured exposure schedules achieve stronger alignment with human reading-time data than larger multilingual baselines, despite substantially smaller scale.}
+
+%  A 125M-parameter Dutch--English \textsc{Beetle} trained with B3-33 sequential exposure reaches $\Delta\log L = 139.6$ on the matched Dutch-reader MECO~L2 cell, exceeding BLOOM-7b1 (19.7) by $7.1\times$ at $1/56$th the parameter count and multilingual LLMs (Apertus-8B, EuroLLM-9B, Gemma-2-9B, Qwen-3 variants; Dutch-reader mean 12.35) by $11.3\times$. 
+
+
+
+%To support developmental analysis, we introduce \texttt{beetle-analyze}, a complementary toolkit that tracks representation dynamics through embedding drift, centered kernel alignment (CKA), and psycholinguistic evaluation using reading-time and word-learning benchmarks. Checkpoints are saved at log-scale intervals, enabling trajectory-level interpretability of multilingual acquisition.
+
+
+%Bilinguality is a minimally interpretable setting to investigate multilingual representation learning \cite{inaba-etal-2025-bilingual}. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage 
+
+
+%(Massively) Multilingual Language Modelling (LMs)  standardly rely on the assumption that multilingual capabilities can arise through joint simultaneous pretraining on multilingual data mixtures  \citep{pires2019multilingual, conneau-etal-2020-emerging, conneau2020unsupervised, xue-etal-2021-mt5}.  Although  cross-lingual transfer and generalisation capabilities are widely noted to emerge due to the shared representational space induced by joint multilingual training \citep{chang-etal-2022-geometry}, relatively little is known about how these representations are acquired during training, and the extent to which the geometry of multilingual representation depends on the temporal structure of multilingual exposure. Studying multilinguality in a bilingual setting allows for more controlled experimentation to develop a better understanding of how a language model represents two different languages \cite{inaba-etal-2025-bilingual}.  
+
+\newpage 
+\begin{figure}[!ht]
+    \centering
+    \suchir{need to remake}
+    %\includegraphics[width=\linewidth]{fig/beetle-fig1.png}
+    \caption{\textbf{The Beetle Modular Language Modeling Framework for Multilingual Acquisition.} Language model training framework systematically varying acquisition timing, cognitively inspired curricula, and continual-learning mechanisms (EWC, MAML, LAMOL, replay, LR schedules) across human-scale (100M tokens) and web-scale (24B tokens) regimes.}
+    \label{fig:placeholder}
+\end{figure}
+
+
+%Additionally, LMs are also increasingly being used as “model organisms” in computational cognitive science and neuroscience \citep{hosseini2024artificial, alkhamissi-etal-2025-language}. There has been some evidence that multilingual LMs might exhibit signals of alignment to  human processing \citep{liu2026training, negi2025brain, lamarre2025concreteness, negi2025brain}. However, there have been innovations in human-scale language modelling (e.g.., through the \textsc{BabyLM} Challenge \cite{warstadt2023findings, warstadt2024insights, hu2024findings, charpentier2025findings,  wilcox2025bigger, choshen2026babylm}) to develop pretraining strategies that attempt to more closely model second language (L2) acquisition \citep{oba-etal-2023-second, yadavalli-etal-2023-slabert, aoyama2024modeling, constantinescu2025InvestigatingCriticalPeriod, arnett-etal-2025-acquisition}, evaluating models on fit to psycholinguistic tasks. We collectively refer to as second language (L2) Language Models (L2LMs). Developing language models with validated alignment to cognitive dimensions of humans are potentially useful in experimental contexts as cognitive proxies of students or learners in psycholinguistic studies (e.g., eye tracking experiments) or student models used in the development educational applications  to support language learning \cite{salhan2025linguistics_llms, salhan2025pedagogical}.  
+
+%Jointly motivated by multilingual interpretability and improving human-alignment of multilingual representations, in this work, introduce \raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/BeetleLM.png}}, a \textbf{modular language model training and interpretability framework for designing and evaluating cognitive proxies of human learners}. \texttt{beetle-train} enable systematic experimentation for pretraining LMs that model varying bilingual v second language (L2), trilingual (L3) (and “polyglot”, Ln) acquisition conditions under controlled, cognitively-inspired regimes. \texttt{beetle-train} introduces modular manipulable training conditions. \textbf{Exposure schedules} vary (1) when a language is introduced in training and (2) the proportion of language mixtures in a phase of training (modelling language dominance). The framework further integrates a broad suite of \textbf{continual learning mechanisms} enabling controlled analysis of stability–plasticity trade-offs in multilingual acquisition.  \raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/BeetleLM.png}}  bridges ideas from cognitive modeling, continual learning, and large-scale language model pretraining to model neural multilingual language acquisition as a function of exposure dynamics, inductive bias, and developmental constraint. Checkpoints are systematically saved at log-scale intervals for developmental interpretability analysis in \texttt{beetle-analyze},  a complementary evaluation toolkit analysing the learning dynamics (via trajectory-level interpretability methods, e.g., embedding drift and centered kernel alignment) and intrinsic psycholinguistic and formal/functional competence of bilingual/trilingual or polyglot models using repurposed multilingual word learning and reading-time alignment datasets. Both serve as diagnostic signals of whether learned shared structure aligns with human-aligned predictive representations to systematically compare how training manipulations correspond to human word acquisition and predictive processing behavior. Training data is decontaminated for evaluations to robustly evaluate the linguistic  generalisation capabilities of \raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/BeetleLM.png}} models.
+
+%Recent findings in neural scaling and psychometric predictive power (PPP) show that language models exhibit non-monotonic learning dynamics during training: alignment with human processing behavior improves early in training, peaks near a phase transition, and can subsequently decline even as perplexity continues to improve. In pariticular, a neural pretraining phase transition – characterized by the rapid emergence of specialized attention heads – has been suggested to occur at around 2 billion words of pretraining \cite{aoyama-wilcox-2025-language}.  Our reported experiments using \raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/BeetleLM.png}} primarily focus on contrasting bilingual and multilingual LLMs with two multilingual representation learning regimes – a human-scale (100M token) and sample-efficient (24B token) language modelling with a fixed size 125M architecture to compare a pre- or near-transition phase transition regime where shared structure is forming, and a post-transition regime where representations are more specialised.  \suchir{\textbf{[statement of findings] }– we show that exposure schedules induce systematic changes in learning dynamics, including learning rate sensitivity and catastrophic forgetting patterns across languages.  \raisebox{-0.3em}{\includegraphics[height=1.2em]{fig/BeetleLM.png}} have a higher alignment with human eye tracking data.} 
+
+%\suchir{Add something about our contributions for multilingual scaling + extension of LMs as model organisms for diverse multilingual language learning? + results once they come in}
+%NanoGPT SpeedRun and OpenAI Parameter Golf represent recent initiatives on SLMs!  
+
+%Dynamic Systems Theory (DST) has been proposed as one approach for studying second and multilingual – second (L2), third (L3) and Ln– language acquisition as an emergent, variability-driven and interactional process \citep{van2007dynamic, verspoor2011dynamic, lenzing2015exploring, verspoor2021variability, verspoor2022measures}. DST approaches highlight individual developmental trajectories, multilingual interaction, and ergodicity-related individual learner differences \citep{lowie2019individual, huang2022learning}. Such approaches prioritise description of the interaction of the quantity, timing and the quality of input to a learner; typological differences between languages; the age of acquisition (AoA) and a general \textit{sensitivity to initial conditions} \citep{bosch2024emergent, bosch2025another};  and individual differences (e.g., sociolinguistic impacts on language processing and production) to holistically characterise human language acquisition. 
+
+
+
+
+\section{Memorisation Effects in Bilingual Training}
+
+
+Recent work on palimpsestic memorization demonstrates that memorization depends on training order and can be statistically detected via correlations with sequence presentation. This insight justifies our use of checkpoint-based difference-in-differences estimators, which leverage training step information to measure instantaneous and persistent memorization in multilingual LLMs.
+
+We extend the difference-in-differences (DiD) framework to quantify memorisation and cross-lingual transfer in bilingual LMs. Let $x$ denote a training instance in L1 or L2, and $G(x) = g$ the timestep when $x$ is first trained (treatment step). Let $\theta_c$ be the model at checkpoint $c$, and $\gamma(\theta_c, x)$ the performance of the model on $x$ (e.g., log-likelihood). Unlike prior work such as Pythia, exact sequence IDs allow us to compute $Y_c(x; \infty)$ for held-out sequences or via cross-lingual analogues.
+
+\paragraph{Difference-in-Differences Estimator} 
+We compute the causal effect of training on $x$ while correcting for natural trends in model performance:
+\begin{equation}
+\begin{aligned}
+\hat{\tau}^{\text{DiD}}_{g,c} 
+&= \big(Y_c(g) - Y_{g-1}(g)\big) \\
+&\quad - \big(Y_c(\infty) - Y_{g-1}(\infty)\big),
+\end{aligned}
+\end{equation}
+
+where the first term captures the improvement of the trained batch from just before treatment to checkpoint $c$, and the second term measures the change in untrained sequences over the same period, controlling for global trends.
+
+DiD naturally extends to measure causal transfer from L1 to L2. For an L2 sequence $x_{L2}$ that shares content, subwords, or structure with an L1 instance trained at $g$, the cross-lingual transfer effect is
+\begin{equation}
+\begin{aligned}
+\hat{\tau}^{\text{transfer}}_{g,c}(x_{L2}) 
+&= \big(Y_c(x_{L2}) - Y_{g-1}(x_{L2})\big) \\
+&\quad - \big(Y_c(x_{L2})_{\text{control}} - Y_{g-1}(x_{L2})_{\text{control}}\big),
+\end{aligned}
+\end{equation}
+
+where the control group consists of L2 sequences with no L1 overlap. Shifting $g$ allows analysis of curriculum effects, while tracking memorisation per subword enables studies of typology or shared morpheme influence.
+
+\subsection{Language-Aware Graph-Based Complement to DiD}
+
+To incorporate cross-lingual dependencies beyond the DiD estimator, we construct a language similarity graph $\mathcal{G} = (\mathcal{V}, \mathcal{E})$, where each node $l \in \mathcal{V}$ represents a language and edges $(l_i, l_j) \in \mathcal{E}$ encode pairwise similarity. Let $\mathbf{s}_l \in \mathbb{R}^d$ denote the language-specific embedding for language $l$ extracted from a held-out parallel corpus. Edge weights are defined via cosine similarity:
+\begin{equation}
+A_{ij} = 
+\begin{cases}
+\cos(\mathbf{s}_{l_i}, \mathbf{s}_{l_j}) & \text{if } \cos(\mathbf{s}_{l_i}, \mathbf{s}_{l_j}) \ge \theta, \\
+0 & \text{otherwise},
+\end{cases}
+\end{equation}
+where $\theta$ is a threshold controlling sparsity. The unnormalized graph Laplacian is $\mathbf{L} = \mathbf{D} - \mathbf{A}$, with $\mathbf{D}_{ii} = \sum_j A_{ij}$.
+
+Let $\mathbf{m} \in \mathbb{R}^{|\mathcal{V}|}$ denote a vector of memorization scores (e.g., DiD or log-likelihood improvements) per language, and $\mathbf{t} \in \mathbb{R}^{|\mathcal{V}|}$ a vector of language-level covariates such as training token counts. The \emph{graph-based correlation coefficient} quantifying the alignment of memorization with training data while respecting language topology is defined as
+\begin{equation}
+\rho_{\mathcal{G}}(\mathbf{m}, \mathbf{t}) = 
+\frac{\mathbf{m}^\top \mathbf{L} \mathbf{t}}
+{\sqrt{(\mathbf{m}^\top \mathbf{L} \mathbf{m}) (\mathbf{t}^\top \mathbf{L} \mathbf{t})}}.
+\end{equation}
+
+This metric captures structured dependencies among languages:  
+
+\begin{itemize}
+    \item $\rho_{\mathcal{G}} \approx 1$ indicates that memorization increases along edges connecting similar languages (positive alignment).  
+    \item $\rho_{\mathcal{G}} \approx -1$ indicates inverse alignment, i.e., memorization propagates differently from training volume across structurally similar languages.  
+\end{itemize}
+
+By combining DiD estimates $\hat{\tau}^{\text{DiD}}$ or $\hat{\tau}^{\text{transfer}}$ with graph-based correlations $\rho_\mathcal{G}$, we obtain a language-aware, causal framework that allows us to:  
+
+\begin{enumerate}
+    \item Quantify instantaneous and persistent memorization per language.
+    \item Measure cross-lingual transfer effects between related languages.
+    \item Investigate curriculum or model-scale influences while respecting language-specific structure and data sparsity.
+\end{enumerate}
+ 
+\section{Bilingual Memorisation}
+
+
+We adopt a causal perspective to quantify memorisation in language models (LMs), defining it as the effect of training on an instance $x$ at timestep $g$ on the model's ability to predict $x$ at checkpoint $c$. Formally, let $Y_c(x; g)$ denote the potential outcome, i.e., the model's performance on $x$ at checkpoint $c$ had it been trained at step $g$. Counterfactual memorisation is then defined as
+\begin{equation}
+\tau_{x,c} = Y_c(x; G(x)) - Y_c(x; \infty),
+\end{equation}
+where $G(x)$ is the treatment step of $x$ and $Y_c(x; \infty)$ represents the unobserved performance had $x$ not been seen during training. Direct estimation of $Y_c(x; \infty)$ is infeasible; we therefore estimate the \emph{expected memorisation} over groups of instances (macro-batches) treated at the same timestep:
+\begin{equation}
+\tau_{g,c} = \mathbb{E}_{x \sim B_g}[Y_c(x; g) - Y_c(x; \infty)].
+\end{equation}
+
+We consider two estimators. The \emph{difference estimator} computes the difference between the mean performance of training instances in batch $B_g$ and a held-out validation set $B_\infty$, assuming i.i.d. sampling:
+\begin{equation}
+\hat{\tau}^{\text{diff}}_{g,c} = \bar{Y}_c(g) - \bar{Y}_c(\infty),
+\end{equation}
+where $\bar{Y}_c(\cdot)$ denotes the mean performance over instances. To relax this assumption and reduce variance, we adopt a \emph{difference-in-differences} (DiD) design, leveraging the temporal dimension to account for underlying trends in model performance:
+\begin{equation}
+\hat{\tau}^{\text{DiD}}_{g,c} = \big(\bar{Y}_c(g) - \bar{Y}_{g-1}(g)\big) - \big(\bar{Y}_c(\infty) - \bar{Y}_{g-1}(\infty)\big),
+\end{equation}
+where $\bar{Y}_{g-1}(\cdot)$ represents the mean performance on instances just prior to treatment. This estimator requires the \emph{parallel trends} and \emph{no anticipation} assumptions, which are generally more realistic than the i.i.d. assumption. Using these estimators, we construct a \emph{memorisation profile}, capturing instantaneous, persistent, and residual memorisation of model instances across training checkpoints.
+
+
+
+\subsection{Polyglot Language Modeling}
+
+Polyglot language models (PLMs) generalize BiLMs to $n$ languages $L_1,\dots,L_n$. Let $\mathcal{D}_i$ denote the corpus of language $L_i$, and $\alpha_i(t)$ the time-dependent data mixture. The model distribution is:
+
+\[
+P_\theta(x) = P_\theta(x \mid L_i), \quad x \in \mathcal{V}_i^*
+\]
+
+with training data mixture:
+
+\[
+\mathcal{D}_\text{mix}(t) = \sum_{i=1}^n \alpha_i(t) \, \mathcal{D}_i, \quad \sum_{i=1}^n \alpha_i(t) = 1
+\]
+
+This framework allows sequential introduction of new languages, modeling human third, fourth, or higher language acquisition, and enabling study of transfer, interference, and conceptual integration across multiple languages.
+
+
+
+
+\section{Bilingual Interpretability}
+
+
+
+
+
+
+\subsection{Representational Alignment Analysis}
+
+To measure cross-lingual representational similarity, we compute layerwise alignment between hidden representations produced by each language. For layer \( \ell \) and checkpoint \( t \), alignment is defined as:
+
+\begin{equation}
+\text{Align}_\ell(t) = \text{CKA}(H^\ell_{L_1}(t), H^\ell_{L_2}(t)),
+\end{equation}
+
+where \( H^\ell_{L_i}(t) \) denotes hidden activations at layer \( \ell \) for language \( L_i \). We additionally compute PWCCA as a complementary alignment metric. Tracking alignment trajectories across checkpoints enables identification of representational integration stages and potential alignment phase transitions.
+
+\subsection{Gradient Geometry and Transfer Analysis}
+
+To characterise transfer and interference between languages, we analyse the geometric relationship between gradients induced by each language. For each checkpoint, we compute the cosine similarity between gradients computed on mini-batches from each language:
+
+\begin{equation}
+\cos(\nabla_\theta \mathcal{L}_{L_1}, \nabla_\theta \mathcal{L}_{L_2}).
+\end{equation}
+
+Positive cosine similarity indicates parameter updates that benefit both languages, while negative similarity suggests interference. This analysis allows investigation of curriculum-dependent transfer dynamics and catastrophic forgetting.
+
+\subsection{Circuit-Level Mechanistic Analysis}
+
+Using the \textit{pico-analyze} component abstraction, we track structural and functional properties of model submodules, including attention heads, OV circuits, and MLP subspaces. For example, we analyse temporal changes in effective rank and norm of OV circuits:
+
+\begin{equation}
+\text{Rank}_{OV,\ell}(t),
+\end{equation}
+
+which may reflect the development of shared semantic routing mechanisms or language-specific pathways.
+
+\subsection{Representational Specialisation and Sparsity}
+
+To measure the degree of language-specific subnetwork usage, we compute sparsity metrics such as Gini and Hoyer coefficients over activations for each language. For layer \( \ell \), we define language specialisation as:
+
+\begin{equation}
+\Delta \text{Gini}_\ell(t) =
+\left|
+\text{Gini}(H^\ell_{L_1}) - \text{Gini}(H^\ell_{L_2})
+\right|.
+\end{equation}
+
+These metrics provide quantitative measures of shared versus modular bilingual representations.
+
+\subsection{Effective Dimensionality Analysis}
+
+We examine the growth and restructuring of representational capacity using proportional effective rank (PERank) computed on activation covariance matrices. Tracking PERank trajectories allows testing whether second-language acquisition expands representational dimensionality or induces shared low-rank bilingual manifolds.
+
+\subsection{Forgetting and Representational Drift}
+
+To quantify second-language-induced forgetting, we measure representational drift relative to pre-\( L_2 \) checkpoints:
+
+\begin{equation}
+\text{Drift}_\ell(t) =
+\text{CKA}(H^\ell_{L_1}(t), H^\ell_{L_1}(t_{\text{pre-}L_2})).
+\end{equation}
+
+This enables layerwise characterisation of continual learning effects under different exposure schedules.
+
+\subsection{Token-Level Lexical Learning Trajectories}
+
+The token-level provenance provided by Infinimax-Mini allows tracking the probability assigned to individual lexical items over training time:
+
+\begin{equation}
+P_\theta(w,t).
+\end{equation}
+
+This enables analysis of cross-lingual lexical transfer, cognate facilitation effects, and negative transfer phenomena at the item level.
+
+\subsection{Parameter Reuse and Exposure Regularisation}
+
+Finally, we analyse parameter reuse between languages by measuring weight overlap across checkpoints:
+
+\begin{equation}
+\text{Overlap}(t) = \cos(W_{L_1}(t), W_{L_2}(t)).
+\end{equation}
+
+This analysis examines whether exposure timing acts as an implicit regulariser shaping parameter sharing and subnetwork reuse.
+
+
+\section{Bilingual Representation Formation and Interpretability}
+
+\subsection{Temporal Representation Formation (Concept Emergence Over Training)}
+
+\paragraph{Core Question.} When and how do bilingual representations become shared versus language-specific?  
+Because we have checkpointed models across training, known exposure schedules $\alpha(t)$, and indexed training data, we can reconstruct the trajectory of representation formation, not just the final alignment.
+
+\subsubsection{Cross-lingual Representation Alignment Trajectories}
+
+We track similarity between L1 and L2 embeddings across training:
+\begin{equation}
+\text{Align}_\ell(t) = \text{CKA}\big(H_\ell^{L1}(t), H_\ell^{L2}(t)\big)
+\end{equation}
+where $H_\ell(t)$ denotes hidden states at layer $\ell$ at training time $t$.  
+
+\textbf{Why this is powerful:}
+\begin{itemize}
+    \item Most prior work measures only \emph{final alignment}.
+    \item We can measure \emph{alignment phase transitions}, speed, and dependence on $\alpha(t)$.
+\end{itemize}
+
+\textbf{Novel cognitive insight:}  
+Simultaneous exposure may induce an early shared conceptual space, whereas sequential exposure may require remapping or integration.
+
+\subsubsection{Critical Period Detection}
+
+We test whether
+\begin{equation}
+\frac{d}{dt} \text{Align}(t)
+\end{equation}
+exhibits irreversible plateaus, sharp transitions, or delayed integration windows.  
+This connects directly to second-language acquisition (SLA) critical period hypotheses and representational plasticity.
+
+\subsection{Concept Localization and Layer Function}
+
+\subsubsection{Cross-lingual Concept Subspace Identification}
+
+We use linear probes, CAVs/TCAV, sparse autoencoders, and concept bottleneck approximations to test whether bilingual models encode concepts in:
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Layer} & \textbf{Hypothesized Role} \\
+\midrule
+Early & Form / phonology \\
+Mid   & Lexical semantics \\
+Late  & Language-specific syntax \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsubsection{Shared vs Language-Specific Neuron Discovery}
+
+We quantify selectivity of neuron $i$ as
+\begin{equation}
+\text{Selectivity}_i = \frac{\text{within-language variance}}{\text{activation variance across languages}}
+\end{equation}
+This allows identification of bilingual neurons, L1-dominant neurons, and L2-specialized neurons.  
+\textbf{Unique feature:} Our dataset allows tracking when neurons specialize over training, which is rare in interpretability studies.
+
+\subsection{Knowledge Transfer and Interference}
+
+\subsubsection{Forward Transfer}
+
+Does L1 training facilitate L2 learning?  
+We measure
+\begin{equation}
+\Delta L_{\text{L2}}(t)
+\end{equation}
+relative to a monolingual baseline.
+
+\subsubsection{Backward Interference}
+
+Does L2 training degrade L1 representations?  
+We track perplexity, representation drift, and neuron reuse.  
+This connects to catastrophic forgetting, EWC comparisons, and bilingual cognitive interference.
+
+\subsection{Structural Representation Analysis}
+
+\subsubsection{Grammar Induction Trajectories}
+
+We use structural probes, dependency tree probes, and PCFG extraction approximations to test whether L2 reuses L1 grammar structures or builds independent ones.
+
+\subsubsection{Shared Abstract Syntax Space}
+
+We measure tree similarity using
+\begin{equation}
+\text{TreeCKA}(T^{L1}, T^{L2})
+\end{equation}
+
+\subsection{Data Attribution and Learning Source Analysis}
+
+\paragraph{Token-level Training Influence.}  
+We estimate
+\begin{equation}
+\text{Influence}(x_{\text{train}} \rightarrow y_{\text{eval}})
+\end{equation}
+to identify which L1 data supports L2 predictions and which examples create bilingual alignment.
+
+\paragraph{Concept Learning Provenance.}  
+We can reconstruct which training instances caused a concept to become cross-lingually shared—a capability extremely rare in multilingual interpretability.
+
+\subsection{Vocabulary and Tokenizer Effects}
+
+\subsubsection{Morpheme Sharing}
+
+We measure whether bilingual training increases subword overlap and morphological alignment.
+
+\subsubsection{Chunkability Changes Over Time}
+
+We track chunkability evolution over training, synergistic with our existing metrics.
+
+\subsection{Mechanistic Interpretability}
+
+\subsubsection{Circuit Discovery Across Languages}
+
+We identify circuits reused across L1 and L2, and circuits newly formed for L2.
+
+\subsubsection{Language Switching Circuits}
+
+We test which neurons activate during language switching.
+
+\subsubsection{Attention Head Role Analysis}
+
+We test whether attention heads specialize for translation mapping, syntactic alignment, or lexical alignment.
+
+\subsection{Representation Geometry}
+
+\subsubsection{Shared Concept Manifold Hypothesis}
+
+We test whether languages occupy separate, partially overlapping, or fully merged manifolds.
+
+\subsubsection{Dimensionality Analysis}
+
+We measure the intrinsic dimensionality of monolingual versus bilingual spaces, testing whether bilingual learning compresses the conceptual space.
+
+\subsection{Curriculum Learning and Exposure Scheduling Effects}
+
+\subsubsection{Optimal Bilingual Curriculum Discovery}
+
+Using $\alpha(t)$, we test which schedules maximize transfer and minimize interference.
+
+\subsubsection{Representation Path Dependence}
+
+We test whether
+\begin{equation}
+\text{Rep}_{\text{final}}(\alpha_1(t)) \neq \text{Rep}_{\text{final}}(\alpha_2(t))
+\end{equation}
+even if final exposure proportions match.  
+This has implications for multilingual curriculum design and continual learning theory.
+
+\subsection{Evaluation-Driven Interpretability}
+
+We align internal changes with BLiMP, lexical decision, zero-shot causal benchmarks, and morphological segmentation tasks.  
+This links representation formation directly to behavioral outcomes.
+
+
+\section{The Effect of EWC on Catastrophic Forgetting}
+
+
+Exposure scheduling and EWC operate at distinct levels of the learning process. Exposure scheduling controls \emph{when} and \emph{how much} each language is observed during training, shaping the representation learning trajectory. EWC instead constrains \emph{how} parameters can change after learning earlier tasks. Formally, exposure scheduling modifies the data distribution:
+\[
+\mathcal{D}_{\text{mix}}(t),
+\]
+while EWC modifies the optimization objective:
+\[
+\mathcal{L}(\theta).
+\]
+
+First, exposure scheduling allows parameters to reorganize freely and enables analysis of how multilingual representations emerge through training dynamics. In contrast, EWC imposes explicit constraints that preserve earlier knowledge but may limit beneficial cross-lingual transfer. Second, exposure scheduling naturally supports continuous and mixed multilingual training, whereas EWC typically assumes discrete task boundaries and sequential training phases. Third, exposure scheduling scales straightforwardly to polyglot settings by generalizing $\alpha(t)$ to a vector of mixture proportions $\{\alpha_i(t)\}_{i=1}^n$, while EWC requires maintaining importance estimates for each prior task, which may become computationally expensive as the number of languages grows.
+
+Exposure scheduling provides a framework for analysing how multilingual knowledge forms and how training curricula influence transfer and interference. 
+
+EWC provides a mechanism for stabilizing knowledge once it has been acquired. Consequently, exposure scheduling can be viewed as defining the multilingual learning environment, while EWC constrains parameter updates within that environment. Investigating their interaction offers a promising direction for developing robust multilingual continual learning systems.
+

@@ -1,0 +1,33 @@
+
+\section{Shared vs.\ Language-Specific Vocabulary: Cognates and Interlingual Homographs}\label{app:tokenizer-cognate}
+
+The default \beetle{} models use a shared bilingual BPE vocabulary of size $50{,}304$, trained on a proportional data mix calibrated so that each language receives roughly equal compression. This design choice interacts directly with the two lexical phenomena that are most diagnostic of bilingual reading: cognates, whose surface forms overlap across languages, and interlingual homographs, whose forms are identical but whose meanings differ. This appendix first discusses how the shared vocabulary shapes these phenomena, then presents a targeted control confirming that the curriculum effects reported in the main paper are not an artefact of tokenization.
+
+\subsection{Effect of the shared BPE vocabulary}
+
+A shared subword vocabulary causes cognates and interlingual homographs to be segmented into overlapping or identical token sequences. A Dutch--English cognate pair, or an interlingual homograph with the same orthographic form in both languages, is therefore backed by the same embedding rows and the same downstream representational support regardless of which language is being processed. This is the concrete mechanism by which cumulative cross-language frequency can generate cognate facilitation in language models: because both languages contribute to the same tokens, an overlapping form accrues more effective exposure than either language alone would supply \citep{winther2021cumulative}. The account maps naturally onto the Bilingual Interactive Activation framework, in which shared word forms produce cross-language co-activation at the lexical level, so that reading an overlapping form partially activates its representation in the other language \citep{dijkstra2002architecture,dijkstra2000interlingual}.
+
+The shared design carries a trade-off. It maximises transfer for script-overlapping pairs such as Dutch, German, or Italian with English, where a substantial fraction of tokens is genuinely reused. It is also, however, exactly the configuration that recent work identifies as predicting human-misaligned behaviour for overlapping word forms \citep{skrjanec2026crosslingual}: the most common tokenizer design does not reproduce the reading-time signatures that human bilinguals show for cognates and interlingual homographs, because it collapses forms that the human lexicon keeps partially distinct. This is treated here as a known limitation rather than a defect, and vocabulary construction is a controlled variable in \beetle{}, which supports per-language, shared-bilingual, and shared-trilingual vocabularies.
+
+Two further considerations bear on how these effects should be measured. First, some cross-lingual homograph effects surface only in later eye-tracking measures, such as regression-path duration or total fixation time, rather than in first-pass reading \citep{hoversten2016time}, which motivates evaluating models against multiple reading-time measures instead of a single early one. Second, under a fixed experience budget shared across two languages, each language's word forms are encountered less often than in a monolingual model trained on the same total number of tokens. On the weaker-links account, this reduced frequency weakens the lexical links for each language's forms \citep{gollan2008weaker,whitford2015second}, and a shared vocabulary can partially offset this for overlapping forms while leaving language-specific forms exposed to it.
+
+\subsection{Curriculum effects survive a language-specific tokenizer}
+
+Because the shared vocabulary ties the two languages together at the token level, one might worry that the curriculum effects reported in the main paper are an artefact of that coupling rather than a property of the training order. To test this, a representative Dutch--English pair was re-trained with a language-specific tokenizer: separate Dutch and English vocabularies whose combined size matches the shared $50{,}304$-token vocabulary. The balanced (B1) and sequential (B3) curricula were then re-run at the $100$M scale and evaluated on MECO first-pass reading using the same $\Delta\log L$ metric as in the main paper.
+
+Table~\ref{tab:tokenizer-ablation} reports the comparison. Under both tokenizers the sequential curriculum yields a higher $\Delta\log L$ than the balanced curriculum, and the size of the staged advantage is close to identical: $+5.1$ under the shared vocabulary and $+5.5$ under language-specific vocabularies. The absolute values shift slightly downward when the vocabularies are separated, consistent with the loss of shared representational support for overlapping forms, but the ordering B3 $>$ B1 and both the sign and approximate magnitude of the staged advantage are preserved. The curriculum effect is therefore robust to tokenization and is not a by-product of the shared BPE vocabulary. These language-specific-tokenizer numbers are a targeted control on the Dutch--English pair rather than a full re-evaluation of the model suite.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+Tokenizer & B1 & B3 & $\Delta$(B3$-$B1) \\
+\midrule
+Shared BPE ($50{,}304$)   & $32.2$ & $37.3$ & $+5.1$ \\
+Language-specific         & $30.9$ & $36.4$ & $+5.5$ \\
+\bottomrule
+\end{tabular}
+\caption{Dutch--English $100$M models on MECO first-pass $\Delta\log L$, comparing the shared bilingual BPE vocabulary against matched-size language-specific vocabularies. B1 is the balanced curriculum and B3 the sequential curriculum. The sequential advantage B3 $>$ B1 holds under both tokenizers with near-identical magnitude, indicating that the curriculum effect is not a tokenization artefact.}
+\label{tab:tokenizer-ablation}
+\end{table}

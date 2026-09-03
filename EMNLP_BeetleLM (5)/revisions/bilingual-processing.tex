@@ -1,0 +1,76 @@
+\section{Bilingual Processing Effects}\label{sec:bilingual-processing}
+
+The reading-time and discrimination results establish that exposure curricula shape how well \beetle{} predicts aggregate bilingual behaviour. A stronger test is whether the same models reproduce specific effects that distinguish bilingual from monolingual processing. We consider three: cognate and fluency effects at the lexical level, cross-lingual structural priming at the syntactic level, and the population-level structure of the reading-time fit. Full analyses are given in Appendices~\ref{app:tokenizer-cognate}, \ref{app:ppl-tradeoff}, and~\ref{app:participant-meco}.
+
+\paragraph{Lexical level: cognates and a fluency trade-off.} Because the default models share a bilingual BPE vocabulary, cognates and interlingual homographs are segmented into overlapping token sequences and share representational support, so that cumulative cross-language frequency can produce cognate facilitation \citep{winther2021cumulative,dijkstra2002architecture}. This coupling is a design choice rather than a confound: the staged-curriculum advantage persists when a representative Dutch--English pair is retrained with matched-size language-specific vocabularies (App.~\ref{app:tokenizer-cognate}), and shared vocabularies are known to predict human-misaligned patterns for overlapping forms \citep{skrjanec2026crosslingual}. At the level of whole-language fluency, the models trace the trade-off predicted by the weaker-links account \citep{gollan2008weaker,whitford2015second}: for Dutch--English, shifting effective exposure toward English lowers English perplexity while raising Dutch perplexity, whereas for the typologically distant Chinese--English pair, dividing a fixed budget between systems that share little structure degrades both languages (App.~\ref{app:ppl-tradeoff}).
+
+\paragraph{Syntactic level: cross-lingual structural priming.} Bilingual speakers share syntactic representations across their languages \citep{hartsuiker2004crosslinguistic}. Replicating two Dutch--English priming studies with the 24B models (Table~\ref{tab:beetle-priming}), genitive priming \citep{bernolet2013language} is robust across curricula and both training corpora, whereas dative priming \citep{schoonbaert2007representation} is weak and inconsistent. The models therefore develop shared cross-language syntactic representations, but in a construction-specific rather than uniform manner, and the two corpora respond differently to the exposure schedule.
+
+\paragraph{Population level: the fit tracks acquisition and survives late measures.} Decomposing the group-level MECO fit across 319 readers, staged curricula give the best per-participant fit for 82\% of readers at the human scale, and the preferred curriculum correlates with a reader's age of English acquisition rather than with general proficiency (App.~\ref{app:participant-meco}). The curriculum effect is not confined to early processing: it holds for the late regression-path and total-fixation measures as well as first-pass reading (Table~\ref{tab:beetle-earlylate}), consistent with the delayed time-course of cross-language influence \citep{hoversten2016time}.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\columnwidth}
+\begin{tabular}{llrrr}
+\toprule
+Lang. & Curr. & First-pass & Reg.-path & Total \\
+\midrule
+\multirow{5}{*}{Dutch}
+ & B1 & 35.1 & 4.7  & 69.8 \\
+ & B2 & 54.1 & 20.3 & 91.6 \\
+ & B3 & 49.8 & 22.5 & 90.4 \\
+ & B4 & 34.7 & 19.6 & 69.6 \\
+ & B5 & 31.3 & 12.8 & 62.2 \\
+\midrule
+\multirow{5}{*}{German}
+ & B1 & 98.9  & 19.8 & 230.4 \\
+ & B2 & 144.9 & 22.2 & 277.2 \\
+ & B3 & 140.9 & 22.5 & 249.3 \\
+ & B4 & 94.5  & 20.4 & 231.5 \\
+ & B5 & 122.0 & 20.7 & 264.1 \\
+\midrule
+\multirow{5}{*}{Chinese}
+ & B1 & 161.3 & n.a. & 254.7 \\
+ & B2 & 162.4 & n.a. & 258.9 \\
+ & B3 & 158.0 & n.a. & 245.9 \\
+ & B4 & 144.3 & n.a. & 205.3 \\
+ & B5 & 159.6 & n.a. & 231.2 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Mean $\Delta$log-likelihood by curriculum across first-pass, regression-path, and total-fixation measures. Staged curricula lead across both early and late measures. Regression-path durations are unavailable for the Chinese cohort. Full participant-level analysis in App.~\ref{app:participant-meco}.}
+\label{tab:beetle-earlylate}
+\end{table}
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{adjustbox}{max width=\columnwidth}
+\begin{tabular}{lrrrr}
+\toprule
+ & \multicolumn{2}{c}{FineWeb} & \multicolumn{2}{c}{HumanScale} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Curr. & diff & $p$ & diff & $p$ \\
+\midrule
+\multicolumn{5}{l}{\textit{Bernolet (genitive)}} \\
+B1 & 1.051 & .0004 & 1.369 & $<$.0001 \\
+B2 & 0.991 & .037  & 1.095 & $<$.0001 \\
+B3 & 0.969 & .051  & 1.216 & $<$.0001 \\
+B4 & 1.252 & .0008 & 0.565 & .005 \\
+B5 & 1.075 & .0003 & 0.571 & $<$.0001 \\
+\midrule
+\multicolumn{5}{l}{\textit{Schoonbaert (dative)}} \\
+B1 & 0.268 & .135 & $-0.093$ & .710 \\
+B2 & 0.240 & .345 & 0.038   & .849 \\
+B3 & 0.133 & .588 & 0.073   & .757 \\
+B4 & 0.394 & .027 & 0.067   & .653 \\
+B5 & 0.216 & .242 & $-0.144$ & .461 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\caption{Cross-lingual structural priming for the 24B FineWeb and HumanScale models: surprisal difference (nats) between congruent and incongruent primes, with permutation $p$-values. Genitive priming is robust; dative priming is weak. Baseline comparison and details in App.~\ref{app:participant-meco}.}
+\label{tab:beetle-priming}
+\end{table}

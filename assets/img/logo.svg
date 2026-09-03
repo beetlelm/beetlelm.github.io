@@ -9,22 +9,43 @@
       <stop offset="1" stop-color="#211f45"/>
     </linearGradient>
   </defs>
+
   <rect x="8" y="8" width="224" height="224" rx="56" fill="url(#bg)"/>
-  <g stroke="#211f45" stroke-width="7" stroke-linecap="round" fill="none" opacity="0.9">
-    <path d="M78 96 L44 74"/><path d="M74 120 L38 120"/><path d="M78 144 L44 166"/>
-    <path d="M162 96 L196 74"/><path d="M166 120 L202 120"/><path d="M162 144 L196 166"/>
-    <path d="M104 66 L92 40"/><path d="M136 66 L148 40"/>
+
+  <!-- legs -->
+  <g stroke="#211f45" stroke-width="9" stroke-linecap="round" fill="none">
+    <path d="M84 108 L40 86"/>
+    <path d="M82 138 L36 138"/>
+    <path d="M84 168 L42 192"/>
+    <path d="M156 108 L200 86"/>
+    <path d="M158 138 L204 138"/>
+    <path d="M156 168 L198 192"/>
   </g>
-  <circle cx="92" cy="40" r="7" fill="#211f45"/>
-  <circle cx="148" cy="40" r="7" fill="#211f45"/>
-  <circle cx="120" cy="70" r="24" fill="#211f45"/>
-  <ellipse cx="120" cy="140" rx="52" ry="66" fill="url(#shell)"/>
-  <path d="M120 82 L120 200" stroke="#6d5ae0" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- antennae -->
+  <g stroke="#211f45" stroke-width="8" stroke-linecap="round" fill="none">
+    <path d="M106 62 Q92 40 78 36"/>
+    <path d="M134 62 Q148 40 162 36"/>
+  </g>
+  <circle cx="78" cy="36" r="8" fill="#211f45"/>
+  <circle cx="162" cy="36" r="8" fill="#211f45"/>
+
+  <!-- head -->
+  <circle cx="120" cy="72" r="26" fill="#211f45"/>
+  <circle cx="110" cy="68" r="5" fill="#cabfff"/>
+  <circle cx="130" cy="68" r="5" fill="#cabfff"/>
+
+  <!-- body / elytra -->
+  <ellipse cx="120" cy="146" rx="58" ry="72" fill="url(#shell)"/>
+  <!-- wing split -->
+  <path d="M120 84 L120 214" stroke="#6d5ae0" stroke-width="7" stroke-linecap="round"/>
+  <!-- pronotum highlight -->
+  <path d="M120 92 a44 40 0 0 1 44 34 a44 60 0 0 1 -44 12 a44 60 0 0 1 -44 -12 a44 40 0 0 1 44 -34 Z" fill="#2d2a5e" opacity="0.55"/>
+
+  <!-- spots -->
   <g fill="#f7f6fe">
-    <circle cx="98" cy="118" r="7"/><circle cx="142" cy="118" r="7"/>
-    <circle cx="102" cy="152" r="6"/><circle cx="138" cy="152" r="6"/>
-    <circle cx="110" cy="182" r="5"/><circle cx="130" cy="182" r="5"/>
+    <circle cx="96" cy="126" r="8"/><circle cx="144" cy="126" r="8"/>
+    <circle cx="100" cy="164" r="6.5"/><circle cx="140" cy="164" r="6.5"/>
+    <circle cx="108" cy="196" r="5"/><circle cx="132" cy="196" r="5"/>
   </g>
-  <circle cx="112" cy="64" r="4" fill="#f7f6fe"/>
-  <circle cx="128" cy="64" r="4" fill="#f7f6fe"/>
 </svg>
