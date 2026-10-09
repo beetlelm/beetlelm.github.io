@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research — beetle</title>
+  <meta name="description" content="The scientific contribution behind Beetle: controlled bilingual pretraining, key findings on second-language reading-time alignment, results figures and the EMNLP 2026 paper.">
+
+  <link href="favicon.ico" rel="icon" sizes="any">
+  <link href="assets/img/logo.svg" rel="icon" type="image/svg+xml">
+  <link href="assets/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="assets/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/site.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="beetle logo"><span>beetle</span></a>
+      <button class="nav-toggle" aria-label="Menu"><i class="bi bi-list"></i></button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="research.html" class="active">Research</a>
+        <a href="models.html">Models &amp; Data</a>
+        <a href="framework.html">Framework</a>
+        <a href="docs.html">Docs</a>
+        <a class="nav-gh" href="https://github.com/beetlelm" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="wrap">
+      <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Research</span>
+      <h1>What training experience does to a second language</h1>
+      <p>Beetle isolates how exposure structure, scale and first language shape bilingual model behaviour — and compares that behaviour with human second-language processing.</p>
+    </div>
+  </section>
+
+  <!-- Motivation -->
+  <section class="section" style="padding-top:36px;">
+    <div class="wrap">
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>The problem</h3>
+          <p>Bilingual language models offer a controlled setting for studying how training conditions shape second-language (L2) behaviour. But prior work typically varies <strong>exposure structure, scale, and architecture at once</strong> — making it difficult to attribute any effect to a single factor.</p>
+        </div>
+        <div class="card">
+          <h3>The approach</h3>
+          <p>In Beetle, <strong>tokeniser, target language, training budget and exposure structure are each independently manipulable</strong>. Holding the others fixed makes the effect of first language, curriculum and data scale attributable to one cause — enabling systematic, comparable experimentation.</p>
+        </div>
+      </div>
+
+      <h3 style="margin-top:40px;">Four controls, varied one at a time</h3>
+      <div class="spec-grid" style="margin-top:14px;">
+        <div class="spec"><div class="k">Tokeniser</div><div class="v">BPE · equal compression</div></div>
+        <div class="spec"><div class="k">Target language</div><div class="v">21 first languages</div></div>
+        <div class="spec"><div class="k">Training budget</div><div class="v">100M / 2B / 24B</div></div>
+        <div class="spec"><div class="k">Exposure structure</div><div class="v">curricula B1–B5</div></div>
+      </div>
+      <p style="margin-top:16px;color:var(--muted);font-size:15px;">See <a href="framework.html">the framework</a> for how each control is implemented, and <a href="models.html">models &amp; data</a> for the released checkpoints.</p>
+    </div>
+  </section>
+
+  <!-- Key findings -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Key findings</span>
+        <h2>What the models reveal</h2>
+      </div>
+      <div class="findings">
+        <div class="finding">
+          <div class="fi"><i class="bi bi-bar-chart-steps"></i></div>
+          <h4>Staged curricula win</h4>
+          <p>Staged, temporally structured curricula consistently improve alignment with language-learner reading time, compared with balanced bilingual training.</p>
+        </div>
+        <div class="finding">
+          <div class="fi"><i class="bi bi-rulers"></i></div>
+          <h4>Biggest gains at small scale</h4>
+          <p>The advantage of structured exposure is largest at <strong>smaller data scales</strong> — where how input is ordered matters most.</p>
+        </div>
+        <div class="finding">
+          <div class="fi"><i class="bi bi-translate"></i></div>
+          <h4>Closer pairs transfer more</h4>
+          <p>Gains are largest for <strong>typologically closer language pairs</strong>, and a dissociation appears between online reading time and offline grammaticality judgement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results figures -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Results</span>
+        <h2>Evaluated against human processing</h2>
+        <p>We evaluate the models on human bilingual and second-language reading-time prediction, grammaticality judgement and cross-lingual structural priming.</p>
+      </div>
+
+      <div class="grid cols-2" style="margin-bottom:20px;">
+        <figure class="fig">
+          <img src="assets/paper/fig-meco-main.png" alt="MECO L2 reading-time alignment">
+          <figcaption><b>Reading time (MECO).</b> L2 reading-time alignment of Beetle vs. multilingual LLMs: (a) B1–B5 Dutch/Chinese/German–English (FineWeb 100M, 2B, 24B; BabyBabelLM) and (b) B1–B3 Basque/Italian/Russian/Turkish–English (100M FineWeb). Staged curricula (B2/B3/B5) consistently beat balanced exposure (B1).</figcaption>
+        </figure>
+        <figure class="fig">
+          <img src="assets/paper/fig-bliss-main.png" alt="BLiSS learner minimal-pair accuracy">
+          <figcaption><b>Discrimination (BLiSS).</b> Learner minimal-pair discrimination: Beetle vs. baseline-matched multilingual LLMs. Staged curricula (B2, B3-33, B5) generally outperform balanced exposure (B1), though differences are smaller than for reading-time alignment — a dissociation between online processing and offline judgement.</figcaption>
+        </figure>
+      </div>
+
+      <figure class="fig" style="margin-bottom:20px;">
+        <img src="assets/paper/fig-blimp-main.png" alt="English BLiMP accuracy across 15 L1s and 5 curricula">
+        <figcaption><b>Grammatical competence.</b> Beetle English BLiMP accuracy for 100M FineWeb models across 15 L1s and 5 exposure curricula. At 100M tokens, balanced exposure (B1) gives the strongest English grammar, and every bilingual curriculum beats its L1-monolingual control.</figcaption>
+      </figure>
+
+      <figure class="fig">
+        <img src="assets/paper/fig-flores-nll.png" alt="FLORES sentence NLL trajectories per model">
+        <figcaption><b>Figure 3. FLORES Sentence NLL.</b> Each facet is one model; curves report mean sentence-level NLL in bits on 1,012 parallel FLORES-200 devtest sentences (lower is better), with solid lines for L1 and dashed lines for English. The vertical dashed line marks L2 English introduction.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Priming table -->
+  <section class="section alt">
+    <div class="wrap narrow">
+      <div class="section-head">
+        <span class="eyebrow">Cross-lingual structural priming</span>
+        <h2>Priming persists across scale</h2>
+      </div>
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr><th rowspan="2">Curr.</th><th colspan="2">FineWeb (24B)</th><th colspan="2">HumanScale</th></tr>
+            <tr><th>diff</th><th>p</th><th>diff</th><th>p</th></tr>
+          </thead>
+          <tbody>
+            <tr class="grp"><th colspan="5">Bernolet (genitive)</th></tr>
+            <tr><td>B1</td><td>1.051</td><td>.0004</td><td>1.369</td><td>&lt;.0001</td></tr>
+            <tr><td>B2</td><td>0.991</td><td>.037</td><td>1.095</td><td>&lt;.0001</td></tr>
+            <tr><td>B3</td><td>0.969</td><td>.051</td><td>1.216</td><td>&lt;.0001</td></tr>
+            <tr><td>B4</td><td>1.252</td><td>.0008</td><td>0.565</td><td>.005</td></tr>
+            <tr><td>B5</td><td>1.075</td><td>.0003</td><td>0.571</td><td>&lt;.0001</td></tr>
+          </tbody>
+          <caption><b>Table 1.</b> Cross-lingual structural priming for the 24B FineWeb and HumanScale models: surprisal difference (nats) between congruent and incongruent primes, with permutation <i>p</i>-values.</caption>
+        </table>
+      </div>
+      <p style="margin-top:20px;"><a class="btn btn-outline btn-sm" href="docs.html#notebooks">Reproduce the analyses in Colab <i class="bi bi-arrow-right"></i></a></p>
+    </div>
+  </section>
+
+  <!-- Full paper -->
+  <section class="section">
+    <div class="wrap">
+      <div class="paper-card">
+        <span class="venue">EMNLP 2026</span>
+        <h3 class="paper-title">Beetle: A Bilingual Model Suite for Modelling Second-Language Processing</h3>
+        <div class="authors">
+          <a href="https://suchirsalhan.github.io/" target="_blank" rel="noopener">Suchir Salhan<sup>1</sup></a>
+          <a href="https://catherinearnett.github.io/" target="_blank" rel="noopener">Catherine Arnett<sup>2</sup></a>
+          <a href="https://jmichaelov.com/" target="_blank" rel="noopener">James A. Michaelov<sup>3</sup></a>
+          <a href="https://www.cl.cam.ac.uk/~pjb48/" target="_blank" rel="noopener">Paula Buttery<sup>1</sup></a>
+        </div>
+        <p class="affil"><sup>1</sup>University of Cambridge &nbsp;·&nbsp; <sup>2</sup>EleutherAI &nbsp;·&nbsp; <sup>3</sup>University of Oxford &nbsp;·&nbsp; Correspondence: <a href="mailto:sas245@cam.ac.uk">sas245@cam.ac.uk</a></p>
+        <p class="abstract">
+          <span class="lbl">Abstract</span>
+          Bilingual language models (LMs) offer a controlled setting for studying how training conditions shape second-language (L2) behaviour, but prior work typically varies exposure structure, scale, and architecture at once, making it difficult to attribute effects to any single factor. We introduce <strong>Beetle</strong>, a controlled language model pretraining framework in which tokeniser, target language, training budget, and exposure structure are each independently manipulable, enabling systematic and comparable experimentation of training conditions. Using Beetle, we train and release <strong>285 bilingual and 45 monolingual open-source LMs</strong> with rich checkpoints across a range of exposure schedules, data scales and first languages (L1s) to study multilingual pretraining and computational modelling of bilingualism and second language learning. Evaluating models on human bilingual and second language reading-time prediction and grammaticality judgement tasks, we find that staged and temporally structured curricula consistently improve alignment with language learner reading time compared to balanced bilingual training, with the largest gains at smaller data scales and for typologically closer language pairs. The Beetle models are well suited tools to help move computational psycholinguistics beyond its prevailing monolingual, English-centric focus toward models of human bilingual processing, to study cross-lingual learning dynamics, while supporting community-based development of controlled model families.
+        </p>
+        <div class="paper-btns">
+          <a class="btn btn-primary" href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i> Read on arXiv</a>
+          <a class="btn btn-outline" href="assets/paper/beetle-emnlp.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> PDF</a>
+          <a class="btn btn-ghost" href="#cite"><i class="bi bi-quote"></i> Cite</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cite -->
+  <section class="section alt" id="cite">
+    <div class="wrap narrow">
+      <div class="section-head"><span class="eyebrow">Citation</span><h2>Cite Beetle</h2></div>
+      <div class="code">
+        <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bibtex</span></div>
+<pre><code>@inproceedings{salhan2026beetle,
+  title     = {Beetle: A Bilingual Model Suite for Modelling
+               Second-Language Processing},
+  author    = {Salhan, Suchir and Arnett, Catherine and
+               Michaelov, James A. and Buttery, Paula},
+  booktitle = {Proceedings of EMNLP},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2609.22633}
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="https://github.com/beetlelm" target="_blank" rel="noopener"><img src="assets/img/logo.svg" alt="beetle"></a>
+      <p class="f-tag">A controlled framework for bilingual language learning.</p>
+      <nav class="f-nav">
+        <a href="research.html">Research</a>
+        <a href="models.html">Models &amp; Data</a>
+        <a href="framework.html">Framework</a>
+        <a href="docs.html">Docs</a>
+        <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">arXiv</a>
+        <a href="https://github.com/beetlelm" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <p class="f-copy">© 2026 beetle · Released under Apache-2.0 · Site by <a href="https://suchirsalhan.github.io/" target="_blank" rel="noopener">Suchir Salhan</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentation — beetle</title>
+  <meta name="description" content="Install Beetle, train a tiny language model on CPU with zero downloads, load any checkpoint with from_pretrained, and reproduce the psycholinguistic evaluations in Colab.">
+
+  <link href="favicon.ico" rel="icon" sizes="any">
+  <link href="assets/img/logo.svg" rel="icon" type="image/svg+xml">
+  <link href="assets/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="assets/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/site.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="beetle logo"><span>beetle</span></a>
+      <button class="nav-toggle" aria-label="Menu"><i class="bi bi-list"></i></button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="models.html">Models &amp; Data</a>
+        <a href="framework.html">Framework</a>
+        <a href="docs.html" class="active">Docs</a>
+        <a class="nav-gh" href="https://github.com/beetlelm" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="wrap">
+      <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Documentation</span>
+      <h1>Get started with Beetle</h1>
+      <p>Install the framework, train a real PicoDecoder on a laptop CPU with zero downloads, load any released checkpoint, and reproduce the evaluations in Colab.</p>
+    </div>
+  </section>
+
+  <!-- Install + train -->
+  <section class="section" style="padding-top:32px;">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Quickstart</span><h2>Install &amp; train in minutes</h2></div>
+      <div class="grid cols-2">
+        <div>
+          <h3 style="font-size:18px;">1 · Install</h3>
+          <div class="code">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash — full stack</span></div>
+<pre><code><span class="c-prompt">$ </span>git clone https://github.com/beetlelm/beetlelm.git
+<span class="c-prompt">$ </span>cd beetlelm
+<span class="c-prompt">$ </span>pip install -e .</code></pre>
+          </div>
+          <div class="code">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash — light (CPU quickstart only)</span></div>
+<pre><code><span class="c-prompt">$ </span>pip install <span class="c-str">"torch>=2.5.1"</span> transformers numpy pyyaml click
+<span class="c-prompt">$ </span>pip install -e . --no-deps</code></pre>
+          </div>
+          <p style="font-size:14.5px;color:var(--muted);">Prefer one command? <span class="ic">./install.sh --toy</span> does a light install plus a smoke train.</p>
+        </div>
+        <div>
+          <h3 style="font-size:18px;">2 · Train (CPU, zero downloads)</h3>
+          <div class="code">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>beetlelm-toy --config_path configs/tiny_cpu.yaml</code></pre>
+          </div>
+          <div class="code">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">python</span></div>
+<pre><code><span class="c-kw">from</span> beetlelm.toy <span class="c-kw">import</span> train
+results = train(<span class="c-str">"configs/tiny_cpu.yaml"</span>)
+<span class="c-kw">print</span>(results[<span class="c-str">"final_loss"</span>], results[<span class="c-str">"checkpoint_dir"</span>])
+
+<span class="c-comment"># reload the checkpoint — standard HuggingFace</span>
+<span class="c-kw">from</span> beetlelm.pico_decoder.pico_decoder <span class="c-kw">import</span> PicoDecoderHF
+model = PicoDecoderHF.from_pretrained(<span class="c-str">"runs/tiny_cpu"</span>)</code></pre>
+          </div>
+          <p style="font-size:14.5px;color:var(--muted);">Point <span class="ic">data.train_file</span> at any UTF-8 text file to train on your own corpus, or change <span class="ic">--seed</span>, <span class="ic">--max_steps</span>, <span class="ic">--d_model</span>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tutorials -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Guides</span><h2>Step by step</h2><p>From a first CPU run to loading a pretrained Beetle checkpoint.</p></div>
+      <div class="grid cols-3">
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-download"></i></div>
+          <h4>1 · Install beetle</h4>
+          <p>Clone the repo and install in editable mode. The light install pulls only what the CPU quickstart needs.</p>
+          <div class="code" style="margin-bottom:0;"><pre><code>git clone https://github.com/beetlelm/beetlelm.git
+cd beetlelm
+pip install -e .</code></pre></div>
+        </div>
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-cpu"></i></div>
+          <h4>2 · Train your first model</h4>
+          <p>Train a real PicoDecoder end-to-end on CPU with zero downloads — done in a couple of minutes.</p>
+          <div class="code" style="margin-bottom:0;"><pre><code>beetlelm-toy \
+  --config_path configs/tiny_cpu.yaml</code></pre></div>
+        </div>
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-file-earmark-text"></i></div>
+          <h4>3 · Train on your own text</h4>
+          <p>Point <span class="ic">data.train_file</span> at any UTF-8 file, and tune the run with a couple of flags.</p>
+          <div class="code" style="margin-bottom:0;"><pre><code>beetlelm-toy \
+  --config_path configs/tiny_cpu.yaml \
+  --seed 42 --max_steps 500 --d_model 128</code></pre></div>
+        </div>
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-box-seam"></i></div>
+          <h4>4 · Load a pretrained model</h4>
+          <p>Every Beetle checkpoint is standard HuggingFace — reload it with <span class="ic">from_pretrained</span>.</p>
+          <div class="code" style="margin-bottom:0;"><pre><code>from transformers import AutoModelForCausalLM
+m = AutoModelForCausalLM.from_pretrained(
+  "Beetle-HumanScale/beetle-monolingual-humanscale-eng")</code></pre></div>
+        </div>
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-alphabet"></i></div>
+          <h4>5 · Use a beetle tokenizer</h4>
+          <p>Bilingual and human-scale BPE tokenizers are published on the Hub and load the same way.</p>
+          <div class="code" style="margin-bottom:0;"><pre><code>from transformers import AutoTokenizer
+tok = AutoTokenizer.from_pretrained(
+  "Beetle-Data/tokenizer-nl-en")
+print(tok("Hello, beetle!"))</code></pre></div>
+        </div>
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-bar-chart-line"></i></div>
+          <h4>6 · Analyse &amp; evaluate</h4>
+          <p>Score learning dynamics and BLiMP-style minimal-pair accuracy, or play in Colab — no code required.</p>
+          <div class="code" style="margin-bottom:0;"><pre><code># minimal-pair evaluation
+from beetle_analyze import blimp_accuracy
+blimp_accuracy("runs/tiny_cpu")</code></pre></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notebooks -->
+  <section class="section" id="notebooks">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Reproduce in Colab</span><h2>Run the analyses, no local setup</h2><p>Open the reading-time, grammaticality and priming analyses in Google Colab.</p></div>
+      <div class="grid cols-3">
+        <div class="card">
+          <div class="card-ic" style="background:linear-gradient(155deg,#ffb703,#fb8500);"><i class="bi bi-arrow-left-right"></i></div>
+          <h4>German structural priming</h4>
+          <p>RQ A — cross-lingual structural priming for German–English Beetle models (Bernolet genitive &amp; dative).</p>
+          <div class="nb-badges">
+            <a class="nb-badge colab" href="https://colab.research.google.com/github/suchirsalhan/beetle-analyze/blob/main/notebooks/rq_a_german_priming.ipynb" target="_blank" rel="noopener"><i class="bi bi-google"></i> Colab</a>
+            <a class="nb-badge gh" href="https://github.com/suchirsalhan/beetle-analyze/blob/main/notebooks/rq_a_german_priming.ipynb" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-ic" style="background:linear-gradient(155deg,#ffb703,#fb8500);"><i class="bi bi-rulers"></i></div>
+          <h4>Priming across scale</h4>
+          <p>RQ B — how cross-lingual structural priming develops across 100M / 2B / 24B budgets and over checkpoints.</p>
+          <div class="nb-badges">
+            <a class="nb-badge colab" href="https://colab.research.google.com/github/suchirsalhan/beetle-analyze/blob/main/notebooks/rq_b_scale_priming.ipynb" target="_blank" rel="noopener"><i class="bi bi-google"></i> Colab</a>
+            <a class="nb-badge gh" href="https://github.com/suchirsalhan/beetle-analyze/blob/main/notebooks/rq_b_scale_priming.ipynb" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-ic" style="background:linear-gradient(155deg,#ffb703,#fb8500);"><i class="bi bi-translate"></i></div>
+          <h4>Multilingual priming</h4>
+          <p>RQ C — structural priming across multiple L1s, comparing curricula and directionality (L1→L2 vs. L2→L1).</p>
+          <div class="nb-badges">
+            <a class="nb-badge colab" href="https://colab.research.google.com/github/suchirsalhan/beetle-analyze/blob/main/notebooks/rq_c_multilingual_priming.ipynb" target="_blank" rel="noopener"><i class="bi bi-google"></i> Colab</a>
+            <a class="nb-badge gh" href="https://github.com/suchirsalhan/beetle-analyze/blob/main/notebooks/rq_c_multilingual_priming.ipynb" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-ic" style="background:linear-gradient(155deg,#ffb703,#fb8500);"><i class="bi bi-check2-square"></i></div>
+          <h4>BLiMP grammaticality</h4>
+          <p>Reproduce the human-scale BLiMP grammatical-judgement evaluations (P2/P3) for the Beetle suite.</p>
+          <div class="nb-badges">
+            <a class="nb-badge colab" href="https://colab.research.google.com/github/suchirsalhan/beetle-analyze/blob/main/notebooks/colab_p2_p3_blimp_humanscale_a100.ipynb" target="_blank" rel="noopener"><i class="bi bi-google"></i> Colab</a>
+            <a class="nb-badge gh" href="https://github.com/suchirsalhan/beetle-analyze/blob/main/notebooks/colab_p2_p3_blimp_humanscale_a100.ipynb" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-ic" style="background:linear-gradient(155deg,#ffb703,#fb8500);"><i class="bi bi-graph-down"></i></div>
+          <h4>FLORES sentence NLL</h4>
+          <p>Sentence-level NLL trajectories on parallel FLORES-200 devtest sentences for the 100M model variants.</p>
+          <div class="nb-badges">
+            <a class="nb-badge colab" href="https://colab.research.google.com/github/suchirsalhan/beetle-analyze/blob/main/notebooks/colab_flores_100m_variants_a100.ipynb" target="_blank" rel="noopener"><i class="bi bi-google"></i> Colab</a>
+            <a class="nb-badge gh" href="https://github.com/suchirsalhan/beetle-analyze/blob/main/notebooks/colab_flores_100m_variants_a100.ipynb" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-ic" style="background:linear-gradient(155deg,#ffb703,#fb8500);"><i class="bi bi-diagram-2"></i></div>
+          <h4>Interpretability</h4>
+          <p>Hierarchical / layerwise interpretability analyses from the paper’s learning-dynamics appendices.</p>
+          <div class="nb-badges">
+            <a class="nb-badge colab" href="https://colab.research.google.com/github/suchirsalhan/beetle-analyze/blob/main/notebooks/colab_emnlp_interp.ipynb" target="_blank" rel="noopener"><i class="bi bi-google"></i> Colab</a>
+            <a class="nb-badge gh" href="https://github.com/suchirsalhan/beetle-analyze/blob/main/notebooks/colab_emnlp_interp.ipynb" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:22px;"><a class="nb-badge colab" style="padding:9px 16px;" href="https://colab.research.google.com/github/suchirsalhan/beetle-analyze/blob/main/notebooks/cpu_smoke.ipynb" target="_blank" rel="noopener"><i class="bi bi-lightning-charge"></i> CPU smoke test — check the analysis stack end-to-end</a></p>
+    </div>
+  </section>
+
+  <!-- Evaluation resources -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Evaluation data</span><h2>Benchmarks &amp; resources</h2></div>
+      <div class="link-cards">
+        <a class="link-card" href="https://meco-read.com/" target="_blank" rel="noopener"><i class="bi bi-eye"></i><div><div class="t">MECO</div><div class="s">Multilingual eye-tracking reading times</div></div></a>
+        <a class="link-card" href="https://huggingface.co/datasets/ALTACambridge/BLiSS" target="_blank" rel="noopener"><i class="bi bi-check2-square"></i><div><div class="t">BLiSS</div><div class="s">Learner minimal-pair discrimination</div></div></a>
+        <a class="link-card" href="https://aclanthology.org/2025.babylm-main.13/" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i><div><div class="t">BabyLM 2025</div><div class="s">2025.babylm-main.13</div></div></a>
+        <a class="link-card" href="https://aclanthology.org/2025.emnlp-demos.22/" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i><div><div class="t">EMNLP 2025 (demo)</div><div class="s">2025.emnlp-demos.22</div></div></a>
+        <a class="link-card" href="https://aclanthology.org/2026.cdl-1.15/" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i><div><div class="t">CDL 2026</div><div class="s">2026.cdl-1.15</div></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ecosystem -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Ecosystem</span><h2>Four repositories, end to end</h2></div>
+      <div class="grid cols-2">
+        <a class="card link" href="https://github.com/beetlelm/beetlelm" target="_blank" rel="noopener">
+          <div class="card-ic"><i class="bi bi-cpu"></i></div>
+          <h4>beetlelm</h4>
+          <p>The core framework: train tiny language models end-to-end on CPU with zero downloads and a reproducible baseline. The architecture zoo, tokenizer, and HuggingFace-compatible checkpoints live here.</p>
+          <span class="more">Open repository <i class="bi bi-arrow-right"></i></span>
+        </a>
+        <a class="card link" href="https://github.com/beetlelm/beetle-data" target="_blank" rel="noopener">
+          <div class="card-ic"><i class="bi bi-database"></i></div>
+          <h4>beetle-data</h4>
+          <p>A minimal, reproducible bilingual data-preparation pipeline: build a corpus, train a BPE tokenizer, pretokenize into shards, and report stats — for small language models.</p>
+          <span class="more">Open repository <i class="bi bi-arrow-right"></i></span>
+        </a>
+        <a class="card link" href="https://github.com/beetlelm/beetle-analyze" target="_blank" rel="noopener">
+          <div class="card-ic"><i class="bi bi-bar-chart-line"></i></div>
+          <h4>beetle-analyze</h4>
+          <p>A minimal, reproducible toolkit for analysing language-model evaluation output via BLiMP-style minimal-pair accuracy.</p>
+          <span class="more">Open repository <i class="bi bi-arrow-right"></i></span>
+        </a>
+        <a class="card link" href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">
+          <div class="card-ic"><i class="bi bi-rocket-takeoff"></i></div>
+          <h4>beetle-explorer</h4>
+          <p>Load and play with Beetle language models in Colab — no coding required. A non-technical companion to the beetlelm training framework.</p>
+          <span class="more">Open repository <i class="bi bi-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get involved -->
+  <section class="section alt">
+    <div class="wrap narrow center">
+      <div class="section-head center"><span class="eyebrow">Get involved</span><h2>Open source &amp; welcoming</h2><p>Beetle welcomes issues, pull requests and questions.</p></div>
+      <p style="font-family:var(--mono-font);font-size:16px;"><i class="bi bi-envelope" style="color:var(--accent);"></i> <a href="mailto:sas245@cam.ac.uk">sas245@cam.ac.uk</a></p>
+      <div class="cta-row" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px;">
+        <a class="btn btn-primary" href="https://github.com/beetlelm" target="_blank" rel="noopener"><i class="bi bi-github"></i> github.com/beetlelm</a>
+        <a class="btn btn-outline" href="https://huggingface.co/Beetle-HumanScale" target="_blank" rel="noopener"><i class="bi bi-boxes"></i> Hugging Face</a>
+        <a class="btn btn-ghost" href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener"><i class="bi bi-rocket-takeoff"></i> Try it in Colab</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="https://github.com/beetlelm" target="_blank" rel="noopener"><img src="assets/img/logo.svg" alt="beetle"></a>
+      <p class="f-tag">A controlled framework for bilingual language learning.</p>
+      <nav class="f-nav">
+        <a href="research.html">Research</a>
+        <a href="models.html">Models &amp; Data</a>
+        <a href="framework.html">Framework</a>
+        <a href="docs.html">Docs</a>
+        <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">arXiv</a>
+        <a href="https://github.com/beetlelm" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <p class="f-copy">© 2026 beetle · Released under Apache-2.0 · Site by <a href="https://suchirsalhan.github.io/" target="_blank" rel="noopener">Suchir Salhan</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+
+</html>

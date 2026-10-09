@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Framework — beetle</title>
+  <meta name="description" content="How Beetle works: a LLaMA-class PicoDecoder backbone, modular tokenisation, five exposure curricula (B1–B5), three data scales, dense checkpoints and matched monolingual baselines.">
+
+  <link href="favicon.ico" rel="icon" sizes="any">
+  <link href="assets/img/logo.svg" rel="icon" type="image/svg+xml">
+  <link href="assets/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="assets/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/css/site.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="beetle logo"><span>beetle</span></a>
+      <button class="nav-toggle" aria-label="Menu"><i class="bi bi-list"></i></button>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="models.html">Models &amp; Data</a>
+        <a href="framework.html" class="active">Framework</a>
+        <a href="docs.html">Docs</a>
+        <a class="nav-gh" href="https://github.com/beetlelm" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="wrap">
+      <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Framework</span>
+      <h1>Controlled manipulation of pretraining</h1>
+      <p>Beetle lets you manipulate pretraining conditions one at a time — holding architecture, tokeniser and data source fixed so the effect of L1, curriculum and data scale is attributable to a single factor.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:32px;">
+    <div class="wrap">
+      <figure class="fig" style="margin-bottom:28px;">
+        <img src="assets/paper/fig1-beetle-splash.png" alt="Beetle framework and the B1–B5 exposure curricula">
+        <figcaption><b>Figure 1.</b> Beetle is an open-source LM pretraining framework for studying bilingual and multilingual language acquisition under tightly controlled conditions. Each facet shows a structured exposure curriculum (<b>B1–B5</b>) used to pretrain bilingual models that vary in the relative per-language data distribution across training steps.</figcaption>
+      </figure>
+
+      <div class="card" style="margin-bottom:0;">
+        <p class="lead mb-0">Beetle models language exposure in bilingual pretraining as changing <em>continuously</em> over training, so it can represent gradual or abrupt transitions between languages, periodic bursts of exposure, and clustered, context-dependent input. It isolates variables that prior L2-LM work manipulated separately: <strong>L2 onset timing</strong>, <strong>L2 exposure ratio</strong>, and <strong>continual-learning regularisation</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture + tokenisation -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-cpu"></i></div>
+          <h3>Architecture</h3>
+          <p>The default backbone, <strong>PicoDecoder</strong> (Diehl Martinez et al., 2025), is a 125M-parameter LLaMA-style causal decoder — a contemporary LLaMA-class stack (RoPE, SwiGLU, RMSNorm, grouped-query attention) rather than the GPT-2-style decoder of B-GPT.</p>
+          <div class="spec-grid">
+            <div class="spec"><div class="k">Params</div><div class="v">125M</div></div>
+            <div class="spec"><div class="k">Layers</div><div class="v">14</div></div>
+            <div class="spec"><div class="k">d_model</div><div class="v">768</div></div>
+            <div class="spec"><div class="k">Heads</div><div class="v">12 attn / 1 KV</div></div>
+            <div class="spec"><div class="k">Positions</div><div class="v">RoPE</div></div>
+            <div class="spec"><div class="k">Activation</div><div class="v">SwiGLU</div></div>
+            <div class="spec"><div class="k">Norm</div><div class="v">RMSNorm</div></div>
+            <div class="spec"><div class="k">Seq. length</div><div class="v">512</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-alphabet"></i></div>
+          <h3>Tokenisation</h3>
+          <p>Tokenisation is a <strong>modular</strong> element of the framework, so it can be used to study the benefits of vocabulary overlap, different schemes (SentencePiece, UnigramLM, SuperBPE, BPE) and <strong>equal compression</strong>.</p>
+          <p>Beetle models use a <strong>BPE tokenizer</strong> (HuggingFace <span class="ic">tokenizers</span>) with a <strong>50K vocabulary</strong>, trained with <strong>equal compression</strong> so both languages share the same compression rate — each model sees the same amount of information per language in each sequence.</p>
+          <p class="mb-0"><a class="btn btn-outline btn-sm" href="https://huggingface.co/Beetle-Data" target="_blank" rel="noopener">Browse tokenizers <i class="bi bi-arrow-right"></i></a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curricula -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Exposure curricula</span>
+        <h2>Five ways to introduce a second language</h2>
+        <p>We compare five curricula that manipulate how L2 input is distributed over training. Four differ mainly in <em>when</em> L2 is introduced and how the L1:L2 mixture then changes; B4 instead keeps L2 available throughout but concentrates it into discrete episodes. We report the total proportion of training tokens in L2, since curricula that introduce L2 at different points provide different amounts of it. Models are named by <strong>curriculum</strong> (<span class="ic">b1</span>–<span class="ic">b5</span>), <strong>scale</strong> and <strong>language pair</strong> (e.g. <span class="ic">nld-eng</span>).</p>
+      </div>
+      <div class="curr-legend">
+        <div class="curr"><span class="tag">B1</span><h5>Balanced</h5><p>Constant 50:50 mixture throughout; L2 available from the start. L2 = <span class="pct">50%</span>.</p></div>
+        <div class="curr"><span class="tag">B2</span><h5>Simultaneous</h5><p>L1 only, then a sigmoid to 50:50 at the halfway point. L2 = <span class="pct">25%</span>.</p></div>
+        <div class="curr"><span class="tag">B3</span><h5>Sequential</h5><p>L1 only, then a sigmoid to an L2-dominant 33:67 mixture. L2 = <span class="pct">33.5%</span>.</p></div>
+        <div class="curr"><span class="tag">B4</span><h5>Classroom</h5><p>80:20 overall, L2 clustered into intermittent episodes (available throughout). L2 = <span class="pct">20%</span>.</p></div>
+        <div class="curr"><span class="tag">B5</span><h5>Late</h5><p>L1 only until 80% of training, then a sigmoid to 50:50 — an L1-attrition setting. L2 = <span class="pct">10%</span>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data scales + languages -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-bar-chart-steps"></i></div>
+          <h3>Data scales &amp; checkpoints</h3>
+          <div class="scale-row scale-a"><div class="n">100M</div><div class="d">tokens — human-scale (BabyBabelLM) &amp; web-scale entry point</div></div>
+          <div class="scale-row scale-b"><div class="n">2B</div><div class="d">tokens — FineWeb-2 (L1) + FineWeb-Edu (English)</div></div>
+          <div class="scale-row scale-c"><div class="n">24B</div><div class="d">tokens — largest web-scale regime</div></div>
+          <p style="font-size:14px;color:var(--muted);margin:14px 0 0;">~30 checkpoints per model, on a log<sub>2</sub> schedule that restarts each exposure phase — saving gradients, activations and circuits (Pythia-style) for interpretability. The first checkpoints available for several of these languages.</p>
+        </div>
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-translate"></i></div>
+          <h3>Languages, transfer &amp; baselines</h3>
+          <p>We release <strong>285 bilingual + 45 monolingual</strong> models over <strong>21 L1s</strong>, all with English as L2 (for reading-time and CEFR data). At 100M FineWeb we cover:</p>
+          <div class="chips">
+            <span>Danish</span><span>German</span><span>Greek</span><span>Estonian</span><span>Basque</span><span>Filipino</span><span>Finnish</span><span>Hebrew</span><span>Hindi</span><span>Icelandic</span><span>Italian</span><span>Japanese</span><span>Korean</span><span>Dutch</span><span>Polish</span><span>Russian</span><span>Spanish</span><span>Turkish</span><span>Chinese</span>
+          </div>
+          <p style="margin-top:14px;"><strong>Cross-lingual transfer</strong> is measured against <strong>matched monolingual baselines</strong> (German, Dutch, Chinese at all scales; Russian, Italian, Turkish, Basque at 100M/2B) and against massively multilingual LLMs — Apertus 8B, XGLM 4.5B, Llama 3.1 1B, Gemma 3 270M, Qwen 3 0.6B.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning dynamics -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Learning dynamics</span>
+        <h2>When cross-lingual transfer emerges</h2>
+        <p>Because checkpoints are dense near phase boundaries, Beetle exposes <em>when</em> cross-lingual transfer emerges and how it depends on typological similarity, exposure timing and mixture. Sentence-level NLL trajectories on parallel FLORES-200 text track L1 and L2 across training, before and after L2 introduction.</p>
+      </div>
+      <figure class="fig">
+        <img src="assets/paper/fig-flores-nll.png" alt="FLORES sentence NLL trajectories per model">
+        <figcaption><b>Figure 3. FLORES Sentence NLL.</b> Each facet is one model; curves report mean sentence-level NLL in bits on 1,012 parallel FLORES-200 devtest sentences (lower is better), with solid lines for L1 and dashed lines for English. The vertical dashed line marks L2 English introduction.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Naming + related work -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-box-arrow-in-down"></i></div>
+          <h3>How a model name is built</h3>
+          <p>Every model, tokenizer and dataset is standard HuggingFace. The model name encodes its <strong>curriculum</strong>, <strong>scale</strong> and <strong>language pair</strong> — note these when you load one, and cite the paper.</p>
+          <div class="code" style="margin-bottom:0;">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">python</span></div>
+<pre><code><span class="c-kw">from</span> transformers <span class="c-kw">import</span> AutoModelForCausalLM, AutoTokenizer
+
+<span class="c-comment"># B1 (balanced) Dutch-English, 100M FineWeb</span>
+name = <span class="c-str">"Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-nld-eng"</span>
+model = AutoModelForCausalLM.from_pretrained(name)
+tok   = AutoTokenizer.from_pretrained(<span class="c-str">"Beetle-Data/tokenizer-nl-en"</span>)</code></pre>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-journals"></i></div>
+          <h3>Motivation &amp; related work</h3>
+          <p>Beetle builds on prior bilingual / L2-LM and acquisition work, but differs by holding architecture, tokeniser and data fixed while varying <em>only</em> exposure structure — with a LLaMA-class backbone, fine-grained early checkpoints, matched monolingual controls, and 21 typologically diverse L1s.</p>
+          <div class="tags">
+            <span>Matusevych et al., 2013</span><span>Yadavalli et al., 2023</span><span>Oba et al., 2023</span><span>Aoyama &amp; Schneider, 2024</span><span>Arnett et al., 2025</span><span>Constantinescu et al., 2025</span><span>Feng et al., 2026</span>
+          </div>
+        </div>
+      </div>
+      <div class="center" style="margin-top:36px;">
+        <a class="btn btn-primary" href="models.html">Browse the released models <i class="bi bi-arrow-right"></i></a>
+        <a class="btn btn-outline" href="docs.html">Train your own <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <a href="https://github.com/beetlelm" target="_blank" rel="noopener"><img src="assets/img/logo.svg" alt="beetle"></a>
+      <p class="f-tag">A controlled framework for bilingual language learning.</p>
+      <nav class="f-nav">
+        <a href="research.html">Research</a>
+        <a href="models.html">Models &amp; Data</a>
+        <a href="framework.html">Framework</a>
+        <a href="docs.html">Docs</a>
+        <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">arXiv</a>
+        <a href="https://github.com/beetlelm" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <p class="f-copy">© 2026 beetle · Released under Apache-2.0 · Site by <a href="https://suchirsalhan.github.io/" target="_blank" rel="noopener">Suchir Salhan</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js"></script>
+</body>
+
+</html>
