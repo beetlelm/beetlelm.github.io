@@ -1,155 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>beetle — A controlled framework for bilingual language learning</title>
-  <meta name="description" content="Beetle is an open-source framework and model suite for studying how training experience shapes bilingual language models — 330 released checkpoints across curricula, data scales and first languages.">
+  <meta name="description"
+        content="Beetle: A Bilingual Model Suite for Modelling Second-Language Processing. A controlled pretraining framework and 330 open models for studying how training experience shapes bilingual language models.">
   <meta name="keywords" content="beetle, beetlelm, bilingual language models, second-language acquisition, controlled pretraining, computational psycholinguistics, reading time, BLiMP, EMNLP 2026">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beetle: A Bilingual Model Suite for Modelling Second-Language Processing</title>
 
-  <!-- Favicons -->
+  <!-- Social share -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://beetlelm.github.io/">
+  <meta property="og:title" content="Beetle: A Bilingual Model Suite for Modelling Second-Language Processing">
+  <meta property="og:description" content="A controlled pretraining framework and 330 open models for studying how training experience shapes bilingual language models.">
+  <meta property="og:image" content="https://beetlelm.github.io/assets/img/apple-touch-icon.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Beetle: A Bilingual Model Suite for Modelling Second-Language Processing">
+  <meta name="twitter:description" content="330 open checkpoints for studying how training experience shapes bilingual language models.">
+  <meta name="twitter:image" content="https://beetlelm.github.io/assets/img/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
   <link href="favicon.ico" rel="icon" sizes="any">
   <link href="assets/img/logo.svg" rel="icon" type="image/svg+xml">
   <link href="assets/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
   <link href="assets/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 
-  <!-- Social share -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://beetlelm.github.io/">
-  <meta property="og:title" content="beetle — a controlled framework for bilingual language learning">
-  <meta property="og:description" content="An open-source framework and model suite for studying second-language learning, cross-lingual transfer and human bilingual processing.">
-  <meta property="og:image" content="https://beetlelm.github.io/assets/img/apple-touch-icon.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="beetle — a controlled framework for bilingual language learning">
-  <meta name="twitter:description" content="330 open checkpoints for studying how training experience shapes bilingual language models.">
-  <meta name="twitter:image" content="https://beetlelm.github.io/assets/img/apple-touch-icon.png">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Icons + styles -->
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/css/site.css" rel="stylesheet">
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
 </head>
-
 <body>
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <img src="assets/img/logo.svg" alt="beetle logo" style="height:88px;width:auto;margin-bottom:1.25rem;">
+          <h1 class="title is-1 publication-title">Beetle: A Bilingual Model Suite for Modelling Second-Language Processing</h1>
 
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="beetle logo"><span>beetle</span></a>
-      <button class="nav-toggle" aria-label="Menu"><i class="bi bi-list"></i></button>
-      <nav class="nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="research.html">Research</a>
-        <a href="models.html">Models &amp; Data</a>
-        <a href="framework.html">Framework</a>
-        <a href="docs.html">Docs</a>
-        <a class="nav-gh" href="https://github.com/beetlelm" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
-      </nav>
-    </div>
-  </header>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://suchirsalhan.github.io/">Suchir Salhan</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://catherinearnett.github.io/">Catherine Arnett</a><sup>2</sup>,</span>
+            <span class="author-block"><a href="https://jmichaelov.com/">James A. Michaelov</a><sup>3</sup>,</span>
+            <span class="author-block"><a href="https://www.cl.cam.ac.uk/~pjb48/">Paula Buttery</a><sup>1</sup></span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Cambridge,</span>
+            <span class="author-block"><sup>2</sup>EleutherAI</span>,
+            <span class="author-block"><sup>3</sup>University of Oxford</span>
+          </div>
+          <div class="is-size-6 publication-authors" style="margin-top:0.25rem;">
+            <span class="publication-venue">EMNLP 2026</span>
+          </div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="wrap">
-      <img src="assets/img/logo.svg" class="hero-mark" alt="beetle logo">
-      <span class="eyebrow">Open-source research framework · Apache-2.0</span>
-      <h1>How does training experience shape bilingual language models?</h1>
-      <p class="lede">Beetle is an open-source framework and model suite for studying second-language learning, cross-lingual transfer and human bilingual processing — under tightly controlled conditions.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="models.html">Explore the models <i class="bi bi-arrow-right"></i></a>
-        <a class="btn btn-outline" href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">Read the paper <i class="bi bi-box-arrow-up-right"></i></a>
-      </div>
-
-      <div class="stats">
-        <div class="stat"><div class="num" data-count="330">330</div><div class="lbl">Released models</div></div>
-        <div class="stat"><div class="num" data-count="21">21</div><div class="lbl">First languages</div></div>
-        <div class="stat"><div class="num" data-count="3">3</div><div class="lbl">Main data scales</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- One framework -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head center">
-        <span class="eyebrow">One framework · controlled experiments</span>
-        <h2>One framework. Different learning experiences.</h2>
-        <p>Change <strong>when</strong> a second language is introduced, <strong>how much</strong> exposure a model receives, and <strong>how</strong> that exposure unfolds over training — while tokeniser, architecture and data source stay fixed.</p>
-      </div>
-
-      <figure class="fig">
-        <img src="assets/paper/fig1-beetle-splash.png" alt="The Beetle framework and its B1–B5 exposure curricula">
-        <figcaption><b>Beetle</b> pretrains bilingual models under controlled conditions. Each facet is a structured exposure curriculum (<b>B1–B5</b>) that varies the per-language data distribution across training steps.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- Where to go next -->
-  <section class="section alt">
-    <div class="wrap">
-      <div class="section-head center">
-        <h2>Explore the research</h2>
-        <p>Start with the scientific question, browse the released suite, or get building.</p>
-      </div>
-      <div class="dest-grid">
-        <a class="card link" href="research.html">
-          <div class="card-ic"><i class="bi bi-activity"></i></div>
-          <h3>Study bilingual processing</h3>
-          <p>How training history shapes model behaviour — compared with human reading times and grammaticality judgements.</p>
-          <span class="more">See the results <i class="bi bi-arrow-right"></i></span>
-        </a>
-        <a class="card link" href="models.html">
-          <div class="card-ic"><i class="bi bi-boxes"></i></div>
-          <h3>Build on the suite</h3>
-          <p>330 open checkpoints, bilingual tokenizers and datasets — searchable by language, curriculum and scale.</p>
-          <span class="more">Browse models &amp; data <i class="bi bi-arrow-right"></i></span>
-        </a>
-        <a class="card link" href="docs.html">
-          <div class="card-ic"><i class="bi bi-terminal"></i></div>
-          <h3>Get started</h3>
-          <p>Install Beetle, train a model on CPU with zero downloads, and load any checkpoint with <span class="ic">from_pretrained</span>.</p>
-          <span class="more">Read the docs <i class="bi bi-arrow-right"></i></span>
-        </a>
+          <div class="column has-text-centered" style="margin-top:1.25rem;">
+            <div class="publication-links">
+              <!-- Paper -->
+              <span class="link-block">
+                <a href="assets/paper/beetle-emnlp.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arXiv -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2609.22633" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code -->
+              <span class="link-block">
+                <a href="https://github.com/beetlelm" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- HuggingFace -->
+              <span class="link-block">
+                <a href="models.html" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-cloud-download-alt"></i></span>
+                  <span>Models &amp; Data</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Paper strip -->
-  <section class="section">
-    <div class="wrap narrow center">
-      <span class="venue">EMNLP 2026</span>
-      <h2 style="font-size:26px;">Beetle: A Bilingual Model Suite for Modelling Second-Language Processing</h2>
-      <p class="lead" style="margin-bottom:24px;">Suchir Salhan · Catherine Arnett · James A. Michaelov · Paula Buttery</p>
-      <div class="cta-row" style="justify-content:center;">
-        <a class="btn btn-primary" href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i> Read on arXiv</a>
-        <a class="btn btn-ghost" href="research.html">Abstract &amp; findings</a>
-        <a class="btn btn-ghost" href="https://github.com/beetlelm" target="_blank" rel="noopener"><i class="bi bi-github"></i> View the code</a>
+<section class="section" id="tldr">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-four-fifths">
+        <div class="content is-size-5">
+          <em><strong>TL;DR:</strong> We introduce <strong>Beetle</strong>, a controlled language-model pretraining framework in which tokeniser, target language, training budget and exposure structure are each independently manipulable. Using Beetle we train and release <strong>285 bilingual and 45 monolingual open-source models</strong> with rich checkpoints across a range of exposure schedules, data scales and first languages. Evaluating against human bilingual and second-language reading-time and grammaticality-judgement data, we find that <strong>staged, temporally structured curricula consistently improve alignment with language-learner reading time</strong> over balanced bilingual training — with the largest gains at smaller data scales and for typologically closer language pairs.</em>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <a href="https://github.com/beetlelm" target="_blank" rel="noopener"><img src="assets/img/logo.svg" alt="beetle"></a>
-      <p class="f-tag">A controlled framework for bilingual language learning.</p>
-      <nav class="f-nav">
-        <a href="research.html">Research</a>
-        <a href="models.html">Models &amp; Data</a>
-        <a href="framework.html">Framework</a>
-        <a href="docs.html">Docs</a>
-        <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">arXiv</a>
-        <a href="https://github.com/beetlelm" target="_blank" rel="noopener">GitHub</a>
-      </nav>
-      <p class="f-copy">© 2026 beetle · Released under Apache-2.0 · Site by <a href="https://suchirsalhan.github.io/" target="_blank" rel="noopener">Suchir Salhan</a></p>
+<section class="section" id="intro">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-justified">
+      <div class="column is-four-fifths">
+        <div class="content">
+          <p>
+            Bilingual language models offer a controlled setting for studying how training conditions shape second-language (L2) behaviour. But prior work typically varies <strong>exposure structure, scale, and architecture at once</strong>, making it difficult to attribute any effect to a single factor. If a staged bilingual schedule helps, is it the schedule, the amount of second-language data, or the model — and under which first language?
+          </p>
+          <p>
+            Beetle is designed to make these questions answerable. It is a controlled pretraining framework in which the <strong>tokeniser, target language, training budget, and exposure structure</strong> are each independently manipulable. Holding the others fixed makes the effect of first language, curriculum and data scale attributable to one cause — enabling systematic, comparable experimentation. The exposure structure is varied through five curricula, <strong>B1–B5</strong>, that change <em>when</em> the second language is introduced and <em>how</em> the per-language data distribution unfolds across training steps.
+          </p>
+          <div class="is-flex is-horizontal-center">
+            <figure class="image" style="max-width:720px;">
+              <img src="assets/paper/fig1-beetle-splash.png" alt="The Beetle framework and its B1–B5 exposure curricula">
+              <figcaption>Beetle pretrains bilingual models under controlled conditions. Each facet is a structured exposure curriculum (B1–B5) that varies the per-language data distribution across training steps, while tokeniser, architecture and data source stay fixed.</figcaption>
+            </figure>
+          </div>
+          <p>
+            Using this framework we train and release <strong>330 open models</strong> — 285 bilingual and 45 monolingual — with rich checkpoints across <strong>five curricula, three data scales (100M / 2B / 24B tokens) and 21 first languages</strong>. We then evaluate the models against human data on bilingual and second-language reading-time prediction, grammaticality judgement, and cross-lingual structural priming.
+          </p>
+          <p>
+            Across these evaluations, <strong>staged and temporally structured curricula (B2, B3, B5) consistently align better with language-learner reading time</strong> than balanced bilingual training (B1). The advantage of structured exposure is <strong>largest at smaller data scales</strong> — where how the input is ordered matters most — and for <strong>typologically closer language pairs</strong>. A dissociation emerges between online reading time and offline grammaticality judgement: the differences that are sharp for reading-time alignment are smaller for minimal-pair discrimination.
+          </p>
+          <p>
+            Cross-lingual structural priming — a signature of abstract syntactic representation in humans — is robustly present in the models and <strong>persists across data scale</strong>. The table below reports the priming effect for the 24B-token models on the Bernolet genitive construction: the surprisal difference (in nats) between congruent and incongruent primes, with permutation <em>p</em>-values.
+          </p>
+          <div class="is-flex is-horizontal-center">
+            <table class="table is-hoverable" id="resulttab">
+              <thead>
+                <tr>
+                  <th>Curriculum</th>
+                  <th>FineWeb (24B) diff</th>
+                  <th><em>p</em></th>
+                  <th>HumanScale diff</th>
+                  <th><em>p</em></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="hruled"><td>B1</td><td>1.051</td><td>.0004</td><td>1.369</td><td>&lt;.0001</td></tr>
+                <tr><td>B2</td><td>0.991</td><td>.037</td><td>1.095</td><td>&lt;.0001</td></tr>
+                <tr><td>B3</td><td>0.969</td><td>.051</td><td>1.216</td><td>&lt;.0001</td></tr>
+                <tr><td>B4</td><td>1.252</td><td>.0008</td><td>0.565</td><td>.005</td></tr>
+                <tr><td>B5</td><td>1.075</td><td>.0003</td><td>0.571</td><td>&lt;.0001</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            Together, these findings position the Beetle models as tools to help move computational psycholinguistics beyond its prevailing monolingual, English-centric focus, toward models of human bilingual processing and cross-lingual learning dynamics, while supporting community-based development of controlled model families. Every released checkpoint loads directly with <a href="https://huggingface.co/docs/transformers/">HuggingFace Transformers</a> via <span class="segdemo">from_pretrained</span>.
+          </p>
+          <p>
+            If you made it this far, we encourage you to read <a href="assets/paper/beetle-emnlp.pdf">our paper</a> for the full framework, all curricula and evaluations, and the complete set of results.
+          </p>
+        </div>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="assets/js/site.js"></script>
+<section class="section" id="explore">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content">
+          <h2 class="title is-3 has-text-centered">Explore the research</h2>
+        </div>
+        <div class="columns is-multiline">
+          <div class="column is-one-third">
+            <a class="box" href="research.html" style="height:100%;display:block;">
+              <span class="icon is-large has-text-link"><i class="fas fa-chart-line fa-2x"></i></span>
+              <h3 class="title is-5" style="margin-top:0.75rem;">Study bilingual processing</h3>
+              <p>How training history shapes model behaviour — compared with human reading times and grammaticality judgements.</p>
+            </a>
+          </div>
+          <div class="column is-one-third">
+            <a class="box" href="models.html" style="height:100%;display:block;">
+              <span class="icon is-large has-text-link"><i class="fas fa-layer-group fa-2x"></i></span>
+              <h3 class="title is-5" style="margin-top:0.75rem;">Build on the suite</h3>
+              <p>330 open checkpoints, bilingual tokenizers and datasets — searchable by language, curriculum and scale.</p>
+            </a>
+          </div>
+          <div class="column is-one-third">
+            <a class="box" href="framework.html" style="height:100%;display:block;">
+              <span class="icon is-large has-text-link"><i class="fas fa-cubes fa-2x"></i></span>
+              <h3 class="title is-5" style="margin-top:0.75rem;">Understand the framework</h3>
+              <p>Architecture, tokenisation, the B1–B5 exposure curricula, data scales, checkpoints and matched baselines.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="content">
+          <h2 class="title">BibTeX</h2>
+          <pre><code>@inproceedings{salhan2026beetle,
+  title     = {Beetle: A Bilingual Model Suite for Modelling Second-Language Processing},
+  author    = {Salhan, Suchir and Arnett, Catherine and Michaelov, James A. and Buttery, Paula},
+  booktitle = {Proceedings of EMNLP},
+  year      = {2026},
+  url       = {https://arxiv.org/abs/2609.22633}
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            <a href="research.html">Research</a> &nbsp;·&nbsp;
+            <a href="models.html">Models &amp; Data</a> &nbsp;·&nbsp;
+            <a href="framework.html">Framework</a> &nbsp;·&nbsp;
+            <a href="docs.html">Docs</a> &nbsp;·&nbsp;
+            <a href="https://arxiv.org/abs/2609.22633">arXiv</a> &nbsp;·&nbsp;
+            <a href="https://github.com/beetlelm">GitHub</a>
+          </p>
+          <p>
+            © 2026 beetle · Released under Apache-2.0 · Site by <a href="https://suchirsalhan.github.io/">Suchir Salhan</a>.
+            Page template adapted from the <a href="https://github.com/superbpe/superbpe.github.io">SuperBPE project page</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
-
 </html>

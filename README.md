@@ -14,16 +14,18 @@ Paper: *Beetle: A Bilingual Model Suite for Modelling Second-Language Processing
 A small, static multi-page research site with a deliberately sparse homepage and
 dedicated pages for the detail:
 
-- `index.html` — **Home.** The research question, key numbers, one figure, and
-  links to the main destinations.
+- `index.html` — **Home.** A single-page academic project page (SuperBPE-style
+  layout): title, authors, paper/arXiv/code links, a TL;DR, the framework figure
+  and key results, an "Explore the research" grid, and the citation.
 - `research.html` — **Research.** Motivation, the four controlled variables, key
   findings, results figures, the full abstract and the citation.
 - `models.html` — **Models & Data.** A searchable catalogue of every released
   checkpoint, tokenizer and dataset on the Hugging Face Hub.
 - `framework.html` — **Framework.** Architecture, tokenisation, the B1–B5 exposure
   curricula, data scales, checkpoints and matched baselines.
-- `docs.html` — **Documentation.** Install, CPU quickstart, tutorials, loading
-  checkpoints, Colab notebooks and the ecosystem repositories.
+- `docs.html` — **Documentation.** Loading released checkpoints and tokenizers,
+  stepping through training checkpoints, reproducing the paper's evaluations,
+  the analysis notebooks and the ecosystem repositories.
 
 Shared assets:
 
