@@ -104,6 +104,13 @@
     .selchip i:hover { color:#d64545; }
     .tray-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
     .tray-actions .btn-view { text-decoration:none; }
+    .clist { list-style:none; margin:0; padding:0; }
+    .clist li { font-size:13.5px; color:var(--body); line-height:1.6; padding:9px 2px; border-bottom:1px solid var(--line); }
+    .clist li b { color:var(--ink); }
+    button.lnk { background:none; border:0; color:var(--accent); font-family:var(--head-font); font-weight:600; font-size:13px; cursor:pointer; padding:0; }
+    button.lnk:hover { text-decoration:underline; }
+    .tag-final { display:inline-block; font-size:10px; font-weight:700; font-family:var(--head-font); background:linear-gradient(135deg,#ffb703,#fb8500); color:#231; border-radius:50px; padding:1px 7px; vertical-align:middle; }
+    .tag-warn { display:inline-block; font-size:10px; font-weight:700; font-family:var(--head-font); background:#fff1dc; color:#c57b12; border-radius:50px; padding:1px 7px; vertical-align:middle; }
   </style>
 </head>
 
@@ -136,7 +143,7 @@
   <!-- Route A: experiment templates -->
   <section class="section" style="padding-top:38px;">
     <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Browse or select</span><h2>Start from a research question</h2><p>Pick what you want to investigate. We filter the catalogue to matching models and jump you to the table, where you tick several and generate the code to run them. Already know what you want? Filter the full collection directly below.</p></div>
+      <div class="section-head" style="margin-bottom:14px;"><h2>Start from a research question</h2></div>
       <div class="xtemplates">
         <div class="xcard" data-preset='{"resource":"model","final":true}'>
           <h4>🧠 Model internals &amp; interpretability</h4>
@@ -278,58 +285,17 @@
 
   <!-- Model families -->
   <section class="section">
-    <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Collections</span><h2>Choose a model family</h2><p>Beetle's resources are organised into collections based on their training data and experimental purpose. Start with the collection that best matches your question.</p></div>
-      <div class="card fam featured" style="margin-bottom:20px;">
-        <span class="flag">Final release · recommended</span>
-        <h4>Beetle-FineWeb-24B (final release)</h4>
-        <div class="meta">Beetle-FineWeb-24B-4 · Beetle-FineWeb-24B-5 · 123 models</div>
-        <p><strong>The only genuine 24-billion-token models — and the recommended checkpoints for new work.</strong> Bilingual models across all five exposure curricula (B1–B5) plus monolingual baselines, trained on FineWeb at full scale, together with their matched 2B-token companions. <strong>Only these two collections reach the full 24B-token budget</strong> — the earlier experimental 24B collections were cut short (see the note below), so start here.</p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <button class="btn-view" data-preset='{"resource":"model","final":true}'>Browse the final models <i class="bi bi-arrow-down"></i></button>
-          <a class="btn btn-ghost btn-sm" href="https://huggingface.co/Beetle-FineWeb-24B-4" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> 24B-4 on HF</a>
-          <a class="btn btn-ghost btn-sm" href="https://huggingface.co/Beetle-FineWeb-24B-5" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> 24B-5 on HF</a>
-        </div>
-      </div>
-      <div class="grid cols-2">
-        <div class="card fam">
-          <h4>Beetle-FineWeb-100M</h4>
-          <div class="meta">FineWeb · 100M tokens</div>
-          <p><strong>Small-scale experiments across many first languages.</strong> Monolingual controls and bilingual models trained on a 100-million-token FineWeb slice. A useful starting point for comparing first languages and exposure curricula under a relatively small training budget: study curriculum effects, compare language pairs, or run experiments feasible with modest compute.</p>
-          <button class="btn-view" data-preset='{"resource":"model","ds":["FineWeb"],"scale":["100M"]}'>View these models <i class="bi bi-arrow-down"></i></button>
-        </div>
-        <div class="card fam">
-          <h4>Beetle-FineWeb-2B <span class="pill" style="background:#fff1dc;color:#c57b12;">~300M actual</span></h4>
-          <div class="meta">FineWeb · labelled 2B · ~300M tokens actual</div>
-          <p><strong>Earlier "2B" collection — reached only ~300M tokens.</strong> These runs were affected by the token-budget drift described below and stopped at roughly 300 million tokens rather than the intended 2 billion. Still useful as small-scale baselines, but for genuine 2B-token models use the 2B companions in the <a href="#finder" data-preset='{"resource":"model","scale":["2B"]}'>final release</a>.</p>
-          <button class="btn-view" data-preset='{"resource":"model","org":"Beetle-FineWeb-2B"}'>View these models <i class="bi bi-arrow-down"></i></button>
-        </div>
-        <div class="card fam">
-          <h4>Beetle-FineWeb2-24B <span class="pill" style="background:#fff1dc;color:#c57b12;">~3B actual</span></h4>
-          <div class="meta">FineWeb2 · labelled 24B · ~3B tokens actual</div>
-          <p><strong>Earlier "24B" experiments — reached only ~3B tokens.</strong> Bilingual models across all five exposure curricula and several language pairs, with selected continual-learning variants. These runs were cut short by the token-budget drift described below, so they are <em>not</em> full 24B-token models. For full-scale results, use the <strong>final release</strong> above.</p>
-          <button class="btn-view" data-preset='{"resource":"model","org":"Beetle-FineWeb2-24B"}'>View these models <i class="bi bi-arrow-down"></i></button>
-        </div>
-        <div class="card fam">
-          <h4>Beetle-FineWeb3-24B <span class="pill" style="background:#fff1dc;color:#c57b12;">~3B actual</span></h4>
-          <div class="meta">FineWeb3 · labelled 24B · ~3B tokens actual</div>
-          <p><strong>Earlier monolingual baselines, reached only ~3B tokens.</strong> Monolingual models on FineWeb3, providing additional language-specific baselines. Like the other earlier 24B collection, these were cut short of the full budget; the monolingual baselines in the <strong>final release</strong> above are the full 24B-token versions.</p>
-          <button class="btn-view" data-preset='{"resource":"model","org":"Beetle-FineWeb3-24B"}'>View these models <i class="bi bi-arrow-down"></i></button>
-        </div>
-        <div class="card fam">
-          <h4>Beetle-HumanScale</h4>
-          <div class="meta">Human-scale · models · data · tokenisers</div>
-          <p><strong>Models for cognitively motivated experiments.</strong> Models, datasets, and tokenisers based on controlled, human-scale language-learning settings. Includes bilingual and monolingual models, alternative exposure schedules, and selected continual-learning variants — particularly useful for connecting computational experiments with questions about human language acquisition.</p>
-          <button class="btn-view" data-preset='{"resource":"model","org":"Beetle-HumanScale"}'>View these models <i class="bi bi-arrow-down"></i></button>
-        </div>
-        <div class="card fam">
-          <h4>Beetle-Data</h4>
-          <div class="meta">326 repositories · datasets · tokenisers · shards</div>
-          <p><strong>The full data and tokeniser catalogue.</strong> BabyBabel corpora, bilingual datasets, BPE tokenisers, pre-tokenised shards and raw corpora used across the Beetle experiments. Everything you need to build new data pipelines or reproduce training conditions.</p>
-          <button class="btn-view" data-preset='{"resource":"all","org":"Beetle-Data"}'>Browse Beetle-Data <i class="bi bi-arrow-down"></i></button>
-        </div>
-      </div>
-      <p class="fnote" style="margin-top:20px;">Every repository is open on Hugging Face. <strong>Final release:</strong> <a href="https://huggingface.co/Beetle-FineWeb-24B-4" target="_blank" rel="noopener">Beetle-FineWeb-24B-4</a> · <a href="https://huggingface.co/Beetle-FineWeb-24B-5" target="_blank" rel="noopener">Beetle-FineWeb-24B-5</a>. &nbsp;<strong>Other collections:</strong> <a href="https://huggingface.co/Beetle-HumanScale" target="_blank" rel="noopener">Beetle-HumanScale</a> · <a href="https://huggingface.co/Beetle-FineWeb-100M" target="_blank" rel="noopener">Beetle-FineWeb-100M</a> · <a href="https://huggingface.co/Beetle-FineWeb-2B" target="_blank" rel="noopener">Beetle-FineWeb-2B</a> · <a href="https://huggingface.co/Beetle-FineWeb2-24B" target="_blank" rel="noopener">Beetle-FineWeb2-24B</a> · <a href="https://huggingface.co/Beetle-FineWeb3-24B" target="_blank" rel="noopener">Beetle-FineWeb3-24B</a> · <a href="https://huggingface.co/Beetle-Data" target="_blank" rel="noopener">Beetle-Data</a></p>
+    <div class="wrap narrow">
+      <div class="section-head"><span class="eyebrow">Collections</span><h2>Model collections</h2></div>
+      <ul class="clist">
+        <li><b>Beetle-FineWeb-24B-4 / -24B-5</b> <span class="tag-final">Final release</span> &nbsp;The only genuine 24B-token models (123 repos): all B1 to B5 curricula, monolingual baselines and matched 2B companions. <button class="lnk" data-preset='{"resource":"model","final":true}'>Browse</button> · <a href="https://huggingface.co/Beetle-FineWeb-24B-4" target="_blank" rel="noopener">24B-4</a> · <a href="https://huggingface.co/Beetle-FineWeb-24B-5" target="_blank" rel="noopener">24B-5</a></li>
+        <li><b>Beetle-FineWeb-100M</b> &nbsp;100M-token FineWeb models across many first languages. <button class="lnk" data-preset='{"resource":"model","ds":["FineWeb"],"scale":["100M"]}'>Browse</button></li>
+        <li><b>Beetle-FineWeb-2B</b> <span class="tag-warn">~300M actual</span> &nbsp;Earlier "2B" runs, cut short to ~300M tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb-2B"}'>Browse</button></li>
+        <li><b>Beetle-FineWeb2-24B</b> <span class="tag-warn">~3B actual</span> &nbsp;Earlier "24B" bilingual experiments, cut short to ~3B tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb2-24B"}'>Browse</button></li>
+        <li><b>Beetle-FineWeb3-24B</b> <span class="tag-warn">~3B actual</span> &nbsp;Earlier "24B" monolingual baselines, cut short to ~3B tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb3-24B"}'>Browse</button></li>
+        <li><b>Beetle-HumanScale</b> &nbsp;Human-scale models, data and tokenisers for cognitively motivated experiments. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-HumanScale"}'>Browse</button></li>
+        <li><b>Beetle-Data</b> &nbsp;The full data and tokeniser catalogue: BabyBabel corpora, bilingual datasets, BPE tokenisers and shards. <button class="lnk" data-preset='{"resource":"all","org":"Beetle-Data"}'>Browse</button> · <a href="https://huggingface.co/Beetle-Data" target="_blank" rel="noopener">HF</a></li>
+      </ul>
     </div>
   </section>
 
@@ -351,47 +317,21 @@
 
   <!-- Data & tokenisers -->
   <section class="section">
-    <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Data &amp; tokenisers</span><h2>Datasets, corpora and tokenisers</h2><p>Repository names encode most of this information, so the finder above (set <b>Resource</b> to Datasets, Tokenisers, Pre-tokenised or Raw corpora) will take you straight to any of these.</p></div>
-      <div class="grid cols-2">
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-database"></i></div>
-          <h4>BabyBabel corpora</h4>
-          <p>Small, language-specific corpora designed for controlled language-model training. Available in multiple languages and data sizes, with held-out datasets in the HumanScale collection.</p>
-          <button class="btn-view" data-preset='{"resource":"dataset","text":"babybabel"}'>Find BabyBabel corpora <i class="bi bi-arrow-up"></i></button>
-        </div>
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-collection"></i></div>
-          <h4>Bilingual datasets</h4>
-          <p>Parallel experimental resources for training models on different language combinations and exposure conditions. Use these to construct new comparisons or investigate language learning beyond the released checkpoints.</p>
-          <button class="btn-view" data-preset='{"resource":"dataset","mtype":"any"}'>Find datasets <i class="bi bi-arrow-up"></i></button>
-        </div>
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-alphabet"></i></div>
-          <h4>Tokenisers</h4>
-          <p>Bilingual and monolingual BPE tokenisers developed for the Beetle experiments. Shared tokenisation choices support comparisons between training conditions; HumanScale also provides tokenisers for additional language combinations.</p>
-          <button class="btn-view" data-preset='{"resource":"tokenizer"}'>Find tokenisers <i class="bi bi-arrow-up"></i></button>
-        </div>
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-hdd-stack"></i></div>
-          <h4>Pre-tokenised &amp; raw corpora</h4>
-          <p>Pre-tokenised training shards for supported configurations, alongside larger raw corpora for researchers who want to build their own data pipelines.</p>
-          <button class="btn-view" data-preset='{"resource":"pretok"}'>Find pre-tokenised shards <i class="bi bi-arrow-up"></i></button>
-        </div>
-      </div>
+    <div class="wrap narrow">
+      <div class="section-head"><span class="eyebrow">Data &amp; tokenisers</span><h2>Datasets, corpora and tokenisers</h2></div>
+      <ul class="clist">
+        <li><b>BabyBabel corpora</b> &nbsp;Small, controlled per-language corpora, with held-out sets in HumanScale. <button class="lnk" data-preset='{"resource":"dataset","text":"babybabel"}'>Find</button></li>
+        <li><b>Bilingual datasets</b> &nbsp;Resources for language combinations and exposure conditions. <button class="lnk" data-preset='{"resource":"dataset","mtype":"any"}'>Find</button></li>
+        <li><b>Tokenisers</b> &nbsp;Bilingual and monolingual BPE tokenisers used across the experiments. <button class="lnk" data-preset='{"resource":"tokenizer"}'>Find</button></li>
+        <li><b>Pre-tokenised &amp; raw corpora</b> &nbsp;Training shards and larger raw corpora for your own pipelines. <button class="lnk" data-preset='{"resource":"pretok"}'>Find</button></li>
+      </ul>
     </div>
   </section>
 
   <!-- Help -->
   <section class="section alt">
     <div class="wrap narrow center">
-      <div class="section-head center"><span class="eyebrow">Next steps</span><h2>Need help choosing a checkpoint?</h2></div>
-      <p class="lead">If you are unsure which models or datasets suit your experiment, start with the <a href="framework.html">framework</a> to understand the training conditions, or consult the <a href="docs.html">documentation</a> for instructions on using the resources. For the full scientific motivation and evaluation details, read the <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">EMNLP 2026 paper</a>.</p>
-      <p class="lead"><strong>Have a new research question?</strong> Beetle is an open resource for collaborative research. We welcome projects using the released models to investigate bilingualism, cross-lingual transfer, representation learning, and other questions about how language models learn.</p>
-      <div class="cta-row" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px;">
-        <a class="btn btn-primary" href="research.html"><i class="bi bi-lightbulb"></i> Research directions</a>
-        <a class="btn btn-outline" href="mailto:sas245@cam.ac.uk"><i class="bi bi-envelope"></i> Get in touch</a>
-      </div>
+      <p class="fnote" style="font-size:13px;">If you are unsure which models or datasets suit your experiment, start with the <a href="framework.html">framework</a> to understand the training conditions, or consult the <a href="docs.html">documentation</a>. For the full scientific motivation and evaluation details, read the <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">EMNLP 2026 paper</a>.</p>
     </div>
   </section>
 
