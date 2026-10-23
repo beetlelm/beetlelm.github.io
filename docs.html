@@ -106,26 +106,31 @@
       <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Framework</span>
       <h1>The Beetle Framework</h1>
       <p class="fw-headline">Change how a model learns. Discover what changes.</p>
-      <p>What happens when a model learns two languages at once instead of one after the other? When does more training data help? How does tokenisation shape what a model learns? Beetle lets you design controlled experiments to answer these questions: change one factor of how a model is trained, hold the rest fixed, and compare the results.</p>
-      <p>Beetle is built as four small, independent libraries rather than one monolith. A monolith entangles data, training and evaluation, so you can never be sure which change caused a difference in behaviour. Splitting the pipeline into focused tools keeps every stage inspectable, swappable and forkable, and lets an experiment vary exactly one thing at a time.</p>
-      <p>Each library does one job well, reads in an afternoon, and is useful on its own. Use them together for the full controlled-pretraining loop, or take a single component into your own project. The guides below run each one from a small local example up to the real research configs.</p>
+      <p>What happens when a model learns two languages at once rather than one after the other? Does more training data help? How does tokenisation affect what a model learns?</p>
+      <p><strong>Beetle helps you investigate these questions through controlled experiments.</strong> Change how a model is trained, compare the results, and study how its behaviour develops.</p>
+      <p>The framework consists of four open-source tools. Use them together to run an experiment from raw text to evaluation, or use individual tools in your own projects.</p>
       <div class="fw-modules">
         <div class="fw-mod">
-          <h3><a href="#beetlelm">beetlelm</a> · train</h3>
-          <p>The PicoDecoder backbone and an architecture zoo (BGPT, MoE, state-space and more), modular BPE / Unigram / SuperBPE tokenisation with equal compression, the B1–B5 exposure curricula, fifteen continual-learning strategies, and checkpoints that save gradients and activations at every step. <a class="lk" href="https://github.com/beetlelm/beetlelm" target="_blank" rel="noopener">GitHub</a> · <a class="lk" href="#beetlelm">Guide</a></p>
+          <h3><a href="#beetlelm">beetlelm</a> · Train</h3>
+          <p>Train language models with different architectures, tokenisers and language-exposure strategies. Compare five curricula (B1–B5) to investigate how the order and timing of language learning affect the result. <a class="lk" href="https://github.com/beetlelm/beetlelm" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a> · <a class="lk" href="#beetlelm">Guide</a></p>
         </div>
         <div class="fw-mod">
-          <h3><a href="#beetle-data">beetle-data</a> · prepare</h3>
-          <p>Turn raw text into training-ready shards: build a corpus, train an equal-compression tokeniser, decontaminate against the benchmarks, and pretokenise into Arrow or Parquet. The same pipeline that produced the released data. <a class="lk" href="https://github.com/beetlelm/beetle-data" target="_blank" rel="noopener">GitHub</a> · <a class="lk" href="#beetle-data">Guide</a></p>
+          <h3><a href="#beetle-data">beetle-data</a> · Prepare</h3>
+          <p>Turn raw text into training data. Build corpora, train tokenisers, remove benchmark overlap and prepare data for model training, using the same pipeline as the released models. <a class="lk" href="https://github.com/beetlelm/beetle-data" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a> · <a class="lk" href="#beetle-data">Guide</a></p>
         </div>
         <div class="fw-mod">
-          <h3><a href="#beetle-analyze">beetle-analyze</a> · evaluate</h3>
-          <p>Score what a model learned: BLiMP minimal pairs, MECO reading-time alignment, BLiSS learner grammaticality, FLORES-200 NLL, and cross-lingual priming. One command reproduces the paper's results. <a class="lk" href="https://github.com/beetlelm/beetle-analyze" target="_blank" rel="noopener">GitHub</a> · <a class="lk" href="#beetle-analyze">Guide</a></p>
+          <h3><a href="#beetle-analyze">beetle-analyze</a> · Evaluate</h3>
+          <p>Measure what models learn. Evaluate grammatical knowledge, multilingual performance and alignment with human reading times, or investigate how internal representations change during training. <a class="lk" href="https://github.com/beetlelm/beetle-analyze" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a> · <a class="lk" href="#beetle-analyze">Guide</a></p>
         </div>
         <div class="fw-mod">
-          <h3><a href="#beetle-explorer">beetle-explorer</a> · explore</h3>
-          <p>Try any released checkpoint in Colab with no code: pick a collection, language, curriculum and training step, then generate text. The non-technical way in. <a class="lk" href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">GitHub</a> · <a class="lk" href="#beetle-explorer">Guide</a></p>
+          <h3><a href="#beetle-explorer">beetle-explorer</a> · Explore</h3>
+          <p>Try released models in Google Colab without writing code. Choose a language, training strategy and checkpoint, then generate text and compare how models behave. <a class="lk" href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a> · <a class="lk" href="#beetle-explorer">Guide</a></p>
         </div>
+      </div>
+      <div class="cta-row" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;">
+        <a class="btn btn-primary" href="#beetlelm">Read the guides</a>
+        <a class="btn btn-outline" href="models.html">Explore the models</a>
+        <a class="btn btn-ghost" href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">Read the research paper</a>
       </div>
     </div>
   </section>
@@ -175,7 +180,7 @@
       <!-- ===================== beetlelm ===================== -->
       <div class="g-guide">
         <span class="g-eyebrow">Guide 1</span>
-        <h2 class="g-title">Training models with beetlelm</h2>
+        <h2 class="g-title">Training models with <a href="https://github.com/beetlelm/beetlelm" target="_blank" rel="noopener" style="color:inherit;">beetlelm <i class="bi bi-github" style="font-size:0.82em;"></i></a></h2>
         <p class="g-lede"><span class="ic">beetlelm</span> trains small language models and keeps the whole training history, so you can study how a model learns, not just how it ends up.</p>
 
         <section class="g-sec" id="beetlelm" data-spy>
@@ -282,10 +287,6 @@ training:
               <tr><td>24B</td><td>24,000,000,000</td><td>91,552</td><td>512</td></tr>
             </tbody>
           </table>
-          <div class="callout">
-            <h4>A note on the 24B and 2B collections</h4>
-            <p>An effective-batch bug meant some early runs consumed a fraction of their intended tokens. Only <strong>Beetle-FineWeb-24B-4</strong> and <strong>Beetle-FineWeb-24B-5</strong> completed the full 91,552-step, 24B-token budget. Earlier "24B" collections reached about 3B tokens, and the earlier "2B" collection about 300M. Use the two final collections for full-scale work. The <a href="models.html">models page</a> explains which repository is which.</p>
-          </div>
         </section>
 
         <section class="g-sec" id="beetlelm-curricula" data-spy>
@@ -342,7 +343,7 @@ training:
       <!-- ===================== beetle-data ===================== -->
       <div class="g-guide">
         <span class="g-eyebrow">Guide 2</span>
-        <h2 class="g-title">Preparing data with beetle-data</h2>
+        <h2 class="g-title">Preparing data with <a href="https://github.com/beetlelm/beetle-data" target="_blank" rel="noopener" style="color:inherit;">beetle-data <i class="bi bi-github" style="font-size:0.82em;"></i></a></h2>
         <p class="g-lede"><span class="ic">beetle-data</span> turns raw text into training-ready shards: build a corpus, train a tokeniser, pretokenise, report stats.</p>
 
         <section class="g-sec" id="beetle-data" data-spy>
@@ -407,7 +408,7 @@ stats = pretokenize(tagged, tok, out_dir=<span class="c-str">"pretokenized"</spa
       <!-- ===================== beetle-analyze ===================== -->
       <div class="g-guide">
         <span class="g-eyebrow">Guide 3</span>
-        <h2 class="g-title">Analysing models with beetle-analyze</h2>
+        <h2 class="g-title">Analysing models with <a href="https://github.com/beetlelm/beetle-analyze" target="_blank" rel="noopener" style="color:inherit;">beetle-analyze <i class="bi bi-github" style="font-size:0.82em;"></i></a></h2>
         <p class="g-lede"><span class="ic">beetle-analyze</span> reads evaluation output and reports minimal-pair accuracy, with a research suite for deeper study.</p>
 
         <section class="g-sec" id="beetle-analyze" data-spy>
@@ -513,7 +514,7 @@ stats = pretokenize(tagged, tok, out_dir=<span class="c-str">"pretokenized"</spa
       <!-- ===================== beetle-explorer ===================== -->
       <div class="g-guide">
         <span class="g-eyebrow">No setup</span>
-        <h2 class="g-title">Explore models in Colab</h2>
+        <h2 class="g-title">Explore models in Colab with <a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener" style="color:inherit;">beetle-explorer <i class="bi bi-github" style="font-size:0.82em;"></i></a></h2>
         <p class="g-lede"><span class="ic">beetle-explorer</span> is a notebook for trying Beetle models without writing code.</p>
 
         <section class="g-sec" id="beetle-explorer" data-spy>
@@ -523,10 +524,6 @@ stats = pretokenize(tagged, tok, out_dir=<span class="c-str">"pretokenized"</spa
             <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">python</span></div>
 <pre><code><span class="c-kw">from</span> transformers <span class="c-kw">import</span> AutoModelForCausalLM
 model = AutoModelForCausalLM.from_pretrained(repo, revision=<span class="c-str">"step-N"</span>, trust_remote_code=<span class="c-kw">True</span>)</code></pre>
-          </div>
-          <div class="callout">
-            <h4>Which collection to pick</h4>
-            <p>Only <strong>Beetle-FineWeb-24B-4</strong> and <strong>Beetle-FineWeb-24B-5</strong> reached the full 24B-token budget. Earlier collections labelled "24B" reached only about 3B tokens, and the earlier "2B" collection about 300M, because of a token-budget bug. Default to the <span class="ic">-24B-4</span> and <span class="ic">-24B-5</span> collections. The <a href="models.html">models page</a> has the full explanation.</p>
           </div>
           <p><a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Open beetle-explorer on GitHub</a></p>
         </section>
