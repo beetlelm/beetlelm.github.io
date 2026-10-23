@@ -139,35 +139,80 @@
     </div>
   </section>
 
+  <!-- Model families -->
+  <section class="section">
+    <div class="wrap narrow">
+      <div class="section-head"><span class="eyebrow">Collections</span><h2>Model collections</h2></div>
+      <ul class="clist">
+        <li><b>Beetle-FineWeb-24B-4 / -24B-5</b> <span class="tag-final">Final release</span> &nbsp;The only genuine 24B-token models (123 repos): all B1 to B5 curricula, monolingual baselines and matched 2B companions. <button class="lnk" data-preset='{"resource":"model","final":true}'>Browse</button> · <a href="https://huggingface.co/Beetle-FineWeb-24B-4" target="_blank" rel="noopener">24B-4</a> · <a href="https://huggingface.co/Beetle-FineWeb-24B-5" target="_blank" rel="noopener">24B-5</a></li>
+        <li><b>Beetle-FineWeb-100M</b> &nbsp;100M-token FineWeb models across many first languages. <button class="lnk" data-preset='{"resource":"model","ds":["FineWeb"],"scale":["100M"]}'>Browse</button></li>
+        <li><b>Beetle-FineWeb-2B</b> <span class="tag-warn">~300M actual</span> &nbsp;Earlier "2B" runs, cut short to ~300M tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb-2B"}'>Browse</button></li>
+        <li><b>Beetle-FineWeb2-24B</b> <span class="tag-warn">~3B actual</span> &nbsp;Earlier "24B" bilingual experiments, cut short to ~3B tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb2-24B"}'>Browse</button></li>
+        <li><b>Beetle-FineWeb3-24B</b> <span class="tag-warn">~3B actual</span> &nbsp;Earlier "24B" monolingual baselines, cut short to ~3B tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb3-24B"}'>Browse</button></li>
+        <li><b>Beetle-HumanScale</b> &nbsp;Human-scale models, data and tokenisers for cognitively motivated experiments. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-HumanScale"}'>Browse</button></li>
+        <li><b>Beetle-Data</b> &nbsp;The full data and tokeniser catalogue: BabyBabel corpora, bilingual datasets, BPE tokenisers and shards. <button class="lnk" data-preset='{"resource":"all","org":"Beetle-Data"}'>Browse</button> · <a href="https://huggingface.co/Beetle-Data" target="_blank" rel="noopener">HF</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Training scales -->
+  <section class="section">
+    <div class="wrap narrow">
+      <div class="section-head"><span class="eyebrow">Training budget</span><h2>Three training scales</h2></div>
+      <p class="lead">Beetle models are trained at three budgets: <strong>100M</strong>, <strong>2B</strong> and <strong>24B</strong> tokens. Only <a href="https://huggingface.co/Beetle-FineWeb-24B-4" target="_blank" rel="noopener">Beetle-FineWeb-24B-4</a> and <a href="https://huggingface.co/Beetle-FineWeb-24B-5" target="_blank" rel="noopener">Beetle-FineWeb-24B-5</a> reached the full 24B budget. Because of a token-budget bug the earlier "24B" collections reached only about 3B tokens and the earlier "2B" collection about 300M, so start with the final release for full-scale work. The human-scale models use roughly 100M tokens of child-oriented BabyBabelLM data.</p>
+    </div>
+  </section>
+
+  <!-- Languages -->
+  <section class="section alt">
+    <div class="wrap narrow">
+      <div class="section-head"><span class="eyebrow">Languages</span><h2>21 first languages</h2></div>
+      <p class="lead">Beetle covers 21 first languages, each paired with <strong>English</strong> as the shared second language: Dutch, German, Danish, Icelandic, Norwegian, Italian, Spanish, Polish, Russian, Serbian, Greek, Hindi, Finnish, Estonian, Turkish, Basque, Hebrew, Filipino, Japanese, Korean and Chinese. They span Latin, Cyrillic, Greek, Devanagari, Hebrew, Han, Kana and Hangul scripts and several language families, which makes the suite a testbed for cross-lingual transfer. Filter by any language in the finder above.</p>
+    </div>
+  </section>
+
+  <!-- Data & tokenisers -->
+  <section class="section">
+    <div class="wrap narrow">
+      <div class="section-head"><span class="eyebrow">Data &amp; tokenisers</span><h2>Datasets, corpora and tokenisers</h2></div>
+      <ul class="clist">
+        <li><b>BabyBabel corpora</b> &nbsp;Small, controlled per-language corpora, with held-out sets in HumanScale. <button class="lnk" data-preset='{"resource":"dataset","text":"babybabel"}'>Find</button></li>
+        <li><b>Bilingual datasets</b> &nbsp;Resources for language combinations and exposure conditions. <button class="lnk" data-preset='{"resource":"dataset","mtype":"any"}'>Find</button></li>
+        <li><b>Tokenisers</b> &nbsp;Bilingual and monolingual BPE tokenisers used across the experiments. <button class="lnk" data-preset='{"resource":"tokenizer"}'>Find</button></li>
+        <li><b>Pre-tokenised &amp; raw corpora</b> &nbsp;Training shards and larger raw corpora for your own pipelines. <button class="lnk" data-preset='{"resource":"pretok"}'>Find</button></li>
+      </ul>
+    </div>
+  </section>
+
   <!-- Route A: experiment templates -->
   <section class="section" style="padding-top:38px;">
     <div class="wrap">
-      <div class="section-head" style="margin-bottom:14px;"><h2>Start from a research question</h2></div>
+      <div class="section-head" style="margin-bottom:14px;"><h2>Start from a research question</h2><p>Pick a question, tick the models you want, then copy a ready-to-run snippet into Colab. Each snippet uses <a href="docs.html#beetle-analyze">beetle-analyze</a>.</p></div>
       <div class="xtemplates">
-        <div class="xcard" data-preset='{"resource":"model","final":true}'>
+        <div class="xcard" data-preset='{"resource":"model","final":true}' data-an="cka">
           <h4>🧠 Model internals &amp; interpretability</h4>
           <p>Track representations over training, study when capabilities emerge, probe memorisation. Pick several checkpoints of one model, or matched conditions.</p>
-          <span class="go">Find models <i class="bi bi-arrow-down"></i></span>
+          <span class="go">Pick models → CKA code <i class="bi bi-arrow-down"></i></span>
         </div>
-        <div class="xcard" data-preset='{"resource":"model"}'>
+        <div class="xcard" data-preset='{"resource":"model"}' data-an="blimp">
           <h4>📈 Training &amp; scaling</h4>
           <p>Compare 100M, 2B and 24B token budgets and learning trajectories. Pick the same model family at different budgets.</p>
-          <span class="go">Find models <i class="bi bi-arrow-down"></i></span>
+          <span class="go">Pick models → BLiMP code <i class="bi bi-arrow-down"></i></span>
         </div>
-        <div class="xcard" data-preset='{"resource":"model","mtype":"bilingual"}'>
+        <div class="xcard" data-preset='{"resource":"model","mtype":"bilingual"}' data-an="blimp">
           <h4>🌍 Multilingual learning &amp; transfer</h4>
           <p>Compare monolingual against bilingual models, language pairs, and exposure order. Add the matched monolingual baselines to compare.</p>
-          <span class="go">Find models <i class="bi bi-arrow-down"></i></span>
+          <span class="go">Pick models → BLiMP code <i class="bi bi-arrow-down"></i></span>
         </div>
-        <div class="xcard" data-preset='{"resource":"model","ds":["BabyBabel"]}'>
+        <div class="xcard" data-preset='{"resource":"model","ds":["BabyBabel"]}' data-an="meco">
           <h4>🧪 AI &amp; human learning</h4>
-          <p>Compare models with human reading-time and grammaticality data. Human-scale models pair with the cognitive datasets documented in the <a href="docs.html#beetle-analyze">docs</a>.</p>
-          <span class="go">Find models <i class="bi bi-arrow-down"></i></span>
+          <p>Compare models with human reading-time and grammaticality data (MECO, BLiSS, priming), documented in the <a href="docs.html#beetle-analyze">docs</a>.</p>
+          <span class="go">Pick models → MECO code <i class="bi bi-arrow-down"></i></span>
         </div>
-        <div class="xcard" data-preset='{"resource":"model","final":true}'>
+        <div class="xcard" data-preset='{"resource":"model","final":true}' data-an="load">
           <h4>🎓 Students &amp; enthusiasts</h4>
           <p>Reproduce a paper result, build a benchmark comparison, or start a project. Begin with the recommended final-release models, or try them in <a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Colab</a>.</p>
-          <span class="go">Find models <i class="bi bi-arrow-down"></i></span>
+          <span class="go">Pick models → load &amp; generate <i class="bi bi-arrow-down"></i></span>
         </div>
       </div>
     </div>
@@ -266,64 +311,29 @@
               <button class="btn-reset" id="tray-clear"><i class="bi bi-x-lg"></i> Clear selection</button>
             </div>
             <div class="tray-chips" id="tray-chips"></div>
+            <div class="rq-label" style="margin:14px 0 6px;">Generate code for</div>
+            <div class="chipset" id="an-set">
+              <span class="fchip on" data-an="load">Load &amp; generate</span>
+              <span class="fchip" data-an="blimp">BLiMP</span>
+              <span class="fchip" data-an="cka">CKA</span>
+              <span class="fchip" data-an="meco">MECO</span>
+              <span class="fchip" data-an="bliss">BLiSS</span>
+              <span class="fchip" data-an="priming">Priming</span>
+            </div>
+            <label class="forder" style="margin-top:9px;"><input type="checkbox" id="an-all"> Run across all checkpoints, not just the final one</label>
             <div class="tray-actions">
-              <button class="btn-view" id="act-copy"><i class="bi bi-clipboard"></i> Copy loading code</button>
+              <button class="btn-view" id="act-copy"><i class="bi bi-clipboard"></i> Copy code</button>
               <a class="btn-view" id="act-colab" href="https://colab.research.google.com/github/beetlelm/beetle-explorer/blob/main/notebooks/Beetle_Model_Explorer.ipynb" target="_blank" rel="noopener"><i class="bi bi-journal-code"></i> Open in Colab</a>
               <button class="btn-view" id="act-hf"><i class="bi bi-box-arrow-up-right"></i> Open on Hugging Face</button>
             </div>
             <div class="code" id="code-box" style="margin:14px 0 0;display:none;">
-              <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">python · load your selected models</span></div>
+              <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t" id="code-title">python</span></div>
 <pre><code id="code-py"></code></pre>
             </div>
           </div>
           <p class="fnote"><b>Training data vs. evaluation language.</b> This finder filters on the language(s) a model was <em>trained</em> on. To find models <em>evaluated</em> on a language you care about, consult the <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">EMNLP 2026 paper</a>. &nbsp; The counts here are Hugging Face repositories (models, checkpoints, datasets and tokenisers), which is a larger number than the 285 + 45 models reported in the paper.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Model families -->
-  <section class="section">
-    <div class="wrap narrow">
-      <div class="section-head"><span class="eyebrow">Collections</span><h2>Model collections</h2></div>
-      <ul class="clist">
-        <li><b>Beetle-FineWeb-24B-4 / -24B-5</b> <span class="tag-final">Final release</span> &nbsp;The only genuine 24B-token models (123 repos): all B1 to B5 curricula, monolingual baselines and matched 2B companions. <button class="lnk" data-preset='{"resource":"model","final":true}'>Browse</button> · <a href="https://huggingface.co/Beetle-FineWeb-24B-4" target="_blank" rel="noopener">24B-4</a> · <a href="https://huggingface.co/Beetle-FineWeb-24B-5" target="_blank" rel="noopener">24B-5</a></li>
-        <li><b>Beetle-FineWeb-100M</b> &nbsp;100M-token FineWeb models across many first languages. <button class="lnk" data-preset='{"resource":"model","ds":["FineWeb"],"scale":["100M"]}'>Browse</button></li>
-        <li><b>Beetle-FineWeb-2B</b> <span class="tag-warn">~300M actual</span> &nbsp;Earlier "2B" runs, cut short to ~300M tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb-2B"}'>Browse</button></li>
-        <li><b>Beetle-FineWeb2-24B</b> <span class="tag-warn">~3B actual</span> &nbsp;Earlier "24B" bilingual experiments, cut short to ~3B tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb2-24B"}'>Browse</button></li>
-        <li><b>Beetle-FineWeb3-24B</b> <span class="tag-warn">~3B actual</span> &nbsp;Earlier "24B" monolingual baselines, cut short to ~3B tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb3-24B"}'>Browse</button></li>
-        <li><b>Beetle-HumanScale</b> &nbsp;Human-scale models, data and tokenisers for cognitively motivated experiments. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-HumanScale"}'>Browse</button></li>
-        <li><b>Beetle-Data</b> &nbsp;The full data and tokeniser catalogue: BabyBabel corpora, bilingual datasets, BPE tokenisers and shards. <button class="lnk" data-preset='{"resource":"all","org":"Beetle-Data"}'>Browse</button> · <a href="https://huggingface.co/Beetle-Data" target="_blank" rel="noopener">HF</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Training scales -->
-  <section class="section">
-    <div class="wrap narrow">
-      <div class="section-head"><span class="eyebrow">Training budget</span><h2>Three training scales</h2></div>
-      <p class="lead">Beetle models are trained at three budgets: <strong>100M</strong>, <strong>2B</strong> and <strong>24B</strong> tokens. Only <a href="https://huggingface.co/Beetle-FineWeb-24B-4" target="_blank" rel="noopener">Beetle-FineWeb-24B-4</a> and <a href="https://huggingface.co/Beetle-FineWeb-24B-5" target="_blank" rel="noopener">Beetle-FineWeb-24B-5</a> reached the full 24B budget. Because of a token-budget bug the earlier "24B" collections reached only about 3B tokens and the earlier "2B" collection about 300M, so start with the final release for full-scale work. The human-scale models use roughly 100M tokens of child-oriented BabyBabelLM data.</p>
-    </div>
-  </section>
-
-  <!-- Languages -->
-  <section class="section alt">
-    <div class="wrap narrow">
-      <div class="section-head"><span class="eyebrow">Languages</span><h2>21 first languages</h2></div>
-      <p class="lead">Beetle covers 21 first languages, each paired with <strong>English</strong> as the shared second language: Dutch, German, Danish, Icelandic, Norwegian, Italian, Spanish, Polish, Russian, Serbian, Greek, Hindi, Finnish, Estonian, Turkish, Basque, Hebrew, Filipino, Japanese, Korean and Chinese. They span Latin, Cyrillic, Greek, Devanagari, Hebrew, Han, Kana and Hangul scripts and several language families, which makes the suite a testbed for cross-lingual transfer. Filter by any language in the finder above.</p>
-    </div>
-  </section>
-
-  <!-- Data & tokenisers -->
-  <section class="section">
-    <div class="wrap narrow">
-      <div class="section-head"><span class="eyebrow">Data &amp; tokenisers</span><h2>Datasets, corpora and tokenisers</h2></div>
-      <ul class="clist">
-        <li><b>BabyBabel corpora</b> &nbsp;Small, controlled per-language corpora, with held-out sets in HumanScale. <button class="lnk" data-preset='{"resource":"dataset","text":"babybabel"}'>Find</button></li>
-        <li><b>Bilingual datasets</b> &nbsp;Resources for language combinations and exposure conditions. <button class="lnk" data-preset='{"resource":"dataset","mtype":"any"}'>Find</button></li>
-        <li><b>Tokenisers</b> &nbsp;Bilingual and monolingual BPE tokenisers used across the experiments. <button class="lnk" data-preset='{"resource":"tokenizer"}'>Find</button></li>
-        <li><b>Pre-tokenised &amp; raw corpora</b> &nbsp;Training shards and larger raw corpora for your own pipelines. <button class="lnk" data-preset='{"resource":"pretok"}'>Find</button></li>
-      </ul>
     </div>
   </section>
 
@@ -379,7 +389,7 @@
     opt(l1,"","First language (any)"); opt(l2,"","Second language (any)");
     LANGLIST.forEach(c=>{opt(l1,c,LANGNAMES[c]||c);opt(l2,c,LANGNAMES[c]||c);});
 
-    function langMode(){ return (state.resource==="model" && (state.mtype==="bilingual"||state.mtype==="continual")); }
+    function langMode(){ return false; }  // language pair dropdowns retired: always filter by language chips
 
     function syncVisibility(){
       document.getElementById("g-mtype").classList.toggle("hidden", state.resource!=="model");
@@ -473,8 +483,10 @@
       refreshTray();
     }
 
-    // --- Multi-model selection, tray and code generation ---
+    // --- Multi-model selection, tray and analysis code generation ---
     const tray=document.getElementById("tray");
+    let analysis="load", allCkpt=false;
+    const AN_TITLE={load:"load & generate", blimp:"BLiMP accuracy", cka:"CKA similarity", meco:"MECO reading-time", bliss:"BLiSS grammaticality", priming:"structural priming"};
     function refreshTray(){
       const n=selected.size;
       tray.style.display = n ? "block" : "none";
@@ -482,22 +494,35 @@
       document.getElementById("tray-count").innerHTML = '<b>'+n+'</b> model'+(n===1?'':'s')+' selected';
       document.getElementById("tray-chips").innerHTML = [...selected.keys()].map(k=>
         '<span class="selchip">'+k.split("/")[1]+'<i class="bi bi-x" data-rm="'+k+'"></i></span>').join("");
+      document.getElementById("code-box").style.display="block";
+      document.getElementById("code-title").textContent="python · "+(AN_TITLE[analysis]||analysis);
+      document.getElementById("code-py").textContent=genCode();
     }
     function genCode(){
       const repos=[...selected.keys()];
-      const lines=repos.map(r=>'    "'+r+'",').join("\n");
-      return 'from transformers import AutoModelForCausalLM, AutoTokenizer\n\n'+
-        'repos = [\n'+lines+'\n]\n\n'+
-        '# To load a specific training checkpoint, pass revision="step-XXXX"\n'+
-        'models = {r: AutoModelForCausalLM.from_pretrained(r, trust_remote_code=True) for r in repos}\n'+
-        'tokenizers = {r: AutoTokenizer.from_pretrained(r) for r in repos}';
+      const reposBlock='repos = [\n'+repos.map(r=>'    "'+r+'",').join("\n")+'\n]';
+      const tut='# beetle-analyze tutorial: https://beetlelm.github.io/docs.html#beetle-analyze\n';
+      const pip='!pip install git+https://github.com/beetlelm/beetle-analyze.git\n';
+      const rev = allCkpt ? ' --revisions all' : '';
+      if(analysis==="load")
+        return 'from transformers import AutoModelForCausalLM, AutoTokenizer\n\n'+reposBlock+'\n\n'+
+          '# To load a specific training checkpoint, pass revision="step-XXXX"\n'+
+          'models = {r: AutoModelForCausalLM.from_pretrained(r, trust_remote_code=True) for r in repos}\n'+
+          'tokenizers = {r: AutoTokenizer.from_pretrained(r) for r in repos}';
+      if(analysis==="blimp")   return tut+pip+'\n'+reposBlock+'\n\n# BLiMP minimal-pair accuracy '+(allCkpt?'across all checkpoints':'on the final checkpoint')+'\nfor repo in repos:\n    !python evals/eval_blimp.py --model {repo}'+rev+' --output results/blimp';
+      if(analysis==="cka")     return tut+pip+'\n'+reposBlock+'\n\n# CKA representational similarity '+(allCkpt?'across checkpoints':'at the final checkpoint')+'\nfor repo in repos:\n    !beetle-cka --model {repo}'+rev+' --output results/cka';
+      if(analysis==="meco")    return tut+'!pip install "beetle-analyze[eyetracking] @ git+https://github.com/beetlelm/beetle-analyze.git"\n\n'+reposBlock+'\n\n# MECO second-language reading-time alignment (delta log-likelihood)\nfor repo in repos:\n    !python evals/eval_meco.py --model {repo}'+rev+'\n!python -m analyze.ppp_delta_ll --surprisals results/meco/surprisals_all.tsv --corpus meco_l2';
+      if(analysis==="bliss")   return tut+pip+'\n'+reposBlock+'\n\n# BLiSS learner grammaticality (RP@0 / RP@tau / NGS / CPS)\nfor repo in repos:\n    !python evals/eval_bliss.py --model {repo} --output results/bliss';
+      if(analysis==="priming") return tut+pip+'\n'+reposBlock+'\n\n# Cross-lingual structural priming (congruent vs incongruent surprisal)\nfor repo in repos:\n    !python evals/eval_priming.py --model {repo}'+rev+' --output results/priming';
+      return reposBlock;
     }
+    function setAnalysis(a){ if(!a) return; analysis=a; [...document.getElementById("an-set").children].forEach(c=>c.classList.toggle("on",c.dataset.an===a)); if(selected.size) refreshTray(); }
+    document.getElementById("an-set").addEventListener("click", ev=>{ const c=ev.target.closest(".fchip"); if(c) setAnalysis(c.dataset.an); });
+    document.getElementById("an-all").addEventListener("change", ev=>{ allCkpt=ev.target.checked; if(selected.size) refreshTray(); });
     tbody.addEventListener("change", ev=>{
       const cb=ev.target.closest(".rsel"); if(!cb) return;
       const k=cb.dataset.k; if(cb.checked) selected.set(k,1); else selected.delete(k);
       refreshTray();
-      const codeBox=document.getElementById("code-box");
-      if(codeBox.style.display!=="none") document.getElementById("code-py").textContent=genCode();
     });
     document.getElementById("rselall").addEventListener("change", ev=>{
       D.filter(match).slice(0,RENDER_CAP).filter(e=>e.r==="model").forEach(e=>{
@@ -572,7 +597,7 @@
       document.getElementById("finder").scrollIntoView({behavior:"smooth",block:"start"});
     }
     document.querySelectorAll("[data-preset]").forEach(b=>{
-      b.addEventListener("click",()=>{ try{ applyPreset(JSON.parse(b.dataset.preset)); }catch(e){} });
+      b.addEventListener("click",()=>{ if(b.dataset.an) setAnalysis(b.dataset.an); try{ applyPreset(JSON.parse(b.dataset.preset)); }catch(e){} });
     });
 
     render();
