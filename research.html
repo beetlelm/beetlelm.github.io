@@ -49,183 +49,120 @@
 
   <section class="page-head">
     <div class="wrap">
-      <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Research</span>
-      <h1>What can language models teach us about learning a second language?</h1>
-      <p><strong>Beetle is an open research resource for studying bilingualism, second-language learning, and how language models acquire and represent language.</strong></p>
+      <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Research Projects</span>
+      <h1>New ways to study how language models learn</h1>
+      <p><strong>Beetle opens up new opportunities to study how language models acquire, organise, and use linguistic knowledge.</strong></p>
     </div>
   </section>
 
   <!-- Intro -->
   <section class="section" style="padding-top:36px;">
     <div class="wrap narrow">
-      <p class="lead">By controlling what models learn, which languages they encounter, and when they encounter them, Beetle makes it possible to investigate questions about human language processing and machine learning that are difficult to study with existing models.</p>
-      <p class="lead">Whether you work in psycholinguistics, computational linguistics, interpretability, or multilingual machine learning, you can use Beetle's models to test hypotheses, reproduce findings, and develop new research directions.</p>
+      <p class="lead">By varying the languages models encounter, the order in which they encounter them, and the amount of data they learn from, we can investigate how different learning experiences shape model behaviour.</p>
+      <p class="lead">The framework supports research across linguistics, cognitive science, machine learning, and interpretability. Researchers can use Beetle to explore existing questions, test new hypotheses, and develop methods for understanding learning in language models.</p>
     </div>
   </section>
 
-  <!-- Research questions -->
+  <!-- Who Beetle is for -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow">Who it's for</span>
+        <h2>Audiences we're building Beetle for</h2>
+        <p>Beetle is an open resource: you don't need to build a giant AI to explore the science of how language models learn. It is useful whether you train models yourself or simply want to understand how AI acquires language.</p>
+      </div>
+
+      <div class="grid cols-2" style="align-items:stretch;">
+        <div class="card">
+          <img src="assets/gif/beetle_gif1_light.gif" alt="Beetle — built for AI researchers, multilingual NLP and model builders. Open models. Open training. Open questions." style="width:100%;max-width:440px;display:block;margin:0 auto 14px;border-radius:12px;">
+          <h3>AI researchers, multilingual NLP &amp; model builders</h3>
+          <p>Use the open models and resources as a starting point for comparing training strategies and testing hypotheses — or train your own models and ask your own questions.</p>
+          <div class="rq-label">What you can do with Beetle</div>
+          <ul class="rq-list">
+            <li><strong>Study learning dynamics.</strong> Analyse how capabilities develop over training, in the spirit of shared tasks like Parameter Golf, BabyLM and the NanoGPT Speedrun.</li>
+            <li><strong>Analyse data mixtures.</strong> What happens if a model learns two languages from the start, learns them sequentially, or encounters its second language much later?</li>
+            <li><strong>Developmental interpretability.</strong> Use the Beetle checkpoints to study how models learn and how capabilities form during training.</li>
+            <li><strong>Multilinguality.</strong> Beetle covers 21 first languages, including script-independent and typologically diverse settings such as Finnish, Basque, Hindi, Japanese, Korean, Turkish and Chinese — a testbed for cross-lingual transfer.</li>
+            <li><strong>Data scale and quality.</strong> Vary language-exposure curricula and training scales (100M, 2B and 24B tokens) to investigate which training conditions drive observed differences.</li>
+            <li><strong>Infrastructure.</strong> Reuse the Beetle tooling for tokenisation and memorisation experiments.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <img src="assets/gif/beetle_gif2_light.gif" alt="Beetle — built for cognitive scientists, applied AI researchers and anyone curious about AI. Explore how language models learn with Beetle." style="width:100%;max-width:440px;display:block;margin:0 auto 14px;border-radius:12px;">
+          <h3>Cognitive scientists &amp; the simply curious</h3>
+          <p>You don't need to build a giant AI to explore the science. Beetle is a way in for cognitive scientists, applied researchers, and anyone curious about how AI learns language.</p>
+          <div class="rq-label">What you can do with Beetle</div>
+          <ul class="rq-list">
+            <li><strong>Non-technical exploration.</strong> Explore how AI learns languages without training anything yourself — load a model in the browser and watch it in action.</li>
+            <li><strong>Cognitive modelling.</strong> Use Beetle to study how well model predictions align with human cognitive data, from reading times to grammaticality judgements.</li>
+            <li><strong>Connect computation and cognition.</strong> Compare model learning trajectories with patterns observed in human language acquisition and bilingual processing.</li>
+          </ul>
+          <p class="inline-links"><a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Explore the models in Colab — no coding required</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research directions -->
   <section class="section alt">
     <div class="wrap">
       <div class="section-head center">
         <span class="eyebrow">Research directions</span>
-        <h2>One model family, many research questions</h2>
+        <h2>Questions Beetle makes tractable</h2>
       </div>
       <div class="grid cols-2">
 
         <div class="card">
           <div class="card-ic"><i class="bi bi-people"></i></div>
-          <h3>Human language processing</h3>
-          <p class="q">Can language models help explain how people learn and process a second language?</p>
-          <p>Use Beetle to investigate how models predict human reading times, distinguish grammatical from ungrammatical sentences, and respond to linguistic context. Compare model behaviour with experimental findings from bilingual and second-language research.</p>
-          <p>You do not need to train a language model from scratch to get started. Released checkpoints let you explore existing results, test alternative hypotheses, and connect computational predictions to human behaviour.</p>
-          <div class="rq-label">Possible research directions</div>
-          <ul class="rq-list">
-            <li>Compare model predictions with reading-time and grammaticality-judgement data.</li>
-            <li>Test whether models reproduce differences between first-language and second-language processing.</li>
-            <li>Investigate which properties of human bilingualism are captured by language models, and which are not.</li>
-            <li>Develop computational tests of theories of second-language acquisition.</li>
-          </ul>
+          <h3>Language learning and human cognition</h3>
+          <p>How do models' learning trajectories compare with patterns observed in human language acquisition and processing? Beetle provides a setting for investigating relationships between computational learning and human linguistic behaviour.</p>
         </div>
 
         <div class="card">
           <div class="card-ic"><i class="bi bi-translate"></i></div>
-          <h3>Cross-lingual transfer and representation learning</h3>
-          <p class="q">How does knowledge learned in one language influence another?</p>
-          <p>Beetle's controlled training setups let you investigate how language relationships, exposure schedules, and training scale affect what models learn. Study when knowledge transfers across languages, which language pairs benefit most, and how these effects change during training.</p>
-          <div class="rq-label">Possible research directions</div>
-          <ul class="rq-list">
-            <li>Compare cross-lingual transfer across languages with different linguistic properties.</li>
-            <li>Trace how shared and language-specific representations develop during training.</li>
-            <li>Test whether exposure order changes which capabilities emerge and when.</li>
-            <li>Investigate whether improvements in one language come at the expense of another.</li>
-          </ul>
+          <h3>Multilingual learning and cross-lingual transfer</h3>
+          <p>How does experience with one language shape a model's ability to learn or use another? Explore how language background, exposure, and learning order influence cross-lingual generalisation.</p>
         </div>
 
         <div class="card">
           <div class="card-ic"><i class="bi bi-diagram-3"></i></div>
-          <h3>Mechanistic interpretability and model analysis</h3>
-          <p class="q">What changes inside a model as it learns multiple languages?</p>
-          <p>Beetle provides model families and training checkpoints that can be used to study the development of linguistic representations and the mechanisms underlying cross-lingual behaviour. Its controlled conditions make it possible to compare models that differ in a particular aspect of their training experience.</p>
-          <div class="rq-label">Possible research directions</div>
-          <ul class="rq-list">
-            <li>Track the emergence of linguistic features across training checkpoints.</li>
-            <li>Compare internal representations across languages, curricula, and model scales.</li>
-            <li>Investigate whether the mechanisms supporting a capability are shared across languages.</li>
-            <li>Connect changes in model representations to measurable changes in behaviour.</li>
-          </ul>
+          <h3>The development of linguistic representations</h3>
+          <p>How do internal representations emerge and change during training? Beetle's checkpoints make it possible to investigate how models develop linguistic knowledge, and how these changes relate to their behaviour.</p>
         </div>
 
         <div class="card">
-          <div class="card-ic"><i class="bi bi-mortarboard"></i></div>
-          <h3>New projects and student collaborations</h3>
-          <p class="q">Have a question that Beetle could help answer?</p>
-          <p>Beetle is designed to support research beyond the experiments in our paper. We welcome collaborations with students and researchers interested in developing new projects using the released models, checkpoints, evaluation tasks, and training framework.</p>
-          <p>Projects can range from analysing existing checkpoints to designing new experiments, developing evaluation methods, or training controlled model variants. The aim is to turn promising questions into rigorous, reproducible research with a clear path towards publication.</p>
-          <p>You do not need to have a fully developed project before getting in touch. If you have an interesting question about language learning, multilingual models, or interpretability, we would be happy to explore it with you.</p>
+          <div class="card-ic"><i class="bi bi-arrow-repeat"></i></div>
+          <h3>Continual learning and interference</h3>
+          <p>When does learning something new reinforce, compete with, or disrupt existing knowledge? Beetle offers a setting for studying how models retain and adapt linguistic knowledge as their experience changes.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-alphabet"></i></div>
+          <h3>Tokenisation and the structure of language</h3>
+          <p>How does the way text is represented influence what models learn? Researchers can investigate the relationship between tokenisation, linguistic structure, learning efficiency, and generalisation.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-bar-chart-steps"></i></div>
+          <h3>Learning dynamics, data, and scale</h3>
+          <p>Which aspects of a model's learning experience matter most? Compare models trained with different amounts of data and different learning conditions to investigate how training choices shape the emergence of linguistic capabilities.</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Controlled setting -->
+  <!-- Start with a question -->
   <section class="section">
-    <div class="wrap">
+    <div class="wrap narrow">
       <div class="section-head">
-        <span class="eyebrow">Why Beetle</span>
-        <h2>A controlled setting for studying language learning</h2>
-        <p>Existing multilingual models often differ in several ways at once, making it difficult to determine why they behave differently. Beetle addresses this problem by allowing researchers to vary four aspects of training independently.</p>
+        <span class="eyebrow">Start with a question</span>
+        <h2>From a question to a controlled experiment</h2>
       </div>
-      <div class="grid cols-2">
-        <div class="card">
-          <h4>Language exposure</h4>
-          <p>Compare balanced bilingual training with curricula that introduce languages at different times or in different proportions.</p>
-        </div>
-        <div class="card">
-          <h4>First language</h4>
-          <p>Investigate how a model's initial language experience affects subsequent learning across 21 first-language settings.</p>
-        </div>
-        <div class="card">
-          <h4>Training scale</h4>
-          <p>Compare models trained on 100 million, 2 billion, and 24 billion tokens to study how learning changes with additional experience.</p>
-        </div>
-        <div class="card">
-          <h4>Tokenisation</h4>
-          <p>Use a common BPE tokeniser with equal-compression controls to help isolate the effects of training conditions from differences in tokenisation.</p>
-        </div>
-      </div>
-      <p class="inline-links">The result is a family of models that supports controlled comparisons, rather than a collection of unrelated multilingual systems. &nbsp; <a href="framework.html">Explore the framework</a> · <a href="models.html">Browse models and data</a></p>
-    </div>
-  </section>
-
-  <!-- Findings -->
-  <section class="section alt">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Key findings</span>
-        <h2>What we have found so far</h2>
-        <p>Our first study uses Beetle to investigate how bilingual training experience shapes second-language behaviour.</p>
-      </div>
-      <div class="grid cols-2">
-        <div class="finding">
-          <div class="fi"><i class="bi bi-bar-chart-steps"></i></div>
-          <h4>Training order matters</h4>
-          <p>Staged curricula improve alignment with human second-language reading times compared with balanced bilingual exposure.</p>
-        </div>
-        <div class="finding">
-          <div class="fi"><i class="bi bi-rulers"></i></div>
-          <h4>The effects depend on scale</h4>
-          <p>Differences between training curricula are particularly pronounced at smaller training budgets.</p>
-        </div>
-        <div class="finding">
-          <div class="fi"><i class="bi bi-translate"></i></div>
-          <h4>Language relationships matter</h4>
-          <p>The benefits of structured exposure are largest for typologically closer language pairs in our experiments.</p>
-        </div>
-        <div class="finding">
-          <div class="fi"><i class="bi bi-signpost-split"></i></div>
-          <h4>Human processing measures tell different stories</h4>
-          <p>The curricula that best predict reading times are not necessarily those that perform best on grammaticality judgements, suggesting that online processing and offline linguistic judgements capture different aspects of model behaviour.</p>
-        </div>
-      </div>
-      <p class="inline-links">These findings are a starting point, not a limit on what the models can be used to study.</p>
-    </div>
-  </section>
-
-  <!-- Explore the results -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Results</span>
-        <h2>Explore the results</h2>
-        <p>Our EMNLP 2026 paper evaluates Beetle on human processing data, grammaticality judgements, multilingual language modelling, and cross-lingual structural priming.</p>
-      </div>
-
-      <div class="grid cols-2">
-        <figure class="fig">
-          <a href="assets/paper/fig-meco-main.png" target="_blank" rel="noopener"><img src="assets/paper/fig-meco-main.png" alt="MECO second-language reading-time results"></a>
-          <figcaption><b>Human reading times — MECO.</b> Compare how well models predict second-language reading times across language pairs, training scales, and exposure curricula.</figcaption>
-        </figure>
-        <figure class="fig">
-          <a href="assets/paper/fig-bliss-main.png" target="_blank" rel="noopener"><img src="assets/paper/fig-bliss-main.png" alt="BLiSS grammaticality-judgement results"></a>
-          <figcaption><b>Grammaticality judgements — BLiSS.</b> Examine how models distinguish acceptable from unacceptable sentences, and how this relates to their alignment with human reading times.</figcaption>
-        </figure>
-        <figure class="fig">
-          <a href="assets/paper/fig-blimp-main.png" target="_blank" rel="noopener"><img src="assets/paper/fig-blimp-main.png" alt="BLiMP English grammatical competence results"></a>
-          <figcaption><b>English grammatical competence — BLiMP.</b> Compare English grammatical performance across first languages and training curricula, including bilingual models and monolingual controls.</figcaption>
-        </figure>
-        <figure class="fig">
-          <a href="assets/paper/fig-flores-nll.png" target="_blank" rel="noopener"><img src="assets/paper/fig-flores-nll.png" alt="FLORES-200 sentence NLL trajectories"></a>
-          <figcaption><b>Language modelling across languages — FLORES-200.</b> Explore how prediction difficulty changes across training and compare the development of first-language and English modelling performance.</figcaption>
-        </figure>
-      </div>
-
-      <div class="card" style="margin-top:20px;">
-        <div class="card-ic"><i class="bi bi-arrow-left-right"></i></div>
-        <h3>Cross-lingual structural priming</h3>
-        <p>Investigate whether exposure to a linguistic structure in one language influences a model's expectations in another, and whether this behaviour persists across training scales.</p>
-        <a class="more" href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">Read the paper and inspect the analyses <i class="bi bi-arrow-right"></i></a>
-      </div>
+      <p class="lead">Beetle is designed to make research questions about language learning experimentally tractable. You can begin with an existing checkpoint, compare models with different training histories, or use the framework to develop a new controlled experiment.</p>
+      <p class="lead">We welcome collaborations with researchers interested in language acquisition, multilingualism, representation learning, interpretability, and the broader science of language models.</p>
+      <p class="inline-links"><strong>Interested in working with Beetle?</strong> Get in touch at <a href="mailto:sas245@cam.ac.uk">sas245@cam.ac.uk</a>.</p>
     </div>
   </section>
 
@@ -241,7 +178,7 @@
         <div class="card">
           <div class="card-ic"><span class="num-ic">1</span></div>
           <h4>Explore the findings</h4>
-          <p>Start with the paper and its figures to understand the questions already investigated.</p>
+          <p>Start with the <a href="assets/paper/beetle-emnlp.pdf" target="_blank" rel="noopener">paper</a> and its figures to understand the questions already investigated.</p>
         </div>
         <div class="card">
           <div class="card-ic"><span class="num-ic">2</span></div>
@@ -259,66 +196,19 @@
           <p>Use the models, training framework, and checkpoints to investigate a question beyond the original paper.</p>
         </div>
       </div>
-      <p class="inline-links"><a href="models.html">Browse models and data</a> · <a href="docs.html">Explore the documentation</a> · <a href="docs.html#notebooks">Reproduce the analyses in Colab</a></p>
+      <p class="inline-links"><a href="models.html">Browse models and data</a> · <a href="docs.html">Explore the documentation</a> · <a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Explore the models in Colab</a></p>
     </div>
   </section>
 
-  <!-- The paper -->
-  <section class="section">
-    <div class="wrap">
-      <div class="paper-card">
-        <span class="venue">EMNLP 2026 (Oral, top 3%)</span>
-        <h3 class="paper-title">Beetle: A Bilingual Model Suite for Modelling Second-Language Processing</h3>
-        <div class="authors">
-          <a href="https://suchirsalhan.github.io/" target="_blank" rel="noopener">Suchir Salhan<sup>1</sup></a>
-          <a href="https://catherinearnett.github.io/" target="_blank" rel="noopener">Catherine Arnett<sup>2</sup></a>
-          <a href="https://jmichaelov.com/" target="_blank" rel="noopener">James A. Michaelov<sup>3</sup></a>
-          <a href="https://www.cl.cam.ac.uk/~pjb48/" target="_blank" rel="noopener">Paula Buttery<sup>1</sup></a>
-        </div>
-        <p class="affil"><sup>1</sup>University of Cambridge &nbsp;·&nbsp; <sup>2</sup>EleutherAI &nbsp;·&nbsp; <sup>3</sup>University of Oxford &nbsp;·&nbsp; Correspondence: <a href="mailto:sas245@cam.ac.uk">sas245@cam.ac.uk</a></p>
-        <p class="abstract">
-          <span class="lbl">Overview</span>
-          Beetle introduces a controlled pretraining framework and releases <strong>285 bilingual and 45 monolingual open-source language models</strong>, with checkpoints spanning multiple first languages, training scales, and exposure schedules. Evaluating against human bilingual and second-language reading-time prediction and grammaticality-judgement tasks, we find that staged and temporally structured curricula consistently improve alignment with language-learner reading time compared with balanced bilingual training — with the largest gains at smaller data scales and for typologically closer language pairs.
-        </p>
-        <div class="paper-btns">
-          <a class="btn btn-primary" href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i> Read on arXiv</a>
-          <a class="btn btn-outline" href="assets/paper/beetle-emnlp.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Read the PDF</a>
-          <a class="btn btn-ghost" href="#cite"><i class="bi bi-quote"></i> BibTeX citation</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cite -->
-  <section class="section alt" id="cite">
-    <div class="wrap narrow">
-      <div class="section-head"><span class="eyebrow">Citation</span><h2>Cite Beetle</h2></div>
-      <div class="code">
-        <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bibtex</span></div>
-<pre><code>@inproceedings{salhan2026beetle,
-  title     = {Beetle: A Bilingual Model Suite for Modelling
-               Second-Language Processing},
-  author    = {Salhan, Suchir and Arnett, Catherine and
-               Michaelov, James A. and Buttery, Paula},
-  booktitle = {Proceedings of EMNLP},
-  year      = {2026},
-  url       = {https://arxiv.org/abs/2609.22633}
-}</code></pre>
-      </div>
-    </div>
-  </section>
-
-  <!-- Work with us -->
+  <!-- Read the paper -->
   <section class="section">
     <div class="wrap narrow center">
-      <div class="section-head center"><span class="eyebrow">Collaborate</span><h2>Work with us</h2></div>
-      <p class="lead">We are interested in collaborations that use Beetle to answer new questions about human language, cross-lingual learning, and the development of language-model capabilities.</p>
-      <p class="lead"><strong>Students and prospective collaborators are welcome.</strong> If you are interested in a research project, get in touch with a brief description of the question you would like to investigate, the methods or background you would bring, and the kind of collaboration you have in mind.</p>
-      <p class="lead" style="color:var(--muted);">The most exciting applications of Beetle may be questions we have not asked yet.</p>
+      <div class="section-head center"><span class="eyebrow">Read the paper</span><h2>The science behind Beetle</h2></div>
+      <p class="lead">The full framework, all five curricula, every evaluation, and the complete results are in our EMNLP 2026 paper (Oral, top 3%). <strong>Interested in working with Beetle?</strong> Collaboration enquiries are welcome — the most exciting applications may be questions we have not asked yet.</p>
       <div class="cta-row" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px;">
-        <a class="btn btn-primary" href="mailto:sas245@cam.ac.uk"><i class="bi bi-envelope"></i> Get in touch</a>
-        <a class="btn btn-outline" href="https://github.com/beetlelm" target="_blank" rel="noopener"><i class="bi bi-github"></i> github.com/beetlelm</a>
-        <a class="btn btn-ghost" href="https://huggingface.co/Beetle-HumanScale" target="_blank" rel="noopener"><i class="bi bi-boxes"></i> Hugging Face</a>
+        <a class="btn btn-primary" href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i> Read the EMNLP 2026 paper</a>
+        <a class="btn btn-outline" href="assets/paper/beetle-emnlp.pdf" target="_blank" rel="noopener"><i class="bi bi-file-earmark-pdf"></i> Read the PDF</a>
+        <a class="btn btn-ghost" href="mailto:sas245@cam.ac.uk"><i class="bi bi-envelope"></i> sas245@cam.ac.uk</a>
       </div>
     </div>
   </section>

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Documentation — beetle</title>
-  <meta name="description" content="Load any of the 330 released Beetle checkpoints with from_pretrained, use the bilingual tokenizers, and reproduce the reading-time, grammaticality and structural-priming analyses from the EMNLP 2026 paper.">
+  <meta name="description" content="Get started with Beetle: train a real bilingual model on CPU in minutes with beetlelm, prepare bilingual training data with beetle-data, and scale the same steps up to billions of tokens. Both ship a download-free, reproducible quickstart.">
 
   <link href="favicon.ico" rel="icon" sizes="any">
   <link href="assets/img/logo.svg" rel="icon" type="image/svg+xml">
@@ -41,165 +41,289 @@
     <div class="wrap">
       <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Documentation</span>
       <h1>Get started with Beetle</h1>
-      <p>Load any of the 330 released checkpoints with <span class="ic">from_pretrained</span>, use the bilingual tokenizers, and reproduce the reading-time, grammaticality and structural-priming analyses from the paper.</p>
+      <p>Train a real bilingual model on your laptop in a couple of minutes, prepare bilingual training data from raw text to tokenised shards, and scale the same steps up to billions of tokens. Both <span class="ic">beetlelm</span> and <span class="ic">beetle-data</span> ship a download-free, CPU-only quickstart alongside the full research pipeline.</p>
     </div>
   </section>
 
-  <!-- Install + train -->
-  <section class="section" style="padding-top:32px;">
+  <!-- beetlelm: train -->
+  <section class="section" id="beetlelm" style="padding-top:32px;">
     <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Quickstart</span><h2>Load a Beetle model in minutes</h2></div>
+      <div class="section-head"><span class="eyebrow">beetlelm</span><h2>Train a bilingual model</h2><p><span class="ic">beetlelm</span> trains bilingual, monolingual and polyglot language models and stores comprehensive checkpoints for learning-dynamics research. There are two entry points: <span class="ic">beetlelm-toy</span>, the download-free CPU quickstart, and <span class="ic">beetlelm-train</span>, the full research trainer (Lightning, HuggingFace datasets, the architecture zoo, continual-learning modules). Checkpoints from both are standard HuggingFace and reload with <span class="ic">from_pretrained</span>.</p></div>
       <div class="grid cols-2">
         <div>
-          <h3 style="font-size:18px;">1 · Set up</h3>
+          <h3 style="font-size:18px;">1 · Install</h3>
           <div class="code">
             <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
-<pre><code><span class="c-prompt">$ </span>pip install transformers torch</code></pre>
+<pre><code><span class="c-prompt">$ </span>git clone https://github.com/beetlelm/beetlelm.git
+<span class="c-prompt">$ </span>cd beetlelm
+<span class="c-prompt">$ </span>pip install -e .</code></pre>
           </div>
-          <p style="font-size:14.5px;color:var(--muted);">Every released model and tokenizer is standard HuggingFace — no bespoke framework required. The 330 checkpoints span five curricula (B1–B5), three data scales (100M / 2B / 24B) and 21 first languages.</p>
+          <p style="font-size:14.5px;color:var(--muted);">Full stack (Lightning, datasets, wandb, HF Hub). For the CPU quickstart only, a light install keeps the heavy training stack out:</p>
+          <div class="code" style="margin-bottom:0;">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>pip install <span class="c-str">"torch>=2.5.1"</span> transformers numpy pyyaml click
+<span class="c-prompt">$ </span>pip install -e . --no-deps</code></pre>
+          </div>
         </div>
         <div>
-          <h3 style="font-size:18px;">2 · Load a released checkpoint</h3>
+          <h3 style="font-size:18px;">2 · Quickstart (CPU, zero downloads)</h3>
           <div class="code">
-            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">python</span></div>
-<pre><code><span class="c-kw">from</span> transformers <span class="c-kw">import</span> AutoModelForCausalLM, AutoTokenizer
-
-name = <span class="c-str">"Beetle-HumanScale/beetle-bilingual-nl-en-b2"</span>
-model = AutoModelForCausalLM.from_pretrained(name)
-tok   = AutoTokenizer.from_pretrained(name)
-
-<span class="c-comment"># score a sentence under the model</span>
-out = model(**tok(<span class="c-str">"the beetle reads the sentence"</span>, return_tensors=<span class="c-str">"pt"</span>))
-<span class="c-kw">print</span>(out.logits.shape)</code></pre>
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>beetlelm-toy --config_path configs/tiny_cpu.yaml</code></pre>
           </div>
-          <p style="font-size:14.5px;color:var(--muted);">Browse every checkpoint by language, curriculum and scale on the <a href="models.html">Models &amp; Data</a> page.</p>
+          <p style="font-size:14.5px;color:var(--muted);">…or from Python:</p>
+          <div class="code" style="margin-bottom:0;">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">python</span></div>
+<pre><code><span class="c-kw">from</span> beetlelm.toy <span class="c-kw">import</span> train
+results = train(<span class="c-str">"configs/tiny_cpu.yaml"</span>)
+<span class="c-kw">print</span>(results[<span class="c-str">"final_loss"</span>], results[<span class="c-str">"checkpoint_dir"</span>])</code></pre>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Tutorials -->
+  <!-- Reproduce the toy result -->
   <section class="section alt">
     <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Guides</span><h2>Step by step</h2><p>From loading a released checkpoint to reproducing the paper’s evaluations.</p></div>
-      <div class="grid cols-3">
+      <div class="section-head"><span class="eyebrow">Reproduce the toy result</span><h2>A real model, in about 15 seconds</h2><p><span class="ic">configs/tiny_cpu.yaml</span> trains a <strong>0.72M-parameter</strong> PicoDecoder for 200 steps on the in-repo bilingual (English + Spanish) byte corpus. On a laptop CPU it finishes in about 15 seconds and writes a HuggingFace checkpoint plus <span class="ic">metrics.json</span> to <span class="ic">runs/tiny_cpu/</span>.</p></div>
+      <div class="grid cols-2">
         <div class="card">
-          <div class="card-ic"><i class="bi bi-box-seam"></i></div>
-          <h4>1 · Load a model</h4>
-          <p>Every Beetle checkpoint is standard HuggingFace — load it with <span class="ic">from_pretrained</span>.</p>
-          <div class="code" style="margin-bottom:0;"><pre><code>from transformers import AutoModelForCausalLM
-m = AutoModelForCausalLM.from_pretrained(
-  "Beetle-HumanScale/beetle-monolingual-humanscale-eng")</code></pre></div>
+          <div class="spec-grid">
+            <div class="spec"><div class="k">final train loss</div><div class="v">~0.20</div></div>
+            <div class="spec"><div class="k">final val loss</div><div class="v">~0.37</div></div>
+            <div class="spec"><div class="k">parameters</div><div class="v">722,048</div></div>
+            <div class="spec"><div class="k">device / time</div><div class="v">CPU / ~15s</div></div>
+          </div>
+          <p style="font-size:14px;color:var(--muted);margin:14px 0 0;">Random loss over the 256-way byte vocabulary is <span class="ic">ln(256) ≈ 5.55</span>, so the drop to ~0.2 shows the model has learned the toy corpus. Runs are deterministic on CPU given the seed, and the expected numbers are committed in <span class="ic">baselines/tiny_cpu_baseline.json</span>. These are toy-scale sanity numbers, not research results.</p>
         </div>
         <div class="card">
-          <div class="card-ic"><i class="bi bi-alphabet"></i></div>
-          <h4>2 · Use a beetle tokenizer</h4>
-          <p>Bilingual and human-scale BPE tokenizers are published on the Hub and load the same way.</p>
-          <div class="code" style="margin-bottom:0;"><pre><code>from transformers import AutoTokenizer
-tok = AutoTokenizer.from_pretrained(
-  "Beetle-Data/tokenizer-nl-en")
-print(tok("Hello, beetle!"))</code></pre></div>
-        </div>
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-layers"></i></div>
-          <h4>3 · Pick a curriculum &amp; scale</h4>
-          <p>Checkpoints are named by first language, curriculum (B1–B5) and data scale (100M / 2B / 24B), so each experiment is directly comparable.</p>
-          <div class="code" style="margin-bottom:0;"><pre><code># B2 staged curriculum, Dutch L1, 24B tokens
-AutoModelForCausalLM.from_pretrained(
-  "Beetle-FineWeb/beetle-nl-en-b2-24b")</code></pre></div>
-        </div>
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-clock-history"></i></div>
-          <h4>4 · Step through training</h4>
-          <p>Dense intermediate checkpoints let you trace learning dynamics across training steps via the <span class="ic">revision</span> argument.</p>
-          <div class="code" style="margin-bottom:0;"><pre><code>AutoModelForCausalLM.from_pretrained(
-  "Beetle-FineWeb/beetle-nl-en-b2-24b",
-  revision="step-8000")</code></pre></div>
-        </div>
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-check2-square"></i></div>
-          <h4>5 · Run a minimal-pair eval</h4>
-          <p>Score BLiMP-style and BLiSS learner minimal-pair discrimination on any loaded checkpoint.</p>
-          <div class="code" style="margin-bottom:0;"><pre><code>from beetle_analyze import minimal_pair_accuracy
-minimal_pair_accuracy(m, tok, dataset="BLiSS")</code></pre></div>
-        </div>
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-bar-chart-line"></i></div>
-          <h4>6 · Compare to human data</h4>
-          <p>Align model surprisal with MECO L2 reading times and test cross-lingual structural priming — the paper’s core analyses.</p>
-          <div class="code" style="margin-bottom:0;"><pre><code>from beetle_analyze import reading_time_fit
-reading_time_fit(m, tok, corpus="MECO-L2")</code></pre></div>
+          <h4>Reload the checkpoint</h4>
+          <p>The run writes a standard HuggingFace checkpoint you can load back in a couple of lines.</p>
+          <div class="code" style="margin-bottom:0;">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">python</span></div>
+<pre><code><span class="c-kw">from</span> beetlelm.pico_decoder.pico_decoder <span class="c-kw">import</span> PicoDecoderHF
+<span class="c-kw">from</span> beetlelm.bytes <span class="c-kw">import</span> ByteTokenizerManager
+model = PicoDecoderHF.from_pretrained(<span class="c-str">"runs/tiny_cpu"</span>)
+tok   = ByteTokenizerManager.from_pretrained(<span class="c-str">"runs/tiny_cpu"</span>)</code></pre>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Notebooks -->
-  <section class="section" id="notebooks">
+  <!-- Change a variable + full framework -->
+  <section class="section">
     <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Reproduce in Colab</span><h2>Run the analyses, no local setup</h2><p>Open the reading-time, grammaticality and priming analyses in Google Colab.</p></div>
-      <div class="grid cols-3">
+      <div class="grid cols-2">
         <div class="card">
-          <div class="card-ic" style="background:linear-gradient(155deg,#ffb703,#fb8500);"><i class="bi bi-arrow-left-right"></i></div>
-          <h4>German structural priming</h4>
-          <p>RQ A — cross-lingual structural priming for German–English Beetle models (Bernolet genitive &amp; dative).</p>
-          <div class="nb-badges">
-            <a class="nb-badge colab" href="https://colab.research.google.com/github/suchirsalhan/beetle-analyze/blob/main/notebooks/rq_a_german_priming.ipynb" target="_blank" rel="noopener"><i class="bi bi-google"></i> Colab</a>
-            <a class="nb-badge gh" href="https://github.com/suchirsalhan/beetle-analyze/blob/main/notebooks/rq_a_german_priming.ipynb" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
+          <div class="card-ic"><i class="bi bi-sliders"></i></div>
+          <h3>Change one variable</h3>
+          <p>Everything is driven by the YAML config or by <span class="ic">overrides</span> / CLI flags. Point <span class="ic">data.train_file</span> at any UTF-8 text file to train on your own corpus.</p>
+          <div class="code">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>beetlelm-toy --config_path configs/tiny_cpu.yaml --seed 7 --max_steps 400
+<span class="c-prompt">$ </span>beetlelm-toy --config_path configs/tiny_cpu.yaml --d_model 256</code></pre>
+          </div>
+          <div class="code" style="margin-bottom:0;">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">python</span></div>
+<pre><code><span class="c-kw">from</span> beetlelm.toy <span class="c-kw">import</span> train
+train(<span class="c-str">"configs/tiny_cpu.yaml"</span>, overrides={
+    <span class="c-str">"model"</span>:    {<span class="c-str">"d_model"</span>: 256, <span class="c-str">"n_layers"</span>: 6},
+    <span class="c-str">"training"</span>: {<span class="c-str">"seed"</span>: 7, <span class="c-str">"max_steps"</span>: 400},
+})</code></pre>
           </div>
         </div>
         <div class="card">
-          <div class="card-ic" style="background:linear-gradient(155deg,#ffb703,#fb8500);"><i class="bi bi-rulers"></i></div>
-          <h4>Priming across scale</h4>
-          <p>RQ B — how cross-lingual structural priming develops across 100M / 2B / 24B budgets and over checkpoints.</p>
-          <div class="nb-badges">
-            <a class="nb-badge colab" href="https://colab.research.google.com/github/suchirsalhan/beetle-analyze/blob/main/notebooks/rq_b_scale_priming.ipynb" target="_blank" rel="noopener"><i class="bi bi-google"></i> Colab</a>
-            <a class="nb-badge gh" href="https://github.com/suchirsalhan/beetle-analyze/blob/main/notebooks/rq_b_scale_priming.ipynb" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
+          <div class="card-ic"><i class="bi bi-cpu"></i></div>
+          <h3>Use the full framework</h3>
+          <p>The full trainer targets larger runs on real datasets and the architecture zoo (pico, bgpt, MoE, SSM, geo-bilingual, H-Net, MambaByte), with continual-learning extensions (EWC, MAML/SMLMT, replay, LoRA, layer growth). Configs live under <span class="ic">configs/</span> and launchers under <span class="ic">script/</span>.</p>
+          <div class="code">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>beetlelm-train --config_path configs/pico_default.yaml
+<span class="c-prompt">$ </span>beetlelm-train --config_path configs/quickstart_fineweb.yaml --validate_only</code></pre>
+          </div>
+          <p style="font-size:14px;color:var(--muted);margin-bottom:0;">Some architectures need extra, non-PyPI dependencies (e.g. <span class="ic">hnet</span> needs <span class="ic">mamba_ssm</span> / <span class="ic">flash_attn</span>; DeepSpeed is Linux-only) — these import lazily, so the base install stays clean. Weights &amp; Biases is forced offline by default; nothing phones home unless you opt in.</p>
+        </div>
+      </div>
+      <p style="margin-top:20px;color:var(--muted);font-size:15px;">A fast, CPU-only smoke test trains the real model for a few steps and checks the loss is finite, that the model learns, that runs are deterministic, and that a loadable checkpoint is written: <span class="ic">pytest -q tests/test_toy_smoke.py</span>. See <span class="ic">notebooks/quickstart.ipynb</span> for a full walkthrough.</p>
+    </div>
+  </section>
+
+  <!-- beetle-data -->
+  <section class="section alt" id="beetle-data">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">beetle-data</span><h2>Prepare bilingual training data</h2><p><span class="ic">beetle-data</span> is a bilingual data-preparation pipeline for small language models: stream raw multilingual corpora (FineWeb-Edu / FineWeb-2 / CulturaX), decontaminate against evaluation benchmarks, score and filter, train BPE tokenizers, and pretokenize into Arrow/Parquet shards. It ships the full production code <strong>and</strong> a minimal, offline, reproducible path you can run start to finish in seconds.</p></div>
+      <div class="grid cols-2">
+        <div>
+          <h3 style="font-size:18px;">1 · Install</h3>
+          <div class="code">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>pip install beetle-data</code></pre>
+          </div>
+          <p style="font-size:14.5px;color:var(--muted);">…or from source. The core install is CPU-only; the heavy curriculum-mode stack is an opt-in extra.</p>
+          <div class="code" style="margin-bottom:0;">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>git clone https://github.com/beetlelm/beetle-data
+<span class="c-prompt">$ </span>cd beetle-data
+<span class="c-prompt">$ </span>pip install -e .                 <span class="c-comment"># core pipeline (CPU)</span>
+<span class="c-prompt">$ </span>pip install -e .[curriculum]     <span class="c-comment"># + BeetleStream v2 GPU stack</span></code></pre>
           </div>
         </div>
-        <div class="card">
-          <div class="card-ic" style="background:linear-gradient(155deg,#ffb703,#fb8500);"><i class="bi bi-translate"></i></div>
-          <h4>Multilingual priming</h4>
-          <p>RQ C — structural priming across multiple L1s, comparing curricula and directionality (L1→L2 vs. L2→L1).</p>
-          <div class="nb-badges">
-            <a class="nb-badge colab" href="https://colab.research.google.com/github/suchirsalhan/beetle-analyze/blob/main/notebooks/rq_c_multilingual_priming.ipynb" target="_blank" rel="noopener"><i class="bi bi-google"></i> Colab</a>
-            <a class="nb-badge gh" href="https://github.com/suchirsalhan/beetle-analyze/blob/main/notebooks/rq_c_multilingual_priming.ipynb" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
+        <div>
+          <h3 style="font-size:18px;">2 · Quickstart (one command)</h3>
+          <div class="code">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>beetle-data run --out-dir beetle_out</code></pre>
           </div>
+          <p style="font-size:14.5px;color:var(--muted);">Runs the full pipeline on the bundled toy corpus (synthetic Spanish + English) with zero external downloads, writing:</p>
+          <ul style="font-size:14px;color:var(--muted);margin:0;padding-left:20px;line-height:1.6;">
+            <li><span class="ic">beetle_out/tokenizer.json</span> — the trained BPE tokenizer</li>
+            <li><span class="ic">beetle_out/pretokenized/es-en_train_0000.parquet</span> — tokenized shards</li>
+            <li><span class="ic">beetle_out/stats.json</span> — token/block/vocab statistics</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reproduce toy artifact + pipeline steps -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-check2-square"></i></div>
+          <h3>Reproduce the toy artifact</h3>
+          <p>With the default config you should see exactly these deterministic numbers:</p>
+          <div class="spec-grid">
+            <div class="spec"><div class="k">vocab size</div><div class="v">468</div></div>
+            <div class="spec"><div class="k">total tokens</div><div class="v">9,621</div></div>
+            <div class="spec"><div class="k">es / en tokens</div><div class="v">4,899 / 4,722</div></div>
+            <div class="spec"><div class="k">blocks (seq_len 128)</div><div class="v">75</div></div>
+          </div>
+          <p style="font-size:14px;color:var(--muted);margin:14px 0 0;">The vocab is 468, not the requested 8000: the tiny corpus has fewer than 8000 learnable BPE merges, so training stops early — expected at toy scale. On a real corpus the vocab reaches the ceiling.</p>
         </div>
         <div class="card">
-          <div class="card-ic" style="background:linear-gradient(155deg,#ffb703,#fb8500);"><i class="bi bi-check2-square"></i></div>
-          <h4>BLiMP grammaticality</h4>
-          <p>Reproduce the human-scale BLiMP grammatical-judgement evaluations (P2/P3) for the Beetle suite.</p>
-          <div class="nb-badges">
-            <a class="nb-badge colab" href="https://colab.research.google.com/github/suchirsalhan/beetle-analyze/blob/main/notebooks/colab_p2_p3_blimp_humanscale_a100.ipynb" target="_blank" rel="noopener"><i class="bi bi-google"></i> Colab</a>
-            <a class="nb-badge gh" href="https://github.com/suchirsalhan/beetle-analyze/blob/main/notebooks/colab_p2_p3_blimp_humanscale_a100.ipynb" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-ic" style="background:linear-gradient(155deg,#ffb703,#fb8500);"><i class="bi bi-graph-down"></i></div>
-          <h4>FLORES sentence NLL</h4>
-          <p>Sentence-level NLL trajectories on parallel FLORES-200 devtest sentences for the 100M model variants.</p>
-          <div class="nb-badges">
-            <a class="nb-badge colab" href="https://colab.research.google.com/github/suchirsalhan/beetle-analyze/blob/main/notebooks/colab_flores_100m_variants_a100.ipynb" target="_blank" rel="noopener"><i class="bi bi-google"></i> Colab</a>
-            <a class="nb-badge gh" href="https://github.com/suchirsalhan/beetle-analyze/blob/main/notebooks/colab_flores_100m_variants_a100.ipynb" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-ic" style="background:linear-gradient(155deg,#ffb703,#fb8500);"><i class="bi bi-diagram-2"></i></div>
-          <h4>Interpretability</h4>
-          <p>Hierarchical / layerwise interpretability analyses from the paper’s learning-dynamics appendices.</p>
-          <div class="nb-badges">
-            <a class="nb-badge colab" href="https://colab.research.google.com/github/suchirsalhan/beetle-analyze/blob/main/notebooks/colab_emnlp_interp.ipynb" target="_blank" rel="noopener"><i class="bi bi-google"></i> Colab</a>
-            <a class="nb-badge gh" href="https://github.com/suchirsalhan/beetle-analyze/blob/main/notebooks/colab_emnlp_interp.ipynb" target="_blank" rel="noopener"><i class="bi bi-github"></i> Source</a>
+          <div class="card-ic"><i class="bi bi-diagram-2"></i></div>
+          <h3>Pipeline steps as commands</h3>
+          <p>The four core steps are also separate commands. Each falls back to the bundled toy corpus; point <span class="ic">--data-dir</span> at a folder of <span class="ic">&lt;lang&gt;.txt</span> files to use your own data.</p>
+          <div class="code" style="margin-bottom:0;">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>beetle-data build-corpus    --l1 es --out corpus.txt
+<span class="c-prompt">$ </span>beetle-data train-tokenizer --corpus corpus.txt --out tok.json --vocab-size 8000
+<span class="c-prompt">$ </span>beetle-data pretokenize     --tokenizer tok.json --corpus corpus.txt --out-dir shards --seq-len 128
+<span class="c-prompt">$ </span>beetle-data stats           shards</code></pre>
           </div>
         </div>
       </div>
-      <p style="margin-top:22px;color:var(--muted);font-size:15px;">Each notebook loads released checkpoints from the Hub and reproduces a figure or table from the paper — open it and run.</p>
+    </div>
+  </section>
+
+  <!-- Python API + full pipeline -->
+  <section class="section alt">
+    <div class="wrap">
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-code-slash"></i></div>
+          <h3>Python API</h3>
+          <p>The same four steps are available from Python. See <span class="ic">notebooks/quickstart.ipynb</span> for inspecting and decoding the tokenized output.</p>
+          <div class="code" style="margin-bottom:0;">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">python</span></div>
+<pre><code><span class="c-kw">from</span> beetle_data <span class="c-kw">import</span> iter_bilingual, train_tokenizer, pretokenize, corpus_stats
+
+tagged = <span class="c-kw">list</span>(iter_bilingual(<span class="c-str">"es"</span>, <span class="c-str">"en"</span>))      <span class="c-comment"># [(text, "L1"|"L2"), ...]</span>
+tok = train_tokenizer((t <span class="c-kw">for</span> t, _ <span class="c-kw">in</span> tagged), vocab_size=8000)
+stats = pretokenize(tagged, tok, out_dir=<span class="c-str">"pretokenized"</span>, seq_len=128, lang=<span class="c-str">"es-en"</span>)
+<span class="c-kw">print</span>(stats[<span class="c-str">"total_tokens"</span>], stats[<span class="c-str">"num_blocks"</span>])</code></pre>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-hdd-stack"></i></div>
+          <h3>The full pipeline, at real scale</h3>
+          <p>The production code streams raw corpora from Hugging Face and pretokenizes at billion-token scale (set <span class="ic">HF_TOKEN</span> first — no credentials are stored in the repo). Static mode runs three stages: benchmark index → stream + 13-gram decontaminate → pretokenize. BeetleStream v2 curriculum mode adds Stages A–D (teacher annotation, quality scoring, topic clustering, difficulty grading) and needs the GPU extra.</p>
+          <div class="code" style="margin-bottom:0;">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>python pipeline/run_pipeline.py          <span class="c-comment"># full static pipeline</span>
+<span class="c-prompt">$ </span>bash   scripts/launch_full_pipeline.sh    <span class="c-comment"># cluster launcher</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- beetle-analyze -->
+  <section class="section" id="beetle-analyze">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">beetle-analyze</span><h2>Analyse model evaluations</h2><p><span class="ic">beetle-analyze</span> is a minimal, reproducible toolkit for analysing language-model evaluation output via BLiMP-style minimal-pair accuracy. On top of the quickstart it ships a full research suite — CKA, probing, logit lens, sparse autoencoders (SAEs), MECO reading-time alignment, FLORES perplexity trajectories, and functional localization.</p></div>
+      <div class="grid cols-2">
+        <div>
+          <h3 style="font-size:18px;">1 · Install</h3>
+          <div class="code">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>git clone https://github.com/beetlelm/beetle-analyze
+<span class="c-prompt">$ </span>cd beetle-analyze
+<span class="c-prompt">$ </span>pip install -e .                 <span class="c-comment"># core toolkit (CPU)</span>
+<span class="c-prompt">$ </span>pip install -e .[eyetracking]    <span class="c-comment"># + reading-time extras</span></code></pre>
+          </div>
+          <p style="font-size:14.5px;color:var(--muted);margin-bottom:0;">Optional extras keep the heavy dependencies opt-in: <span class="ic">[stats]</span>, <span class="ic">[eyetracking]</span> (minicons / wordfreq), <span class="ic">[saes]</span>, <span class="ic">[brain]</span>.</p>
+        </div>
+        <div>
+          <h3 style="font-size:18px;">2 · Quickstart (BLiMP accuracy)</h3>
+          <div class="code">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>beetle-analyze blimp
+<span class="c-comment"># overall minimal-pair accuracy: 0.6000</span>
+<span class="c-prompt">$ </span>beetle-analyze blimp --scoring mean
+<span class="c-comment"># 0.80</span></code></pre>
+          </div>
+          <p style="font-size:14.5px;color:var(--muted);margin-bottom:0;">Runs on the bundled toy data with zero downloads. Point <span class="ic">--input</span> at your own evaluation output and write results with <span class="ic">--json-out</span> / <span class="ic">--plot-out</span>; add <span class="ic">--bootstrap</span> for confidence intervals.</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:20px;">
+        <div class="card-ic"><i class="bi bi-bar-chart-line"></i></div>
+        <h3>Run the full research suite</h3>
+        <p>The master runner evaluates whole model families across languages, and the analyses are also exposed as console scripts (<span class="ic">beetle-cka</span>, <span class="ic">beetle-probe</span>, <span class="ic">beetle-dev-trajectory</span>).</p>
+        <div class="code" style="margin-bottom:0;">
+          <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>python analyze/run.py --all --family humanscale --langs deu nld zho eng
+<span class="c-prompt">$ </span>python analyze/run.py --all --family fineweb --langs deu nld</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- beetle-explorer -->
+  <section class="section alt" id="beetle-explorer">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">beetle-explorer</span><h2>Explore models with no code</h2><p><span class="ic">beetle-explorer</span> lets you load and play with Beetle language models in Colab — no coding required. It is the non-technical companion to the training framework: open one notebook, pick a collection, language, curriculum, seed and checkpoint, move the sliders, and generate text.</p></div>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-rocket-takeoff"></i></div>
+          <h3>Open the notebook</h3>
+          <p>Everything lives in a single notebook — <span class="ic">notebooks/Beetle_Model_Explorer.ipynb</span>. Open it in Colab, run the setup cell, and choose a model from the dropdowns. It needs only <span class="ic">torch</span>, <span class="ic">transformers</span>, <span class="ic">huggingface_hub</span> and <span class="ic">ipywidgets</span> — no training stack.</p>
+          <div class="code" style="margin-bottom:0;">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">python</span></div>
+<pre><code><span class="c-kw">from</span> transformers <span class="c-kw">import</span> AutoModelForCausalLM
+model = AutoModelForCausalLM.from_pretrained(
+    repo, revision=<span class="c-str">"step-N"</span>, trust_remote_code=<span class="c-kw">True</span>)</code></pre>
+          </div>
+          <p style="margin-top:14px;margin-bottom:0;"><a class="btn btn-primary btn-sm" href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener"><i class="bi bi-github"></i> Open beetle-explorer</a></p>
+        </div>
+        <div class="card" style="border-left:4px solid #fb8500;background:#fff8ef;">
+          <h4 style="margin-top:0;"><i class="bi bi-exclamation-triangle" style="color:#fb8500;"></i> &nbsp;Which collection to pick</h4>
+          <p style="margin-bottom:8px;">When choosing a collection, the <strong>only genuine 24-billion-token models</strong> are <span class="ic">Beetle-FineWeb-24B-4</span> and <span class="ic">Beetle-FineWeb-24B-5</span>. Because of a token-budget drift bug, some earlier collections were cut short:</p>
+          <ul style="font-size:14px;color:var(--body);margin:0 0 8px;padding-left:20px;line-height:1.6;">
+            <li>Earlier "24B" collections (<span class="ic">Beetle-FineWeb2-24B</span>, <span class="ic">Beetle-FineWeb3-24B</span>) reached only ~3B tokens.</li>
+            <li>The earlier "2B" collection (<span class="ic">Beetle-FineWeb-2B</span>) reached only ~300M tokens.</li>
+          </ul>
+          <p style="margin-bottom:0;">For full-scale work, start with the final release. See the <a href="https://beetlelm.github.io/models.html" target="_blank" rel="noopener">models page</a> for the full explanation.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Evaluation resources -->
-  <section class="section alt">
+  <section class="section">
     <div class="wrap">
       <div class="section-head"><span class="eyebrow">Evaluation data</span><h2>Benchmarks &amp; resources</h2></div>
       <div class="link-cards">
@@ -209,46 +333,40 @@ reading_time_fit(m, tok, corpus="MECO-L2")</code></pre></div>
         <a class="link-card" href="https://aclanthology.org/2025.emnlp-demos.22/" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i><div><div class="t">EMNLP 2025 (demo)</div><div class="s">2025.emnlp-demos.22</div></div></a>
         <a class="link-card" href="https://aclanthology.org/2026.cdl-1.15/" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i><div><div class="t">CDL 2026</div><div class="s">2026.cdl-1.15</div></div></a>
       </div>
-    </div>
-  </section>
-
-  <!-- Ecosystem -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Ecosystem</span><h2>Four repositories, end to end</h2></div>
-      <div class="grid cols-2">
-        <a class="card link" href="https://github.com/beetlelm/beetlelm" target="_blank" rel="noopener">
-          <div class="card-ic"><i class="bi bi-cpu"></i></div>
-          <h4>beetlelm</h4>
-          <p>The core framework behind the released suite: the architecture zoo (PicoDecoder backbone), the modular tokenizer, the B1–B5 exposure curricula, and HuggingFace-compatible checkpoints.</p>
-          <span class="more">Open repository <i class="bi bi-arrow-right"></i></span>
-        </a>
-        <a class="card link" href="https://github.com/beetlelm/beetle-data" target="_blank" rel="noopener">
-          <div class="card-ic"><i class="bi bi-database"></i></div>
-          <h4>beetle-data</h4>
-          <p>A minimal, reproducible bilingual data-preparation pipeline: build a corpus, train a BPE tokenizer, pretokenize into shards, and report stats — for small language models.</p>
-          <span class="more">Open repository <i class="bi bi-arrow-right"></i></span>
-        </a>
-        <a class="card link" href="https://github.com/beetlelm/beetle-analyze" target="_blank" rel="noopener">
-          <div class="card-ic"><i class="bi bi-bar-chart-line"></i></div>
-          <h4>beetle-analyze</h4>
-          <p>A minimal, reproducible toolkit for analysing language-model evaluation output via BLiMP-style minimal-pair accuracy.</p>
-          <span class="more">Open repository <i class="bi bi-arrow-right"></i></span>
-        </a>
-        <a class="card link" href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">
-          <div class="card-ic"><i class="bi bi-rocket-takeoff"></i></div>
-          <h4>beetle-explorer</h4>
-          <p>Load and play with Beetle language models in Colab — no coding required. A non-technical companion to the beetlelm training framework.</p>
-          <span class="more">Open repository <i class="bi bi-arrow-right"></i></span>
-        </a>
+      <div class="grid cols-2" style="margin-top:20px;">
+        <div class="card">
+          <h4>MECO — multilingual reading times</h4>
+          <p>The Multilingual Eye-movement COrpus provides eye-tracking reading times for first- and second-language readers across many languages. Beetle uses it to test how well a model's surprisal predicts the time human learners actually spend reading each word.</p>
+          <p class="inline-links"><a href="https://meco-read.com/" target="_blank" rel="noopener">meco-read.com <i class="bi bi-box-arrow-up-right"></i></a></p>
+        </div>
+        <div class="card">
+          <h4>BLiSS — learner minimal pairs</h4>
+          <p>BLiSS is a benchmark of learner-style minimal pairs for grammaticality and acceptability discrimination. Beetle uses it to measure whether models tell acceptable from unacceptable sentences in the way second-language learners do.</p>
+          <p class="inline-links"><a href="https://huggingface.co/datasets/ALTACambridge/BLiSS" target="_blank" rel="noopener">ALTACambridge/BLiSS <i class="bi bi-box-arrow-up-right"></i></a></p>
+        </div>
+        <div class="card">
+          <h4>BabyLM 2025 <span class="ic">2025.babylm-main.13</span></h4>
+          <p>Related work from the Beetle authors on sample-efficient, developmentally-plausible language modelling. It motivates Beetle's controlled, small-scale training setup and the focus on how models learn under limited data.</p>
+          <p class="inline-links"><a href="https://aclanthology.org/2025.babylm-main.13/" target="_blank" rel="noopener">aclanthology.org <i class="bi bi-box-arrow-up-right"></i></a></p>
+        </div>
+        <div class="card">
+          <h4>EMNLP 2025 demo <span class="ic">2025.emnlp-demos.22</span></h4>
+          <p>A system-demonstration paper for the tooling underpinning Beetle's controlled training and evaluation. It describes the infrastructure that makes reproducible, comparable model families practical.</p>
+          <p class="inline-links"><a href="https://aclanthology.org/2025.emnlp-demos.22/" target="_blank" rel="noopener">aclanthology.org <i class="bi bi-box-arrow-up-right"></i></a></p>
+        </div>
+        <div class="card">
+          <h4>CDL 2026 <span class="ic">2026.cdl-1.15</span></h4>
+          <p>Related work on cognitively-motivated and developmental language modelling. It connects model learning dynamics to patterns observed in human language acquisition — the broader research programme Beetle contributes to.</p>
+          <p class="inline-links"><a href="https://aclanthology.org/2026.cdl-1.15/" target="_blank" rel="noopener">aclanthology.org <i class="bi bi-box-arrow-up-right"></i></a></p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Get involved -->
-  <section class="section alt">
+  <section class="section">
     <div class="wrap narrow center">
-      <div class="section-head center"><span class="eyebrow">Get involved</span><h2>Open source &amp; welcoming</h2><p>Beetle welcomes issues, pull requests and questions.</p></div>
+      <div class="section-head center"><span class="eyebrow">Get involved</span><h2>Open source &amp; welcoming</h2><p>Beetle welcomes issues, pull requests and questions. Everything is released under Apache-2.0.</p></div>
       <p style="font-family:var(--mono-font);font-size:16px;"><i class="bi bi-envelope" style="color:var(--accent);"></i> <a href="mailto:sas245@cam.ac.uk">sas245@cam.ac.uk</a></p>
       <div class="cta-row" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px;">
         <a class="btn btn-primary" href="https://github.com/beetlelm" target="_blank" rel="noopener"><i class="bi bi-github"></i> github.com/beetlelm</a>
