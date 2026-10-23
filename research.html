@@ -22,11 +22,10 @@
   <style>
     .rq-label { font-family: var(--head-font); font-weight: 700; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #9c99bd; margin: 16px 0 6px; }
     .rq-list { margin: 0; padding-left: 20px; }
-    .rq-list li { font-size: 14.5px; color: var(--body); margin: 5px 0; line-height: 1.5; }
-    .card .q { font-weight: 700; color: var(--ink); font-size: 15.5px; margin: 0 0 12px; }
-    .num-ic { font-family: var(--head-font); font-weight: 700; font-size: 20px; }
+    .rq-list li { font-size: 14.5px; color: var(--body); margin: 7px 0; line-height: 1.5; }
     .inline-links { font-size: 15px; color: var(--muted); margin-top: 18px; }
     .inline-links a { font-weight: 600; }
+    .counts-line { font-family: var(--head-font); font-weight: 600; color: var(--accent); font-size: 15px; margin-top: 4px; margin-bottom: 18px; }
   </style>
 </head>
 
@@ -40,8 +39,7 @@
         <a href="index.html">Home</a>
         <a href="research.html" class="active">Research</a>
         <a href="models.html">Models &amp; Data</a>
-        <a href="framework.html">Framework</a>
-        <a href="docs.html">Docs</a>
+        <a href="docs.html">Framework</a>
         <a class="nav-gh" href="https://github.com/beetlelm" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
       </nav>
     </div>
@@ -51,48 +49,49 @@
     <div class="wrap">
       <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Research</span>
       <h1>Don't just study what AI can do. Study how it learns.</h1>
-      <p><strong>🪲 Beetle is an open-source playground for experimenting with how language models learn.</strong></p>
+      <p><strong>Our open-source playground for experimenting with how AI learns.</strong></p>
     </div>
   </section>
 
   <!-- Intro -->
   <section class="section" style="padding-top:36px;">
     <div class="wrap narrow">
-      <p class="lead">What happens when a model learns two languages instead of one? When it meets a new language later in training? When it learns from more data? With 330 models, 21 first languages, five learning setups and thousands of checkpoints, Beetle lets you investigate these questions for yourself.</p>
+      <p class="counts-line">21 languages · 330 models · thousands of training checkpoints</p>
+      <p class="lead">Beetle brings together open model weights, training checkpoints, datasets, tokenisers, a training framework and analysis tools, giving you the resources to go beyond evaluating finished models and start investigating how they develop.</p>
+      <p class="lead"><strong>Stop treating AI models as black boxes. Start exploring how they develop, and help us build a better scientific understanding of language models for safer, fairer AI.</strong></p>
       <p class="inline-links"><a href="models.html">Explore models</a> · <a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Try Colab</a> · <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">Read the paper</a></p>
     </div>
   </section>
 
-  <!-- Who we are building Beetle for -->
+  <!-- What can you do -->
   <section class="section alt">
     <div class="wrap">
-      <div class="section-head center"><span class="eyebrow">Who it's for</span><h2>We're building Beetle for</h2></div>
+      <div class="section-head center">
+        <span class="eyebrow">For everyone</span>
+        <h2>What can YOU do with Beetle?</h2>
+      </div>
+      <p class="lead" style="text-align:center;max-width:760px;margin:0 auto 26px;">Whether you are interested in building small language models, AI interpretability, building better AI systems for more languages, or researching how humans learn language, the Beetle model suite and our open-source training, data and analysis tools let you ask cool questions.</p>
       <div class="grid cols-2" style="align-items:start;">
 
         <div class="card">
           <img src="assets/gif/beetle_gif1_light.gif" alt="Beetle, built for AI researchers, multilingual NLP and model builders." style="width:100%;max-width:440px;border-radius:12px;margin:0 auto 14px;display:block;">
-          <h3>AI researchers, multilingual NLP &amp; model builders</h3>
-          <p>Use the open models and resources as a starting point for comparing training strategies and testing hypotheses, or train your own models and ask your own questions.</p>
+          <h3>For AI enthusiasts, researchers &amp; model builders</h3>
           <div class="rq-label">What you can do with Beetle</div>
           <ul class="rq-list">
-            <li><strong>Study learning dynamics.</strong> Analyse how capabilities develop over training, in the spirit of shared tasks like Parameter Golf, BabyLM and the NanoGPT Speedrun.</li>
-            <li><strong>Analyse data mixtures.</strong> What happens if a model learns two languages from the start, learns them sequentially, or encounters its second language much later?</li>
-            <li><strong>Developmental interpretability.</strong> Use the Beetle checkpoints to study how models learn and how capabilities form during training.</li>
-            <li><strong>Multilinguality.</strong> Beetle covers 21 first languages, including script-independent and typologically diverse settings such as Finnish, Basque, Hindi, Japanese, Korean, Turkish and Chinese, a testbed for cross-lingual transfer.</li>
-            <li><strong>Data scale and quality.</strong> Vary language-exposure curricula and training scales (100M, 2B and 24B tokens) to investigate which training conditions drive observed differences.</li>
-            <li><strong>Infrastructure.</strong> Reuse the Beetle tooling for tokenisation and memorisation experiments.</li>
+            <li><strong>AI enthusiasts.</strong> Get hands-on with open models and explore questions that go beyond benchmark scores.</li>
+            <li><strong>AI researchers.</strong> Investigate model internals: tokenisation, memorisation, representations and interpretability. Learn when capabilities emerge during training and test hypotheses about learning dynamics, exploring what changes as models see more data (100M, 2B and 24B training tokens).</li>
+            <li><strong>Multilingual NLP researchers.</strong> A suite of monolingual and bilingual models with checkpoints, from Finnish and Basque to Hindi, Japanese and Korean, for studying how multilingual transfer happens.</li>
+            <li><strong>Model builders.</strong> Train your own small language models, experiment with different data mixtures and language-exposure curricula, and see what happens when you change how a model learns.</li>
           </ul>
         </div>
 
         <div class="card">
           <img src="assets/gif/beetle_gif2_light.gif" alt="Beetle, built for cognitive scientists, applied AI researchers and anyone curious about AI." style="width:100%;max-width:300px;border-radius:12px;margin:0 auto 14px;display:block;">
-          <h3>Cognitive scientists &amp; the simply curious</h3>
-          <p>You don't need to build a giant AI to explore the science. Beetle is a way in for cognitive scientists, applied researchers, and anyone curious about how AI learns language.</p>
+          <h3>Beetle isn't just for AI engineers</h3>
           <div class="rq-label">What you can do with Beetle</div>
           <ul class="rq-list">
-            <li><strong>Non-technical exploration.</strong> Explore how AI learns languages without training anything yourself: load a model in the browser and watch it in action.</li>
-            <li><strong>Cognitive modelling.</strong> Use Beetle to study how well model predictions align with human cognitive data, from reading times to grammaticality judgements.</li>
-            <li><strong>Connect computation and cognition.</strong> Compare model learning trajectories with patterns observed in human language acquisition and bilingual processing.</li>
+            <li><strong>Compare AI with human learning.</strong> Compare the behaviour of language models with human cognitive data.</li>
+            <li><strong>Learn the science behind AI models.</strong> Use Beetle for hands-on exploration of the science behind language models: analyse our models and learn how to train your own.</li>
           </ul>
           <p class="inline-links"><a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Explore the models in Colab, no coding required →</a></p>
         </div>
@@ -100,41 +99,13 @@
     </div>
   </section>
 
-  <!-- Research directions -->
+  <!-- Closing -->
   <section class="section">
-    <div class="wrap">
-      <div class="section-head center"><span class="eyebrow">Research directions</span><h2>Questions Beetle makes tractable</h2></div>
-      <div class="grid cols-2">
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-people"></i></div>
-          <h3>Language learning and human cognition</h3>
-          <p>How do models' learning trajectories compare with patterns observed in human language acquisition and processing? Beetle provides a setting for investigating relationships between computational learning and human linguistic behaviour.</p>
-        </div>
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-translate"></i></div>
-          <h3>Multilingual learning and cross-lingual transfer</h3>
-          <p>How does experience with one language shape a model's ability to learn or use another? Explore how language background, exposure, and learning order influence cross-lingual generalisation.</p>
-        </div>
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-diagram-3"></i></div>
-          <h3>The development of linguistic representations</h3>
-          <p>How do internal representations emerge and change during training? Beetle's checkpoints make it possible to investigate how models develop linguistic knowledge, and how these changes relate to their behaviour.</p>
-        </div>
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-arrow-repeat"></i></div>
-          <h3>Continual learning and interference</h3>
-          <p>When does learning something new reinforce, compete with, or disrupt existing knowledge? Beetle offers a setting for studying how models retain and adapt linguistic knowledge as their experience changes.</p>
-        </div>
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-alphabet"></i></div>
-          <h3>Tokenisation and the structure of language</h3>
-          <p>How does the way text is represented influence what models learn? Researchers can investigate the relationship between tokenisation, linguistic structure, learning efficiency, and generalisation.</p>
-        </div>
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-bar-chart-steps"></i></div>
-          <h3>Learning dynamics, data, and scale</h3>
-          <p>Which aspects of a model's learning experience matter most? Compare models trained with different amounts of data and different learning conditions to investigate how training choices shape the emergence of linguistic capabilities.</p>
-        </div>
+    <div class="wrap narrow center">
+      <p class="lead">With 330 monolingual and bilingual models, spanning 21 first languages, five language-exposure curricula, and approximately 30 checkpoints per model, Beetle gives researchers an unprecedentedly controlled way to investigate how models acquire and process multiple languages. Our open-source Beetle Framework brings together open model weights, training checkpoints, data, tokenisers and analysis tools in one research suite.</p>
+      <div class="cta-row" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px;">
+        <a class="btn btn-primary" href="models.html"><i class="bi bi-boxes"></i> Explore the models</a>
+        <a class="btn btn-outline" href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener"><i class="bi bi-file-earmark-text"></i> Read the paper</a>
       </div>
     </div>
   </section>
@@ -146,8 +117,7 @@
       <nav class="f-nav">
         <a href="research.html">Research</a>
         <a href="models.html">Models &amp; Data</a>
-        <a href="framework.html">Framework</a>
-        <a href="docs.html">Docs</a>
+        <a href="docs.html">Framework</a>
         <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">arXiv</a>
         <a href="https://github.com/beetlelm" target="_blank" rel="noopener">GitHub</a>
       </nav>

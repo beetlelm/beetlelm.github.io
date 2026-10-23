@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guides · beetle</title>
+  <title>Framework · beetle</title>
   <meta name="description" content="Guided tutorials for the Beetle toolkit: train small bilingual language models with beetlelm, prepare training data with beetle-data, and analyse evaluations with beetle-analyze. Each guide runs from a small local example up to the real research configs.">
 
   <link href="favicon.ico" rel="icon" sizes="any">
@@ -71,6 +71,17 @@
     .res-list li { padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
     .res-list li:last-child { border-bottom: 0; }
     .res-list a { font-weight: 600; }
+
+    .fw-intro .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .fw-intro h1 { margin: 6px 0 6px; }
+    .fw-intro .fw-headline { font-family: var(--head-font); font-weight: 700; font-size: 20px; color: var(--accent-dark); margin: 0 0 14px; }
+    .fw-intro p { max-width: 760px; color: var(--body); line-height: 1.62; font-size: 15.5px; margin: 0 0 12px; }
+    .fw-modules { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 16px; margin: 22px 0 4px; max-width: 1140px; }
+    .fw-mod { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+    .fw-mod h3 { font-family: var(--head-font); font-weight: 700; font-size: 15px; margin: 0 0 6px; color: var(--ink); }
+    .fw-mod h3 a { color: var(--accent-dark); text-decoration: none; }
+    .fw-mod p { font-size: 13.5px; color: var(--body); line-height: 1.55; margin: 0; max-width: none; }
+    .fw-mod .lk { font-weight: 600; white-space: nowrap; }
   </style>
 </head>
 
@@ -84,18 +95,38 @@
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
         <a href="models.html">Models &amp; Data</a>
-        <a href="framework.html">Framework</a>
-        <a href="docs.html" class="active">Docs</a>
+        <a href="docs.html" class="active">Framework</a>
         <a class="nav-gh" href="https://github.com/beetlelm" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
       </nav>
     </div>
   </header>
 
-  <section class="guide-head">
+  <section class="guide-head fw-intro" id="framework">
     <div class="wrap">
-      <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Guides</span>
-      <h1>Build, train and analyse with Beetle</h1>
-      <p>Three short guides take you from a small local example to the real research configs. Train a model with <span class="ic">beetlelm</span>, prepare data with <span class="ic">beetle-data</span>, and analyse evaluations with <span class="ic">beetle-analyze</span>. You can also open a model in Colab with no setup.</p>
+      <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Framework</span>
+      <h1>The Beetle Framework</h1>
+      <p class="fw-headline">Change how a model learns. Discover what changes.</p>
+      <p>What happens when a model learns two languages at once instead of one after the other? When does more training data help? How does tokenisation shape what a model learns? Beetle lets you design controlled experiments to answer these questions: change one factor of how a model is trained, hold the rest fixed, and compare the results.</p>
+      <p>Beetle is built as four small, independent libraries rather than one monolith. A monolith entangles data, training and evaluation, so you can never be sure which change caused a difference in behaviour. Splitting the pipeline into focused tools keeps every stage inspectable, swappable and forkable, and lets an experiment vary exactly one thing at a time.</p>
+      <p>Each library does one job well, reads in an afternoon, and is useful on its own. Use them together for the full controlled-pretraining loop, or take a single component into your own project. The guides below run each one from a small local example up to the real research configs.</p>
+      <div class="fw-modules">
+        <div class="fw-mod">
+          <h3><a href="#beetlelm">beetlelm</a> · train</h3>
+          <p>The PicoDecoder backbone and an architecture zoo (BGPT, MoE, state-space and more), modular BPE / Unigram / SuperBPE tokenisation with equal compression, the B1–B5 exposure curricula, fifteen continual-learning strategies, and checkpoints that save gradients and activations at every step. <a class="lk" href="https://github.com/beetlelm/beetlelm" target="_blank" rel="noopener">GitHub</a> · <a class="lk" href="#beetlelm">Guide</a></p>
+        </div>
+        <div class="fw-mod">
+          <h3><a href="#beetle-data">beetle-data</a> · prepare</h3>
+          <p>Turn raw text into training-ready shards: build a corpus, train an equal-compression tokeniser, decontaminate against the benchmarks, and pretokenise into Arrow or Parquet. The same pipeline that produced the released data. <a class="lk" href="https://github.com/beetlelm/beetle-data" target="_blank" rel="noopener">GitHub</a> · <a class="lk" href="#beetle-data">Guide</a></p>
+        </div>
+        <div class="fw-mod">
+          <h3><a href="#beetle-analyze">beetle-analyze</a> · evaluate</h3>
+          <p>Score what a model learned: BLiMP minimal pairs, MECO reading-time alignment, BLiSS learner grammaticality, FLORES-200 NLL, and cross-lingual priming. One command reproduces the paper's results. <a class="lk" href="https://github.com/beetlelm/beetle-analyze" target="_blank" rel="noopener">GitHub</a> · <a class="lk" href="#beetle-analyze">Guide</a></p>
+        </div>
+        <div class="fw-mod">
+          <h3><a href="#beetle-explorer">beetle-explorer</a> · explore</h3>
+          <p>Try any released checkpoint in Colab with no code: pick a collection, language, curriculum and training step, then generate text. The non-technical way in. <a class="lk" href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">GitHub</a> · <a class="lk" href="#beetle-explorer">Guide</a></p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -104,12 +135,16 @@
     <!-- sidebar -->
     <aside class="guide-nav" aria-label="Guide contents">
       <div class="g-group">
+        <a class="g-top" href="#framework">The framework</a>
+      </div>
+      <div class="g-group">
         <a class="g-top" href="#beetlelm">Training models with beetlelm</a>
         <a class="g-sub" href="#beetlelm">Overview</a>
         <a class="g-sub" href="#beetlelm-code">Code structure</a>
         <a class="g-sub" href="#beetlelm-setup">Setup</a>
         <a class="g-sub" href="#beetlelm-start">Getting started</a>
         <a class="g-sub" href="#beetlelm-config">Configuration</a>
+        <a class="g-sub" href="#beetlelm-curricula">Exposure curricula (B1–B5)</a>
       </div>
       <div class="g-group">
         <a class="g-top" href="#beetle-data">Preparing data with beetle-data</a>
@@ -251,6 +286,54 @@ training:
             <h4>A note on the 24B and 2B collections</h4>
             <p>An effective-batch bug meant some early runs consumed a fraction of their intended tokens. Only <strong>Beetle-FineWeb-24B-4</strong> and <strong>Beetle-FineWeb-24B-5</strong> completed the full 91,552-step, 24B-token budget. Earlier "24B" collections reached about 3B tokens, and the earlier "2B" collection about 300M. Use the two final collections for full-scale work. The <a href="models.html">models page</a> explains which repository is which.</p>
           </div>
+        </section>
+
+        <section class="g-sec" id="beetlelm-curricula" data-spy>
+          <h3>Exposure curricula (B1 to B5)</h3>
+          <p>The point of Beetle is to change <em>when</em> and <em>how much</em> a model sees its second language. That schedule is a single field, <span class="ic">data_mix</span>, in the data block of a config. The language streams are pretokenised datasets from <span class="ic">beetle-data</span>; the curriculum decides how they are mixed across training.</p>
+          <div class="code">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">configs/fineweb_bilingual/core/B3/train_deu_L1-eng_L2.yaml</span></div>
+<pre><code>data:
+  <span class="c-str">data_mix</span>: B3                          <span class="c-comment"># the exposure curriculum</span>
+  <span class="c-str">lang_sources</span>: [Beetle-Data/de-28B]        <span class="c-comment"># L1 stream</span>
+  <span class="c-str">l2_streams</span>:   [Beetle-Data/en-for-de-28B]  <span class="c-comment"># L2 (English) stream</span>
+  <span class="c-str">pretokenized</span>: true</code></pre>
+          </div>
+          <p>The five curricula differ in when the second language starts, the final L1:L2 ratio, and how the mixture changes over training.</p>
+          <table class="g-table">
+            <thead><tr><th>Curriculum</th><th>L2 onset</th><th>Shape</th><th>L2 share</th></tr></thead>
+            <tbody>
+              <tr><td>B1 Balanced</td><td>step 0</td><td>constant 50:50</td><td>50%</td></tr>
+              <tr><td>B2 Simultaneous</td><td>30%</td><td>sigmoid onset, 50:50 finish</td><td>~25%</td></tr>
+              <tr><td>B3 Sequential</td><td>~33%</td><td>sigmoid to L2-dominant</td><td>~33.5%</td></tr>
+              <tr><td>B4 Episodic</td><td>step 0</td><td>available throughout, in bursts</td><td>20% (80:20)</td></tr>
+              <tr><td>B5 Late</td><td>50%</td><td>late sigmoid to L2-dominant</td><td>~10%</td></tr>
+            </tbody>
+          </table>
+          <h4>Define a new curriculum</h4>
+          <p>A named curriculum is resolved by <span class="ic">DataMixConfig</span> in <span class="ic">src/beetlelm/bilingual/</span>. Internally every schedule is a sequence of phases over normalised training progress t in [0, 1]: each phase fixes a per-language sampling weight for a span of training. To define your own, give <span class="ic">data_mix</span> an explicit phase list instead of a named preset.</p>
+          <div class="code">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">a custom curriculum</span></div>
+<pre><code>data:
+  <span class="c-str">lang_sources</span>: [Beetle-Data/de-28B]
+  <span class="c-str">l2_streams</span>:   [Beetle-Data/en-for-de-28B]
+  <span class="c-str">data_mix</span>:
+    <span class="c-str">phases</span>:                       <span class="c-comment"># weights are [L1, L2] and sum to 1</span>
+      - {start: 0.0, end: 0.4, weights: [1.0, 0.0]}   <span class="c-comment"># L1 only</span>
+      - {start: 0.4, end: 0.7, weights: [0.5, 0.5]}   <span class="c-comment"># ramp in L2</span>
+      - {start: 0.7, end: 1.0, weights: [0.3, 0.7]}   <span class="c-comment"># L2-dominant</span></code></pre>
+          </div>
+          <p>Phase boundaries double as event markers: in continual-learning runs they trigger an EWC snapshot. The same phase form extends to more than two languages for trilingual and multilingual mixtures.</p>
+          <h4>Launch a training sweep</h4>
+          <p>A controlled study varies one factor at a time across many runs, so Beetle generates configs programmatically and submits them in bulk. <span class="ic">configs/generate_p1_sweep.py</span> writes a whole tree of YAMLs (per curriculum, per language pair, per strategy), and the launchers under <span class="ic">script/launch/</span> submit them to a cluster with crash-resilient resume.</p>
+          <div class="code" style="margin-bottom:0;">
+            <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">bash</span></div>
+<pre><code><span class="c-prompt">$ </span>python configs/generate_p1_sweep.py          <span class="c-comment"># write the config tree</span>
+<span class="c-prompt">$ </span>LANGS=<span class="c-str">"deu nld zho"</span> TIERS=<span class="c-str">"B1 B2 B3"</span> \
+      bash script/launch/launch_fineweb_24b_b1_b3_sweep.sh
+<span class="c-prompt">$ </span>bash script/launch/launch_multilang_b1b5_sweep.sh   <span class="c-comment"># all curricula, many languages</span></code></pre>
+          </div>
+          <p>Each launcher takes <span class="ic">LANGS</span> and <span class="ic">TIERS</span> (the curricula) as environment variables and skips runs that are already finished, so a sweep can be stopped and resumed.</p>
         </section>
       </div>
 
@@ -459,8 +542,7 @@ model = AutoModelForCausalLM.from_pretrained(repo, revision=<span class="c-str">
       <nav class="f-nav">
         <a href="research.html">Research</a>
         <a href="models.html">Models &amp; Data</a>
-        <a href="framework.html">Framework</a>
-        <a href="docs.html">Docs</a>
+        <a href="docs.html">Framework</a>
         <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">arXiv</a>
         <a href="https://github.com/beetlelm" target="_blank" rel="noopener">GitHub</a>
       </nav>
