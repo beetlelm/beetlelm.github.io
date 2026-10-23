@@ -133,24 +133,25 @@
   <section class="page-head">
     <div class="wrap">
       <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Models &amp; Data</span>
-      <h1>Choose models for your experiment</h1>
-      <p>You often need several models at once, to compare training stages, data budgets, languages or behaviour. Pick the models you need, tick them, and copy ready-to-run code. Start from a research question below, or filter the full catalogue directly.</p>
-      <p class="counts-line">330 open models · thousands of checkpoints · 21 first languages <span>· 100M / 2B / 24B tokens</span></p>
+      <h1>Find the right models for your experiment</h1>
+      <p>Want to understand how AI learns, compare models trained on different languages, or investigate how a model's behaviour changes during training? Beetle gives you open models, training checkpoints, datasets and tokenisers to explore these questions yourself.</p>
+      <p><strong>Start with a research question below, or browse the full catalogue.</strong> Select the models you need and copy ready-to-run code to start analysing them in Colab.</p>
+      <p class="counts-line">330 open models · thousands of checkpoints · 21 first languages <span>· three training scales</span></p>
     </div>
   </section>
 
   <!-- Model families -->
   <section class="section">
     <div class="wrap narrow">
-      <div class="section-head"><span class="eyebrow">Collections</span><h2>Model collections</h2></div>
+      <div class="section-head"><span class="eyebrow">Collections</span><h2>Model collections</h2><p>Choose a collection based on what you want to investigate.</p></div>
       <ul class="clist">
-        <li><b>Beetle-FineWeb-24B-4 / -24B-5</b> <span class="tag-final">Final release</span> &nbsp;The only genuine 24B-token models (123 repos): all B1 to B5 curricula, monolingual baselines and matched 2B companions. <button class="lnk" data-preset='{"resource":"model","final":true}'>Browse</button> · <a href="https://huggingface.co/Beetle-FineWeb-24B-4" target="_blank" rel="noopener">24B-4</a> · <a href="https://huggingface.co/Beetle-FineWeb-24B-5" target="_blank" rel="noopener">24B-5</a></li>
-        <li><b>Beetle-FineWeb-100M</b> &nbsp;100M-token FineWeb models across many first languages. <button class="lnk" data-preset='{"resource":"model","ds":["FineWeb"],"scale":["100M"]}'>Browse</button></li>
-        <li><b>Beetle-FineWeb-2B</b> <span class="tag-warn">~300M actual</span> &nbsp;Earlier "2B" runs, cut short to ~300M tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb-2B"}'>Browse</button></li>
-        <li><b>Beetle-FineWeb2-24B</b> <span class="tag-warn">~3B actual</span> &nbsp;Earlier "24B" bilingual experiments, cut short to ~3B tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb2-24B"}'>Browse</button></li>
-        <li><b>Beetle-FineWeb3-24B</b> <span class="tag-warn">~3B actual</span> &nbsp;Earlier "24B" monolingual baselines, cut short to ~3B tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb3-24B"}'>Browse</button></li>
-        <li><b>Beetle-HumanScale</b> &nbsp;Human-scale models, data and tokenisers for cognitively motivated experiments. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-HumanScale"}'>Browse</button></li>
-        <li><b>Beetle-Data</b> &nbsp;The full data and tokeniser catalogue: BabyBabel corpora, bilingual datasets, BPE tokenisers and shards. <button class="lnk" data-preset='{"resource":"all","org":"Beetle-Data"}'>Browse</button> · <a href="https://huggingface.co/Beetle-Data" target="_blank" rel="noopener">HF</a></li>
+        <li><b><a href="https://huggingface.co/Beetle-FineWeb-24B-4" target="_blank" rel="noopener">Beetle-FineWeb-24B-4</a> and <a href="https://huggingface.co/Beetle-FineWeb-24B-5" target="_blank" rel="noopener">Beetle-FineWeb-24B-5</a></b> <span class="tag-final">Final release</span> &nbsp;The complete 24-billion-token models: all five bilingual learning setups (B1 to B5), monolingual baselines and matched 2-billion-token models. Start here for experiments that need the full training budget. <button class="lnk" data-preset='{"resource":"model","final":true}'>Browse collection</button></li>
+        <li><b>Beetle-FineWeb-100M</b> &nbsp;Models trained on 100 million tokens of web text in different first languages. Ideal for smaller-scale experiments and comparisons of early learning. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb-100M"}'>Browse collection</button></li>
+        <li><b>Beetle-FineWeb-2B</b> &nbsp;Models trained on approximately 300 million tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb-2B"}'>Browse collection</button></li>
+        <li><b>Beetle-FineWeb2-24B</b> &nbsp;Bilingual models trained on approximately 3 billion tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb2-24B"}'>Browse collection</button></li>
+        <li><b>Beetle-FineWeb3-24B</b> &nbsp;Monolingual baseline models trained on approximately 3 billion tokens. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-FineWeb3-24B"}'>Browse collection</button></li>
+        <li><b>Beetle-HumanScale</b> &nbsp;Smaller models, datasets and tokenisers designed for experiments inspired by how humans learn language. <button class="lnk" data-preset='{"resource":"model","org":"Beetle-HumanScale"}'>Browse collection</button></li>
+        <li><b><a href="https://huggingface.co/Beetle-Data" target="_blank" rel="noopener">Beetle-Data</a></b> &nbsp;The complete data and tokeniser catalogue: BabyBabel corpora, bilingual datasets, BPE tokenisers and training-data shards. <button class="lnk" data-preset='{"resource":"all","org":"Beetle-Data"}'>Browse collection</button></li>
       </ul>
     </div>
   </section>
@@ -158,63 +159,76 @@
   <!-- Training scales -->
   <section class="section">
     <div class="wrap narrow">
-      <div class="section-head"><span class="eyebrow">Training budget</span><h2>Three training scales</h2></div>
-      <p class="lead">Beetle models are trained at three budgets: <strong>100M</strong>, <strong>2B</strong> and <strong>24B</strong> tokens. Only <a href="https://huggingface.co/Beetle-FineWeb-24B-4" target="_blank" rel="noopener">Beetle-FineWeb-24B-4</a> and <a href="https://huggingface.co/Beetle-FineWeb-24B-5" target="_blank" rel="noopener">Beetle-FineWeb-24B-5</a> reached the full 24B budget. Because of a token-budget bug the earlier "24B" collections reached only about 3B tokens and the earlier "2B" collection about 300M, so start with the final release for full-scale work. The human-scale models use roughly 100M tokens of child-oriented BabyBabelLM data.</p>
+      <div class="section-head"><span class="eyebrow">Training budget</span><h2>Three training scales</h2><p>Beetle models use different amounts of training text, so you can investigate how learning changes with experience.</p></div>
+      <div class="rtable-wrap" style="margin-bottom:16px;">
+        <table class="rtable" style="min-width:420px;">
+          <thead><tr><th>Training budget</th><th>What it lets you explore</th></tr></thead>
+          <tbody>
+            <tr><td><b>100 million tokens</b></td><td>Early learning and smaller-scale experiments</td></tr>
+            <tr><td><b>2 billion tokens</b></td><td>Intermediate stages of training</td></tr>
+            <tr><td><b>24 billion tokens</b></td><td>Longer training and the development of more mature capabilities</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fnote" style="font-size:13.5px;">The final-release <b>Beetle-FineWeb-24B-4</b> and <b>Beetle-FineWeb-24B-5</b> collections completed the full 24-billion-token budget. Other collections have their actual training budgets listed above, so you can choose models with the amount of training your experiment requires. The HumanScale collection uses child-oriented BabyBabelLM data, for smaller, more cognitively motivated learning setups.</p>
     </div>
   </section>
 
   <!-- Languages -->
   <section class="section alt">
     <div class="wrap narrow">
-      <div class="section-head"><span class="eyebrow">Languages</span><h2>21 first languages</h2></div>
-      <p class="lead">Beetle covers 21 first languages, each paired with <strong>English</strong> as the shared second language: Dutch, German, Danish, Icelandic, Norwegian, Italian, Spanish, Polish, Russian, Serbian, Greek, Hindi, Finnish, Estonian, Turkish, Basque, Hebrew, Filipino, Japanese, Korean and Chinese. They span Latin, Cyrillic, Greek, Devanagari, Hebrew, Han, Kana and Hangul scripts and several language families, which makes the suite a testbed for cross-lingual transfer. Filter by any language in the finder above.</p>
+      <div class="section-head"><span class="eyebrow">Languages</span><h2>Explore 21 first languages</h2></div>
+      <p class="lead">Beetle includes models that learn each of 21 first languages, paired with English in the bilingual experiments: Dutch, German, Danish, Icelandic, Norwegian, Italian, Spanish, Polish, Russian, Serbian, Greek, Hindi, Finnish, Estonian, Turkish, Basque, Hebrew, Filipino, Japanese, Korean and Chinese.</p>
+      <p class="lead">These languages span different language families and writing systems, making Beetle useful for investigating how language background affects learning, what languages share, and when knowledge transfers between them. Filter the model finder by language to find the models you need.</p>
     </div>
   </section>
 
   <!-- Data & tokenisers -->
   <section class="section">
     <div class="wrap narrow">
-      <div class="section-head"><span class="eyebrow">Data &amp; tokenisers</span><h2>Datasets, corpora and tokenisers</h2></div>
+      <div class="section-head"><span class="eyebrow">Data &amp; tokenisers</span><h2>Datasets and tokenisers</h2><p>Use Beetle's data resources to run your own experiments, not just analyse existing models.</p></div>
       <ul class="clist">
-        <li><b>BabyBabel corpora</b> &nbsp;Small, controlled per-language corpora, with held-out sets in HumanScale. <button class="lnk" data-preset='{"resource":"dataset","text":"babybabel"}'>Find</button></li>
-        <li><b>Bilingual datasets</b> &nbsp;Resources for language combinations and exposure conditions. <button class="lnk" data-preset='{"resource":"dataset","mtype":"any"}'>Find</button></li>
-        <li><b>Tokenisers</b> &nbsp;Bilingual and monolingual BPE tokenisers used across the experiments. <button class="lnk" data-preset='{"resource":"tokenizer"}'>Find</button></li>
-        <li><b>Pre-tokenised &amp; raw corpora</b> &nbsp;Training shards and larger raw corpora for your own pipelines. <button class="lnk" data-preset='{"resource":"pretok"}'>Find</button></li>
+        <li><b>BabyBabel corpora</b> &nbsp;Small, language-specific datasets for controlled language-learning experiments, with held-out evaluation sets in HumanScale. <button class="lnk" data-preset='{"resource":"dataset","text":"babybabel"}'>Find</button></li>
+        <li><b>Bilingual datasets</b> &nbsp;Data for comparing language combinations and different patterns of exposure. <button class="lnk" data-preset='{"resource":"dataset","mtype":"any"}'>Find</button></li>
+        <li><b>Tokenisers</b> &nbsp;The monolingual and bilingual BPE tokenisers used in the experiments. <button class="lnk" data-preset='{"resource":"tokenizer"}'>Find</button></li>
+        <li><b>Training data and raw corpora</b> &nbsp;Pre-tokenised training shards and larger raw datasets for building your own pipelines. <button class="lnk" data-preset='{"resource":"pretok"}'>Find</button></li>
       </ul>
+      <p class="fnote" style="font-size:13.5px;">Browse the <a href="https://huggingface.co/Beetle-Data" target="_blank" rel="noopener">Beetle-Data collection on Hugging Face</a> to get started.</p>
     </div>
   </section>
 
   <!-- Route A: experiment templates -->
-  <section class="section" style="padding-top:38px;">
+  <section class="section">
     <div class="wrap">
-      <div class="section-head" style="margin-bottom:14px;"><h2>Start from a research question</h2><p>Pick a question, tick the models you want, then copy a ready-to-run snippet into Colab. Each snippet uses <a href="docs.html#beetle-analyze">beetle-analyze</a>.</p></div>
+      <div class="section-head"><span class="eyebrow">Experiments</span><h2>What do you want to investigate?</h2><p>Choose a research question to find relevant models and generate code you can run with <a href="docs.html#beetle-analyze">beetle-analyze</a>. Tick the models you want, and the snippet updates for your selection.</p></div>
       <div class="xtemplates">
         <div class="xcard" data-preset='{"resource":"model","final":true}' data-an="cka">
-          <h4>🧠 Model internals &amp; interpretability</h4>
-          <p>Track representations over training, study when capabilities emerge, probe memorisation. Pick several checkpoints of one model, or matched conditions.</p>
-          <span class="go">Pick models → CKA code <i class="bi bi-arrow-down"></i></span>
+          <h4>🧠 How does AI learn?</h4>
+          <p><strong>Study model internals and interpretability.</strong> Investigate how a model's internal representations change during training, when capabilities emerge, and how information is stored. Select checkpoints from different stages of training to track what changes over time.</p>
+          <span class="go">Choose models → generate CKA code <i class="bi bi-arrow-down"></i></span>
         </div>
         <div class="xcard" data-preset='{"resource":"model"}' data-an="blimp">
-          <h4>📈 Training &amp; scaling</h4>
-          <p>Compare 100M, 2B and 24B token budgets and learning trajectories. Pick the same model family at different budgets.</p>
-          <span class="go">Pick models → BLiMP code <i class="bi bi-arrow-down"></i></span>
+          <h4>📈 Does more training make a difference?</h4>
+          <p><strong>Compare training budgets and learning trajectories.</strong> Compare models trained on 100 million, 2 billion and 24 billion tokens to see how additional training affects performance and internal representations. Use matched models wherever possible to make the comparison meaningful.</p>
+          <span class="go">Choose models → generate BLiMP code <i class="bi bi-arrow-down"></i></span>
         </div>
         <div class="xcard" data-preset='{"resource":"model","mtype":"bilingual"}' data-an="blimp">
-          <h4>🌍 Multilingual learning &amp; transfer</h4>
-          <p>Compare monolingual against bilingual models, language pairs, and exposure order. Add the matched monolingual baselines to compare.</p>
-          <span class="go">Pick models → BLiMP code <i class="bi bi-arrow-down"></i></span>
+          <h4>🌍 How does learning two languages change a model?</h4>
+          <p><strong>Investigate multilingual learning and cross-lingual transfer.</strong> Compare models that learn one language with models that learn two, across different language pairs and exposure orders. Include matched monolingual baselines to isolate the effects of bilingual learning.</p>
+          <span class="go">Choose models → generate BLiMP code <i class="bi bi-arrow-down"></i></span>
         </div>
         <div class="xcard" data-preset='{"resource":"model","ds":["BabyBabel"]}' data-an="meco">
-          <h4>🧪 AI &amp; human learning</h4>
-          <p>Compare models with human reading-time and grammaticality data (MECO, BLiSS, priming), documented in the <a href="docs.html#beetle-analyze">docs</a>.</p>
-          <span class="go">Pick models → MECO code <i class="bi bi-arrow-down"></i></span>
+          <h4>🧪 What can AI learning tell us about human learning?</h4>
+          <p><strong>Compare models with human language-processing data.</strong> Connect model behaviour to human reading times, grammaticality judgements and priming data. Beetle's resources document datasets including MECO and BLiSS, helping you explore where model and human language processing converge or differ.</p>
+          <span class="go">Choose models → generate MECO code <i class="bi bi-arrow-down"></i></span>
         </div>
         <div class="xcard" data-preset='{"resource":"model","final":true}' data-an="load">
-          <h4>🎓 Students &amp; enthusiasts</h4>
-          <p>Reproduce a paper result, build a benchmark comparison, or start a project. Begin with the recommended final-release models, or try them in <a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Colab</a>.</p>
-          <span class="go">Pick models → load &amp; generate <i class="bi bi-arrow-down"></i></span>
+          <h4>🎓 Learning, teaching and independent projects</h4>
+          <p><strong>Get hands-on with language models.</strong> Reproduce a published result, compare models on a benchmark, explore how models generate text, or build a project of your own. Start with the recommended final-release models, then use the notebooks and tools to investigate your own questions.</p>
+          <span class="go">Choose models → load &amp; generate <i class="bi bi-arrow-down"></i></span>
         </div>
       </div>
+      <p class="inline-links" style="font-size:14px;margin-top:16px;">See the <a href="docs.html#beetle-analyze">beetle-analyze documentation</a> for supported analyses and datasets, or try the interactive <a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Beetle Explorer in Colab</a>.</p>
     </div>
   </section>
 
@@ -340,7 +354,8 @@
   <!-- Help -->
   <section class="section alt">
     <div class="wrap narrow center">
-      <p class="fnote" style="font-size:13px;">If you are unsure which models or datasets suit your experiment, start with the <a href="docs.html">framework</a> to understand the training conditions, or consult the <a href="docs.html">documentation</a>. For the full scientific motivation and evaluation details, read the <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">EMNLP 2026 paper</a>.</p>
+      <p class="lead"><strong>Your experiment starts with a question.</strong> Choose the models, compare their training histories, and investigate what changes as they learn.</p>
+      <p class="fnote" style="font-size:13px;">Unsure which models suit your experiment? Start with the <a href="docs.html">framework guides</a>, or read the <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">EMNLP 2026 paper</a> for the full motivation and evaluation details.</p>
     </div>
   </section>
 
