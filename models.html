@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Models &amp; Data — beetle</title>
-  <meta name="description" content="Find the right Beetle model for your research: an interactive finder over bilingual and monolingual language models, checkpoints, datasets and tokenisers — filter by language, training data, model type, curriculum and scale.">
+  <title>Models &amp; Data · beetle</title>
+  <meta name="description" content="Find the right Beetle model for your research: an interactive finder over bilingual and monolingual language models, checkpoints, datasets and tokenisers, to filter by language, training data, model type, curriculum and scale.">
 
   <link href="favicon.ico" rel="icon" sizes="any">
   <link href="assets/img/logo.svg" rel="icon" type="image/svg+xml">
@@ -26,8 +26,8 @@
     /* finder */
     .finder { display:grid; grid-template-columns: 300px 1fr; gap:26px; align-items:start; }
     @media (max-width:880px){ .finder { grid-template-columns:1fr; } }
-    .finder-panel { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); position:sticky; top:84px; }
-    @media (max-width:880px){ .finder-panel { position:static; } }
+    .finder-panel { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); position:sticky; top:84px; max-height:calc(100vh - 100px); overflow-y:auto; }
+    @media (max-width:880px){ .finder-panel { position:static; max-height:none; overflow:visible; } }
     .fgroup { margin-bottom:18px; }
     .fgroup.hidden { display:none; }
     .fgroup > .lbl { font-family:var(--head-font); font-weight:700; font-size:12px; letter-spacing:0.07em; text-transform:uppercase; color:#9c99bd; margin-bottom:9px; display:block; }
@@ -84,6 +84,26 @@
     .rq-list li { font-size:14.5px; color:var(--body); margin:5px 0; line-height:1.5; }
     .inline-links { font-size:15px; color:var(--muted); margin-top:18px; }
     .inline-links a { font-weight:600; }
+    /* experiment templates */
+    .xtemplates { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; }
+    .xcard { text-align:left; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:18px; cursor:pointer; transition:border-color .15s, box-shadow .15s, transform .08s; font-family:var(--body-font); }
+    .xcard:hover { border-color:var(--accent); box-shadow:var(--shadow); transform:translateY(-2px); }
+    .xcard h4 { font-size:16px; margin:0 0 6px; color:var(--ink); }
+    .xcard p { font-size:13.5px; color:var(--body); margin:0 0 10px; line-height:1.5; }
+    .xcard .go { font-family:var(--head-font); font-weight:600; font-size:13px; color:var(--accent); }
+    /* selection checkboxes + tray */
+    table.rtable td.selcell { text-align:center; width:34px; }
+    input.rsel, #rselall { width:16px; height:16px; cursor:pointer; accent-color:var(--accent); }
+    .tray { margin-top:18px; background:var(--accent-soft); border:1px solid #d9cefb; border-radius:14px; padding:16px 18px; }
+    .tray-head { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .tray-count { font-family:var(--head-font); font-weight:700; color:var(--ink); font-size:15px; }
+    .tray-count b { color:var(--accent-dark); }
+    .tray-chips { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 4px; }
+    .selchip { display:inline-flex; align-items:center; gap:6px; font-family:var(--mono-font); font-size:11.5px; background:#fff; border:1px solid #d9cefb; color:var(--accent-dark); border-radius:50px; padding:3px 6px 3px 10px; }
+    .selchip i { cursor:pointer; color:var(--muted); }
+    .selchip i:hover { color:#d64545; }
+    .tray-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; }
+    .tray-actions .btn-view { text-decoration:none; }
   </style>
 </head>
 
@@ -107,83 +127,50 @@
   <section class="page-head">
     <div class="wrap">
       <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Models &amp; Data</span>
-      <h1>What can you do with Beetle right now?</h1>
-      <p><strong>You don't have to train a model from scratch to start experimenting with Beetle.</strong> Download the existing models, inspect their training histories, compare their behaviour, and use them to investigate your own questions. Each model is part of a broader collection designed to make comparisons possible — instead of choosing between unrelated pretrained models, you can examine models trained under different conditions and investigate what changes.</p>
+      <h1>Choose models for your experiment</h1>
+      <p>You often need several models at once, to compare training stages, data budgets, languages or behaviour. Pick the models you need, tick them, and copy ready-to-run code. Start from a research question below, or filter the full catalogue directly.</p>
       <p class="counts-line">330 open models · thousands of checkpoints · 21 first languages <span>· 100M / 2B / 24B tokens</span></p>
     </div>
   </section>
 
-  <!-- What can you do with the models -->
+  <!-- Route A: experiment templates -->
   <section class="section" style="padding-top:38px;">
     <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Start here</span><h2>What can you do with the models?</h2><p>The suite contains 285 bilingual and 45 monolingual models, trained at three data scales with different language-exposure schedules and first languages. Here are four ways in — pick the one that fits your question.</p></div>
-      <div class="grid cols-2">
-
-        <div class="card">
-          <h3>🔬 Investigate how language models learn</h3>
-          <p class="rq-label" style="margin-top:0;">For AI enthusiasts &amp; interpretability researchers</p>
-          <p>Go beyond asking which model performs best — investigate how its behaviour develops <em>during</em> training.</p>
-          <ul class="rq-list">
-            <li><strong>Inspect internal representations.</strong> Explore how linguistic information is encoded and how representations change across checkpoints.</li>
-            <li><strong>Investigate memorisation and generalisation.</strong> Compare what models learn as they encounter more training data.</li>
-            <li><strong>Study when capabilities emerge.</strong> Examine checkpoints to see how behaviours develop, change or disappear during training.</li>
-            <li><strong>Test mechanistic hypotheses.</strong> Use controlled model comparisons to probe the internal mechanisms behind observed behaviour.</li>
-          </ul>
-          <p class="fnote"><em>Example:</em> compare checkpoints from a single model to see how its representation of grammatical structure changes during training — then compare models trained with different exposure schedules to see whether they reach similar representations through different learning histories.</p>
-          <button class="btn-view" data-preset='{"resource":"model","mtype":"any"}'>Explore model checkpoints <i class="bi bi-arrow-down"></i></button>
+      <div class="section-head"><span class="eyebrow">Browse or select</span><h2>Start from a research question</h2><p>Pick what you want to investigate. We filter the catalogue to matching models and jump you to the table, where you tick several and generate the code to run them. Already know what you want? Filter the full collection directly below.</p></div>
+      <div class="xtemplates">
+        <div class="xcard" data-preset='{"resource":"model","final":true}'>
+          <h4>🧠 Model internals &amp; interpretability</h4>
+          <p>Track representations over training, study when capabilities emerge, probe memorisation. Pick several checkpoints of one model, or matched conditions.</p>
+          <span class="go">Find models <i class="bi bi-arrow-down"></i></span>
         </div>
-
-        <div class="card">
-          <h3>🌍 Explore multilingual learning and transfer</h3>
-          <p class="rq-label" style="margin-top:0;">For multilingual NLP researchers</p>
-          <p>What does a model learn from its first language, and how does that knowledge influence its second?</p>
-          <ul class="rq-list">
-            <li><strong>Compare languages.</strong> Investigate models with different first languages, including Finnish, Basque, Hindi, Japanese and Korean.</li>
-            <li><strong>Study cross-lingual transfer.</strong> Test whether experience with one language influences performance in another.</li>
-            <li><strong>Investigate typological similarity.</strong> Compare how the relationship between two languages affects learning and processing.</li>
-            <li><strong>Explore language-specific behaviour.</strong> Study which patterns generalise across languages and which depend on particular training experiences.</li>
-          </ul>
-          <p class="fnote"><em>Example:</em> compare models learning English after different first languages to investigate whether structural similarity between languages predicts how well they learn particular grammatical patterns.</p>
-          <button class="btn-view" data-preset='{"resource":"model","mtype":"bilingual"}'>Explore bilingual models <i class="bi bi-arrow-down"></i></button>
+        <div class="xcard" data-preset='{"resource":"model"}'>
+          <h4>📈 Training &amp; scaling</h4>
+          <p>Compare 100M, 2B and 24B token budgets and learning trajectories. Pick the same model family at different budgets.</p>
+          <span class="go">Find models <i class="bi bi-arrow-down"></i></span>
         </div>
-
-        <div class="card">
-          <h3>⚙️ Experiment with small language models</h3>
-          <p class="rq-label" style="margin-top:0;">For aspiring model builders &amp; ML practitioners</p>
-          <p>A collection of pretrained models and training resources for hands-on experimentation.</p>
-          <ul class="rq-list">
-            <li><strong>Explore different training scales.</strong> Compare models trained on 100M, 2B and 24B tokens.</li>
-            <li><strong>Compare training trajectories.</strong> Investigate how behaviour differs across checkpoints, not just final performance.</li>
-            <li><strong>Reproduce research experiments.</strong> Use the released models and evaluation resources to investigate the findings in our paper.</li>
-            <li><strong>Develop new experiments.</strong> Use the models as baselines for your own research into learning dynamics and model behaviour.</li>
-          </ul>
-          <p class="fnote"><em>Start by analysing an existing checkpoint, then move on to training your own models — see the <a href="framework.html">framework</a> — when you're ready to investigate a new question.</em></p>
-          <button class="btn-view" data-preset='{"resource":"model","final":true}'>Browse the final models <i class="bi bi-arrow-down"></i></button>
+        <div class="xcard" data-preset='{"resource":"model","mtype":"bilingual"}'>
+          <h4>🌍 Multilingual learning &amp; transfer</h4>
+          <p>Compare monolingual against bilingual models, language pairs, and exposure order. Add the matched monolingual baselines to compare.</p>
+          <span class="go">Find models <i class="bi bi-arrow-down"></i></span>
         </div>
-
-        <div class="card">
-          <h3>🧠 Compare AI with human learning</h3>
-          <p class="rq-label" style="margin-top:0;">For cognitive scientists, psycholinguists &amp; students</p>
-          <p>Compare model predictions with human data to examine where model behaviour resembles human language processing and where it differs.</p>
-          <ul class="rq-list">
-            <li><strong>Study human reading times.</strong> Compare model predictions with the time people take to read words and sentences.</li>
-            <li><strong>Investigate grammatical knowledge.</strong> Test how well models distinguish grammatical from ungrammatical sentences.</li>
-            <li><strong>Explore bilingual processing.</strong> Examine how experience with one language influences expectations in another.</li>
-            <li><strong>Connect ML with cognitive science.</strong> Use controlled models to explore second-language acquisition and linguistic representation.</li>
-          </ul>
-          <p class="fnote"><em>Example:</em> compare the reading-time predictions of models trained with different exposure schedules to see which training histories best capture patterns observed in human second-language readers.</p>
-          <button class="btn-view" data-preset='{"resource":"model","mtype":"bilingual"}'>Explore models for psycholinguistics <i class="bi bi-arrow-down"></i></button>
+        <div class="xcard" data-preset='{"resource":"model","ds":["BabyBabel"]}'>
+          <h4>🧪 AI &amp; human learning</h4>
+          <p>Compare models with human reading-time and grammaticality data. Human-scale models pair with the cognitive datasets documented in the <a href="docs.html#beetle-analyze">docs</a>.</p>
+          <span class="go">Find models <i class="bi bi-arrow-down"></i></span>
         </div>
-
+        <div class="xcard" data-preset='{"resource":"model","final":true}'>
+          <h4>🎓 Students &amp; enthusiasts</h4>
+          <p>Reproduce a paper result, build a benchmark comparison, or start a project. Begin with the recommended final-release models, or try them in <a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Colab</a>.</p>
+          <span class="go">Find models <i class="bi bi-arrow-down"></i></span>
+        </div>
       </div>
-      <p class="inline-links" style="font-size:15px;color:var(--muted);margin-top:22px;">Every released checkpoint loads through Hugging Face Transformers with <span style="font-family:var(--mono-font);">from_pretrained</span>. <a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Try the analysis notebooks in Colab</a> — no coding required — or browse the full suite in the finder below.</p>
     </div>
   </section>
 
   <!-- Finder -->
   <section class="section alt" id="finder">
     <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Model finder</span><h2>Find a model</h2><p>Choose a language, training dataset, model type, and training scale to narrow the available checkpoints. Results update as you change filters.</p></div>
+      <div class="section-head"><span class="eyebrow">Select directly</span><h2>Or filter the full collection</h2><p>Narrow the catalogue by language, training data, model type, curriculum and budget. Tick the models you want in the table, then copy the loading code or open them in Colab. Your selection is kept as you change filters.</p></div>
       <div class="finder">
         <div class="finder-panel">
           <div class="fgroup">
@@ -224,10 +211,7 @@
             <span class="lbl"><span class="step">4 ·</span> Training data</span>
             <div class="chipset" id="f-ds">
               <span class="fchip" data-v="FineWeb">FineWeb</span>
-              <span class="fchip" data-v="FineWeb2">FineWeb2</span>
-              <span class="fchip" data-v="FineWeb3">FineWeb3</span>
               <span class="fchip" data-v="BabyBabel">BabyBabel</span>
-              <span class="fchip" data-v="HumanScale">HumanScale</span>
             </div>
           </div>
 
@@ -243,32 +227,49 @@
           </div>
 
           <div class="fgroup">
-            <span class="lbl"><span class="step">6 ·</span> Model scale</span>
+            <span class="lbl"><span class="step">6 ·</span> Training budget</span>
             <div class="chipset" id="f-scale">
               <span class="fchip" data-v="100M">100M</span>
-              <span class="fchip" data-v="300M">300M</span>
               <span class="fchip" data-v="2B">2B</span>
-              <span class="fchip" data-v="3B">3B</span>
               <span class="fchip" data-v="24B">24B</span>
-              <span class="fchip" data-v="HumanScale">HumanScale</span>
+              <span class="fchip" data-v="HumanScale">Human-scale</span>
             </div>
+            <p style="font-size:12px;color:var(--muted);margin:8px 0 0;line-height:1.5;">Only <b>Beetle-FineWeb-24B-4/-5</b> reached the full 24B budget. Earlier "24B" collections reached ~3B tokens and the earlier "2B" ~300M; their real budget shows in the table.</p>
           </div>
         </div>
 
         <div class="finder-results">
-          <div class="finder-search"><i class="bi bi-search"></i><input type="text" id="f-text" placeholder="Search repository names — e.g. nld, sequential, tokenizer, 24b"></div>
+          <div class="finder-search"><i class="bi bi-search"></i><input type="text" id="f-text" placeholder="Search repository names, e.g. nld, sequential, tokenizer, 24b"></div>
           <div class="finder-top">
             <div class="rcount" id="rcount"></div>
             <button class="btn-reset" id="f-reset"><i class="bi bi-arrow-counterclockwise"></i> Reset filters</button>
           </div>
           <div class="rtable-wrap" id="rwrap">
             <table class="rtable">
-              <thead><tr><th>Repository</th><th>Type</th><th>Languages</th><th>Data</th><th>Curriculum</th><th>Scale</th></tr></thead>
+              <thead><tr><th style="width:34px;"><input type="checkbox" id="rselall" title="Select all shown"></th><th>Model</th><th>Type</th><th>Language</th><th>Data</th><th>Curriculum</th><th>Budget</th></tr></thead>
               <tbody id="rbody"></tbody>
             </table>
           </div>
           <div class="empty" id="rempty" style="display:none;"><i class="bi bi-search"></i>No repositories match these filters. Try removing a filter or choosing <b>Any</b>.</div>
           <div class="more-note" id="rmore" style="display:none;"></div>
+
+          <!-- Selection tray + code generation -->
+          <div class="tray" id="tray" style="display:none;">
+            <div class="tray-head">
+              <span class="tray-count" id="tray-count"></span>
+              <button class="btn-reset" id="tray-clear"><i class="bi bi-x-lg"></i> Clear selection</button>
+            </div>
+            <div class="tray-chips" id="tray-chips"></div>
+            <div class="tray-actions">
+              <button class="btn-view" id="act-copy"><i class="bi bi-clipboard"></i> Copy loading code</button>
+              <a class="btn-view" id="act-colab" href="https://colab.research.google.com/github/beetlelm/beetle-explorer/blob/main/notebooks/Beetle_Model_Explorer.ipynb" target="_blank" rel="noopener"><i class="bi bi-journal-code"></i> Open in Colab</a>
+              <button class="btn-view" id="act-hf"><i class="bi bi-box-arrow-up-right"></i> Open on Hugging Face</button>
+            </div>
+            <div class="code" id="code-box" style="margin:14px 0 0;display:none;">
+              <div class="code-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="t">python · load your selected models</span></div>
+<pre><code id="code-py"></code></pre>
+            </div>
+          </div>
           <p class="fnote"><b>Training data vs. evaluation language.</b> This finder filters on the language(s) a model was <em>trained</em> on. To find models <em>evaluated</em> on a language you care about, consult the <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">EMNLP 2026 paper</a>. &nbsp; The counts here are Hugging Face repositories (models, checkpoints, datasets and tokenisers), which is a larger number than the 285 + 45 models reported in the paper.</p>
         </div>
       </div>
@@ -294,32 +295,32 @@
         <div class="card fam">
           <h4>Beetle-FineWeb-100M</h4>
           <div class="meta">FineWeb · 100M tokens</div>
-          <p><strong>Small-scale experiments across many first languages.</strong> Monolingual controls and bilingual models trained on a 100-million-token FineWeb slice. A useful starting point for comparing first languages and exposure curricula under a relatively small training budget — study curriculum effects, compare language pairs, or run experiments feasible with modest compute.</p>
+          <p><strong>Small-scale experiments across many first languages.</strong> Monolingual controls and bilingual models trained on a 100-million-token FineWeb slice. A useful starting point for comparing first languages and exposure curricula under a relatively small training budget: study curriculum effects, compare language pairs, or run experiments feasible with modest compute.</p>
           <button class="btn-view" data-preset='{"resource":"model","ds":["FineWeb"],"scale":["100M"]}'>View these models <i class="bi bi-arrow-down"></i></button>
         </div>
         <div class="card fam">
           <h4>Beetle-FineWeb-2B <span class="pill" style="background:#fff1dc;color:#c57b12;">~300M actual</span></h4>
           <div class="meta">FineWeb · labelled 2B · ~300M tokens actual</div>
           <p><strong>Earlier "2B" collection — reached only ~300M tokens.</strong> These runs were affected by the token-budget drift described below and stopped at roughly 300 million tokens rather than the intended 2 billion. Still useful as small-scale baselines, but for genuine 2B-token models use the 2B companions in the <a href="#finder" data-preset='{"resource":"model","scale":["2B"]}'>final release</a>.</p>
-          <button class="btn-view" data-preset='{"resource":"model","ds":["FineWeb"],"scale":["300M"]}'>View these models <i class="bi bi-arrow-down"></i></button>
+          <button class="btn-view" data-preset='{"resource":"model","org":"Beetle-FineWeb-2B"}'>View these models <i class="bi bi-arrow-down"></i></button>
         </div>
         <div class="card fam">
           <h4>Beetle-FineWeb2-24B <span class="pill" style="background:#fff1dc;color:#c57b12;">~3B actual</span></h4>
           <div class="meta">FineWeb2 · labelled 24B · ~3B tokens actual</div>
           <p><strong>Earlier "24B" experiments — reached only ~3B tokens.</strong> Bilingual models across all five exposure curricula and several language pairs, with selected continual-learning variants. These runs were cut short by the token-budget drift described below, so they are <em>not</em> full 24B-token models. For full-scale results, use the <strong>final release</strong> above.</p>
-          <button class="btn-view" data-preset='{"resource":"model","ds":["FineWeb2"]}'>View these models <i class="bi bi-arrow-down"></i></button>
+          <button class="btn-view" data-preset='{"resource":"model","org":"Beetle-FineWeb2-24B"}'>View these models <i class="bi bi-arrow-down"></i></button>
         </div>
         <div class="card fam">
           <h4>Beetle-FineWeb3-24B <span class="pill" style="background:#fff1dc;color:#c57b12;">~3B actual</span></h4>
           <div class="meta">FineWeb3 · labelled 24B · ~3B tokens actual</div>
-          <p><strong>Earlier monolingual baselines — reached only ~3B tokens.</strong> Monolingual models on FineWeb3, providing additional language-specific baselines. Like the other earlier 24B collection, these were cut short of the full budget; the monolingual baselines in the <strong>final release</strong> above are the full 24B-token versions.</p>
-          <button class="btn-view" data-preset='{"resource":"model","ds":["FineWeb3"]}'>View these models <i class="bi bi-arrow-down"></i></button>
+          <p><strong>Earlier monolingual baselines, reached only ~3B tokens.</strong> Monolingual models on FineWeb3, providing additional language-specific baselines. Like the other earlier 24B collection, these were cut short of the full budget; the monolingual baselines in the <strong>final release</strong> above are the full 24B-token versions.</p>
+          <button class="btn-view" data-preset='{"resource":"model","org":"Beetle-FineWeb3-24B"}'>View these models <i class="bi bi-arrow-down"></i></button>
         </div>
         <div class="card fam">
           <h4>Beetle-HumanScale</h4>
           <div class="meta">Human-scale · models · data · tokenisers</div>
           <p><strong>Models for cognitively motivated experiments.</strong> Models, datasets, and tokenisers based on controlled, human-scale language-learning settings. Includes bilingual and monolingual models, alternative exposure schedules, and selected continual-learning variants — particularly useful for connecting computational experiments with questions about human language acquisition.</p>
-          <button class="btn-view" data-preset='{"resource":"model","ds":["HumanScale"]}'>View these models <i class="bi bi-arrow-down"></i></button>
+          <button class="btn-view" data-preset='{"resource":"model","org":"Beetle-HumanScale"}'>View these models <i class="bi bi-arrow-down"></i></button>
         </div>
         <div class="card fam">
           <h4>Beetle-Data</h4>
@@ -332,95 +333,19 @@
     </div>
   </section>
 
-  <!-- Understanding the scales -->
+  <!-- Training scales -->
   <section class="section">
-    <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Training scales</span><h2>Understanding the dataset sizes</h2><p>Beetle models are trained at three target data scales — <strong>100M</strong>, <strong>2B</strong> and <strong>24B</strong> tokens — so you can study how training budget shapes what a model learns. The scale is the number of tokens a model sees during training, split between its first language and English.</p></div>
-
-      <div class="rtable-wrap" style="margin-bottom:20px;">
-        <table class="rtable" style="min-width:680px;">
-          <thead><tr><th>Scale</th><th>Tokens (target)</th><th>Where to find it</th><th>Notes</th></tr></thead>
-          <tbody>
-            <tr>
-              <td><span class="pill" style="background:#e7f1ff;color:#2f6fd0;">100M</span></td>
-              <td>100 million</td>
-              <td>Beetle-FineWeb-100M</td>
-              <td>Smallest budget; the widest coverage of first languages and curricula.</td>
-            </tr>
-            <tr>
-              <td><span class="pill bi">2B</span></td>
-              <td>2 billion</td>
-              <td>Final release (2B companions in 24B-4 / 24B-5)</td>
-              <td>Intermediate scale. Use the final-release 2B models — the earlier standalone "2B" collection fell short (see below).</td>
-            </tr>
-            <tr>
-              <td><span class="pill final" style="margin:0;">24B</span></td>
-              <td>24 billion</td>
-              <td><strong>Beetle-FineWeb-24B-4 · Beetle-FineWeb-24B-5</strong></td>
-              <td>Full scale. <strong>Only these two collections reach the full 24B-token budget.</strong></td>
-            </tr>
-            <tr>
-              <td><span class="pill" style="background:#fff1dc;color:#c57b12;">300M</span></td>
-              <td>~300 million (actual)</td>
-              <td>Beetle-FineWeb-2B (earlier)</td>
-              <td>Earlier runs labelled "2B" that stopped at ~300M tokens.</td>
-            </tr>
-            <tr>
-              <td><span class="pill" style="background:#fff1dc;color:#c57b12;">3B</span></td>
-              <td>~3 billion (actual)</td>
-              <td>Beetle-FineWeb2-24B · Beetle-FineWeb3-24B</td>
-              <td>Earlier runs labelled "24B" that stopped at ~3B tokens.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="card" style="border-left:4px solid #fb8500;background:#fff8ef;">
-        <h4 style="margin-top:0;"><i class="bi bi-exclamation-triangle" style="color:#fb8500;"></i> &nbsp;Important: which "24B" and "2B" models are the real ones</h4>
-        <p style="margin-bottom:8px;">Some earlier collections were affected by a <strong>token-budget drift</strong> — an 8&times; miscalculation in the effective batch size meant several runs consumed roughly one-eighth of their intended tokens before the bug was caught and fixed. As a result:</p>
-        <ul class="rq-list" style="padding-left:20px;margin-bottom:8px;">
-          <li>The models in <strong>Beetle-FineWeb2-24B</strong> and <strong>Beetle-FineWeb3-24B</strong> — labelled "24B" — actually reached only <strong>~3B tokens</strong>.</li>
-          <li>The models in the earlier standalone <strong>Beetle-FineWeb-2B</strong> collection — labelled "2B" — actually reached only <strong>~300M tokens</strong>.</li>
-          <li>The <strong>only genuine 24-billion-token models</strong> are in <a href="https://huggingface.co/Beetle-FineWeb-24B-4" target="_blank" rel="noopener">Beetle-FineWeb-24B-4</a> and <a href="https://huggingface.co/Beetle-FineWeb-24B-5" target="_blank" rel="noopener">Beetle-FineWeb-24B-5</a>, which also contain the matched full-budget 2B companions.</li>
-        </ul>
-        <p style="margin-bottom:0;">The model finder above reflects these <em>actual</em> token counts: filter by <strong>24B</strong> and you will only see the final release. For any new full-scale work, start with the final release.</p>
-      </div>
+    <div class="wrap narrow">
+      <div class="section-head"><span class="eyebrow">Training budget</span><h2>Three training scales</h2></div>
+      <p class="lead">Beetle models are trained at three budgets: <strong>100M</strong>, <strong>2B</strong> and <strong>24B</strong> tokens. Only <a href="https://huggingface.co/Beetle-FineWeb-24B-4" target="_blank" rel="noopener">Beetle-FineWeb-24B-4</a> and <a href="https://huggingface.co/Beetle-FineWeb-24B-5" target="_blank" rel="noopener">Beetle-FineWeb-24B-5</a> reached the full 24B budget. Because of a token-budget bug the earlier "24B" collections reached only about 3B tokens and the earlier "2B" collection about 300M, so start with the final release for full-scale work. The human-scale models use roughly 100M tokens of child-oriented BabyBabelLM data.</p>
     </div>
   </section>
 
   <!-- Languages -->
   <section class="section alt">
-    <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Languages</span><h2>21 first languages</h2><p>Beetle covers <strong>21 first languages (L1s)</strong> — a script-independent, typologically diverse set — each paired with <strong>English</strong> as the shared second language. This breadth is what makes Beetle a testbed for cross-lingual transfer: you can compare how models learn English after very different first languages.</p></div>
-      <div class="rtable-wrap">
-        <table class="rtable" style="min-width:640px;">
-          <thead><tr><th>Language</th><th>ISO 639-3</th><th>Writing system</th><th>Family</th></tr></thead>
-          <tbody>
-            <tr><td>Dutch</td><td>nld</td><td>Latin</td><td>Indo-European · Germanic</td></tr>
-            <tr><td>German</td><td>deu</td><td>Latin</td><td>Indo-European · Germanic</td></tr>
-            <tr><td>Danish</td><td>dan</td><td>Latin</td><td>Indo-European · Germanic</td></tr>
-            <tr><td>Icelandic</td><td>isl</td><td>Latin</td><td>Indo-European · Germanic</td></tr>
-            <tr><td>Norwegian</td><td>nor</td><td>Latin</td><td>Indo-European · Germanic</td></tr>
-            <tr><td>Italian</td><td>ita</td><td>Latin</td><td>Indo-European · Romance</td></tr>
-            <tr><td>Spanish</td><td>spa</td><td>Latin</td><td>Indo-European · Romance</td></tr>
-            <tr><td>Polish</td><td>pol</td><td>Latin</td><td>Indo-European · Slavic</td></tr>
-            <tr><td>Russian</td><td>rus</td><td>Cyrillic</td><td>Indo-European · Slavic</td></tr>
-            <tr><td>Serbian</td><td>srp</td><td>Cyrillic / Latin</td><td>Indo-European · Slavic</td></tr>
-            <tr><td>Greek</td><td>ell</td><td>Greek</td><td>Indo-European · Hellenic</td></tr>
-            <tr><td>Hindi</td><td>hin</td><td>Devanagari</td><td>Indo-European · Indo-Aryan</td></tr>
-            <tr><td>Finnish</td><td>fin</td><td>Latin</td><td>Uralic · Finnic</td></tr>
-            <tr><td>Estonian</td><td>est</td><td>Latin</td><td>Uralic · Finnic</td></tr>
-            <tr><td>Turkish</td><td>tur</td><td>Latin</td><td>Turkic</td></tr>
-            <tr><td>Basque</td><td>eus</td><td>Latin</td><td>Isolate</td></tr>
-            <tr><td>Hebrew</td><td>heb</td><td>Hebrew</td><td>Afro-Asiatic · Semitic</td></tr>
-            <tr><td>Filipino</td><td>fil</td><td>Latin</td><td>Austronesian</td></tr>
-            <tr><td>Japanese</td><td>jpn</td><td>Kanji / Kana</td><td>Japonic</td></tr>
-            <tr><td>Korean</td><td>kor</td><td>Hangul</td><td>Koreanic</td></tr>
-            <tr><td>Chinese</td><td>zho</td><td>Han</td><td>Sino-Tibetan</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="fnote"><strong>English (eng, Latin, Indo-European · Germanic)</strong> is the shared second language paired with each L1. A small number of additional languages (for example Arabic and Catalan) appear in selected repositories and tokenisers. Filter by any language in the <a href="#finder">model finder</a> above.</p>
+    <div class="wrap narrow">
+      <div class="section-head"><span class="eyebrow">Languages</span><h2>21 first languages</h2></div>
+      <p class="lead">Beetle covers 21 first languages, each paired with <strong>English</strong> as the shared second language: Dutch, German, Danish, Icelandic, Norwegian, Italian, Spanish, Polish, Russian, Serbian, Greek, Hindi, Finnish, Estonian, Turkish, Basque, Hebrew, Filipino, Japanese, Korean and Chinese. They span Latin, Cyrillic, Greek, Devanagari, Hebrew, Han, Kana and Hangul scripts and several language families, which makes the suite a testbed for cross-lingual transfer. Filter by any language in the finder above.</p>
     </div>
   </section>
 
@@ -494,6 +419,13 @@
     const LANGLIST = ["eng","nld","deu","zho","hin","ita","jpn","pol","rus","spa","tur","arb","eus","bul","cat","dan","est","fil","fin","fra","ell","heb","isl","ind","kor","nor","fas","srp","ukr"];
     const CURRNAME = {B1:"Balanced",B2:"Simultaneous",B3:"Sequential",B4:"Classroom",B5:"Late exposure"};
     const RENDER_CAP = 400;
+    // Collapse the dataset field to two families: FineWeb vs BabyBabel (human-scale).
+    function dsGroup(d){ if(!d) return ""; if(d.indexOf("FineWeb")===0) return "FineWeb"; if(d==="HumanScale"||d==="BabyBabel") return "BabyBabel"; return d; }
+    // Real training budget for display (the earlier "24B"/"2B" collections were cut short).
+    function budgetLabel(e){ if(e.s==="300M") return "~300M"; if(e.s==="3B") return "~3B"; if(e.s==="HumanScale") return "human-scale"; return e.s||"·"; }
+    // Multi-model selection (keys are "org/name").
+    const selected = new Map();
+    function keyOf(e){ return e.o+"/"+e.n; }
 
     const state = { resource:"model", mtype:"any", langs:new Set(), l1:"", l2:"", order:true,
                     ds:new Set(), curr:new Set(), scale:new Set(), text:"" };
@@ -506,7 +438,7 @@
     });
     const l1=document.getElementById("f-l1"), l2=document.getElementById("f-l2");
     function opt(sel,val,txt){const o=document.createElement("option");o.value=val;o.textContent=txt;sel.appendChild(o);}
-    opt(l1,"","First language — any"); opt(l2,"","Second language — any");
+    opt(l1,"","First language (any)"); opt(l2,"","Second language (any)");
     LANGLIST.forEach(c=>{opt(l1,c,LANGNAMES[c]||c);opt(l2,c,LANGNAMES[c]||c);});
 
     function langMode(){ return (state.resource==="model" && (state.mtype==="bilingual"||state.mtype==="continual")); }
@@ -524,7 +456,7 @@
     function match(e){
       if(state.resource!=="all" && e.r!==state.resource) return false;
       if(state.resource==="model" && state.mtype!=="any" && e.m!==state.mtype) return false;
-      if(state.ds.size && !state.ds.has(e.d)) return false;
+      if(state.ds.size && !state.ds.has(dsGroup(e.d))) return false;
       if(state.scale.size && !state.scale.has(e.s)) return false;
       if(state.curr.size){ if(!state.curr.has(e.c)) return false; }
       const langs = e.l? e.l.split(","):[];
@@ -568,7 +500,7 @@
     }
     function langCell(e){
       const langs=e.l?e.l.split(","):[];
-      if(!langs.length) return '<span style="color:var(--muted)">—</span>';
+      if(!langs.length) return '<span style="color:var(--muted)">·</span>';
       const names=langs.map(c=>LANGNAMES[c]||c);
       if(e.r==="model" && (e.m==="bilingual"||e.m==="continual") && names.length>=2)
         return names[0]+'<span class="arr">→</span>'+names.slice(1).join(", ");
@@ -579,23 +511,77 @@
       const res=D.filter(match);
       rcount.innerHTML = '<b>'+res.length+'</b> '+(res.length===1?'repository':'repositories')+' match';
       tbody.innerHTML="";
-      if(!res.length){ rempty.style.display="block"; rwrap.style.display="none"; rmore.style.display="none"; return; }
+      if(!res.length){ rempty.style.display="block"; rwrap.style.display="none"; rmore.style.display="none"; refreshTray(); return; }
       rempty.style.display="none"; rwrap.style.display="block";
       const shown=res.slice(0,RENDER_CAP);
       const rows=shown.map(e=>{
         const url="https://huggingface.co/"+e.o+"/"+e.n;
-        const curr=e.c?('<span class="pill curr">'+e.c+'</span> '+(CURRNAME[e.c]||"")):'<span style="color:var(--muted)">—</span>';
-        return '<tr><td class="repo"><a href="'+url+'" target="_blank" rel="noopener">'+e.n+'</a></td>'+
+        const curr=e.c?('<span class="pill curr">'+e.c+'</span> '+(CURRNAME[e.c]||"")):'<span style="color:var(--muted)">·</span>';
+        const k=keyOf(e);
+        const cb = e.r==="model" ? '<input type="checkbox" class="rsel" data-k="'+k+'"'+(selected.has(k)?' checked':'')+'>' : '';
+        return '<tr><td class="selcell">'+cb+'</td>'+
+          '<td class="repo"><a href="'+url+'" target="_blank" rel="noopener">'+e.n+'</a></td>'+
           '<td>'+pill(e)+'</td>'+
           '<td class="langcell">'+langCell(e)+'</td>'+
-          '<td>'+(e.d||'<span style="color:var(--muted)">—</span>')+'</td>'+
+          '<td>'+(dsGroup(e.d)||'<span style="color:var(--muted)">·</span>')+'</td>'+
           '<td>'+curr+'</td>'+
-          '<td>'+(e.s||'<span style="color:var(--muted)">—</span>')+'</td></tr>';
+          '<td>'+budgetLabel(e)+'</td></tr>';
       }).join("");
       tbody.innerHTML=rows;
-      if(res.length>RENDER_CAP){ rmore.style.display="block"; rmore.textContent="Showing the first "+RENDER_CAP+" of "+res.length+" — add a filter or search to narrow further."; }
+      if(res.length>RENDER_CAP){ rmore.style.display="block"; rmore.textContent="Showing the first "+RENDER_CAP+" of "+res.length+". Add a filter or search to narrow further."; }
       else rmore.style.display="none";
+      const shownModels=shown.filter(e=>e.r==="model");
+      document.getElementById("rselall").checked = shownModels.length>0 && shownModels.every(e=>selected.has(keyOf(e)));
+      refreshTray();
     }
+
+    // --- Multi-model selection, tray and code generation ---
+    const tray=document.getElementById("tray");
+    function refreshTray(){
+      const n=selected.size;
+      tray.style.display = n ? "block" : "none";
+      if(!n) return;
+      document.getElementById("tray-count").innerHTML = '<b>'+n+'</b> model'+(n===1?'':'s')+' selected';
+      document.getElementById("tray-chips").innerHTML = [...selected.keys()].map(k=>
+        '<span class="selchip">'+k.split("/")[1]+'<i class="bi bi-x" data-rm="'+k+'"></i></span>').join("");
+    }
+    function genCode(){
+      const repos=[...selected.keys()];
+      const lines=repos.map(r=>'    "'+r+'",').join("\n");
+      return 'from transformers import AutoModelForCausalLM, AutoTokenizer\n\n'+
+        'repos = [\n'+lines+'\n]\n\n'+
+        '# To load a specific training checkpoint, pass revision="step-XXXX"\n'+
+        'models = {r: AutoModelForCausalLM.from_pretrained(r, trust_remote_code=True) for r in repos}\n'+
+        'tokenizers = {r: AutoTokenizer.from_pretrained(r) for r in repos}';
+    }
+    tbody.addEventListener("change", ev=>{
+      const cb=ev.target.closest(".rsel"); if(!cb) return;
+      const k=cb.dataset.k; if(cb.checked) selected.set(k,1); else selected.delete(k);
+      refreshTray();
+      const codeBox=document.getElementById("code-box");
+      if(codeBox.style.display!=="none") document.getElementById("code-py").textContent=genCode();
+    });
+    document.getElementById("rselall").addEventListener("change", ev=>{
+      D.filter(match).slice(0,RENDER_CAP).filter(e=>e.r==="model").forEach(e=>{
+        const k=keyOf(e); if(ev.target.checked) selected.set(k,1); else selected.delete(k);
+      });
+      render();
+    });
+    document.getElementById("tray").addEventListener("click", ev=>{
+      const rm=ev.target.closest("[data-rm]"); if(!rm) return;
+      selected.delete(rm.dataset.rm); render();
+    });
+    document.getElementById("tray-clear").addEventListener("click", ()=>{ selected.clear(); render(); });
+    document.getElementById("act-copy").addEventListener("click", ()=>{
+      const box=document.getElementById("code-box"); box.style.display="block";
+      document.getElementById("code-py").textContent=genCode();
+      navigator.clipboard && navigator.clipboard.writeText(genCode());
+      const b=document.getElementById("act-copy"); const old=b.innerHTML;
+      b.innerHTML='<i class="bi bi-check2"></i> Copied'; setTimeout(()=>{b.innerHTML=old;},1600);
+    });
+    document.getElementById("act-hf").addEventListener("click", ()=>{
+      [...selected.keys()].slice(0,15).forEach(k=>window.open("https://huggingface.co/"+k,"_blank","noopener"));
+    });
 
     // chip wiring
     function wireChipset(id, onToggle, single){

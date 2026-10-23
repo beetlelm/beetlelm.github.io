@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Framework — beetle</title>
-  <meta name="description" content="Beetle is an experimental framework for studying how language models learn from linguistic experience — controlling language background, learning curriculum, data scale and training stage to compare learning trajectories.">
+  <title>Framework · beetle</title>
+  <meta name="description" content="The Beetle framework lets you design controlled experiments on how language models learn: change the language exposure, training data, tokenisation and training stage, then compare what changes.">
 
   <link href="favicon.ico" rel="icon" sizes="any">
   <link href="assets/img/logo.svg" rel="icon" type="image/svg+xml">
@@ -25,6 +25,7 @@
     .rq-list li { font-size:14.5px; color:var(--body); margin:5px 0; line-height:1.5; }
     .inline-links { font-size:15px; color:var(--muted); margin-top:18px; }
     .inline-links a { font-weight:600; }
+    .repo-tag { font-family:var(--mono-font); font-size:12.5px; color:var(--accent-dark); margin-bottom:4px; }
   </style>
 </head>
 
@@ -48,180 +49,154 @@
   <section class="page-head">
     <div class="wrap">
       <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Framework</span>
-      <h1>A framework for studying language learning</h1>
-      <p>Beetle provides an experimental framework for investigating how language models learn from linguistic experience. It brings together controlled training conditions, open model checkpoints, datasets, and evaluation tools to support systematic comparisons of learning trajectories.</p>
+      <h1>The Beetle Framework</h1>
+      <p><strong>Change how a model learns. Discover what changes.</strong></p>
     </div>
   </section>
 
   <section class="section" style="padding-top:32px;">
     <div class="wrap narrow">
       <div class="card" style="margin-bottom:0;">
-        <span class="eyebrow">🛠️ From using models to changing how they learn</span>
-        <p class="lead" style="margin-top:8px;">The Beetle <a href="models.html">model suite</a> lets you investigate models that already exist. <strong>The Beetle training framework lets you go further: design and run your own controlled experiments on how language models learn.</strong></p>
-        <p class="lead mb-0">In conventional training, changing the curriculum can change other things at the same time, making it hard to say which factor caused a difference in behaviour. Beetle makes these comparisons systematic: you can manipulate the <strong>tokeniser, target language, training budget and language-exposure structure independently</strong> — and use the framework to reproduce our experiments, try alternative training strategies, or build new controlled model families.</p>
+        <p class="lead mb-0">What happens when a language model learns two languages at once instead of one after the other? When does more training data help? How does tokenisation shape what a model learns? The Beetle framework lets you design controlled experiments to find out. Change how a model is trained, compare the results, and investigate how its behaviour and internal representations develop.</p>
       </div>
     </div>
   </section>
 
-  <!-- Control the learning experience -->
+  <!-- What can you experiment with -->
   <section class="section alt">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Control the learning experience</span>
-        <h2>Vary one aspect of training at a time</h2>
-        <p>Beetle supports experiments that vary key aspects of training. Together, these dimensions allow researchers to investigate how different learning experiences affect linguistic behaviour and internal representations.</p>
+        <span class="eyebrow">Controls</span>
+        <h2>What can you experiment with?</h2>
       </div>
       <div class="grid cols-2">
         <div class="card">
           <div class="card-ic"><i class="bi bi-translate"></i></div>
-          <h4>Language background</h4>
-          <p>The language or languages a model learns.</p>
-        </div>
-        <div class="card">
-          <div class="card-ic"><i class="bi bi-bar-chart-steps"></i></div>
-          <h4>Learning curriculum</h4>
-          <p>How language exposure is distributed and ordered during training.</p>
+          <h4>Language exposure</h4>
+          <p>Train models on different languages and compare when and how they encounter each one.</p>
         </div>
         <div class="card">
           <div class="card-ic"><i class="bi bi-hdd-stack"></i></div>
-          <h4>Data scale</h4>
-          <p>The amount of training data available.</p>
+          <h4>Training data</h4>
+          <p>Compare models trained on different amounts of data, from smaller budgets to billions of tokens.</p>
+        </div>
+        <div class="card">
+          <div class="card-ic"><i class="bi bi-alphabet"></i></div>
+          <h4>Tokenisation</h4>
+          <p>Investigate how splitting text into units affects language learning and multilingual transfer.</p>
         </div>
         <div class="card">
           <div class="card-ic"><i class="bi bi-clock-history"></i></div>
-          <h4>Training stage</h4>
-          <p>The point in the learning trajectory at which a model is evaluated.</p>
+          <h4>Learning over time</h4>
+          <p>Evaluate checkpoints throughout training to track how model behaviour changes.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- What can you do with the framework -->
+  <!-- From research question to experiment -->
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">What can you do with the framework?</span>
-        <h2>Turn a research question into a controlled experiment</h2>
+        <span class="eyebrow">Research questions</span>
+        <h2>From research question to experiment</h2>
       </div>
       <div class="grid cols-2">
 
         <div class="card">
-          <h3>🧪 Experiment with exposure schedules</h3>
-          <p>Beetle uses five exposure curricula, <strong>B1–B5</strong>, to vary how and when a model encounters each language throughout training. Change <em>when</em> a language appears and investigate questions such as:</p>
+          <h3>🌍 Compare language-learning strategies</h3>
+          <p>Beetle provides five training curricula, B1 to B5, that vary how and when models encounter languages.</p>
           <ul class="rq-list">
-            <li>Does learning two languages simultaneously produce different representations from learning them sequentially?</li>
-            <li>What happens when a model meets its second language only after substantial experience with its first?</li>
-            <li>Does changing the distribution of languages across training affect which capabilities emerge?</li>
-            <li>Which exposure schedules best reproduce particular patterns of human language processing?</li>
+            <li>Does learning two languages simultaneously differ from learning them sequentially?</li>
+            <li>What happens when a model encounters a second language later in training?</li>
+            <li>How does language exposure affect what a model learns?</li>
           </ul>
-          <p class="fnote">By comparing otherwise-matched models, you can investigate the effects of training history directly.</p>
         </div>
 
         <div class="card">
-          <h3>📊 Investigate the effects of training data</h3>
-          <p>How much data does a model need, and does the order in which it sees that data matter? The framework supports experiments across different training budgets and data configurations.</p>
+          <h3>📈 Test the effects of training</h3>
+          <p>Compare models across training budgets and learning trajectories.</p>
           <ul class="rq-list">
-            <li>Does a strategy that helps a smaller model remain beneficial at a larger scale?</li>
-            <li>Do different learning trajectories produce different outcomes under the same training budget?</li>
-            <li>How does a model's learning depend on the resources and experience available to it?</li>
+            <li>Does more data improve performance?</li>
+            <li>Do different training strategies lead to different outcomes?</li>
+            <li>Do patterns in smaller models persist with more training?</li>
           </ul>
-          <p class="fnote">Study not only <em>what</em> a model learns, but <em>how</em> its learning depends on the data it is given.</p>
         </div>
 
         <div class="card">
-          <h3>🔤 Explore tokenisation and language</h3>
-          <p>Tokenisation determines how text is split into the units a model processes — and different tokenisers can represent the same language differently, changing the inputs available during training.</p>
+          <h3>🔤 Investigate tokenisation</h3>
+          <p>Change how text is represented before it enters the model.</p>
           <ul class="rq-list">
-            <li>Investigate tokenisation, language-specific representation and multilingual learning while holding other training choices fixed.</li>
-            <li>Ask whether alternative tokenisation changes how a model learns grammatical patterns.</li>
-            <li>Test how tokenisation affects the information a model transfers between languages.</li>
+            <li>Does tokenisation affect grammatical learning?</li>
+            <li>Does it change how information transfers between languages?</li>
+            <li>Which effects can be attributed to tokenisation rather than other training choices?</li>
           </ul>
-          <p class="fnote">Beetle's controlled approach separates tokenisation from the rest of the training pipeline.</p>
         </div>
 
         <div class="card">
-          <h3>🔬 Build controlled experiments of your own</h3>
-          <p>The framework's value is in making it easy to create comparable models and test specific hypotheses about learning. Use it to:</p>
+          <h3>🧠 Study how models develop</h3>
+          <p>Use intermediate checkpoints to investigate learning as it happens.</p>
           <ul class="rq-list">
-            <li>Design experiments that vary one training factor at a time.</li>
-            <li>Train models with different language combinations and exposure schedules.</li>
-            <li>Compare models across training budgets and checkpoints.</li>
-            <li>Build matched baselines for new research questions.</li>
-            <li>Release your own controlled model families so others can reproduce and extend your work.</li>
+            <li>When do particular capabilities emerge?</li>
+            <li>How do internal representations change during training?</li>
+            <li>Do different learning histories produce different outcomes?</li>
           </ul>
-          <p class="fnote">The key is that the differences between models are intentional, interpretable and scientifically useful.</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- From framework to scientific discovery -->
+  <!-- Use the tools you need -->
   <section class="section alt">
-    <div class="wrap narrow">
-      <div class="section-head">
-        <span class="eyebrow">From framework to scientific discovery</span>
-        <h2>The framework and the model suite complement one another</h2>
-      </div>
-      <p class="lead">Use the <a href="models.html">models</a> to explore existing training trajectories, investigate internal representations, and reproduce analyses. Use the <strong>framework</strong> to change the training process, test new hypotheses, and generate models that answer questions the existing suite does not cover.</p>
-      <p class="lead">Together they support an iterative approach to research: start with an observation in an existing model, form a hypothesis about its training history, design a controlled experiment, and analyse the resulting models. Intermediate checkpoints make it possible to study not only <em>what</em> a model learns, but <em>when</em> particular behaviours emerge and how they change over training.</p>
-    </div>
-  </section>
-
-  <!-- Ecosystem -->
-  <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <span class="eyebrow">Ecosystem</span>
-        <h2>Four small, focused repositories</h2>
-        <p>Beetle is deliberately minimal and maximally forkable. Rather than one monolithic codebase, it is four small repositories you can read in an afternoon — each does one job well, and each has a step-by-step tutorial in the <a href="docs.html">documentation</a>.</p>
+        <span class="eyebrow">Toolkit</span>
+        <h2>Use the tools you need</h2>
+        <p>Beetle is built from four small, open-source repositories. Use them together or adapt individual components for your own experiments.</p>
       </div>
       <div class="grid cols-2">
 
         <div class="card">
-          <div class="meta" style="font-family:var(--mono-font);font-size:12.5px;color:var(--accent-dark);margin-bottom:4px;">beetlelm</div>
-          <h4>The training framework</h4>
-          <p>The core framework behind the released suite: the architecture zoo (with the PicoDecoder backbone), the modular tokeniser, the B1–B5 exposure curricula, and HuggingFace-compatible checkpoints. This is where models are trained.</p>
-          <p class="inline-links"><a href="https://github.com/beetlelm/beetlelm" target="_blank" rel="noopener">Open repository <i class="bi bi-box-arrow-up-right"></i></a> &nbsp;·&nbsp; <a href="docs.html#beetlelm">Read the tutorial</a></p>
+          <div class="repo-tag">beetlelm · Train models</div>
+          <p>The core training framework: model architectures, tokenisation options and B1 to B5 exposure curricula.</p>
+          <p class="inline-links"><a href="https://github.com/beetlelm/beetlelm" target="_blank" rel="noopener">GitHub repository <i class="bi bi-box-arrow-up-right"></i></a> &nbsp;·&nbsp; <a href="docs.html#beetlelm">Tutorial</a></p>
         </div>
 
         <div class="card">
-          <div class="meta" style="font-family:var(--mono-font);font-size:12.5px;color:var(--accent-dark);margin-bottom:4px;">beetle-data</div>
-          <h4>The data pipeline</h4>
-          <p>A minimal, reproducible bilingual data-preparation pipeline: build a corpus, train a BPE tokeniser, pretokenise into shards, and report stats — for small language models. This is where training data comes from.</p>
-          <p class="inline-links"><a href="https://github.com/beetlelm/beetle-data" target="_blank" rel="noopener">Open repository <i class="bi bi-box-arrow-up-right"></i></a> &nbsp;·&nbsp; <a href="docs.html#beetle-data">Read the tutorial</a></p>
+          <div class="repo-tag">beetle-data · Prepare data</div>
+          <p>Build and process training corpora, train BPE tokenisers and prepare data for model training.</p>
+          <p class="inline-links"><a href="https://github.com/beetlelm/beetle-data" target="_blank" rel="noopener">GitHub <i class="bi bi-box-arrow-up-right"></i></a> &nbsp;·&nbsp; <a href="docs.html#beetle-data">Tutorial</a></p>
         </div>
 
         <div class="card">
-          <div class="meta" style="font-family:var(--mono-font);font-size:12.5px;color:var(--accent-dark);margin-bottom:4px;">beetle-analyze</div>
-          <h4>The evaluation toolkit</h4>
-          <p>A minimal, reproducible toolkit for analysing language-model evaluation output via BLiMP-style minimal-pair accuracy, with research tools for reading-time alignment, probing and representational analysis. This is where you measure what models learned.</p>
-          <p class="inline-links"><a href="https://github.com/beetlelm/beetle-analyze" target="_blank" rel="noopener">Open repository <i class="bi bi-box-arrow-up-right"></i></a> &nbsp;·&nbsp; <a href="docs.html#beetle-analyze">Read the tutorial</a></p>
+          <div class="repo-tag">beetle-analyze · Evaluate models</div>
+          <p>Analyse model performance, minimal-pair evaluations, reading-time alignment and internal representations.</p>
+          <p class="inline-links"><a href="https://github.com/beetlelm/beetle-analyze" target="_blank" rel="noopener">GitHub <i class="bi bi-box-arrow-up-right"></i></a> &nbsp;·&nbsp; <a href="docs.html#beetle-analyze">Tutorial</a></p>
         </div>
 
         <div class="card">
-          <div class="meta" style="font-family:var(--mono-font);font-size:12.5px;color:var(--accent-dark);margin-bottom:4px;">beetle-explorer</div>
-          <h4>The no-code companion</h4>
-          <p>Load and play with Beetle language models in Colab — no coding required. A non-technical companion to the beetlelm training framework: pick a collection, language, curriculum and checkpoint, and generate text.</p>
-          <p class="inline-links"><a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Open repository <i class="bi bi-box-arrow-up-right"></i></a> &nbsp;·&nbsp; <a href="docs.html#beetle-explorer">Read the tutorial</a></p>
+          <div class="repo-tag">beetle-explorer · Try models in Colab</div>
+          <p>Explore existing models, choose languages and training conditions, select checkpoints and generate text without building your own training pipeline.</p>
+          <p class="inline-links"><a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">GitHub <i class="bi bi-box-arrow-up-right"></i></a> &nbsp;·&nbsp; <a href="docs.html#beetle-explorer">Tutorial</a></p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Explore and build -->
-  <section class="section alt">
+  <!-- Start experimenting -->
+  <section class="section">
     <div class="wrap narrow center">
       <div class="section-head center">
-        <span class="eyebrow">Start exploring 🪲</span>
-        <h2>Experiment with the training process</h2>
+        <span class="eyebrow">Start experimenting 🪲</span>
+        <h2>Train a model. Test a hypothesis.</h2>
       </div>
-      <p class="lead">You don't need a fully formed project to begin. Reproduce an experiment, change one training factor, or build a new controlled model family — then analyse what changes. The step-by-step, technical how-to lives in the <a href="docs.html">documentation</a>.</p>
+      <p class="lead">You can start with an existing model, reproduce an experiment, or train a new model to test your own hypothesis.</p>
       <div class="cta-row" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px;">
-        <a class="btn btn-primary" href="docs.html">Explore the training framework <i class="bi bi-arrow-right"></i></a>
-        <a class="btn btn-outline" href="models.html">Browse the released models <i class="bi bi-arrow-right"></i></a>
-        <a class="btn btn-ghost" href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">Read the paper's methodology <i class="bi bi-box-arrow-up-right"></i></a>
+        <a class="btn btn-primary" href="docs.html">Read the documentation <i class="bi bi-arrow-right"></i></a>
+        <a class="btn btn-outline" href="models.html">Explore the released models <i class="bi bi-arrow-right"></i></a>
+        <a class="btn btn-ghost" href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">Read the research paper <i class="bi bi-box-arrow-up-right"></i></a>
       </div>
     </div>
   </section>
