@@ -111,6 +111,8 @@
     button.lnk:hover { text-decoration:underline; }
     .tag-final { display:inline-block; font-size:10px; font-weight:700; font-family:var(--head-font); background:linear-gradient(135deg,#ffb703,#fb8500); color:#231; border-radius:50px; padding:1px 7px; vertical-align:middle; }
     .tag-warn { display:inline-block; font-size:10px; font-weight:700; font-family:var(--head-font); background:#fff1dc; color:#c57b12; border-radius:50px; padding:1px 7px; vertical-align:middle; }
+    .pick-hint { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--accent-dark); background:var(--accent-soft); border-radius:10px; padding:9px 13px; margin-bottom:12px; }
+    .pick-hint i { font-size:15px; }
   </style>
 </head>
 
@@ -305,6 +307,7 @@
 
         <div class="finder-results">
           <div class="finder-search"><i class="bi bi-search"></i><input type="text" id="f-text" placeholder="Search repository names, e.g. nld, sequential, tokenizer, 24b"></div>
+          <div class="pick-hint"><i class="bi bi-check2-square"></i> Tick the box on any models you want. A copy-ready code snippet appears below as you select.</div>
           <div class="finder-top">
             <div class="rcount" id="rcount"></div>
             <button class="btn-reset" id="f-reset"><i class="bi bi-arrow-counterclockwise"></i> Reset filters</button>
@@ -538,6 +541,7 @@
       const cb=ev.target.closest(".rsel"); if(!cb) return;
       const k=cb.dataset.k; if(cb.checked) selected.set(k,1); else selected.delete(k);
       refreshTray();
+      if(cb.checked) tray.scrollIntoView({behavior:"smooth",block:"nearest"});
     });
     document.getElementById("rselall").addEventListener("change", ev=>{
       D.filter(match).slice(0,RENDER_CAP).filter(e=>e.r==="model").forEach(e=>{
@@ -609,7 +613,7 @@
       if(p.final){ state._final=true; }
       if(p.text){ state.text=p.text.toLowerCase(); document.getElementById("f-text").value=p.text; }
       render();
-      document.getElementById("finder").scrollIntoView({behavior:"smooth",block:"start"});
+      (document.querySelector(".finder-results")||document.getElementById("finder")).scrollIntoView({behavior:"smooth",block:"start"});
     }
     document.querySelectorAll("[data-preset]").forEach(b=>{
       b.addEventListener("click",()=>{ if(b.dataset.an) setAnalysis(b.dataset.an); try{ applyPreset(JSON.parse(b.dataset.preset)); }catch(e){} });
