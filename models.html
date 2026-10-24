@@ -202,32 +202,32 @@
   <!-- Route A: experiment templates -->
   <section class="section">
     <div class="wrap">
-      <div class="section-head"><span class="eyebrow">Experiments</span><h2>What do you want to investigate?</h2><p>Choose a research question to find relevant models and generate code you can run with <a href="docs.html#beetle-analyze">beetle-analyze</a>. Tick the models you want, and the snippet updates for your selection.</p></div>
+      <div class="section-head"><span class="eyebrow">Experiments</span><h2>What do you want to investigate?</h2><p>Pick a research question below. We load a recommended, matched set of models and generate ready-to-run <a href="docs.html#beetle-analyze">beetle-analyze</a> code straight away — no setup needed. Add or remove models in the table and the snippet updates for your selection.</p></div>
       <div class="xtemplates">
-        <div class="xcard" data-preset='{"resource":"model","final":true}' data-an="cka">
+        <div class="xcard" data-preset='{"resource":"model","mtype":"monolingual","scale":["24B"],"allckpt":true,"pick":["Beetle-FineWeb-24B-4/beetle-monolingual-fineweb3-eng","Beetle-FineWeb-24B-4/beetle-monolingual-fineweb3-deu"]}' data-an="cka">
           <h4>🧠 How does AI learn?</h4>
           <p><strong>Study model internals and interpretability.</strong> Investigate how a model's internal representations change during training, when capabilities emerge, and how information is stored. Select checkpoints from different stages of training to track what changes over time.</p>
-          <span class="go">Choose models → generate CKA code <i class="bi bi-arrow-down"></i></span>
+          <span class="go">Load English &amp; German models → CKA across checkpoints <i class="bi bi-arrow-right-circle"></i></span>
         </div>
-        <div class="xcard" data-preset='{"resource":"model"}' data-an="blimp">
+        <div class="xcard" data-preset='{"resource":"model","mtype":"monolingual","langs":["eng"],"pick":["Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-eng","Beetle-FineWeb3-24B/beetle-monolingual-fineweb3-eng","Beetle-FineWeb-24B-4/beetle-monolingual-fineweb3-eng"]}' data-an="blimp">
           <h4>📈 Does more training make a difference?</h4>
           <p><strong>Compare training budgets and learning trajectories.</strong> Compare models trained on 100 million, 2 billion and 24 billion tokens to see how additional training affects performance and internal representations. Use matched models wherever possible to make the comparison meaningful.</p>
-          <span class="go">Choose models → generate BLiMP code <i class="bi bi-arrow-down"></i></span>
+          <span class="go">Load matched English models (100M → 24B) → BLiMP code <i class="bi bi-arrow-right-circle"></i></span>
         </div>
-        <div class="xcard" data-preset='{"resource":"model","mtype":"bilingual"}' data-an="blimp">
+        <div class="xcard" data-preset='{"resource":"model","langs":["deu","eng"],"scale":["100M"],"pick":["Beetle-FineWeb-100M/beetle-bilingual-balanced-b1-fineweb-100m-deu-eng","Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-deu","Beetle-FineWeb-100M/beetle-monolingual-fineweb-100m-eng"]}' data-an="blimp">
           <h4>🌍 How does learning two languages change a model?</h4>
           <p><strong>Investigate multilingual learning and cross-lingual transfer.</strong> Compare models that learn one language with models that learn two, across different language pairs and exposure orders. Include matched monolingual baselines to isolate the effects of bilingual learning.</p>
-          <span class="go">Choose models → generate BLiMP code <i class="bi bi-arrow-down"></i></span>
+          <span class="go">Load a bilingual model + its baselines → BLiMP code <i class="bi bi-arrow-right-circle"></i></span>
         </div>
-        <div class="xcard" data-preset='{"resource":"model","ds":["BabyBabel"]}' data-an="meco">
+        <div class="xcard" data-preset='{"resource":"model","scale":["HumanScale"],"langs":["deu","eng"],"pick":["Beetle-HumanScale/beetle-bilingual-balanced-b1-humanscale-deu-eng","Beetle-HumanScale/beetle-bilingual-l2-50-sequential-33-67-b3-humanscale-deu-eng","Beetle-HumanScale/beetle-monolingual-humanscale-deu"]}' data-an="meco">
           <h4>🧪 What can AI learning tell us about human learning?</h4>
           <p><strong>Compare models with human language-processing data.</strong> Connect model behaviour to human reading times, grammaticality judgements and priming data. Beetle's resources document datasets including MECO and BLiSS, helping you explore where model and human language processing converge or differ.</p>
-          <span class="go">Choose models → generate MECO code <i class="bi bi-arrow-down"></i></span>
+          <span class="go">Load human-scale models → MECO reading-time code <i class="bi bi-arrow-right-circle"></i></span>
         </div>
-        <div class="xcard" data-preset='{"resource":"model","final":true}' data-an="load">
+        <div class="xcard" data-preset='{"resource":"model","final":true,"pick":["Beetle-FineWeb-24B-4/beetle-monolingual-fineweb3-eng","Beetle-FineWeb-24B-4/beetle-monolingual-fineweb3-deu","Beetle-FineWeb-24B-4/beetle-monolingual-fineweb3-zho"]}' data-an="load">
           <h4>🎓 Learning, teaching and independent projects</h4>
           <p><strong>Get hands-on with language models.</strong> Reproduce a published result, compare models on a benchmark, explore how models generate text, or build a project of your own. Start with the recommended final-release models, then use the notebooks and tools to investigate your own questions.</p>
-          <span class="go">Choose models → load &amp; generate <i class="bi bi-arrow-down"></i></span>
+          <span class="go">Load recommended final models → ready-to-run code <i class="bi bi-arrow-right-circle"></i></span>
         </div>
       </div>
       <p class="inline-links" style="font-size:14px;margin-top:16px;">See the <a href="docs.html#beetle-analyze">beetle-analyze documentation</a> for supported analyses and datasets, or try the interactive <a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Beetle Explorer in Colab</a>.</p>
@@ -392,6 +392,7 @@
     // Multi-model selection (keys are "org/name").
     const selected = new Map();
     function keyOf(e){ return e.o+"/"+e.n; }
+    const DKEYS = new Set(D.filter(e=>e.r==="model").map(keyOf));
 
     const state = { resource:"model", mtype:"any", langs:new Set(), l1:"", l2:"", order:true,
                     ds:new Set(), curr:new Set(), scale:new Set(), text:"" };
@@ -604,16 +605,29 @@
     // presets from cards/buttons
     function applyPreset(p){
       reset();
+      // A curated pick starts from a clean selection and checkpoint setting.
+      if(p.pick){
+        selected.clear();
+        allCkpt = !!p.allckpt;
+        document.getElementById("an-all").checked = allCkpt;
+      }
       if(p.resource){ state.resource=p.resource; setSingle("f-resource",p.resource); }
       if(p.mtype && p.resource==="model"){ state.mtype=p.mtype; setSingle("f-mtype",p.mtype); }
+      if(p.langs){ setMulti("f-lang",state.langs,p.langs); }
       if(p.ds){ setMulti("f-ds",state.ds,p.ds); }
       if(p.scale){ setMulti("f-scale",state.scale,p.scale); }
       if(p.curr){ setMulti("f-curr",state.curr,p.curr); }
       if(p.org){ state._org=p.org; }
       if(p.final){ state._final=true; }
       if(p.text){ state.text=p.text.toLowerCase(); document.getElementById("f-text").value=p.text; }
+      // Preselect the recommended models so code is generated immediately.
+      if(p.pick){ p.pick.forEach(k=>{ if(DKEYS.has(k)) selected.set(k,1); }); }
       render();
-      (document.querySelector(".finder-results")||document.getElementById("finder")).scrollIntoView({behavior:"smooth",block:"start"});
+      if(p.pick && selected.size){
+        tray.scrollIntoView({behavior:"smooth",block:"start"});
+      } else {
+        (document.querySelector(".finder-results")||document.getElementById("finder")).scrollIntoView({behavior:"smooth",block:"start"});
+      }
     }
     document.querySelectorAll("[data-preset]").forEach(b=>{
       b.addEventListener("click",()=>{ if(b.dataset.an) setAnalysis(b.dataset.an); try{ applyPreset(JSON.parse(b.dataset.preset)); }catch(e){} });
