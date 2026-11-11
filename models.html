@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/css/site.css" rel="stylesheet">
 
@@ -113,14 +114,35 @@
     .tag-warn { display:inline-block; font-size:10px; font-weight:700; font-family:var(--head-font); background:#fff1dc; color:#c57b12; border-radius:50px; padding:1px 7px; vertical-align:middle; }
     .pick-hint { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--accent-dark); background:var(--accent-soft); border-radius:10px; padding:9px 13px; margin-bottom:12px; }
     .pick-hint i { font-size:15px; }
+    /* Exposure-curricula diagram (shared with suchirsalhan.github.io) */
+    .bt-diagram { --bt-ink:var(--ink); --bt-ink-2:var(--body); --bt-rule:var(--line);
+      --bt-b1:#5e7a4f; --bt-b2:#a87a26; --bt-b3:#4f6f84; --bt-b4:#a35d48; --bt-b5:#76668a; margin: 8px 0 0; }
+    .bt-strips { list-style: none; margin: 0; padding: 0; }
+    .bt-strips li { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 16px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--bt-rule); }
+    .bt-strips li:first-child { border-top: 1px solid var(--bt-rule); }
+    .bt-strips .k { font-size: 13.5px; line-height: 1.35; color: var(--bt-ink-2); }
+    .bt-strips .k b { font-family: var(--mono-font); font-weight: 600; color: var(--bt-ink); margin-right: 6px; }
+    .bt-strips svg { width: 100%; height: 38px; display: block; overflow: visible; }
+    .bt-strips .axis { stroke: var(--bt-ink-2); stroke-width: 1; vector-effect: non-scaling-stroke; }
+    .bt-strips .grid { stroke: #cfc8e6; stroke-width: 1; stroke-dasharray: 3 3; vector-effect: non-scaling-stroke; }
+    .bt-strips .mean { stroke: var(--bt-ink-2); stroke-width: 1; stroke-dasharray: 2 3; vector-effect: non-scaling-stroke; }
+    .bt-strips .area { stroke-width: 1.5; vector-effect: non-scaling-stroke; fill-opacity: .55; }
+    .bt-strips .a1 { fill: var(--bt-b1); stroke: var(--bt-b1); } .bt-strips .a2 { fill: var(--bt-b2); stroke: var(--bt-b2); }
+    .bt-strips .a3 { fill: var(--bt-b3); stroke: var(--bt-b3); } .bt-strips .a4 { fill: var(--bt-b4); stroke: var(--bt-b4); }
+    .bt-strips .a5 { fill: var(--bt-b5); stroke: var(--bt-b5); }
+    .bt-diagram p.bt-axis-note { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 16px; font-family: var(--mono-font); font-size: 11px; line-height: 1.4; color: var(--bt-ink-2); margin: 6px 0 0; }
+    .bt-diagram .bt-axis-note .ax { display: flex; justify-content: space-between; }
+    .bt-diagram figcaption { font-size: 13px; line-height: 1.55; color: var(--bt-ink-2); margin-top: 10px; }
+    @media (max-width: 640px) { .bt-strips li, .bt-diagram p.bt-axis-note { grid-template-columns: minmax(0, 1fr); gap: 2px; } .bt-axis-note .sp { display: none; } }
   </style>
+  <link href="assets/css/beetle-brand.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bt-brand">
 
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="beetle logo"><span>beetle</span></a>
+      <a class="brand" href="index.html"><img class="bt-wordmark" src="assets/img/brand/beetlewbug.png" alt="Beetle" width="54" height="34"></a>
       <button class="nav-toggle" aria-label="Menu"><i class="bi bi-list"></i></button>
       <nav class="nav">
         <a href="index.html">Home</a>
@@ -173,6 +195,29 @@
         </table>
       </div>
       <p class="fnote" style="font-size:13.5px;">The final-release <b>Beetle-FineWeb-24B-4</b> and <b>Beetle-FineWeb-24B-5</b> collections completed the full 24-billion-token budget. Other collections have their actual training budgets listed above, so you can choose models with the amount of training your experiment requires. The HumanScale collection uses child-oriented BabyBabelLM data, for smaller, more cognitively motivated learning setups.</p>
+    </div>
+  </section>
+
+  <!-- Exposure curricula -->
+  <section class="section alt" id="curricula">
+    <div class="wrap narrow">
+      <div class="section-head"><span class="eyebrow">Curricula</span><h2>Five exposure curricula</h2><p>Bilingual models differ in when the second language appears and how much of the training data it makes up.</p></div>
+      <figure class="bt-diagram">
+        <ul class="bt-strips">
+        <li><span class="k"><b>B1</b>Balanced: constant 50:50 from the first step</span>
+        <svg viewBox="0 0 300 38" preserveAspectRatio="none" aria-hidden="true"><line class="grid" x1="0" y1="18" x2="300" y2="18"/><path class="area a1" d="M0 36V18H300V36Z"/><line class="axis" x1="0" y1="36" x2="300" y2="36"/></svg></li>
+        <li><span class="k"><b>B2</b>Simultaneous: first language only, then a sigmoid at 50% of training to 50:50</span>
+        <svg viewBox="0 0 300 38" preserveAspectRatio="none" aria-hidden="true"><line class="grid" x1="0" y1="18" x2="300" y2="18"/><path class="area a2" d="M0 36H96L96 35.5L102 35.3L108 35L114 34.5L120 33.9L126 33L132 31.8L138 30.4L144 28.8L150 27L156 25.2L162 23.6L168 22.2L174 21L180 20.1L186 19.5L192 19L198 18.7L204 18.5L210 18.3H300V36Z"/><line class="axis" x1="0" y1="36" x2="300" y2="36"/></svg></li>
+        <li><span class="k"><b>B3</b>Sequential: first language only, then a sigmoid at 50% to 33:67, mostly L2</span>
+        <svg viewBox="0 0 300 38" preserveAspectRatio="none" aria-hidden="true"><line class="grid" x1="0" y1="18" x2="300" y2="18"/><path class="area a3" d="M0 36H96L96 35.4L102 35.1L108 34.6L114 34L120 33.1L126 31.9L132 30.4L138 28.5L144 26.3L150 23.9L156 21.6L162 19.4L168 17.5L174 15.9L180 14.8L186 13.9L192 13.3L198 12.8L204 12.5L210 12.3H300V36Z"/><line class="axis" x1="0" y1="36" x2="300" y2="36"/></svg></li>
+        <li><span class="k"><b>B4</b>Classroom: a sigmoid at 50% to 80:20, with short L2 bursts from 40% onward</span>
+        <svg viewBox="0 0 300 38" preserveAspectRatio="none" aria-hidden="true"><line class="mean" x1="0" y1="28.8" x2="300" y2="28.8"/><path class="area a4" d="M0 36H72L72 35.9L78 35.8L84 35.7L90 35.7L96 35.5L102 35.4L108 35.2L114 35L120 34.7V31.1L126 30.7L129 30.5V34.1L132 33.9L138 33.4L144 32.9L150 32.4L156 31.9L162 31.4L165 31.1V27.5L168 27.3L174 26.9V30.5L180 30.1L186 29.8L192 29.6L198 29.4L204 29.3L210 29.1V25.5L216 25.5L219 25.4V29L222 29L228 28.9L234 28.9L240 28.9L246 28.9L252 28.8L255 28.8V25.2L258 25.2L264 25.2V28.8L270 28.8L276 28.8L282 28.8L288 28.8L294 28.8L300 28.8V36Z"/><line class="axis" x1="0" y1="36" x2="300" y2="36"/></svg></li>
+        <li><span class="k"><b>B5</b>Late: first language only, then a sigmoid at 80% of training to 50:50</span>
+        <svg viewBox="0 0 300 38" preserveAspectRatio="none" aria-hidden="true"><line class="grid" x1="0" y1="18" x2="300" y2="18"/><path class="area a5" d="M0 36H186L186 35.5L192 35.3L198 35L204 34.5L210 33.9L216 33L222 31.8L228 30.4L234 28.8L240 27L246 25.2L252 23.6L258 22.2L264 21L270 20.1L276 19.5L282 19L288 18.7L294 18.5L300 18.3V36Z"/><line class="axis" x1="0" y1="36" x2="300" y2="36"/></svg></li>
+        </ul>
+        <p class="bt-axis-note" aria-hidden="true"><span class="sp"></span><span class="ax"><span>start of training</span><span>end</span></span></p>
+        <figcaption>Share of second-language (L2) data over training for each curriculum, plotted from the default Beetle presets. The dashed line marks a 50:50 mix (for B4, the 80:20 target). Each transition is a sigmoid centred on the onset point (steepness 20, or 15 for B4). B4's bursts add 10 percentage points of L2 for the first fifth of every cycle of 15% of training, and its separate home/classroom episodic sampling is not drawn. Ablations change these defaults, for example a later midpoint (B2_later, 65%), a gentler sigmoid (B2_smooth) or a different final ratio for B3 (25:75 or 0:100).</figcaption>
+        </figure>
     </div>
   </section>
 
@@ -356,7 +401,7 @@
   </section>
 
   <!-- Help -->
-  <section class="section alt">
+  <section class="section alt center-close">
     <div class="wrap narrow center">
       <p class="lead"><strong>Your experiment starts with a question.</strong> Choose the models, compare their training histories, and investigate what changes as they learn.</p>
       <p class="fnote" style="font-size:13px;">Unsure which models suit your experiment? Start with the <a href="docs.html">framework guides</a>, or read the <a href="https://arxiv.org/abs/2609.22633" target="_blank" rel="noopener">EMNLP 2026 paper</a> for the full motivation and evaluation details.</p>
@@ -365,7 +410,7 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <a href="https://github.com/beetlelm" target="_blank" rel="noopener"><img src="assets/img/logo.svg" alt="beetle"></a>
+      <a href="https://github.com/beetlelm" target="_blank" rel="noopener"><img class="bt-wordmark" src="assets/img/brand/beetlewbug.png" alt="Beetle on GitHub" width="76" height="48"></a>
       <p class="f-tag">A controlled framework for bilingual language learning.</p>
       <nav class="f-nav">
         <a href="research.html">Research</a>
