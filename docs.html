@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/css/site.css" rel="stylesheet">
 
@@ -83,13 +84,29 @@
     .fw-mod p { font-size: 13.5px; color: var(--body); line-height: 1.55; margin: 0; max-width: none; }
     .fw-mod .lk { font-weight: 600; white-space: nowrap; }
   </style>
+  <link href="assets/css/beetle-brand.css" rel="stylesheet">
+  <style>
+    /* Start-here Colab panel (Beetle Explorer) */
+    .fw-explorer { margin: 22px 0 26px; padding: 26px 28px; background: var(--bt-paper-2); border: 1px solid var(--bt-rule);
+      border-left: 4px solid var(--bt-accent); max-width: 860px; }
+    .fw-explorer .fx-kicker { font-family: var(--mono-font); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--bt-accent-text); margin: 0 0 6px; }
+    .fw-explorer h2 { font-family: var(--bt-serif); font-weight: 600; font-size: clamp(24px, 3vw, 30px); color: var(--bt-ink); margin: 0 0 10px; }
+    .fw-explorer p { max-width: 720px; }
+    .fx-open { display: inline-flex; align-items: center; gap: 10px; margin: 6px 0 16px; padding: 12px 22px; background: var(--bt-ink);
+      color: var(--bt-paper) !important; font-weight: 600; font-size: 16px; border-radius: 3px; text-decoration: none; }
+    .fx-open:hover { background: #24382d; }
+    .fx-steps { margin: 0 0 14px; padding-left: 1.3em; max-width: 720px; }
+    .fx-steps li { margin: 0 0 6px; line-height: 1.55; color: var(--body); }
+    .fx-note { font-size: 14.5px; color: var(--bt-ink-2) !important; }
+    .fx-links { font-size: 14.5px; margin: 8px 0 0 !important; }
+  </style>
 </head>
 
-<body>
+<body class="bt-brand">
 
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="index.html"><img src="assets/img/brand/beetlewbug.png" alt="Beetle" width="520" height="368" style="height:34px;width:auto;"></a>
+      <a class="brand" href="index.html"><img class="bt-wordmark" src="assets/img/brand/beetlewbug.png" alt="Beetle" width="54" height="34"></a>
       <button class="nav-toggle" aria-label="Menu"><i class="bi bi-list"></i></button>
       <nav class="nav">
         <a href="index.html">Home</a>
@@ -106,6 +123,20 @@
       <span class="eyebrow" style="color:var(--accent);font-family:var(--head-font);font-weight:600;letter-spacing:0.12em;text-transform:uppercase;font-size:12px;">Framework</span>
       <h1>The Beetle Framework</h1>
       <p class="fw-headline">Change how a model learns. Discover what changes.</p>
+
+      <section class="fw-explorer" id="beetle-explorer" aria-labelledby="explorer-h">
+        <p class="fx-kicker">Start here · no setup</p>
+        <h2 id="explorer-h">Try Beetle models in your browser</h2>
+        <p>Beetle Explorer is a single Google Colab notebook. Pick a collection, language, curriculum, seed and checkpoint from dropdown menus, move a few sliders and generate text. You don't need to write any Python or install anything.</p>
+        <a class="fx-open" href="https://colab.research.google.com/github/beetlelm/beetle-explorer/blob/main/notebooks/Beetle_Model_Explorer.ipynb" target="_blank" rel="noopener"><i class="bi bi-play-circle-fill" aria-hidden="true"></i> Open the notebook in Colab</a>
+        <ol class="fx-steps">
+          <li>Open the notebook. Sign in to Google, and the first time allow Colab to access GitHub.</li>
+          <li>Run the cells from top to bottom using each ▶ button.</li>
+          <li>Choose a model from the menus, type a prompt and press generate.</li>
+        </ol>
+        <p class="fx-note">New here? Pick <b>Beetle-FineWeb-24B-4</b> or <b>Beetle-FineWeb-24B-5</b>, the full 24-billion-token release. Each checkpoint is a Hugging Face revision: <code>main</code> is the finished model and <code>step-N</code> is an earlier point in training. These are small research models and will happily produce nonsense, which is part of what makes watching them learn interesting.</p>
+        <p class="fx-links"><a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Notebook on GitHub</a> · <a href="#beetle-explorer-guide">Load a model in your own code</a> · <a href="models.html">Browse all models</a></p>
+      </section>
       <p>What happens when a model learns two languages at once rather than one after the other? Does more training data help? How does tokenisation affect what a model learns?</p>
       <p><strong>Beetle helps you investigate these questions through controlled experiments.</strong> Change how a model is trained, compare the results, and study how its behaviour develops.</p>
       <p>The framework consists of four open-source tools. Use them together to run an experiment from raw text to evaluation, or use individual tools in your own projects.</p>
@@ -140,6 +171,9 @@
     <!-- sidebar -->
     <aside class="guide-nav" aria-label="Guide contents">
       <div class="g-group">
+        <a class="g-top" href="#beetle-explorer">Start here: try models in Colab</a>
+      </div>
+      <div class="g-group">
         <a class="g-top" href="#framework">The framework</a>
       </div>
       <div class="g-group">
@@ -170,7 +204,7 @@
       </div>
       <div class="g-group">
         <a class="g-top" href="#beetle-explorer">Explore models in Colab</a>
-        <a class="g-sub" href="#beetle-explorer">No-code explorer</a>
+        <a class="g-sub" href="#beetle-explorer-guide">Load a model in code</a>
       </div>
     </aside>
 
@@ -517,7 +551,7 @@ stats = pretokenize(tagged, tok, out_dir=<span class="c-str">"pretokenized"</spa
         <h2 class="g-title">Explore models in Colab with <a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener" style="color:inherit;">beetle-explorer <i class="bi bi-github" style="font-size:0.82em;"></i></a></h2>
         <p class="g-lede"><span class="ic">beetle-explorer</span> is a notebook for trying Beetle models without writing code.</p>
 
-        <section class="g-sec" id="beetle-explorer" data-spy>
+        <section class="g-sec" id="beetle-explorer-guide" data-spy>
           <h3>No-code explorer</h3>
           <p>Open <span class="ic">notebooks/Beetle_Model_Explorer.ipynb</span> in <a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">beetle-explorer</a>, pick a collection, language, curriculum and checkpoint, and generate text. It needs only PyTorch, Transformers, the Hugging Face Hub and ipywidgets, so it runs in a free Colab session. Under the hood each model loads in one call:</p>
           <div class="code">
@@ -525,7 +559,7 @@ stats = pretokenize(tagged, tok, out_dir=<span class="c-str">"pretokenized"</spa
 <pre><code><span class="c-kw">from</span> transformers <span class="c-kw">import</span> AutoModelForCausalLM
 model = AutoModelForCausalLM.from_pretrained(repo, revision=<span class="c-str">"step-N"</span>, trust_remote_code=<span class="c-kw">True</span>)</code></pre>
           </div>
-          <p><a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Open beetle-explorer on GitHub</a></p>
+          <p><a href="https://colab.research.google.com/github/beetlelm/beetle-explorer/blob/main/notebooks/Beetle_Model_Explorer.ipynb" target="_blank" rel="noopener">Open the notebook in Colab</a> · <a href="https://github.com/beetlelm/beetle-explorer" target="_blank" rel="noopener">Open beetle-explorer on GitHub</a></p>
         </section>
       </div>
 
